@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ConexaoAcess.cs" />
+    <Compile Include="Controllers\ControleLembretes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Viwes\CadasdroLinhaProducao.cs">
@@ -124,7 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
