@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlowValmet.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace FlowValmet.Viwes
         public CadastroLembretes()
         {
             InitializeComponent();
+        }
+
+        private void GNBtnExcluirCadastroLembrete_Click(object sender, EventArgs e)
+        {
+            ConexaoAcess conexaoAcess = new ConexaoAcess();
+            conexaoAcess.Conectar();
         }
     }
 }
