@@ -31,7 +31,7 @@
             this.GNPanelCentro = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.GNPanelBtnsEsquerdo = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.GNbtnLembretes = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelLembretes = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.GNPanelBtnsEsquerdo.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
             this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2Panel1);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2CircleButton1);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNbtnLembretes);
             this.GNPanelBtnsEsquerdo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.GNPanelBtnsEsquerdo.Location = new System.Drawing.Point(8, 5);
             this.GNPanelBtnsEsquerdo.Name = "GNPanelBtnsEsquerdo";
@@ -77,29 +77,31 @@
             this.guna2Panel1.Size = new System.Drawing.Size(73, 16);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // guna2CircleButton1
+            // GNbtnLembretes
             // 
-            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNbtnLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.LightGray;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(15, 846);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(80, 80);
-            this.guna2CircleButton1.TabIndex = 0;
-            this.guna2CircleButton1.Text = "guna2CircleButton1";
+            this.GNbtnLembretes.BackColor = System.Drawing.Color.LightGray;
+            this.GNbtnLembretes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNbtnLembretes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNbtnLembretes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNbtnLembretes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNbtnLembretes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNbtnLembretes.ForeColor = System.Drawing.Color.White;
+            this.GNbtnLembretes.Location = new System.Drawing.Point(22, 665);
+            this.GNbtnLembretes.Name = "GNbtnLembretes";
+            this.GNbtnLembretes.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GNbtnLembretes.Size = new System.Drawing.Size(60, 60);
+            this.GNbtnLembretes.TabIndex = 0;
+            this.GNbtnLembretes.Text = "Lembretes";
+            this.GNbtnLembretes.Click += new System.EventHandler(this.GNbtnLembretes_Click);
             // 
             // GNPanelLembretes
             // 
             this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNPanelLembretes.AutoScroll = true;
             this.GNPanelLembretes.BorderRadius = 5;
             this.GNPanelLembretes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.GNPanelLembretes.Location = new System.Drawing.Point(1528, 5);
@@ -121,6 +123,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaPrincipal";
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.GNPanelBtnsEsquerdo.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -130,7 +133,7 @@
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelCentro;
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelBtnsEsquerdo;
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelLembretes;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton GNbtnLembretes;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,20 @@ namespace FlowValmet.Controllers
 {
     internal class ConexaoAcess
     {
-        public void Conectar()
+        public MySqlConnection Conectar()
         {
-
+            try
+            {
+                var strConexao = "server=localhost;uid=root;pwd=***;database=BDFLowValmet";
+                var conexao = new MySqlConnection(strConexao);
+                
+                return conexao;
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Erro ao conectar: // talevez sem pwd " + ex.Message);
+                return null; // Se falhar, retorna nulo
+            }
         }
 
     }

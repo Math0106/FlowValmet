@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.GNTxtNumeroOP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GNLabelNumeroOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNLabelDescricaoOp = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNTxtDescriçãoOP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GNLabelDesenhoOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNTxtDesenhoOP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GNLabelDataInicioOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNDatePikerInicioOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.GNDatePikerEntregaOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.GNLabelDataEntregaOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNDatePikerInicioOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.GNLabelDataInicioOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabelDesenhoOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNTxtDesenhoOP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GNLabelDescricaoOp = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNTxtDescriçãoOP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GNLabelNumeroOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNTxtNumeroOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNPanelCadastroOP.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,78 +58,66 @@
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtDescriçãoOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNLabelNumeroOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtNumeroOP);
-            this.GNPanelCadastroOP.Location = new System.Drawing.Point(209, 72);
+            this.GNPanelCadastroOP.Location = new System.Drawing.Point(190, 72);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
             this.GNPanelCadastroOP.Size = new System.Drawing.Size(1000, 800);
             this.GNPanelCadastroOP.TabIndex = 1;
             // 
-            // GNTxtNumeroOP
+            // GNDatePikerEntregaOP
             // 
-            this.GNTxtNumeroOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNDatePikerEntregaOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNTxtNumeroOP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GNTxtNumeroOP.DefaultText = "";
-            this.GNTxtNumeroOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GNTxtNumeroOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GNTxtNumeroOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtNumeroOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtNumeroOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtNumeroOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNTxtNumeroOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtNumeroOP.Location = new System.Drawing.Point(106, 127);
-            this.GNTxtNumeroOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GNTxtNumeroOP.Name = "GNTxtNumeroOP";
-            this.GNTxtNumeroOP.PlaceholderText = "";
-            this.GNTxtNumeroOP.SelectedText = "";
-            this.GNTxtNumeroOP.Size = new System.Drawing.Size(229, 46);
-            this.GNTxtNumeroOP.TabIndex = 0;
+            this.GNDatePikerEntregaOP.Checked = true;
+            this.GNDatePikerEntregaOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDatePikerEntregaOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GNDatePikerEntregaOP.Location = new System.Drawing.Point(106, 438);
+            this.GNDatePikerEntregaOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GNDatePikerEntregaOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.GNDatePikerEntregaOP.Name = "GNDatePikerEntregaOP";
+            this.GNDatePikerEntregaOP.Size = new System.Drawing.Size(200, 36);
+            this.GNDatePikerEntregaOP.TabIndex = 10;
+            this.GNDatePikerEntregaOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
             // 
-            // GNLabelNumeroOP
+            // GNLabelDataEntregaOP
             // 
-            this.GNLabelNumeroOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNLabelDataEntregaOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNLabelNumeroOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelNumeroOP.Location = new System.Drawing.Point(106, 102);
-            this.GNLabelNumeroOP.Name = "GNLabelNumeroOP";
-            this.GNLabelNumeroOP.Size = new System.Drawing.Size(22, 18);
-            this.GNLabelNumeroOP.TabIndex = 1;
-            this.GNLabelNumeroOP.Text = "OP";
+            this.GNLabelDataEntregaOP.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabelDataEntregaOP.Location = new System.Drawing.Point(106, 414);
+            this.GNLabelDataEntregaOP.Name = "GNLabelDataEntregaOP";
+            this.GNLabelDataEntregaOP.Size = new System.Drawing.Size(101, 18);
+            this.GNLabelDataEntregaOP.TabIndex = 9;
+            this.GNLabelDataEntregaOP.Text = "Data de Entrega";
             // 
-            // GNLabelDescricaoOp
+            // GNDatePikerInicioOP
             // 
-            this.GNLabelDescricaoOp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNDatePikerInicioOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNLabelDescricaoOp.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDescricaoOp.Location = new System.Drawing.Point(106, 182);
-            this.GNLabelDescricaoOp.Name = "GNLabelDescricaoOp";
-            this.GNLabelDescricaoOp.Size = new System.Drawing.Size(65, 18);
-            this.GNLabelDescricaoOp.TabIndex = 3;
-            this.GNLabelDescricaoOp.Text = "Descrição";
+            this.GNDatePikerInicioOP.Checked = true;
+            this.GNDatePikerInicioOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDatePikerInicioOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GNDatePikerInicioOP.Location = new System.Drawing.Point(106, 367);
+            this.GNDatePikerInicioOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GNDatePikerInicioOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.GNDatePikerInicioOP.Name = "GNDatePikerInicioOP";
+            this.GNDatePikerInicioOP.Size = new System.Drawing.Size(200, 36);
+            this.GNDatePikerInicioOP.TabIndex = 8;
+            this.GNDatePikerInicioOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
             // 
-            // GNTxtDescriçãoOP
+            // GNLabelDataInicioOP
             // 
-            this.GNTxtDescriçãoOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNLabelDataInicioOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNTxtDescriçãoOP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GNTxtDescriçãoOP.DefaultText = "";
-            this.GNTxtDescriçãoOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GNTxtDescriçãoOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GNTxtDescriçãoOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtDescriçãoOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtDescriçãoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDescriçãoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNTxtDescriçãoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDescriçãoOP.Location = new System.Drawing.Point(106, 207);
-            this.GNTxtDescriçãoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GNTxtDescriçãoOP.Name = "GNTxtDescriçãoOP";
-            this.GNTxtDescriçãoOP.PlaceholderText = "";
-            this.GNTxtDescriçãoOP.SelectedText = "";
-            this.GNTxtDescriçãoOP.Size = new System.Drawing.Size(229, 46);
-            this.GNTxtDescriçãoOP.TabIndex = 2;
+            this.GNLabelDataInicioOP.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabelDataInicioOP.Location = new System.Drawing.Point(106, 343);
+            this.GNLabelDataInicioOP.Name = "GNLabelDataInicioOP";
+            this.GNLabelDataInicioOP.Size = new System.Drawing.Size(66, 18);
+            this.GNLabelDataInicioOP.TabIndex = 7;
+            this.GNLabelDataInicioOP.Text = "Data início";
             // 
             // GNLabelDesenhoOP
             // 
@@ -165,61 +153,73 @@
             this.GNTxtDesenhoOP.Size = new System.Drawing.Size(229, 46);
             this.GNTxtDesenhoOP.TabIndex = 4;
             // 
-            // GNLabelDataInicioOP
+            // GNLabelDescricaoOp
             // 
-            this.GNLabelDataInicioOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNLabelDescricaoOp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNLabelDataInicioOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDataInicioOP.Location = new System.Drawing.Point(106, 343);
-            this.GNLabelDataInicioOP.Name = "GNLabelDataInicioOP";
-            this.GNLabelDataInicioOP.Size = new System.Drawing.Size(66, 18);
-            this.GNLabelDataInicioOP.TabIndex = 7;
-            this.GNLabelDataInicioOP.Text = "Data início";
+            this.GNLabelDescricaoOp.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabelDescricaoOp.Location = new System.Drawing.Point(106, 182);
+            this.GNLabelDescricaoOp.Name = "GNLabelDescricaoOp";
+            this.GNLabelDescricaoOp.Size = new System.Drawing.Size(65, 18);
+            this.GNLabelDescricaoOp.TabIndex = 3;
+            this.GNLabelDescricaoOp.Text = "Descrição";
             // 
-            // GNDatePikerInicioOP
+            // GNTxtDescriçãoOP
             // 
-            this.GNDatePikerInicioOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNTxtDescriçãoOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNDatePikerInicioOP.Checked = true;
-            this.GNDatePikerInicioOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNDatePikerInicioOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.GNDatePikerInicioOP.Location = new System.Drawing.Point(106, 367);
-            this.GNDatePikerInicioOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.GNDatePikerInicioOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.GNDatePikerInicioOP.Name = "GNDatePikerInicioOP";
-            this.GNDatePikerInicioOP.Size = new System.Drawing.Size(200, 36);
-            this.GNDatePikerInicioOP.TabIndex = 8;
-            this.GNDatePikerInicioOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
+            this.GNTxtDescriçãoOP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNTxtDescriçãoOP.DefaultText = "";
+            this.GNTxtDescriçãoOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GNTxtDescriçãoOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GNTxtDescriçãoOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtDescriçãoOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtDescriçãoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtDescriçãoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNTxtDescriçãoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtDescriçãoOP.Location = new System.Drawing.Point(106, 207);
+            this.GNTxtDescriçãoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtDescriçãoOP.Name = "GNTxtDescriçãoOP";
+            this.GNTxtDescriçãoOP.PlaceholderText = "";
+            this.GNTxtDescriçãoOP.SelectedText = "";
+            this.GNTxtDescriçãoOP.Size = new System.Drawing.Size(229, 46);
+            this.GNTxtDescriçãoOP.TabIndex = 2;
             // 
-            // GNDatePikerEntregaOP
+            // GNLabelNumeroOP
             // 
-            this.GNDatePikerEntregaOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNLabelNumeroOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNDatePikerEntregaOP.Checked = true;
-            this.GNDatePikerEntregaOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNDatePikerEntregaOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.GNDatePikerEntregaOP.Location = new System.Drawing.Point(106, 438);
-            this.GNDatePikerEntregaOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.GNDatePikerEntregaOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.GNDatePikerEntregaOP.Name = "GNDatePikerEntregaOP";
-            this.GNDatePikerEntregaOP.Size = new System.Drawing.Size(200, 36);
-            this.GNDatePikerEntregaOP.TabIndex = 10;
-            this.GNDatePikerEntregaOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
+            this.GNLabelNumeroOP.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabelNumeroOP.Location = new System.Drawing.Point(106, 102);
+            this.GNLabelNumeroOP.Name = "GNLabelNumeroOP";
+            this.GNLabelNumeroOP.Size = new System.Drawing.Size(22, 18);
+            this.GNLabelNumeroOP.TabIndex = 1;
+            this.GNLabelNumeroOP.Text = "OP";
             // 
-            // GNLabelDataEntregaOP
+            // GNTxtNumeroOP
             // 
-            this.GNLabelDataEntregaOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNTxtNumeroOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNLabelDataEntregaOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDataEntregaOP.Location = new System.Drawing.Point(106, 414);
-            this.GNLabelDataEntregaOP.Name = "GNLabelDataEntregaOP";
-            this.GNLabelDataEntregaOP.Size = new System.Drawing.Size(101, 18);
-            this.GNLabelDataEntregaOP.TabIndex = 9;
-            this.GNLabelDataEntregaOP.Text = "Data de Entrega";
+            this.GNTxtNumeroOP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNTxtNumeroOP.DefaultText = "";
+            this.GNTxtNumeroOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GNTxtNumeroOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GNTxtNumeroOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtNumeroOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtNumeroOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtNumeroOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNTxtNumeroOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtNumeroOP.Location = new System.Drawing.Point(106, 127);
+            this.GNTxtNumeroOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtNumeroOP.Name = "GNTxtNumeroOP";
+            this.GNTxtNumeroOP.PlaceholderText = "";
+            this.GNTxtNumeroOP.SelectedText = "";
+            this.GNTxtNumeroOP.Size = new System.Drawing.Size(229, 46);
+            this.GNTxtNumeroOP.TabIndex = 0;
             // 
             // CadastroOP
             // 

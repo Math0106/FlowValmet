@@ -28,16 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroLembretes));
             this.GNPanelCadastroLembretes = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.GnBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNCheckBoxVincular = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.GNDgvLembretes = new Guna.UI2.WinForms.Guna2DataGridView();
             this.GNBtnCadastrarCadastroLembretes = new Guna.UI2.WinForms.Guna2Button();
-            this.GNBtnExcluirCadastroLembrete = new Guna.UI2.WinForms.Guna2Button();
-            this.GNTxtVincularCadastroLembrete = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GNTxtOPCadastroLembrete = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNLabelDescricaoCadastrarLembrete = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtDEscricaoCadastrarLembretes = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNlabelTituloCadastroLembrete = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtTituloLembrete = new Guna.UI2.WinForms.Guna2TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.GNPanelCadastroLembretes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GNDgvLembretes)).BeginInit();
             this.SuspendLayout();
             // 
             // GNPanelCadastroLembretes
@@ -45,19 +55,122 @@
             this.GNPanelCadastroLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNPanelCadastroLembretes.BorderRadius = 20;
+            this.GNPanelCadastroLembretes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(89)))), ((int)(((byte)(76)))));
+            this.GNPanelCadastroLembretes.BorderRadius = 50;
+            this.GNPanelCadastroLembretes.Controls.Add(this.GnBtnLimpar);
+            this.GNPanelCadastroLembretes.Controls.Add(this.guna2HtmlLabel2);
+            this.GNPanelCadastroLembretes.Controls.Add(this.GNCheckBoxVincular);
+            this.GNPanelCadastroLembretes.Controls.Add(this.GNDgvLembretes);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNBtnCadastrarCadastroLembretes);
-            this.GNPanelCadastroLembretes.Controls.Add(this.GNBtnExcluirCadastroLembrete);
-            this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtVincularCadastroLembrete);
+            this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtOPCadastroLembrete);
             this.GNPanelCadastroLembretes.Controls.Add(this.guna2HtmlLabel1);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNLabelDescricaoCadastrarLembrete);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtDEscricaoCadastrarLembretes);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNlabelTituloCadastroLembrete);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtTituloLembrete);
-            this.GNPanelCadastroLembretes.Location = new System.Drawing.Point(200, 50);
+            this.GNPanelCadastroLembretes.Location = new System.Drawing.Point(208, 50);
             this.GNPanelCadastroLembretes.Name = "GNPanelCadastroLembretes";
             this.GNPanelCadastroLembretes.Size = new System.Drawing.Size(1002, 800);
             this.GNPanelCadastroLembretes.TabIndex = 1;
+            // 
+            // GnBtnLimpar
+            // 
+            this.GnBtnLimpar.BackColor = System.Drawing.Color.White;
+            this.GnBtnLimpar.BorderRadius = 10;
+            this.GnBtnLimpar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GnBtnLimpar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GnBtnLimpar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GnBtnLimpar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GnBtnLimpar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GnBtnLimpar.ForeColor = System.Drawing.Color.White;
+            this.GnBtnLimpar.Location = new System.Drawing.Point(315, 640);
+            this.GnBtnLimpar.Name = "GnBtnLimpar";
+            this.GnBtnLimpar.Size = new System.Drawing.Size(173, 45);
+            this.GnBtnLimpar.TabIndex = 14;
+            this.GnBtnLimpar.Text = "Limpar";
+            this.GnBtnLimpar.Click += new System.EventHandler(this.GnBtnLimpar_Click);
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(64, 200);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(124, 18);
+            this.guna2HtmlLabel2.TabIndex = 11;
+            this.guna2HtmlLabel2.Text = "Vincular em uma OP";
+            // 
+            // GNCheckBoxVincular
+            // 
+            this.GNCheckBoxVincular.BackColor = System.Drawing.Color.White;
+            this.GNCheckBoxVincular.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNCheckBoxVincular.CheckedState.BorderRadius = 2;
+            this.GNCheckBoxVincular.CheckedState.BorderThickness = 0;
+            this.GNCheckBoxVincular.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNCheckBoxVincular.ForeColor = System.Drawing.Color.Transparent;
+            this.GNCheckBoxVincular.Location = new System.Drawing.Point(222, 200);
+            this.GNCheckBoxVincular.Name = "GNCheckBoxVincular";
+            this.GNCheckBoxVincular.Size = new System.Drawing.Size(20, 20);
+            this.GNCheckBoxVincular.TabIndex = 10;
+            this.GNCheckBoxVincular.Text = "guna2CustomCheckBox1";
+            this.GNCheckBoxVincular.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GNCheckBoxVincular.UncheckedState.BorderRadius = 2;
+            this.GNCheckBoxVincular.UncheckedState.BorderThickness = 0;
+            this.GNCheckBoxVincular.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GNCheckBoxVincular.Click += new System.EventHandler(this.GNCheckBoxVincular_Click);
+            // 
+            // GNDgvLembretes
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.GNDgvLembretes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GNDgvLembretes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.GNDgvLembretes.ColumnHeadersHeight = 4;
+            this.GNDgvLembretes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GNDgvLembretes.DefaultCellStyle = dataGridViewCellStyle6;
+            this.GNDgvLembretes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GNDgvLembretes.Location = new System.Drawing.Point(528, 88);
+            this.GNDgvLembretes.Name = "GNDgvLembretes";
+            this.GNDgvLembretes.RowHeadersVisible = false;
+            this.GNDgvLembretes.RowHeadersWidth = 49;
+            this.GNDgvLembretes.RowTemplate.Height = 24;
+            this.GNDgvLembretes.Size = new System.Drawing.Size(413, 631);
+            this.GNDgvLembretes.TabIndex = 8;
+            this.GNDgvLembretes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.GNDgvLembretes.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.GNDgvLembretes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.GNDgvLembretes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.GNDgvLembretes.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GNDgvLembretes.ThemeStyle.HeaderStyle.Height = 4;
+            this.GNDgvLembretes.ThemeStyle.ReadOnly = false;
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.Height = 24;
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GNDgvLembretes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GNDgvLembretes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvLembretes_CellContentClick);
             // 
             // GNBtnCadastrarCadastroLembretes
             // 
@@ -69,61 +182,45 @@
             this.GNBtnCadastrarCadastroLembretes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GNBtnCadastrarCadastroLembretes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnCadastrarCadastroLembretes.ForeColor = System.Drawing.Color.White;
-            this.GNBtnCadastrarCadastroLembretes.Location = new System.Drawing.Point(356, 567);
+            this.GNBtnCadastrarCadastroLembretes.Location = new System.Drawing.Point(101, 640);
             this.GNBtnCadastrarCadastroLembretes.Name = "GNBtnCadastrarCadastroLembretes";
-            this.GNBtnCadastrarCadastroLembretes.Size = new System.Drawing.Size(180, 45);
+            this.GNBtnCadastrarCadastroLembretes.Size = new System.Drawing.Size(167, 45);
             this.GNBtnCadastrarCadastroLembretes.TabIndex = 7;
             this.GNBtnCadastrarCadastroLembretes.Text = "Cadastrar";
+            this.GNBtnCadastrarCadastroLembretes.Click += new System.EventHandler(this.GNBtnCadastrarCadastroLembretes_Click);
             // 
-            // GNBtnExcluirCadastroLembrete
+            // GNTxtOPCadastroLembrete
             // 
-            this.GNBtnExcluirCadastroLembrete.BackColor = System.Drawing.Color.White;
-            this.GNBtnExcluirCadastroLembrete.BorderRadius = 10;
-            this.GNBtnExcluirCadastroLembrete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnExcluirCadastroLembrete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnExcluirCadastroLembrete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GNBtnExcluirCadastroLembrete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GNBtnExcluirCadastroLembrete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNBtnExcluirCadastroLembrete.ForeColor = System.Drawing.Color.White;
-            this.GNBtnExcluirCadastroLembrete.Location = new System.Drawing.Point(108, 567);
-            this.GNBtnExcluirCadastroLembrete.Name = "GNBtnExcluirCadastroLembrete";
-            this.GNBtnExcluirCadastroLembrete.Size = new System.Drawing.Size(180, 45);
-            this.GNBtnExcluirCadastroLembrete.TabIndex = 6;
-            this.GNBtnExcluirCadastroLembrete.Text = "Excluir";
-            this.GNBtnExcluirCadastroLembrete.Click += new System.EventHandler(this.GNBtnExcluirCadastroLembrete_Click);
-            // 
-            // GNTxtVincularCadastroLembrete
-            // 
-            this.GNTxtVincularCadastroLembrete.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GNTxtVincularCadastroLembrete.DefaultText = "";
-            this.GNTxtVincularCadastroLembrete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GNTxtVincularCadastroLembrete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GNTxtVincularCadastroLembrete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtVincularCadastroLembrete.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtVincularCadastroLembrete.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtVincularCadastroLembrete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNTxtVincularCadastroLembrete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtVincularCadastroLembrete.Location = new System.Drawing.Point(92, 175);
-            this.GNTxtVincularCadastroLembrete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GNTxtVincularCadastroLembrete.Name = "GNTxtVincularCadastroLembrete";
-            this.GNTxtVincularCadastroLembrete.PlaceholderText = "";
-            this.GNTxtVincularCadastroLembrete.SelectedText = "";
-            this.GNTxtVincularCadastroLembrete.Size = new System.Drawing.Size(458, 46);
-            this.GNTxtVincularCadastroLembrete.TabIndex = 5;
+            this.GNTxtOPCadastroLembrete.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNTxtOPCadastroLembrete.DefaultText = "";
+            this.GNTxtOPCadastroLembrete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GNTxtOPCadastroLembrete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GNTxtOPCadastroLembrete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtOPCadastroLembrete.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtOPCadastroLembrete.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtOPCadastroLembrete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNTxtOPCadastroLembrete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtOPCadastroLembrete.Location = new System.Drawing.Point(64, 284);
+            this.GNTxtOPCadastroLembrete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtOPCadastroLembrete.Name = "GNTxtOPCadastroLembrete";
+            this.GNTxtOPCadastroLembrete.PlaceholderText = "";
+            this.GNTxtOPCadastroLembrete.SelectedText = "";
+            this.GNTxtOPCadastroLembrete.Size = new System.Drawing.Size(458, 46);
+            this.GNTxtOPCadastroLembrete.TabIndex = 5;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(92, 150);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(64, 259);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(51, 18);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(73, 18);
             this.guna2HtmlLabel1.TabIndex = 4;
-            this.guna2HtmlLabel1.Text = "Vincular";
+            this.guna2HtmlLabel1.Text = "Vincular OP";
             // 
             // GNLabelDescricaoCadastrarLembrete
             // 
             this.GNLabelDescricaoCadastrarLembrete.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDescricaoCadastrarLembrete.Location = new System.Drawing.Point(92, 246);
+            this.GNLabelDescricaoCadastrarLembrete.Location = new System.Drawing.Point(64, 371);
             this.GNLabelDescricaoCadastrarLembrete.Name = "GNLabelDescricaoCadastrarLembrete";
             this.GNLabelDescricaoCadastrarLembrete.Size = new System.Drawing.Size(65, 18);
             this.GNLabelDescricaoCadastrarLembrete.TabIndex = 3;
@@ -140,8 +237,9 @@
             this.GNTxtDEscricaoCadastrarLembretes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNTxtDEscricaoCadastrarLembretes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNTxtDEscricaoCadastrarLembretes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDEscricaoCadastrarLembretes.Location = new System.Drawing.Point(92, 271);
+            this.GNTxtDEscricaoCadastrarLembretes.Location = new System.Drawing.Point(64, 396);
             this.GNTxtDEscricaoCadastrarLembretes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtDEscricaoCadastrarLembretes.MaxLength = 400;
             this.GNTxtDEscricaoCadastrarLembretes.Multiline = true;
             this.GNTxtDEscricaoCadastrarLembretes.Name = "GNTxtDEscricaoCadastrarLembretes";
             this.GNTxtDEscricaoCadastrarLembretes.PlaceholderText = "";
@@ -152,7 +250,7 @@
             // GNlabelTituloCadastroLembrete
             // 
             this.GNlabelTituloCadastroLembrete.BackColor = System.Drawing.Color.Transparent;
-            this.GNlabelTituloCadastroLembrete.Location = new System.Drawing.Point(92, 63);
+            this.GNlabelTituloCadastroLembrete.Location = new System.Drawing.Point(64, 63);
             this.GNlabelTituloCadastroLembrete.Name = "GNlabelTituloCadastroLembrete";
             this.GNlabelTituloCadastroLembrete.Size = new System.Drawing.Size(36, 18);
             this.GNlabelTituloCadastroLembrete.TabIndex = 1;
@@ -169,13 +267,20 @@
             this.GNTxtTituloLembrete.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNTxtTituloLembrete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNTxtTituloLembrete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtTituloLembrete.Location = new System.Drawing.Point(92, 88);
+            this.GNTxtTituloLembrete.Location = new System.Drawing.Point(64, 88);
             this.GNTxtTituloLembrete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtTituloLembrete.MaxLength = 15;
             this.GNTxtTituloLembrete.Name = "GNTxtTituloLembrete";
             this.GNTxtTituloLembrete.PlaceholderText = "";
             this.GNTxtTituloLembrete.SelectedText = "";
             this.GNTxtTituloLembrete.Size = new System.Drawing.Size(458, 46);
             this.GNTxtTituloLembrete.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "lixeira.png");
             // 
             // CadastroLembretes
             // 
@@ -188,6 +293,7 @@
             this.Text = "CadastroLembretes";
             this.GNPanelCadastroLembretes.ResumeLayout(false);
             this.GNPanelCadastroLembretes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GNDgvLembretes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,10 +304,14 @@
         private Guna.UI2.WinForms.Guna2TextBox GNTxtTituloLembrete;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNlabelTituloCadastroLembrete;
         private Guna.UI2.WinForms.Guna2TextBox GNTxtDEscricaoCadastrarLembretes;
-        private Guna.UI2.WinForms.Guna2TextBox GNTxtVincularCadastroLembrete;
+        private Guna.UI2.WinForms.Guna2TextBox GNTxtOPCadastroLembrete;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelDescricaoCadastrarLembrete;
         private Guna.UI2.WinForms.Guna2Button GNBtnCadastrarCadastroLembretes;
-        private Guna.UI2.WinForms.Guna2Button GNBtnExcluirCadastroLembrete;
+        private Guna.UI2.WinForms.Guna2DataGridView GNDgvLembretes;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox GNCheckBoxVincular;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
