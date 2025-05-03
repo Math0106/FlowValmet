@@ -118,5 +118,18 @@ namespace FlowValmet.Viwes
 
             lembretes.Show();
         }
+
+        private void GNBtnUsuario_Click(object sender, EventArgs e)
+        {
+            var usuario = new CadastrarUsuario();
+            usuario.TopLevel = false;
+            usuario.FormBorderStyle = FormBorderStyle.None;
+            usuario.Dock = DockStyle.Fill;
+
+            GNPanelCentro.Controls.Clear(); // Limpa o Panel antes de adicionar
+            GNPanelCentro.Controls.Add(usuario);
+
+            usuario.Show();
+        }
     }
 }

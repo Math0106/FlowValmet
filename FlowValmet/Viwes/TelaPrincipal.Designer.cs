@@ -33,6 +33,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNbtnLembretes = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelLembretes = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.GNBtnUsuario = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelBtnsEsquerdo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnUsuario);
             this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2Panel1);
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNbtnLembretes);
             this.GNPanelBtnsEsquerdo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
@@ -110,6 +112,26 @@
             this.GNPanelLembretes.TabIndex = 3;
             this.GNPanelLembretes.Text = "guna2ContainerControl1";
             // 
+            // GNBtnUsuario
+            // 
+            this.GNBtnUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNBtnUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.GNBtnUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnUsuario.ForeColor = System.Drawing.Color.White;
+            this.GNBtnUsuario.Location = new System.Drawing.Point(22, 572);
+            this.GNBtnUsuario.Name = "GNBtnUsuario";
+            this.GNBtnUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GNBtnUsuario.Size = new System.Drawing.Size(60, 60);
+            this.GNBtnUsuario.TabIndex = 2;
+            this.GNBtnUsuario.Text = "Usuário ";
+            this.GNBtnUsuario.Click += new System.EventHandler(this.GNBtnUsuario_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -135,5 +157,6 @@
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelLembretes;
         private Guna.UI2.WinForms.Guna2CircleButton GNbtnLembretes;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnUsuario;
     }
 }
