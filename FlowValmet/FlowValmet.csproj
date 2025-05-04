@@ -54,17 +54,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Viwes\CadasdroLinhaProducao.cs">
+    <Compile Include="Viwes\CadastroProcesso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Viwes\CadasdroLinhaProducao.Designer.cs">
-      <DependentUpon>CadasdroLinhaProducao.cs</DependentUpon>
+    <Compile Include="Viwes\CadastroProcesso.Designer.cs">
+      <DependentUpon>CadastroProcesso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viwes\CadastrarUsuario.cs">
+    <Compile Include="Viwes\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Viwes\CadastrarUsuario.Designer.cs">
-      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    <Compile Include="Viwes\CadastroUsuario.Designer.cs">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\CadastroLembretes.cs">
       <SubType>Form</SubType>
@@ -77,6 +77,12 @@
     </Compile>
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\LoginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\LoginUsuario.Designer.cs">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -94,17 +100,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Viwes\CadasdroLinhaProducao.resx">
-      <DependentUpon>CadasdroLinhaProducao.cs</DependentUpon>
+    <EmbeddedResource Include="Viwes\CadastroProcesso.resx">
+      <DependentUpon>CadastroProcesso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Viwes\CadastrarUsuario.resx">
-      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Viwes\CadastroUsuario.resx">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLembretes.resx">
       <DependentUpon>CadastroLembretes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\LoginUsuario.resx">
+      <DependentUpon>LoginUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
@@ -128,7 +137,24 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagem\circle-user.png" />
+    <Content Include="Imagem\icon user.png" />
+    <Content Include="Imagem\lock.png" />
     <Content Include="Imagem\LogoValmet.png" />
+    <Content Include="Imagem\password icon.png" />
+    <Content Include="Imagem\profile.png" />
+    <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\arrow.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\ChatGPT Image 4 de mai. de 2025, 14_03_48.png" />
+    <None Include="Resources\ChatGPT Image 3 de mai. de 2025, 14_03_48.png" />
+    <None Include="Resources\valmet logo2.png" />
+    <None Include="Resources\valmet logo.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\Desktop-Sky-Backgrounds-pictures.jpg" />
+    <None Include="Resources\output.png" />
+    <None Include="Resources\Valmet1.jpg" />
+    <None Include="Resources\Valmet.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

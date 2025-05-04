@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FlowValmet.Viwes
 {
-    public partial class CadasdroLinhaProducao : Form
+    public partial class CadastroProcesso: Form
     {
-        public CadasdroLinhaProducao()
+        public CadastroProcesso()
         {
             InitializeComponent();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

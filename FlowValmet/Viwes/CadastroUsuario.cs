@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FlowValmet.Viwes
 {
-    public partial class CadastrarUsuario : Form
+    public partial class CadastroUsuario: Form
     {
-        public CadastrarUsuario()
+        public CadastroUsuario()
         {
             InitializeComponent();
+        }
+
+        private void BttnRegistrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
