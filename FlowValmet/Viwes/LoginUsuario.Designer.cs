@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.BttnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtfundo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.BttnVoltar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.BttnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TxtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             this.TxtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtfundo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.tgglSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.LabelLembrar = new System.Windows.Forms.Label();
+            this.linkLabelRecuperarSenha = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
@@ -48,6 +51,9 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.linkLabelRecuperarSenha);
+            this.guna2Panel1.Controls.Add(this.LabelLembrar);
+            this.guna2Panel1.Controls.Add(this.tgglSwitch);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.BttnVoltar);
             this.guna2Panel1.Controls.Add(this.Picture);
@@ -61,50 +67,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1000, 800);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // BttnLogin
-            // 
-            this.BttnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BttnLogin.BorderRadius = 20;
-            this.BttnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BttnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BttnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.BttnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(140)))), ((int)(((byte)(230)))));
-            this.BttnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BttnLogin.ForeColor = System.Drawing.Color.White;
-            this.BttnLogin.Location = new System.Drawing.Point(199, 540);
-            this.BttnLogin.Name = "BttnLogin";
-            this.BttnLogin.Size = new System.Drawing.Size(223, 51);
-            this.BttnLogin.TabIndex = 18;
-            this.BttnLogin.Text = "Login";
-            // 
-            // txtfundo
-            // 
-            this.txtfundo.BackColor = System.Drawing.Color.Transparent;
-            this.txtfundo.BorderColor = System.Drawing.Color.Teal;
-            this.txtfundo.BorderRadius = 30;
-            this.txtfundo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtfundo.DefaultText = "";
-            this.txtfundo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtfundo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtfundo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtfundo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo.Location = new System.Drawing.Point(170, 189);
-            this.txtfundo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtfundo.Name = "txtfundo";
-            this.txtfundo.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.PlaceholderText = "";
-            this.txtfundo.SelectedText = "";
-            this.txtfundo.Size = new System.Drawing.Size(274, 432);
-            this.txtfundo.TabIndex = 20;
             // 
             // guna2PictureBox2
             // 
@@ -143,13 +105,33 @@
             this.Picture.Image = global::FlowValmet.Properties.Resources.profile;
             this.Picture.ImageRotate = 0F;
             this.Picture.InitialImage = global::FlowValmet.Properties.Resources.profile;
-            this.Picture.Location = new System.Drawing.Point(196, 218);
+            this.Picture.Location = new System.Drawing.Point(196, 198);
             this.Picture.Name = "Picture";
             this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Picture.Size = new System.Drawing.Size(229, 188);
             this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Picture.TabIndex = 19;
             this.Picture.TabStop = false;
+            // 
+            // BttnLogin
+            // 
+            this.BttnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BttnLogin.BorderRadius = 20;
+            this.BttnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BttnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BttnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BttnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            this.BttnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(140)))), ((int)(((byte)(230)))));
+            this.BttnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnLogin.ForeColor = System.Drawing.Color.White;
+            this.BttnLogin.Location = new System.Drawing.Point(196, 545);
+            this.BttnLogin.Name = "BttnLogin";
+            this.BttnLogin.Size = new System.Drawing.Size(229, 48);
+            this.BttnLogin.TabIndex = 18;
+            this.BttnLogin.Text = "Login";
+            this.BttnLogin.Click += new System.EventHandler(this.BttnLogin_Click);
             // 
             // TxtSenha
             // 
@@ -168,7 +150,7 @@
             this.TxtSenha.IconLeft = global::FlowValmet.Properties.Resources._lock;
             this.TxtSenha.IconLeftSize = new System.Drawing.Size(18, 18);
             this.TxtSenha.IconRightSize = new System.Drawing.Size(15, 15);
-            this.TxtSenha.Location = new System.Drawing.Point(196, 485);
+            this.TxtSenha.Location = new System.Drawing.Point(196, 465);
             this.TxtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtSenha.Name = "TxtSenha";
             this.TxtSenha.PlaceholderText = "Senha";
@@ -191,13 +173,38 @@
             this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TxtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUsuario.IconLeft = global::FlowValmet.Properties.Resources.circle_user;
-            this.TxtUsuario.Location = new System.Drawing.Point(196, 429);
+            this.TxtUsuario.Location = new System.Drawing.Point(196, 409);
             this.TxtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.PlaceholderText = "Usuario";
             this.TxtUsuario.SelectedText = "";
             this.TxtUsuario.Size = new System.Drawing.Size(229, 48);
             this.TxtUsuario.TabIndex = 16;
+            // 
+            // txtfundo
+            // 
+            this.txtfundo.BackColor = System.Drawing.Color.Transparent;
+            this.txtfundo.BorderColor = System.Drawing.Color.Teal;
+            this.txtfundo.BorderRadius = 30;
+            this.txtfundo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfundo.DefaultText = "";
+            this.txtfundo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfundo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfundo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfundo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfundo.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfundo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfundo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfundo.Location = new System.Drawing.Point(170, 169);
+            this.txtfundo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtfundo.Name = "txtfundo";
+            this.txtfundo.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.PlaceholderText = "";
+            this.txtfundo.SelectedText = "";
+            this.txtfundo.Size = new System.Drawing.Size(274, 448);
+            this.txtfundo.TabIndex = 20;
             // 
             // guna2CirclePictureBox1
             // 
@@ -211,6 +218,52 @@
             this.guna2CirclePictureBox1.TabIndex = 25;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // tgglSwitch
+            // 
+            this.tgglSwitch.BackColor = System.Drawing.Color.White;
+            this.tgglSwitch.Checked = true;
+            this.tgglSwitch.CheckedState.BorderColor = System.Drawing.Color.Teal;
+            this.tgglSwitch.CheckedState.BorderThickness = 1;
+            this.tgglSwitch.CheckedState.FillColor = System.Drawing.Color.Teal;
+            this.tgglSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.Teal;
+            this.tgglSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.tgglSwitch.Location = new System.Drawing.Point(199, 520);
+            this.tgglSwitch.Name = "tgglSwitch";
+            this.tgglSwitch.Size = new System.Drawing.Size(34, 19);
+            this.tgglSwitch.TabIndex = 26;
+            this.tgglSwitch.UncheckedState.BorderColor = System.Drawing.Color.Teal;
+            this.tgglSwitch.UncheckedState.BorderThickness = 1;
+            this.tgglSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.tgglSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.tgglSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            // 
+            // LabelLembrar
+            // 
+            this.LabelLembrar.AutoSize = true;
+            this.LabelLembrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LabelLembrar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelLembrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LabelLembrar.Location = new System.Drawing.Point(235, 521);
+            this.LabelLembrar.Name = "LabelLembrar";
+            this.LabelLembrar.Size = new System.Drawing.Size(57, 17);
+            this.LabelLembrar.TabIndex = 27;
+            this.LabelLembrar.Text = "Lembrar";
+            // 
+            // linkLabelRecuperarSenha
+            // 
+            this.linkLabelRecuperarSenha.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linkLabelRecuperarSenha.AutoSize = true;
+            this.linkLabelRecuperarSenha.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.linkLabelRecuperarSenha.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRecuperarSenha.LinkColor = System.Drawing.Color.Teal;
+            this.linkLabelRecuperarSenha.Location = new System.Drawing.Point(318, 521);
+            this.linkLabelRecuperarSenha.Name = "linkLabelRecuperarSenha";
+            this.linkLabelRecuperarSenha.Size = new System.Drawing.Size(107, 17);
+            this.linkLabelRecuperarSenha.TabIndex = 28;
+            this.linkLabelRecuperarSenha.TabStop = true;
+            this.linkLabelRecuperarSenha.Text = "Recuperar Senha";
+            this.linkLabelRecuperarSenha.VisitedLinkColor = System.Drawing.Color.Teal;
+            // 
             // LoginUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,6 +274,7 @@
             this.Name = "LoginUsuario";
             this.Text = "LoginUsuario";
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -239,5 +293,8 @@
         private Guna.UI2.WinForms.Guna2GradientButton BttnVoltar;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch tgglSwitch;
+        private System.Windows.Forms.Label LabelLembrar;
+        private System.Windows.Forms.LinkLabel linkLabelRecuperarSenha;
     }
 }

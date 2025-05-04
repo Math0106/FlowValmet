@@ -16,5 +16,10 @@ namespace FlowValmet.Viwes
         {
             InitializeComponent();
         }
+
+        private void BttnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
