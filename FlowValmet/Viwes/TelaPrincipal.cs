@@ -225,5 +225,33 @@ namespace FlowValmet.Viwes
             }
 
         }
+
+        private async void GNBtnVincular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var vincular= new VincularProcessos();
+                vincular.TopLevel = false;
+                vincular.FormBorderStyle = FormBorderStyle.None;
+                vincular.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(vincular);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        vincular.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
     }
 }
