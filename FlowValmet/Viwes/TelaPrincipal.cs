@@ -1,4 +1,5 @@
 ﻿using FlowValmet.Controllers;
+using Org.BouncyCastle.Pkcs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,32 +105,125 @@ namespace FlowValmet.Viwes
             GNPanelLembretes.AutoScrollMinSize = new Size(0, posY);
         }
 
-        private void GNbtnLembretes_Click(object sender, EventArgs e)
+        private async void GNbtnLembretes_Click(object sender, EventArgs e)
         {
-            GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
 
-            var lembretes = new CadastroLembretes();
-            lembretes.TopLevel = false;
-            lembretes.FormBorderStyle = FormBorderStyle.None;
-            lembretes.Dock = DockStyle.Fill;
+            try
+            {
+                var lembrete = new CadastroLembretes();
+                lembrete.TopLevel = false;
+                lembrete.FormBorderStyle = FormBorderStyle.None;
+                lembrete.Dock = DockStyle.Fill;
 
-            GNPanelCentro.Controls.Clear(); // Limpa o Panel antes de adicionar
-            GNPanelCentro.Controls.Add(lembretes);
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(lembrete);
 
-            lembretes.Show();
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+                        lembrete.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+
+
+
         }
 
-        private void GNBtnUsuario_Click(object sender, EventArgs e)
+        private async void GNBtnUsuario_Click(object sender, EventArgs e)
         {
-            var usuario = new CadastrarUsuario();
-            usuario.TopLevel = false;
-            usuario.FormBorderStyle = FormBorderStyle.None;
-            usuario.Dock = DockStyle.Fill;
 
-            GNPanelCentro.Controls.Clear(); // Limpa o Panel antes de adicionar
-            GNPanelCentro.Controls.Add(usuario);
+            try
+            {
+                var usuario = new CadastrarUsuario();
+                usuario.TopLevel = false;
+                usuario.FormBorderStyle = FormBorderStyle.None;
+                usuario.Dock = DockStyle.Fill;
 
-            usuario.Show();
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(usuario);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        usuario.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+
+        }
+
+        private async void GNBtnProcessos_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var linhas = new CadastroLinhaProducao();
+                linhas.TopLevel = false;
+                linhas.FormBorderStyle = FormBorderStyle.None;
+                linhas.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(linhas);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        linhas.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
+
+        private async void GNBtnOp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var op = new CadastroOP();
+                op.TopLevel = false;
+                op.FormBorderStyle = FormBorderStyle.None;
+                op.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(op);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        op.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+
         }
     }
 }

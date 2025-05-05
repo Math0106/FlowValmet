@@ -14,14 +14,14 @@ namespace FlowValmet.Controllers
         {
             try
             {
-                var strConexao = "server=localhost;uid=root;pwd=**;database=BDFLowValmet";
+                var strConexao = "server=localhost;uid=root;pwd=***;database=BDFLowValmet";
                 var conexao = new MySqlConnection(strConexao);
                 
                 return conexao;
             }
             catch(Exception ex) 
             {
-                MessageBox.Show("Erro ao conectar: // talevez sem pwd " + ex.Message);
+                MessageBox.Show("Erro ao conectar: // talvez sem pwd " + ex.Message);
                 return null; // Se falhar, retorna nulo
             }
         }

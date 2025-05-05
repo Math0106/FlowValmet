@@ -8,11 +8,10 @@ using System.Windows.Forms;
 
 namespace FlowValmet.Controllers
 {
-    internal class ControleUsuario
+    internal class ControleLinhaProducao
     {
         ConexaoAcess Conexao = new ConexaoAcess();
-
-        public bool InserirUsuario(string nome, string email, string setor, string perfil, string senha)
+        public bool InserirLinha(string linha, string cor, string sigla)
         {
 
             try
@@ -21,15 +20,14 @@ namespace FlowValmet.Controllers
 
                 conexao.Open();
 
-                string query = "INSERT INTO usuario(nome, email, setor, perfil, senha) VALUES (@nome, @email, @setor, @perfil, @senha)";
+                string query = "INSERT INTO linhaproducao(linha, cor, sigla) VALUES (@linha, @cor, @sigla)";
 
                 using (var comando = new MySqlCommand(query, conexao))
                 {
-                    comando.Parameters.AddWithValue("@nome", nome);
-                    comando.Parameters.AddWithValue("@email", email);
-                    comando.Parameters.AddWithValue("@setor", setor);
-                    comando.Parameters.AddWithValue("@perfil", perfil);
-                    comando.Parameters.AddWithValue("@senha", senha);
+                    comando.Parameters.AddWithValue("@linha", linha);
+                    comando.Parameters.AddWithValue("@cor", cor);
+                    comando.Parameters.AddWithValue("@sigla", sigla);
+
 
                     comando.ExecuteNonQuery(); // Executa o INSERT
                 }
@@ -44,9 +42,9 @@ namespace FlowValmet.Controllers
             }
         }
 
-        public List<Tuple<int, string, string, string, string>> RecuperarUsuarios(string comando)
+        public List<Tuple<int, string, string, string>> RecuperarLinha(string comando)
         {
-            List<Tuple<int, string, string, string, string>> listaUsuario = new List<Tuple<int, string, string, string, string>>();
+            List<Tuple<int, string, string, string>> listaLinhas = new List<Tuple<int, string, string, string>>();
             try
             {
 
@@ -59,12 +57,12 @@ namespace FlowValmet.Controllers
                     var reader = strComando.ExecuteReader();
                     while (reader.Read())
                     {
-                        listaUsuario.Add(Tuple.Create(Convert.ToInt32(reader["id"]), Convert.ToString(reader["nome"]),
-                                                        Convert.ToString(reader["email"]), Convert.ToString(reader["setor"]),
-                                                        Convert.ToString(reader["perfil"])));
+                        listaLinhas.Add(Tuple.Create(Convert.ToInt32(reader["id"]), Convert.ToString(reader["linha"]),
+                                                        Convert.ToString(reader["sigla"]), Convert.ToString(reader["cor"])
+                                                        ));
                     }
                     conexao.Close();
-                    return listaUsuario;
+                    return listaLinhas;
                 }
                 else
                 {
@@ -81,14 +79,14 @@ namespace FlowValmet.Controllers
 
         }
 
-        public bool ExcluirUsuario(int id)
+        public bool ExcluirLinha(int id)
         {
             try
             {
                 var conexao = Conexao.Conectar();
                 conexao.Open();
 
-                string query = "DELETE FROM usuario WHERE id = @id";
+                string query = "DELETE FROM linhaproducao WHERE id = @id";
                 using (var comando = new MySqlCommand(query, conexao))
                 {
                     comando.Parameters.AddWithValue("@id", id);
