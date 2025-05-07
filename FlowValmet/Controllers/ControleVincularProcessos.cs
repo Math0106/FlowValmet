@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,6 +84,58 @@ namespace FlowValmet.Controllers
 
             }
 
+        }
+        public bool InsertrVinculoProcesso(List<Tuple<int, int, DateTime, DateTime>> listaProcessosVinculados)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                conexao = Conexao.Conectar();
+                conexao.Open();
+
+                string query = @"INSERT INTO sua_tabela ( op_id, linhaproducao_id, inicio, fim) 
+                         VALUES (@op_id, @linhaproducao_id, @inicio, @fim)";
+
+                using (var comando = new MySqlCommand(query, conexao))
+                {
+                    // Preparar parâmetros uma vez
+                    comando.Parameters.Add("@op_id", MySqlDbType.Int32);
+                    comando.Parameters.Add("@linhaproducao_id", MySqlDbType.Int32);
+                    comando.Parameters.Add("@inicio", MySqlDbType.DateTime);
+                    comando.Parameters.Add("@fim", MySqlDbType.DateTime);
+
+                    // Iniciar transação para melhor performance em múltiplas inserções
+                    using (var transaction = conexao.BeginTransaction())
+                    {
+                        foreach (var processo in listaProcessosVinculados)
+                        {
+                            comando.Parameters["@op_id"].Value = processo.Item2;
+                            comando.Parameters["@linhaproducao_id"].Value = processo.Item3;
+                            comando.Parameters["@inicio"].Value = processo.Item4;
+                            comando.Parameters["@fim"].Value = processo.Item4;
+
+                            comando.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conexao != null && conexao.State == ConnectionState.Open)
+                {
+                    conexao.Close();
+                }
+            }
         }
 
     }
