@@ -315,6 +315,12 @@
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\LoginUsuarioGUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\LoginUsuarioGUS.Designer.cs">
+      <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +350,9 @@
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\LoginUsuarioGUS.resx">
+      <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,8 +377,18 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagem\circle-user.png" />
+    <Content Include="Imagem\icon user.png" />
     <Content Include="Imagem\iconeLixeira.png" />
+    <Content Include="Imagem\lock.png" />
     <Content Include="Imagem\LogoValmet.png" />
+    <Content Include="Imagem\password icon.png" />
+    <Content Include="Imagem\profile.png" />
+    <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\circle-user.png" />
+    <None Include="Resources\valmet logo2.png" />
+    <None Include="Resources\ChatGPT Image 4 de mai. de 2025, 14_03_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
