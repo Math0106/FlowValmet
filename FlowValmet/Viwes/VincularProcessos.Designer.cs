@@ -43,12 +43,12 @@
             this.GnCbxProcessos = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNDgvVinculado = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Id_Op = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Idop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GNPanelCadastroOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvVinculado)).BeginInit();
             this.SuspendLayout();
@@ -217,7 +217,7 @@
             this.GNDgvVinculado.ColumnHeadersHeight = 25;
             this.GNDgvVinculado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GNDgvVinculado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Op,
+            this.Idop,
             this.processo,
             this.dataInicio,
             this.dataFim});
@@ -260,30 +260,6 @@
             this.GNDgvVinculado.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDgvVinculado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvVinculado_CellContentClick);
             // 
-            // Id_Op
-            // 
-            this.Id_Op.HeaderText = "Id Op";
-            this.Id_Op.MinimumWidth = 6;
-            this.Id_Op.Name = "Id_Op";
-            // 
-            // processo
-            // 
-            this.processo.HeaderText = "Processo";
-            this.processo.MinimumWidth = 6;
-            this.processo.Name = "processo";
-            // 
-            // dataInicio
-            // 
-            this.dataInicio.HeaderText = "Data início";
-            this.dataInicio.MinimumWidth = 6;
-            this.dataInicio.Name = "dataInicio";
-            // 
-            // dataFim
-            // 
-            this.dataFim.HeaderText = "Data Fim";
-            this.dataFim.MinimumWidth = 6;
-            this.dataFim.Name = "dataFim";
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -307,6 +283,30 @@
             this.GNCbxOps.Name = "GNCbxOps";
             this.GNCbxOps.Size = new System.Drawing.Size(333, 36);
             this.GNCbxOps.TabIndex = 0;
+            // 
+            // Idop
+            // 
+            this.Idop.HeaderText = "Id Op";
+            this.Idop.MinimumWidth = 6;
+            this.Idop.Name = "Idop";
+            // 
+            // processo
+            // 
+            this.processo.HeaderText = "Processo";
+            this.processo.MinimumWidth = 6;
+            this.processo.Name = "processo";
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.HeaderText = "Data início";
+            this.dataInicio.MinimumWidth = 6;
+            this.dataInicio.Name = "dataInicio";
+            // 
+            // dataFim
+            // 
+            this.dataFim.HeaderText = "Data Fim";
+            this.dataFim.MinimumWidth = 6;
+            this.dataFim.Name = "dataFim";
             // 
             // VincularProcessos
             // 
@@ -340,7 +340,7 @@
         private Guna.UI2.WinForms.Guna2Button GNBtnVincular;
         private Guna.UI2.WinForms.Guna2Button GnBtnCadastrarVinculo;
         private Guna.UI2.WinForms.Guna2CustomCheckBox GNCheckboxTravarVinculoOp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Op;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Idop;
         private System.Windows.Forms.DataGridViewTextBoxColumn processo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFim;

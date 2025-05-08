@@ -142,18 +142,20 @@ namespace FlowValmet.Viwes
                     if (!row.IsNewRow)
                     {
                         
-                        int opId = Convert.ToInt32(row.Cells["op_id"].Value);
-                        DateTime inicio = Convert.ToDateTime(row.Cells["inicio"].Value);
+                        int opId = Convert.ToInt32(row.Cells["Idop"].Value);
+                        int processo = Convert.ToInt32(row.Cells["processo"].Value);
+                        DateTime inicio = Convert.ToDateTime(row.Cells["dataInicio"].Value);
 
                         // Tratamento para campo fim que pode ser nulo
-                        DateTime? fim = row.Cells["fim"].Value != null ? Convert.ToDateTime(row.Cells["fim"].Value) : (DateTime?)null;
+                        DateTime fim = Convert.ToDateTime(row.Cells["dataFim"].Value);
 
                         // Adiciona à lista (usando DateTime.MinValue para valores nulos)
                         listaProcessos.Add(Tuple.Create(
-                            id,
+                            
                             opId,
-                            inicio,
-                            fim ?? DateTime.MinValue
+                            processo,
+                            inicio.Date.Date,
+                            fim.Date.Date
                         ));
                     }
                 }
