@@ -315,6 +315,12 @@
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\CadastroUsuarioGUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\CadastroUsuarioGUS.Designer.cs">
+      <DependentUpon>CadastroUsuarioGUS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\LoginUsuarioGUS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroUsuarioGUS.resx">
+      <DependentUpon>CadastroUsuarioGUS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\LoginUsuarioGUS.resx">
       <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
