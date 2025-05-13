@@ -68,7 +68,6 @@ namespace FlowValmet.Viwes
                 titulo.TextAlign = ContentAlignment.MiddleCenter;
 
                 // Atualiza com o texto real (que pode ser menor que 25 chars)
-                //titulo.Text = "123456789012345678901234567890";
                 titulo.Text = item.Item2.ToString();
 
                 // Centraliza
@@ -245,6 +244,34 @@ namespace FlowValmet.Viwes
                     GNPanelCentro.Invoke((MethodInvoker)delegate
                     {
                         vincular.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
+
+        private async void GNBtnPCP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var Analise = new AnaliseOps();
+                Analise.TopLevel = false;
+                Analise.FormBorderStyle = FormBorderStyle.None;
+                Analise.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(Analise);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        Analise.Show();
                     });
                 });
             }

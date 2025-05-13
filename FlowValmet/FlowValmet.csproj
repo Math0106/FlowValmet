@@ -169,17 +169,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConexaoAcess.cs" />
+    <Compile Include="Controllers\ControleAnaliseOp.cs" />
     <Compile Include="Controllers\ControleLembretes.cs" />
     <Compile Include="Controllers\ControleLinhaProducao.cs" />
     <Compile Include="Controllers\ControleOp.cs" />
     <Compile Include="Controllers\ControleUsuario.cs" />
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
+    <Compile Include="Controllers\ConverterResx.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\AnaliseOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\AnaliseOps.Designer.cs">
+      <DependentUpon>AnaliseOps.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\CadastroLinhaProducao.cs">
       <SubType>Form</SubType>
@@ -227,6 +235,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\AnaliseOps.resx">
+      <DependentUpon>AnaliseOps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaProducao.resx">
       <DependentUpon>CadastroLinhaProducao.cs</DependentUpon>

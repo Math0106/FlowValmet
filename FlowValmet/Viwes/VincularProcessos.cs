@@ -30,7 +30,7 @@ namespace FlowValmet.Viwes
             var resultadoLinha = Vincular.RecuperarLinhaProducao_id_linha_sigla("SELECT id,linha,sigla FROM bdflowvalmet.linhaproducao");
             foreach (var item in resultadoLinha)
             {
-                GnCbxProcessos.Items.Add($"{item.Item1} - {item.Item2} - {item.Item3}");
+                GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
             }
 
             GNDtpDataInicio.MinDate = DateTime.Today;
@@ -143,7 +143,9 @@ namespace FlowValmet.Viwes
                     {
                         
                         int opId = Convert.ToInt32(row.Cells["Idop"].Value);
-                        int processo = Convert.ToInt32(row.Cells["processo"].Value);
+                        string[] elemento = row.Cells["processo"].Value.ToString().Split('-');
+
+                        int processo = Convert.ToInt32(elemento[0]);
                         DateTime inicio = Convert.ToDateTime(row.Cells["dataInicio"].Value);
 
                         // Tratamento para campo fim que pode ser nulo
@@ -159,6 +161,15 @@ namespace FlowValmet.Viwes
                         ));
                     }
                 }
+
+                if (Vincular.InserirVinculoProcesso(listaProcessos)){
+                    MessageBox.Show("Cadastrado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar");
+                }
+
 
             }
             else

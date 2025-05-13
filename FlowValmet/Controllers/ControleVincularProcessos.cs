@@ -85,7 +85,7 @@ namespace FlowValmet.Controllers
             }
 
         }
-        public bool InsertrVinculoProcesso(List<Tuple<int, int, DateTime, DateTime>> listaProcessosVinculados)
+        public bool InserirVinculoProcesso(List<Tuple<int, int, DateTime, DateTime>> listaProcessosVinculados)
         {
             MySqlConnection conexao = null;
 
@@ -94,7 +94,7 @@ namespace FlowValmet.Controllers
                 conexao = Conexao.Conectar();
                 conexao.Open();
 
-                string query = @"INSERT INTO sua_tabela ( op_id, linhaproducao_id, inicio, fim) 
+                string query = @"INSERT INTO processos ( op_id, linhaproducao_id, inicio, fim) 
                          VALUES (@op_id, @linhaproducao_id, @inicio, @fim)";
 
                 using (var comando = new MySqlCommand(query, conexao))
@@ -110,9 +110,9 @@ namespace FlowValmet.Controllers
                     {
                         foreach (var processo in listaProcessosVinculados)
                         {
-                            comando.Parameters["@op_id"].Value = processo.Item2;
-                            comando.Parameters["@linhaproducao_id"].Value = processo.Item3;
-                            comando.Parameters["@inicio"].Value = processo.Item4;
+                            comando.Parameters["@op_id"].Value = processo.Item1;
+                            comando.Parameters["@linhaproducao_id"].Value = processo.Item2;
+                            comando.Parameters["@inicio"].Value = processo.Item3;
                             comando.Parameters["@fim"].Value = processo.Item4;
 
                             comando.ExecuteNonQuery();
