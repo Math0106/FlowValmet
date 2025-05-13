@@ -75,7 +75,17 @@ namespace FlowValmet.Viwes
                     var confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
                     if (confirmacao == "OK")
                     {
-                        op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString()));
+                        if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
+                        {
+                            if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
+                            {
+                                MessageBox.Show("Erro ao excluir OP");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao excluir vinculos OP");
+                        }
                     }
 
                     GnDvgOp.ClearSelection();

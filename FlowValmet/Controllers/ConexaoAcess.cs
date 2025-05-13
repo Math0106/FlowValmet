@@ -14,7 +14,7 @@ namespace FlowValmet.Controllers
         {
             try
             {
-                var strConexao = "server=localhost;uid=root;pwd=***;database=BDFLowValmet";
+                var strConexao = "server=localhost;uid=root;pwd=Feliz0106*;database=BDFLowValmet";
                 var conexao = new MySqlConnection(strConexao);
                 
                 return conexao;

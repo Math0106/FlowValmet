@@ -107,6 +107,31 @@ namespace FlowValmet.Controllers
                 return false;
             }
         }
+        public bool ExcluirProcessosVinculados(int id)
+        {
+            try
+            {
+                var conexao = Conexao.Conectar();
+                conexao.Open();
+
+                string query = "DELETE FROM processos WHERE op_id = @id";
+                using (var comando = new MySqlCommand(query, conexao))
+                {
+                    comando.Parameters.AddWithValue("@id", id);
+                    int resultado = comando.ExecuteNonQuery();
+
+                    return resultado > 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir vinculos: " + ex.Message);
+                return false;
+            }
+        }
+
+
 
 
 
