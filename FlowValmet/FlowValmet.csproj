@@ -291,6 +291,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\CadastroLinhaGUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\CadastroLinhaGUS.Designer.cs">
+      <DependentUpon>CadastroLinhaGUS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\CadastroLinhaProducao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,12 @@
     </Compile>
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\CadastroOPGUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\CadastroOPGUS.Designer.cs">
+      <DependentUpon>CadastroOPGUS.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\CadastroUsuarioGUS.cs">
       <SubType>Form</SubType>
@@ -344,6 +356,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroLinhaGUS.resx">
+      <DependentUpon>CadastroLinhaGUS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaProducao.resx">
       <DependentUpon>CadastroLinhaProducao.cs</DependentUpon>
     </EmbeddedResource>
@@ -355,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroOPGUS.resx">
+      <DependentUpon>CadastroOPGUS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroUsuarioGUS.resx">
       <DependentUpon>CadastroUsuarioGUS.cs</DependentUpon>
@@ -386,7 +404,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagem\at.png" />
     <Content Include="Imagem\circle-user.png" />
+    <Content Include="Imagem\email.png" />
     <Content Include="Imagem\icon user.png" />
     <Content Include="Imagem\iconeLixeira.png" />
     <Content Include="Imagem\lock.png" />
@@ -394,6 +414,8 @@
     <Content Include="Imagem\password icon.png" />
     <Content Include="Imagem\profile.png" />
     <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\at.png" />
+    <None Include="Resources\email.png" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\circle-user.png" />
     <None Include="Resources\valmet logo2.png" />

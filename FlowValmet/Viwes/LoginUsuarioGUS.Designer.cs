@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.linkLabelRecuperarSenha = new System.Windows.Forms.LinkLabel();
             this.LabelLembrar = new System.Windows.Forms.Label();
             this.tgglSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.BttnVoltar = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.BttnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtfundo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.BttnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TxtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             this.TxtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtfundo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
@@ -56,7 +55,6 @@
             this.guna2Panel1.Controls.Add(this.LabelLembrar);
             this.guna2Panel1.Controls.Add(this.tgglSwitch);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel1.Controls.Add(this.BttnVoltar);
             this.guna2Panel1.Controls.Add(this.BttnLogin);
             this.guna2Panel1.Controls.Add(this.TxtSenha);
             this.guna2Panel1.Controls.Add(this.TxtUsuario);
@@ -68,6 +66,20 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1000, 800);
             this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // Picture
+            // 
+            this.Picture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Picture.Image = global::FlowValmet.Properties.Resources.profile;
+            this.Picture.ImageRotate = 0F;
+            this.Picture.InitialImage = global::FlowValmet.Properties.Resources.profile;
+            this.Picture.Location = new System.Drawing.Point(196, 196);
+            this.Picture.Name = "Picture";
+            this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Picture.Size = new System.Drawing.Size(229, 188);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Picture.TabIndex = 29;
+            this.Picture.TabStop = false;
             // 
             // linkLabelRecuperarSenha
             // 
@@ -115,83 +127,6 @@
             this.tgglSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.tgglSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
-            // BttnVoltar
-            // 
-            this.BttnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.BttnVoltar.BorderRadius = 20;
-            this.BttnVoltar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BttnVoltar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BttnVoltar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnVoltar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnVoltar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnVoltar.FillColor = System.Drawing.Color.Transparent;
-            this.BttnVoltar.FillColor2 = System.Drawing.Color.Transparent;
-            this.BttnVoltar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.BttnVoltar.ForeColor = System.Drawing.Color.White;
-            this.BttnVoltar.ImageSize = new System.Drawing.Size(30, 30);
-            this.BttnVoltar.Location = new System.Drawing.Point(3, 3);
-            this.BttnVoltar.Name = "BttnVoltar";
-            this.BttnVoltar.Size = new System.Drawing.Size(38, 37);
-            this.BttnVoltar.TabIndex = 22;
-            // 
-            // BttnLogin
-            // 
-            this.BttnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BttnLogin.BorderRadius = 20;
-            this.BttnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BttnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BttnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.BttnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(140)))), ((int)(((byte)(230)))));
-            this.BttnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BttnLogin.ForeColor = System.Drawing.Color.White;
-            this.BttnLogin.Location = new System.Drawing.Point(196, 545);
-            this.BttnLogin.Name = "BttnLogin";
-            this.BttnLogin.Size = new System.Drawing.Size(229, 48);
-            this.BttnLogin.TabIndex = 18;
-            this.BttnLogin.Text = "Login";
-            // 
-            // txtfundo
-            // 
-            this.txtfundo.BackColor = System.Drawing.Color.Transparent;
-            this.txtfundo.BorderColor = System.Drawing.Color.Teal;
-            this.txtfundo.BorderRadius = 30;
-            this.txtfundo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtfundo.DefaultText = "";
-            this.txtfundo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtfundo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtfundo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtfundo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo.Location = new System.Drawing.Point(170, 169);
-            this.txtfundo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtfundo.Name = "txtfundo";
-            this.txtfundo.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo.PlaceholderText = "";
-            this.txtfundo.SelectedText = "";
-            this.txtfundo.Size = new System.Drawing.Size(274, 448);
-            this.txtfundo.TabIndex = 20;
-            // 
-            // Picture
-            // 
-            this.Picture.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Picture.Image = global::FlowValmet.Properties.Resources.profile;
-            this.Picture.ImageRotate = 0F;
-            this.Picture.InitialImage = global::FlowValmet.Properties.Resources.profile;
-            this.Picture.Location = new System.Drawing.Point(196, 196);
-            this.Picture.Name = "Picture";
-            this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Picture.Size = new System.Drawing.Size(229, 188);
-            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Picture.TabIndex = 29;
-            this.Picture.TabStop = false;
-            // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::FlowValmet.Properties.Resources.valmet_logo2;
@@ -202,6 +137,25 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 24;
             this.guna2PictureBox2.TabStop = false;
+            // 
+            // BttnLogin
+            // 
+            this.BttnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BttnLogin.BorderRadius = 20;
+            this.BttnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BttnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BttnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BttnLogin.FillColor = System.Drawing.Color.Teal;
+            this.BttnLogin.FillColor2 = System.Drawing.Color.Teal;
+            this.BttnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnLogin.ForeColor = System.Drawing.Color.White;
+            this.BttnLogin.Location = new System.Drawing.Point(196, 545);
+            this.BttnLogin.Name = "BttnLogin";
+            this.BttnLogin.Size = new System.Drawing.Size(229, 48);
+            this.BttnLogin.TabIndex = 18;
+            this.BttnLogin.Text = "Login";
             // 
             // TxtSenha
             // 
@@ -251,6 +205,31 @@
             this.TxtUsuario.Size = new System.Drawing.Size(229, 48);
             this.TxtUsuario.TabIndex = 16;
             // 
+            // txtfundo
+            // 
+            this.txtfundo.BackColor = System.Drawing.Color.Transparent;
+            this.txtfundo.BorderColor = System.Drawing.Color.Teal;
+            this.txtfundo.BorderRadius = 30;
+            this.txtfundo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfundo.DefaultText = "";
+            this.txtfundo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfundo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfundo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfundo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfundo.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfundo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfundo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfundo.Location = new System.Drawing.Point(170, 169);
+            this.txtfundo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtfundo.Name = "txtfundo";
+            this.txtfundo.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfundo.PlaceholderText = "";
+            this.txtfundo.SelectedText = "";
+            this.txtfundo.Size = new System.Drawing.Size(274, 448);
+            this.txtfundo.TabIndex = 20;
+            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
@@ -288,7 +267,6 @@
         private System.Windows.Forms.Label LabelLembrar;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgglSwitch;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2GradientButton BttnVoltar;
         private Guna.UI2.WinForms.Guna2GradientButton BttnLogin;
         private Guna.UI2.WinForms.Guna2TextBox TxtSenha;
         private Guna.UI2.WinForms.Guna2TextBox TxtUsuario;

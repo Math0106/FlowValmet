@@ -30,19 +30,19 @@
         {
             this.GNPanelCentro = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.GNPanelBtnsEsquerdo = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.GNBtnOp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnProcessos = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnUsuario = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNbtnLembretes = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelLembretes = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.GNBtnOp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelBtnsEsquerdo.SuspendLayout();
             this.SuspendLayout();
             // 
             // GNPanelCentro
             // 
             this.GNPanelCentro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelCentro.BorderRadius = 5;
             this.GNPanelCentro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.GNPanelCentro.Location = new System.Drawing.Point(122, 5);
@@ -53,9 +53,8 @@
             // 
             // GNPanelBtnsEsquerdo
             // 
-            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnOp);
@@ -70,11 +69,25 @@
             this.GNPanelBtnsEsquerdo.TabIndex = 3;
             this.GNPanelBtnsEsquerdo.Text = "guna2ContainerControl2";
             // 
+            // GNBtnOp
+            // 
+            this.GNBtnOp.BackColor = System.Drawing.Color.LightGray;
+            this.GNBtnOp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnOp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnOp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnOp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnOp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnOp.ForeColor = System.Drawing.Color.White;
+            this.GNBtnOp.Location = new System.Drawing.Point(22, 413);
+            this.GNBtnOp.Name = "GNBtnOp";
+            this.GNBtnOp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GNBtnOp.Size = new System.Drawing.Size(60, 60);
+            this.GNBtnOp.TabIndex = 4;
+            this.GNBtnOp.Text = "OP";
+            this.GNBtnOp.Click += new System.EventHandler(this.GNBtnOp_Click);
+            // 
             // GNBtnProcessos
             // 
-            this.GNBtnProcessos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnProcessos.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnProcessos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnProcessos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -92,9 +105,6 @@
             // 
             // GNBtnUsuario
             // 
-            this.GNBtnUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnUsuario.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -112,9 +122,6 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.guna2Panel1.BackgroundImage = global::FlowValmet.Properties.Resources.LogoValmet;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -125,9 +132,6 @@
             // 
             // GNbtnLembretes
             // 
-            this.GNbtnLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNbtnLembretes.BackColor = System.Drawing.Color.LightGray;
             this.GNbtnLembretes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNbtnLembretes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -145,7 +149,8 @@
             // 
             // GNPanelLembretes
             // 
-            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelLembretes.AutoScroll = true;
             this.GNPanelLembretes.BorderRadius = 5;
@@ -155,26 +160,6 @@
             this.GNPanelLembretes.Size = new System.Drawing.Size(346, 945);
             this.GNPanelLembretes.TabIndex = 3;
             this.GNPanelLembretes.Text = "guna2ContainerControl1";
-            // 
-            // GNBtnOp
-            // 
-            this.GNBtnOp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNBtnOp.BackColor = System.Drawing.Color.LightGray;
-            this.GNBtnOp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnOp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnOp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GNBtnOp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GNBtnOp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNBtnOp.ForeColor = System.Drawing.Color.White;
-            this.GNBtnOp.Location = new System.Drawing.Point(22, 413);
-            this.GNBtnOp.Name = "GNBtnOp";
-            this.GNBtnOp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.GNBtnOp.Size = new System.Drawing.Size(60, 60);
-            this.GNBtnOp.TabIndex = 4;
-            this.GNBtnOp.Text = "OP";
-            this.GNBtnOp.Click += new System.EventHandler(this.GNBtnOp_Click);
             // 
             // TelaPrincipal
             // 

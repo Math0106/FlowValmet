@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.BttnVoltar2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtconfirmarsenha = new Guna.UI2.WinForms.Guna2TextBox();
             this.picture2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtsenha2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,7 +49,6 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderColor = System.Drawing.Color.Transparent;
             this.panel2.BorderRadius = 20;
-            this.panel2.Controls.Add(this.BttnVoltar2);
             this.panel2.Controls.Add(this.txtconfirmarsenha);
             this.panel2.Controls.Add(this.picture2);
             this.panel2.Controls.Add(this.txtsenha2);
@@ -65,25 +63,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 800);
             this.panel2.TabIndex = 1;
-            // 
-            // BttnVoltar2
-            // 
-            this.BttnVoltar2.BackColor = System.Drawing.Color.Transparent;
-            this.BttnVoltar2.BorderRadius = 20;
-            this.BttnVoltar2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BttnVoltar2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BttnVoltar2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnVoltar2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnVoltar2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnVoltar2.FillColor = System.Drawing.Color.Transparent;
-            this.BttnVoltar2.FillColor2 = System.Drawing.Color.Transparent;
-            this.BttnVoltar2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.BttnVoltar2.ForeColor = System.Drawing.Color.White;
-            this.BttnVoltar2.ImageSize = new System.Drawing.Size(30, 30);
-            this.BttnVoltar2.Location = new System.Drawing.Point(3, 3);
-            this.BttnVoltar2.Name = "BttnVoltar2";
-            this.BttnVoltar2.Size = new System.Drawing.Size(38, 37);
-            this.BttnVoltar2.TabIndex = 27;
             // 
             // txtconfirmarsenha
             // 
@@ -181,9 +160,9 @@
             this.BttnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BttnRegistrar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BttnRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnRegistrar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            this.BttnRegistrar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(140)))), ((int)(((byte)(230)))));
-            this.BttnRegistrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnRegistrar.FillColor = System.Drawing.Color.Teal;
+            this.BttnRegistrar.FillColor2 = System.Drawing.Color.Teal;
+            this.BttnRegistrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BttnRegistrar.ForeColor = System.Drawing.Color.White;
             this.BttnRegistrar.Location = new System.Drawing.Point(201, 568);
             this.BttnRegistrar.Name = "BttnRegistrar";
@@ -205,6 +184,7 @@
             this.txtemail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtemail.IconLeft = global::FlowValmet.Properties.Resources.at;
             this.txtemail.Location = new System.Drawing.Point(196, 345);
             this.txtemail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtemail.Name = "txtemail";
@@ -280,7 +260,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel panel2;
-        private Guna.UI2.WinForms.Guna2GradientButton BttnVoltar2;
         private Guna.UI2.WinForms.Guna2TextBox txtconfirmarsenha;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picture2;
         private Guna.UI2.WinForms.Guna2TextBox txtsenha2;

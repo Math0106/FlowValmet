@@ -73,6 +73,16 @@ namespace FlowValmet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap at {
+            get {
+                object obj = ResourceManager.GetObject("at", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_4_de_mai__de_2025__14_03_48 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 4 de mai. de 2025, 14_03_48", resourceCulture);
@@ -86,6 +96,16 @@ namespace FlowValmet.Properties {
         internal static System.Drawing.Bitmap circle_user {
             get {
                 object obj = ResourceManager.GetObject("circle-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap email {
+            get {
+                object obj = ResourceManager.GetObject("email", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
