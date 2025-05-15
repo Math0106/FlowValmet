@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.GNBtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
+            this.GNBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
             this.GNBtnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             this.GnDvgOp = new Guna.UI2.WinForms.Guna2DataGridView();
             this.GNDatePikerEntregaOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -41,11 +43,9 @@
             this.GNLabelDesenhoOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtDesenhoOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNLabelDescricaoOp = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNTxtDescriçãoOP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GNTxtDescricaoOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNLabelNumeroOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtNumeroOP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GNBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
-            this.GNBtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             this.GNPanelCadastroOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GnDvgOp)).BeginInit();
             this.SuspendLayout();
@@ -67,13 +67,41 @@
             this.GNPanelCadastroOP.Controls.Add(this.GNLabelDesenhoOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtDesenhoOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNLabelDescricaoOp);
-            this.GNPanelCadastroOP.Controls.Add(this.GNTxtDescriçãoOP);
+            this.GNPanelCadastroOP.Controls.Add(this.GNTxtDescricaoOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNLabelNumeroOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtNumeroOP);
             this.GNPanelCadastroOP.Location = new System.Drawing.Point(190, 72);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
             this.GNPanelCadastroOP.Size = new System.Drawing.Size(1000, 800);
             this.GNPanelCadastroOP.TabIndex = 1;
+            // 
+            // GNBtnAtualizar
+            // 
+            this.GNBtnAtualizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnAtualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnAtualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnAtualizar.Location = new System.Drawing.Point(262, 521);
+            this.GNBtnAtualizar.Name = "GNBtnAtualizar";
+            this.GNBtnAtualizar.Size = new System.Drawing.Size(109, 39);
+            this.GNBtnAtualizar.TabIndex = 19;
+            this.GNBtnAtualizar.Text = "Atualizar";
+            // 
+            // GNBtnLimpar
+            // 
+            this.GNBtnLimpar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnLimpar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnLimpar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnLimpar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnLimpar.Location = new System.Drawing.Point(162, 566);
+            this.GNBtnLimpar.Name = "GNBtnLimpar";
+            this.GNBtnLimpar.Size = new System.Drawing.Size(109, 39);
+            this.GNBtnLimpar.TabIndex = 18;
+            this.GNBtnLimpar.Text = "Limpar";
             // 
             // GNBtnCadastrar
             // 
@@ -225,24 +253,24 @@
             this.GNLabelDescricaoOp.TabIndex = 3;
             this.GNLabelDescricaoOp.Text = "Descrição";
             // 
-            // GNTxtDescriçãoOP
+            // GNTxtDescricaoOP
             // 
-            this.GNTxtDescriçãoOP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GNTxtDescriçãoOP.DefaultText = "";
-            this.GNTxtDescriçãoOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GNTxtDescriçãoOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GNTxtDescriçãoOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtDescriçãoOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GNTxtDescriçãoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDescriçãoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNTxtDescriçãoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDescriçãoOP.Location = new System.Drawing.Point(66, 179);
-            this.GNTxtDescriçãoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GNTxtDescriçãoOP.Name = "GNTxtDescriçãoOP";
-            this.GNTxtDescriçãoOP.PlaceholderText = "";
-            this.GNTxtDescriçãoOP.SelectedText = "";
-            this.GNTxtDescriçãoOP.Size = new System.Drawing.Size(305, 46);
-            this.GNTxtDescriçãoOP.TabIndex = 2;
+            this.GNTxtDescricaoOP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNTxtDescricaoOP.DefaultText = "";
+            this.GNTxtDescricaoOP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GNTxtDescricaoOP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GNTxtDescricaoOP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtDescricaoOP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GNTxtDescricaoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtDescricaoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNTxtDescricaoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNTxtDescricaoOP.Location = new System.Drawing.Point(66, 179);
+            this.GNTxtDescricaoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtDescricaoOP.Name = "GNTxtDescricaoOP";
+            this.GNTxtDescricaoOP.PlaceholderText = "";
+            this.GNTxtDescricaoOP.SelectedText = "";
+            this.GNTxtDescricaoOP.Size = new System.Drawing.Size(305, 46);
+            this.GNTxtDescricaoOP.TabIndex = 2;
             // 
             // GNLabelNumeroOP
             // 
@@ -272,34 +300,6 @@
             this.GNTxtNumeroOP.Size = new System.Drawing.Size(305, 46);
             this.GNTxtNumeroOP.TabIndex = 0;
             // 
-            // GNBtnLimpar
-            // 
-            this.GNBtnLimpar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnLimpar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnLimpar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GNBtnLimpar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GNBtnLimpar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNBtnLimpar.ForeColor = System.Drawing.Color.White;
-            this.GNBtnLimpar.Location = new System.Drawing.Point(162, 566);
-            this.GNBtnLimpar.Name = "GNBtnLimpar";
-            this.GNBtnLimpar.Size = new System.Drawing.Size(109, 39);
-            this.GNBtnLimpar.TabIndex = 18;
-            this.GNBtnLimpar.Text = "Limpar";
-            // 
-            // GNBtnAtualizar
-            // 
-            this.GNBtnAtualizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnAtualizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GNBtnAtualizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GNBtnAtualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GNBtnAtualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNBtnAtualizar.ForeColor = System.Drawing.Color.White;
-            this.GNBtnAtualizar.Location = new System.Drawing.Point(262, 521);
-            this.GNBtnAtualizar.Name = "GNBtnAtualizar";
-            this.GNBtnAtualizar.Size = new System.Drawing.Size(109, 39);
-            this.GNBtnAtualizar.TabIndex = 19;
-            this.GNBtnAtualizar.Text = "Atualizar";
-            // 
             // CadastroOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,7 +325,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelDesenhoOP;
         private Guna.UI2.WinForms.Guna2TextBox GNTxtDesenhoOP;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelDescricaoOp;
-        private Guna.UI2.WinForms.Guna2TextBox GNTxtDescriçãoOP;
+        private Guna.UI2.WinForms.Guna2TextBox GNTxtDescricaoOP;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelNumeroOP;
         private Guna.UI2.WinForms.Guna2DateTimePicker GNDatePikerEntregaOP;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelDataEntregaOP;

@@ -18,12 +18,16 @@ namespace FlowValmet.Viwes
         public CadastroOP()
         {
             InitializeComponent();
+            ResetarTelaOp();
+        }
+        public void ResetarTelaOp()
+        {
             GnDvgOp.DataSource = op.RecuperarOp("SELECT * FROM bdflowvalmet.op");
             GNDatePikerInicioOP.MinDate = DateTime.Today;
             GNDatePikerEntregaOP.MinDate = DateTime.Today;
             GNBtnAtualizar.Enabled = false;
+            GNBtnCadastrar.Enabled = true;
         }
-
         private void GBBtnCadastrar_Click(object sender, EventArgs e)
         {
             try
@@ -31,13 +35,13 @@ namespace FlowValmet.Viwes
 
                 if (GNTxtNumeroOP.Text != "" &&
                     GNTxtDesenhoOP.Text != "" &&
-                   GNTxtDescriçãoOP.Text != "" &&
+                   GNTxtDescricaoOP.Text != "" &&
                    GNDatePikerEntregaOP.Text != "" &&
                    GNDatePikerInicioOP.Text != ""
                    )
                 {
 
-                    op.InserirOP(GNTxtNumeroOP.Text, GNTxtDescriçãoOP.Text,GNTxtDesenhoOP.Text,Convert.ToDateTime(GNDatePikerInicioOP.Value), Convert.ToDateTime(GNDatePikerEntregaOP.Value));
+                    op.InserirOP(GNTxtNumeroOP.Text, GNTxtDescricaoOP.Text,GNTxtDesenhoOP.Text,Convert.ToDateTime(GNDatePikerInicioOP.Value), Convert.ToDateTime(GNDatePikerEntregaOP.Value));
                     LimparCampos();
                 }
                 else
@@ -58,7 +62,7 @@ namespace FlowValmet.Viwes
         {
             GNDatePikerEntregaOP.Value = DateTime.Today;
             GNDatePikerInicioOP.Value = DateTime.Today;
-            GNTxtDescriçãoOP.Text = "";
+            GNTxtDescricaoOP.Text = "";
             GNTxtDesenhoOP.Text = "";
             GNTxtNumeroOP.Text = "";
         }
@@ -96,10 +100,25 @@ namespace FlowValmet.Viwes
                             {
                                 MessageBox.Show("Erro ao excluir vinculos OP");
                             }
+                            LimparCampos();
                             break;
                         case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+
                             GNBtnCadastrar.Enabled = false;
-                            MessageBox.Show("Você escolheu alterar.");
+                            GNBtnAtualizar.Enabled = true;
+
+                            GNTxtNumeroOP.Text =  linhas.Cells[1].Value.ToString();
+                            GNTxtDescricaoOP.Text = linhas.Cells[2].Value.ToString();
+                            GNTxtDesenhoOP.Text = linhas.Cells[3].Value.ToString();
+                            if (linhas.Cells[4].Value != null && DateTime.TryParse(linhas.Cells[4].Value.ToString(), out DateTime dataInicio))
+                            {
+                                GNDatePikerInicioOP.Value = dataInicio;
+                            }
+                            if (linhas.Cells[5].Value != null && DateTime.TryParse(linhas.Cells[5].Value.ToString(), out DateTime dataEntrega))
+                            {
+                                GNDatePikerEntregaOP.Value = dataEntrega;
+                            }
+
                             break;
                         case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
                             break;
@@ -115,7 +134,7 @@ namespace FlowValmet.Viwes
             {
                 MessageBox.Show("Erro ao excluir: " + ex);
             }
-            LimparCampos();
+           
 
         }
     }
