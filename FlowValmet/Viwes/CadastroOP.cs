@@ -21,6 +21,7 @@ namespace FlowValmet.Viwes
             GnDvgOp.DataSource = op.RecuperarOp("SELECT * FROM bdflowvalmet.op");
             GNDatePikerInicioOP.MinDate = DateTime.Today;
             GNDatePikerEntregaOP.MinDate = DateTime.Today;
+            GNBtnAtualizar.Enabled = false;
         }
 
         private void GBBtnCadastrar_Click(object sender, EventArgs e)
@@ -71,22 +72,39 @@ namespace FlowValmet.Viwes
                     var linhas = GnDvgOp.Rows[e.RowIndex];
 
 
+                    var form = new MessagemAtualizarExcluirCancelar("Cadastro OP", "Deseja realmente continuar?");
+                    form.ShowDialog();
 
-                    var confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
-                    if (confirmacao == "OK")
+                    switch (form.Result)
                     {
-                        if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
-                        {
-                            if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                            if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())) == 0)
                             {
-                                MessageBox.Show("Erro ao excluir OP");
+                                if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
+                                {
+                                    MessageBox.Show("Erro ao excluir OP");
+                                }
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro ao excluir vinculos OP");
-                        }
+                            else if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())) >= 0)
+                            {
+                                if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
+                                {
+                                    MessageBox.Show("Erro ao excluir OP");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao excluir vinculos OP");
+                            }
+                            break;
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                            GNBtnCadastrar.Enabled = false;
+                            MessageBox.Show("Você escolheu alterar.");
+                            break;
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                            break;
                     }
+
 
                     GnDvgOp.ClearSelection();
                     GnDvgOp.DataSource = op.RecuperarOp("SELECT * FROM bdflowvalmet.op");
@@ -101,4 +119,6 @@ namespace FlowValmet.Viwes
 
         }
     }
+
+
 }

@@ -43,12 +43,12 @@
             this.GnCbxProcessos = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNDgvVinculado = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Idop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GNPanelCadastroOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvVinculado)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,7 @@
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
             this.GNPanelCadastroOP.Size = new System.Drawing.Size(1000, 800);
             this.GNPanelCadastroOP.TabIndex = 2;
+            this.GNPanelCadastroOP.Paint += new System.Windows.Forms.PaintEventHandler(this.GNPanelCadastroOP_Paint);
             // 
             // GNCheckboxTravarVinculoOp
             // 
@@ -102,9 +103,9 @@
             this.GnBtnCadastrarVinculo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GnBtnCadastrarVinculo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GnBtnCadastrarVinculo.ForeColor = System.Drawing.Color.White;
-            this.GnBtnCadastrarVinculo.Location = new System.Drawing.Point(420, 509);
+            this.GnBtnCadastrarVinculo.Location = new System.Drawing.Point(117, 416);
             this.GnBtnCadastrarVinculo.Name = "GnBtnCadastrarVinculo";
-            this.GnBtnCadastrarVinculo.Size = new System.Drawing.Size(180, 45);
+            this.GnBtnCadastrarVinculo.Size = new System.Drawing.Size(144, 35);
             this.GnBtnCadastrarVinculo.TabIndex = 11;
             this.GnBtnCadastrarVinculo.Text = "Aplicar Vinculo";
             this.GnBtnCadastrarVinculo.Click += new System.EventHandler(this.GnBtnCadastrarVinculo_Click_1);
@@ -203,6 +204,8 @@
             // 
             // GNDgvVinculado
             // 
+            this.GNDgvVinculado.AllowUserToAddRows = false;
+            this.GNDgvVinculado.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.GNDgvVinculado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GNDgvVinculado.BackgroundColor = System.Drawing.Color.Gray;
@@ -232,6 +235,7 @@
             this.GNDgvVinculado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvVinculado.Location = new System.Drawing.Point(527, 101);
             this.GNDgvVinculado.Name = "GNDgvVinculado";
+            this.GNDgvVinculado.ReadOnly = true;
             this.GNDgvVinculado.RowHeadersVisible = false;
             this.GNDgvVinculado.RowHeadersWidth = 49;
             this.GNDgvVinculado.RowTemplate.Height = 24;
@@ -250,7 +254,7 @@
             this.GNDgvVinculado.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.GNDgvVinculado.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GNDgvVinculado.ThemeStyle.HeaderStyle.Height = 25;
-            this.GNDgvVinculado.ThemeStyle.ReadOnly = false;
+            this.GNDgvVinculado.ThemeStyle.ReadOnly = true;
             this.GNDgvVinculado.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.GNDgvVinculado.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.GNDgvVinculado.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,6 +263,34 @@
             this.GNDgvVinculado.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvVinculado.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDgvVinculado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvVinculado_CellContentClick);
+            // 
+            // Idop
+            // 
+            this.Idop.HeaderText = "Id Op";
+            this.Idop.MinimumWidth = 6;
+            this.Idop.Name = "Idop";
+            this.Idop.ReadOnly = true;
+            // 
+            // processo
+            // 
+            this.processo.HeaderText = "Processo";
+            this.processo.MinimumWidth = 6;
+            this.processo.Name = "processo";
+            this.processo.ReadOnly = true;
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.HeaderText = "Data início";
+            this.dataInicio.MinimumWidth = 6;
+            this.dataInicio.Name = "dataInicio";
+            this.dataInicio.ReadOnly = true;
+            // 
+            // dataFim
+            // 
+            this.dataFim.HeaderText = "Data Fim";
+            this.dataFim.MinimumWidth = 6;
+            this.dataFim.Name = "dataFim";
+            this.dataFim.ReadOnly = true;
             // 
             // guna2HtmlLabel1
             // 
@@ -283,30 +315,6 @@
             this.GNCbxOps.Name = "GNCbxOps";
             this.GNCbxOps.Size = new System.Drawing.Size(333, 36);
             this.GNCbxOps.TabIndex = 0;
-            // 
-            // Idop
-            // 
-            this.Idop.HeaderText = "Id Op";
-            this.Idop.MinimumWidth = 6;
-            this.Idop.Name = "Idop";
-            // 
-            // processo
-            // 
-            this.processo.HeaderText = "Processo";
-            this.processo.MinimumWidth = 6;
-            this.processo.Name = "processo";
-            // 
-            // dataInicio
-            // 
-            this.dataInicio.HeaderText = "Data início";
-            this.dataInicio.MinimumWidth = 6;
-            this.dataInicio.Name = "dataInicio";
-            // 
-            // dataFim
-            // 
-            this.dataFim.HeaderText = "Data Fim";
-            this.dataFim.MinimumWidth = 6;
-            this.dataFim.Name = "dataFim";
             // 
             // VincularProcessos
             // 

@@ -213,6 +213,12 @@
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\MessagemAtualizarExcluirCancelar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\MessagemAtualizarExcluirCancelar.Designer.cs">
+      <DependentUpon>MessagemAtualizarExcluirCancelar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\MessagemAtualizarExcluirCancelar.resx">
+      <DependentUpon>MessagemAtualizarExcluirCancelar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>

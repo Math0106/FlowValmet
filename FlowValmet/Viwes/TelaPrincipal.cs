@@ -113,6 +113,7 @@ namespace FlowValmet.Viwes
                 lembrete.TopLevel = false;
                 lembrete.FormBorderStyle = FormBorderStyle.None;
                 lembrete.Dock = DockStyle.Fill;
+                GNPanelLembretes.VerticalScroll.Value = 0;
 
                 // Operações de UI devem estar na thread principal
                 GNPanelCentro.Controls.Clear();

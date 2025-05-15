@@ -107,7 +107,7 @@ namespace FlowValmet.Controllers
                 return false;
             }
         }
-        public bool ExcluirProcessosVinculados(int id)
+        public int ExcluirProcessosVinculados(int id)
         {
             try
             {
@@ -120,13 +120,64 @@ namespace FlowValmet.Controllers
                     comando.Parameters.AddWithValue("@id", id);
                     int resultado = comando.ExecuteNonQuery();
 
-                    return resultado > 0;
+                    return resultado;
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao excluir vinculos: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public bool AtualizarOp(int id, string numeroOp, string descricao, string desenho, DateTime dataInicio, DateTime dataEntrega)
+        {
+            try
+            {
+                var conexao = Conexao.Conectar();
+                if (conexao != null)
+                {
+                    conexao.Open();
+                    string comandoSql = @"UPDATE op 
+                                  SET numeroop = @numeroop,
+                                      descricao = @descricao,
+                                      desenho = @desenho,
+                                      datainicio = @datainicio,
+                                      dataentrega = @dataentrega
+                                  WHERE id = @id";
+
+                    var comando = new MySqlCommand(comandoSql, conexao);
+                    comando.Parameters.AddWithValue("@numeroop", numeroOp);
+                    comando.Parameters.AddWithValue("@descricao", descricao);
+                    comando.Parameters.AddWithValue("@desenho", desenho);
+                    comando.Parameters.AddWithValue("@datainicio", dataInicio);
+                    comando.Parameters.AddWithValue("@dataentrega", dataEntrega);
+                    comando.Parameters.AddWithValue("@id", id);
+
+                    int linhasAfetadas = comando.ExecuteNonQuery();
+                    conexao.Close();
+
+                    if (linhasAfetadas > 0)
+                    {
+                       
+                        return true;
+                    }
+                    else
+                    {
+                        
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Falha na conexão.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar OP: " + ex.Message);
                 return false;
             }
         }

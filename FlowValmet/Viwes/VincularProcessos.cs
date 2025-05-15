@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.LinkLabel;
 
 namespace FlowValmet.Viwes
@@ -16,6 +17,7 @@ namespace FlowValmet.Viwes
     public partial class VincularProcessos : Form
     {
         ControleVincularProcessos Vincular = new ControleVincularProcessos();
+        public List<int> listaProcessosVinculados = new List<int>();
         public VincularProcessos()
         {
             InitializeComponent();
@@ -26,41 +28,72 @@ namespace FlowValmet.Viwes
             {
                 GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
             }
-            
-            var resultadoLinha = Vincular.RecuperarLinhaProducao_id_linha_sigla("SELECT id,linha,sigla FROM bdflowvalmet.linhaproducao");
-            foreach (var item in resultadoLinha)
-            {
-                GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
-            }
+
+            ResetarCbxProcessos();
+
+            //var resultadoLinha = Vincular.RecuperarLinhaProducao_id_linha_sigla("SELECT id,linha,sigla FROM bdflowvalmet.linhaproducao");
+            //foreach (var item in resultadoLinha)
+            //{
+            //    GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
+            //}
 
             GNDtpDataInicio.MinDate = DateTime.Today;
             GNDtpDataFim.MinDate = DateTime.Today;
         }
 
+        public void ResetarCbxProcessos()
+        {
+            GnCbxProcessos.Items.Clear();
+            var resultadoLinha = Vincular.RecuperarLinhaProducao_id_linha_sigla("SELECT id,linha,sigla FROM bdflowvalmet.linhaproducao");
+            foreach (var item in resultadoLinha)
+            {
+                if (!listaProcessosVinculados.Contains(item.Item1))
+                {
+                    GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
+                }
+
+            }
+        }
+
         private void GNBtnVincular_Click(object sender, EventArgs e)
         {
- 
-
-            if (GNDtpDataInicio.Value <= GNDtpDataFim.Value)
+            try
             {
-                if (GNCbxOps.Text != "" && GnCbxProcessos.Text != "")
+                
+                if (GNDtpDataInicio.Value <= GNDtpDataFim.Value)
                 {
-                    string[] elementoOp = GNCbxOps.Text.Split('-');
-                    GNDgvVinculado.Rows.Add(elementoOp[0],GnCbxProcessos.Text, GNDtpDataInicio.Value.Date.ToString("dd/MM/yyyy"), GNDtpDataFim.Value.Date.ToString("dd/MM/yyyy"));
-                    GNCbxOps.Enabled = false;
-                    GNCheckboxTravarVinculoOp.Checked = true;
-                    GnCbxProcessos.SelectedIndex = -1;
-                    GNDtpDataInicio.Value = DateTime.Today;
-                    GNDtpDataFim.Value = DateTime.Today;
+                    if (GNCbxOps.Text != "" && GnCbxProcessos.Text != "")
+                    {
+                        string[] elementoOp = GnCbxProcessos.Text.Split('-');
+                        listaProcessosVinculados.Add(int.Parse(elementoOp[0]));
+                        GNDgvVinculado.Rows.Add(elementoOp[0], GnCbxProcessos.Text, GNDtpDataInicio.Value.Date.ToString("dd/MM/yyyy"), GNDtpDataFim.Value.Date.ToString("dd/MM/yyyy"));
+                        GNCbxOps.Enabled = false;
+                        GNCheckboxTravarVinculoOp.Checked = true;
+                        GnCbxProcessos.SelectedIndex = -1;
+                        GNDtpDataInicio.Value = DateTime.Today;
+                        GNDtpDataFim.Value = DateTime.Today;
+
+                        ResetarCbxProcessos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Preencher todos os campos");
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Preencher todos os campos");
+                    MessageBox.Show("Data das invaldas!");
+                    return ;
                 }
+                
+
+
             }
-            else
-            {
-                MessageBox.Show("Data das invaldas!");
+            catch (Exception ex)
+            {               
+                MessageBox.Show("Erro ao vincular processo: " + ex);   
+                return ;
             }
         }
 
@@ -77,7 +110,9 @@ namespace FlowValmet.Viwes
                     var confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
                     if (confirmacao == "OK")
                     {
+                        listaProcessosVinculados.Remove(int.Parse(linhas.Cells[0].Value?.ToString()));
                         GNDgvVinculado.Rows.RemoveAt(e.RowIndex);
+                        ResetarCbxProcessos();
                     }
                 }
 
@@ -130,7 +165,7 @@ namespace FlowValmet.Viwes
 
         private void GnBtnCadastrarVinculo_Click_1(object sender, EventArgs e)
         {
-            if (GNDgvVinculado.Rows.Count > 1)
+            if (GNDgvVinculado.Rows.Count >= 1)
             {
                 
 
@@ -164,6 +199,7 @@ namespace FlowValmet.Viwes
 
                 if (Vincular.InserirVinculoProcesso(listaProcessos)){
                     MessageBox.Show("Cadastrado com sucesso");
+                    listaProcessosVinculados.Clear();
                 }
                 else
                 {
@@ -176,6 +212,11 @@ namespace FlowValmet.Viwes
             {
                 MessageBox.Show("Nada no data grid viwes");
             }
+        }
+
+        private void GNPanelCadastroOP_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
