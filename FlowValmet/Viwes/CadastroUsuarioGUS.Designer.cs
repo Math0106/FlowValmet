@@ -35,9 +35,10 @@
             this.txtusuario2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtemail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtfundo2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -46,18 +47,20 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderColor = System.Drawing.Color.Transparent;
             this.panel2.BorderRadius = 20;
+            this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.txtconfirmarsenha);
             this.panel2.Controls.Add(this.picture2);
             this.panel2.Controls.Add(this.txtsenha2);
             this.panel2.Controls.Add(this.txtusuario2);
             this.panel2.Controls.Add(this.BttnRegistrar);
             this.panel2.Controls.Add(this.txtemail);
-            this.panel2.Controls.Add(this.txtfundo2);
             this.panel2.Controls.Add(this.guna2PictureBox2);
             this.panel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel2.Controls.Add(this.guna2Panel2);
             this.panel2.FillColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(209, 72);
             this.panel2.Name = "panel2";
@@ -193,31 +196,6 @@
             this.txtemail.Size = new System.Drawing.Size(229, 48);
             this.txtemail.TabIndex = 0;
             // 
-            // txtfundo2
-            // 
-            this.txtfundo2.BackColor = System.Drawing.Color.Transparent;
-            this.txtfundo2.BorderColor = System.Drawing.Color.Teal;
-            this.txtfundo2.BorderRadius = 30;
-            this.txtfundo2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtfundo2.DefaultText = "";
-            this.txtfundo2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtfundo2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtfundo2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfundo2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtfundo2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfundo2.Location = new System.Drawing.Point(171, 105);
-            this.txtfundo2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtfundo2.Name = "txtfundo2";
-            this.txtfundo2.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfundo2.PlaceholderText = "";
-            this.txtfundo2.SelectedText = "";
-            this.txtfundo2.Size = new System.Drawing.Size(274, 542);
-            this.txtfundo2.TabIndex = 18;
-            // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::FlowValmet.Properties.Resources.valmet_logo2;
@@ -233,12 +211,39 @@
             // 
             this.guna2CirclePictureBox1.Image = global::FlowValmet.Properties.Resources.ChatGPT_Image_4_de_mai__de_2025__14_03_48;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(574, -58);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(575, -58);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(760, 911);
             this.guna2CirclePictureBox1.TabIndex = 26;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
+            this.guna2Panel2.BorderRadius = 20;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel2.Location = new System.Drawing.Point(171, 105);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(274, 542);
+            this.guna2Panel2.TabIndex = 31;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(23, 105);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(121, 26);
+            this.guna2Button1.TabIndex = 34;
+            this.guna2Button1.Text = "Login";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // CadastroUsuarioGUS
             // 
@@ -266,8 +271,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtusuario2;
         private Guna.UI2.WinForms.Guna2GradientButton BttnRegistrar;
         private Guna.UI2.WinForms.Guna2TextBox txtemail;
-        private Guna.UI2.WinForms.Guna2TextBox txtfundo2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

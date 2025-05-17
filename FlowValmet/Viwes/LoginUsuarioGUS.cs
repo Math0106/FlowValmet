@@ -21,5 +21,34 @@ namespace FlowValmet.Viwes
         {
 
         }
+
+
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            CadastroUsuarioGUS novaTela = new CadastroUsuarioGUS(); 
+            novaTela.Show();              
+            this.Hide();                    
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            CadastroLinhaGUS novaTela = new CadastroLinhaGUS();
+            novaTela.Show();
+            this.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            CadastroOPGUS novaTela = new CadastroOPGUS();
+            novaTela.Show();
+            this.Hide();
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }

@@ -414,6 +414,7 @@
     <Content Include="Imagem\password icon.png" />
     <Content Include="Imagem\profile.png" />
     <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\e7ef6831-d73b-40f9-b663-ac42cfdafba7.jpg" />
     <None Include="Resources\at.png" />
     <None Include="Resources\email.png" />
     <None Include="Resources\lock.png" />

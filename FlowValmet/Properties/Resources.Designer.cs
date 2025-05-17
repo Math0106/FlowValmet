@@ -103,6 +103,16 @@ namespace FlowValmet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap e7ef6831_d73b_40f9_b663_ac42cfdafba7 {
+            get {
+                object obj = ResourceManager.GetObject("e7ef6831-d73b-40f9-b663-ac42cfdafba7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap email {
             get {
                 object obj = ResourceManager.GetObject("email", resourceCulture);
