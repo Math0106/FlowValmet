@@ -16,7 +16,7 @@ namespace FlowValmet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Viwes.CadastroOPGUS());
+            Application.Run(new Viwes.LoginUsuarioGUS());
         }
     }
 }
