@@ -79,5 +79,15 @@ namespace FlowValmet.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Usuario_1_botao_clicado_verde {
+            get {
+                object obj = ResourceManager.GetObject("Usuario 1 botao clicado.verde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

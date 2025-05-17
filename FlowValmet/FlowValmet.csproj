@@ -291,6 +291,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\CadastroLembreteCopiaT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\CadastroLembreteCopiaT.Designer.cs">
+      <DependentUpon>CadastroLembreteCopiaT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\CadastroLinhaProducao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,18 @@
     <Compile Include="Viwes\TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\CadastroLembretesCopia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\CadastroLembretesCopia.Designer.cs">
+      <DependentUpon>CadastroLembretesCopia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\TelaPrincipalCopia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\TelaPrincipalCopia.Designer.cs">
+      <DependentUpon>TelaPrincipalCopia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\Teste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +349,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroLembreteCopiaT.resx">
+      <DependentUpon>CadastroLembreteCopiaT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaProducao.resx">
       <DependentUpon>CadastroLinhaProducao.cs</DependentUpon>
@@ -346,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroLembretesCopia.resx">
+      <DependentUpon>CadastroLembretesCopia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaPrincipalCopia.resx">
+      <DependentUpon>TelaPrincipalCopia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\Teste.resx">
       <DependentUpon>Teste.cs</DependentUpon>
@@ -369,7 +396,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagem\iconeLixeira.png" />
+    <Content Include="Imagem\indicador diario.png" />
+    <Content Include="Imagem\indicador diario.verde.png" />
+    <Content Include="Imagem\lembrete.png" />
+    <Content Include="Imagem\lembrete.verde.png" />
+    <Content Include="Imagem\lembrete1.png" />
+    <Content Include="Imagem\linha de produção clicado.png" />
+    <Content Include="Imagem\linha de produção clicado.verde.png" />
+    <Content Include="Imagem\Logo Valmet.png" />
     <Content Include="Imagem\LogoValmet.png" />
+    <Content Include="Imagem\ordem de produção.png" />
+    <Content Include="Imagem\ordem de produção.verde.png" />
+    <Content Include="Imagem\tela principal.png" />
+    <Content Include="Imagem\tela principal.verde.png" />
+    <Content Include="Imagem\Usuario 1 botao.png" />
+    <Content Include="Imagem\Usuario 1 botao.verde.png" />
+    <None Include="Resources\Usuario 1 botao clicado.verde.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
