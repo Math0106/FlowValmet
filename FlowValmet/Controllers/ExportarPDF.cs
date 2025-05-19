@@ -75,8 +75,22 @@ namespace FlowValmet.Controllers
                 pdfTable.SpacingBefore = 10f;
                 pdfTable.SpacingAfter = 10f;
 
-                // Larguras das colunas (ajuste conforme necessário)
-                float[] columnWidths = new float[] { 12f, 20f, 15f, 10f, 10f, 6f, 6f, 6f, 6f, 6f };
+
+                int totalColumns = dataGridView.Columns.Count;
+                float[] columnWidths = new float[totalColumns];
+
+                // Definir as larguras fixas para as primeiras colunas
+                if (totalColumns > 0) columnWidths[0] = 12f;
+                if (totalColumns > 1) columnWidths[1] = 20f;
+                if (totalColumns > 2) columnWidths[2] = 10f;
+                if (totalColumns > 3) columnWidths[3] = 10f;
+                if (totalColumns > 4) columnWidths[4] = 10f;
+
+                // Preencher o restante com 6f
+                for (int i = 5; i < totalColumns; i++)
+                {
+                    columnWidths[i] = 6f;
+                }
                 pdfTable.SetWidths(columnWidths);
 
                 // Cabeçalhos das colunas

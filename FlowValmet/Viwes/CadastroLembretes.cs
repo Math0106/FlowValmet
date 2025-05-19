@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using FlowValmet.Models;
 
 namespace FlowValmet.Viwes
 {
@@ -43,22 +44,36 @@ namespace FlowValmet.Viwes
                )
             {
                 bool vincular;
-                string op;
+                string opTxt;
                 try
                 {
                     if (GNCheckBoxVincular.Checked)
                     {
-                        op = GNTxtOPCadastroLembrete.Text;
+                        opTxt = GNTxtOPCadastroLembrete.Text;
                         vincular = true;
                     }
                     else
                     {
-                        op = null;
+                        opTxt = null;
                         vincular = false;
                     }
 
-                    bool confirmaInserir = controleLembretes.InserirLembrete(GNTxtTituloLembrete.Text, GNTxtDEscricaoCadastrarLembretes.Text, vincular, op);
-                    LimparCampos();
+                    // Criar o objeto lembrete
+                    var lembrete = new Lembrete(
+                        id: 0,
+                        titulo: GNTxtTituloLembrete.Text,
+                        descricao: GNTxtDEscricaoCadastrarLembretes.Text,
+                        vinculo: vincular,
+                        op: opTxt
+                    );
+
+                    // Inserir no banco de dados
+                    bool sucesso = controleLembretes.InserirLembrete(lembrete);
+
+                    if (sucesso)
+                    {
+                        LimparCampos();
+                    }
 
                 }
                 catch (Exception ex)
@@ -159,23 +174,37 @@ namespace FlowValmet.Viwes
                )
             {
                 bool vincular;
-                string op;
+                string opTxt;
                 try
                 {
                     if (GNCheckBoxVincular.Checked)
                     {
-                        op = GNTxtOPCadastroLembrete.Text;
+                        opTxt = GNTxtOPCadastroLembrete.Text;
                         vincular = true;
                     }
                     else
                     {
-                        op = null;
+                        opTxt = null;
                         vincular = false;
                     }
-                    controleLembretes.AtualizarLembrete(Convert.ToInt32(GNLblLembreteId.Text),GNTxtTituloLembrete.Text, GNTxtDEscricaoCadastrarLembretes.Text, vincular, op);
-                    
-                    
-                    LimparCampos();
+
+                    // Criar o objeto lembrete
+                    var lembrete = new Lembrete(
+                        id: Convert.ToInt32(GNLblLembreteId.Text),
+                        titulo: GNTxtTituloLembrete.Text,
+                        descricao: GNTxtDEscricaoCadastrarLembretes.Text,
+                        vinculo: vincular,
+                        op: opTxt
+                    );
+
+                    // Chamar método de atualização
+                    bool sucesso = controleLembretes.AtualizarLembrete(lembrete);
+
+                    if (sucesso)
+                    {
+                        LimparCampos();
+                        // Atualizar a lista de lembretes se necessário
+                    }
 
                 }
                 catch (Exception ex)

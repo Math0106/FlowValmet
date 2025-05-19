@@ -234,6 +234,7 @@
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
     <Compile Include="Controllers\ConverterResx.cs" />
     <Compile Include="Controllers\ExportarPDF.cs" />
+    <Compile Include="Models\Lembrete.cs" />
     <Compile Include="Models\SessaoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
