@@ -46,6 +46,8 @@
             this.GNlabelTituloCadastroLembrete = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtTituloLembrete = new Guna.UI2.WinForms.Guna2TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.GNLblLembreteId = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNBtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             this.GNPanelCadastroLembretes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvLembretes)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +59,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelCadastroLembretes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(89)))), ((int)(((byte)(76)))));
             this.GNPanelCadastroLembretes.BorderRadius = 50;
+            this.GNPanelCadastroLembretes.Controls.Add(this.GNBtnAtualizar);
+            this.GNPanelCadastroLembretes.Controls.Add(this.GNLblLembreteId);
             this.GNPanelCadastroLembretes.Controls.Add(this.GnBtnLimpar);
             this.GNPanelCadastroLembretes.Controls.Add(this.guna2HtmlLabel2);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNCheckBoxVincular);
@@ -282,6 +286,32 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "lixeira.png");
             // 
+            // GNLblLembreteId
+            // 
+            this.GNLblLembreteId.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblLembreteId.Location = new System.Drawing.Point(510, 63);
+            this.GNLblLembreteId.Name = "GNLblLembreteId";
+            this.GNLblLembreteId.Size = new System.Drawing.Size(12, 18);
+            this.GNLblLembreteId.TabIndex = 15;
+            this.GNLblLembreteId.Text = "...";
+            // 
+            // GNBtnAtualizar
+            // 
+            this.GNBtnAtualizar.BackColor = System.Drawing.Color.White;
+            this.GNBtnAtualizar.BorderRadius = 10;
+            this.GNBtnAtualizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnAtualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnAtualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnAtualizar.Location = new System.Drawing.Point(209, 691);
+            this.GNBtnAtualizar.Name = "GNBtnAtualizar";
+            this.GNBtnAtualizar.Size = new System.Drawing.Size(173, 45);
+            this.GNBtnAtualizar.TabIndex = 16;
+            this.GNBtnAtualizar.Text = "Atualizar";
+            this.GNBtnAtualizar.Click += new System.EventHandler(this.GNBtnAtualizar_Click);
+            // 
             // CadastroLembretes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,5 +343,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
         private System.Windows.Forms.ImageList imageList1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLblLembreteId;
+        private Guna.UI2.WinForms.Guna2Button GNBtnAtualizar;
     }
 }

@@ -21,12 +21,7 @@ namespace FlowValmet.Viwes
         {
             InitializeComponent();
 
-            string caminhoProjeto = Application.StartupPath;
-
-            GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
-
-
-            GNDgvLembretes.ClearSelection();
+            LimparCampos();
 
             if (GNCheckBoxVincular.Checked)
             {
@@ -37,14 +32,7 @@ namespace FlowValmet.Viwes
                 GNTxtOPCadastroLembrete.Enabled = false;
             }
 
-           
-            
-        }
-
-        private void GNBtnExcluirCadastroLembrete_Click(object sender, EventArgs e)
-        {           
-            List<Tuple<int, string, string, bool, string>> listaLembretes = new List<Tuple<int, string, string, bool, string>>();
-            listaLembretes = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");      
+          
         }
 
         private void GNBtnCadastrarCadastroLembretes_Click(object sender, EventArgs e)
@@ -68,12 +56,10 @@ namespace FlowValmet.Viwes
                         op = null;
                         vincular = false;
                     }
+
                     bool confirmaInserir = controleLembretes.InserirLembrete(GNTxtTituloLembrete.Text, GNTxtDEscricaoCadastrarLembretes.Text, vincular, op);
-                    GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
-                    GNTxtTituloLembrete.Clear();
-                    GNTxtDEscricaoCadastrarLembretes.Clear();
-                    GNCheckBoxVincular.Checked = false;
-                    GNTxtOPCadastroLembrete.Clear();
+                    LimparCampos();
+
                 }
                 catch (Exception ex)
                 {
@@ -103,24 +89,43 @@ namespace FlowValmet.Viwes
 
         private void GNDgvLembretes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             LimparCampos();
+            
             if (e.RowIndex >= 0)
             {
                 var linha = GNDgvLembretes.Rows[e.RowIndex];
-                var confirmacao = MessageBox.Show($"Deseja escluir linha: {linha.Cells[0].Value?.ToString()}", linha.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
-                if (confirmacao == "OK")
+                var form = new MessagemAtualizarExcluirCancelar("Cadastro Lembrete", "Deseja realmente continuar?");
+                form.ShowDialog();
+
+                switch (form.Result)
                 {
-                    controleLembretes.ExcluirLembrete(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
-                }
-                
-                GNDgvLembretes.ClearSelection();
-                GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
-
+                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                        controleLembretes.ExcluirLembrete(Convert.ToInt32(linha.Cells[0].Value?.ToString()));                          
+                        LimparCampos();
+                        break;
+                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                        GNLblLembreteId.Text = linha.Cells[0].Value.ToString();
+                        GNTxtTituloLembrete.Text = linha.Cells[1].Value.ToString();
+                        GNTxtDEscricaoCadastrarLembretes.Text = linha.Cells[2].Value.ToString();
+                        var obterValorCheck = linha.Cells[3].Value;
+                        if (Convert.ToBoolean(obterValorCheck) == true)
+                        {
+                            GNCheckBoxVincular.Checked = true;
+                            GNTxtOPCadastroLembrete.Enabled = true;
+                            GNTxtOPCadastroLembrete.Text = linha.Cells[4].Value.ToString();
+                        }
+                        else
+                        {
+                            GNCheckBoxVincular.Checked = false;
+                            GNTxtOPCadastroLembrete.Enabled = false;
+                        }
+                        GNBtnCadastrarCadastroLembretes.Enabled = false;
+                        GNBtnAtualizar.Enabled = true;
+                            break;
+                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                        break;
+                }              
             }
-
-            
-
         }
         
         public void LimparCampos()
@@ -128,8 +133,14 @@ namespace FlowValmet.Viwes
             GNTxtOPCadastroLembrete.Clear();
             GNTxtDEscricaoCadastrarLembretes.Clear();
             GNTxtTituloLembrete.Clear();
+            GNBtnCadastrarCadastroLembretes.Enabled=true;
             GNCheckBoxVincular.Checked = false;
             GNTxtOPCadastroLembrete.Enabled = false;
+            GNBtnAtualizar.Enabled = false;
+            GNDgvLembretes.ClearSelection();
+            GNDgvLembretes.ClearSelection();
+            GNLblLembreteId.Text = "";
+            GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
 
         }
 
@@ -138,9 +149,45 @@ namespace FlowValmet.Viwes
         private void GnBtnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
-            GNDgvLembretes.ClearSelection();
         }
 
+        private void GNBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            if (
+                GNTxtDEscricaoCadastrarLembretes.Text != "" &&
+                GNTxtTituloLembrete.Text != ""
+               )
+            {
+                bool vincular;
+                string op;
+                try
+                {
+                    if (GNCheckBoxVincular.Checked)
+                    {
+                        op = GNTxtOPCadastroLembrete.Text;
+                        vincular = true;
+                    }
+                    else
+                    {
+                        op = null;
+                        vincular = false;
+                    }
+                    controleLembretes.AtualizarLembrete(Convert.ToInt32(GNLblLembreteId.Text),GNTxtTituloLembrete.Text, GNTxtDEscricaoCadastrarLembretes.Text, vincular, op);
+                    
+                    
+                    LimparCampos();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Campos em branco ");
+            }
+
+        }
     }
 }

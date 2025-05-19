@@ -23,7 +23,7 @@ namespace FlowValmet.Viwes
             InitializeComponent();
             GNDgvVinculado.ColumnHeadersHeight = 20;
 
-            var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT id,numeroop,descricao FROM bdflowvalmet.op");
+            var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT o.id, o.numeroop, o.descricao FROM bdflowvalmet.op o LEFT JOIN bdflowvalmet.processos p ON o.id = p.op_id WHERE p.op_id IS NULL;");
             foreach (var item in resultadoOp)
             {
                 GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
@@ -64,9 +64,10 @@ namespace FlowValmet.Viwes
                 {
                     if (GNCbxOps.Text != "" && GnCbxProcessos.Text != "")
                     {
-                        string[] elementoOp = GnCbxProcessos.Text.Split('-');
-                        listaProcessosVinculados.Add(int.Parse(elementoOp[0]));
-                        GNDgvVinculado.Rows.Add(elementoOp[0], GnCbxProcessos.Text, GNDtpDataInicio.Value.Date.ToString("dd/MM/yyyy"), GNDtpDataFim.Value.Date.ToString("dd/MM/yyyy"));
+                        string[] elementoProcesso = GnCbxProcessos.Text.Split('-');
+                        string[] elementoOp = GNCbxOps.Text.Split('-');
+                        listaProcessosVinculados.Add(int.Parse(elementoProcesso[0]));
+                        GNDgvVinculado.Rows.Add(elementoOp[0],GnCbxProcessos.Text , GNDtpDataInicio.Value.Date.ToString("dd/MM/yyyy"), GNDtpDataFim.Value.Date.ToString("dd/MM/yyyy"));
                         GNCbxOps.Enabled = false;
                         GNCheckboxTravarVinculoOp.Checked = true;
                         GnCbxProcessos.SelectedIndex = -1;
@@ -147,10 +148,6 @@ namespace FlowValmet.Viwes
                         }
                         
 
-                    }
-                    else
-                    {
-                        
                     }
                 }
                 else

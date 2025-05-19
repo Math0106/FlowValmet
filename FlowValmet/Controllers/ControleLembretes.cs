@@ -108,6 +108,46 @@ namespace FlowValmet.Controllers
             }
         }
 
+        public bool AtualizarLembrete(int id, string titulo, string descricao, bool vinculo, string op)
+        {
+            try
+            {
+                using (var conexao = Conexao.Conectar()) 
+                {
+                    conexao.Open();
+
+                    string query = @"
+                    UPDATE lembretes 
+                    SET 
+                    titulo = @titulo, 
+                    descricao = @descricao, 
+                    vinculo = @vinculo, 
+                    Op = @Op 
+                    WHERE 
+                    id = @id"; 
+
+                    using (var comando = new MySqlCommand(query, conexao))
+                    {
+                        comando.Parameters.AddWithValue("@id", id);
+                        comando.Parameters.AddWithValue("@titulo", titulo);
+                        comando.Parameters.AddWithValue("@descricao", descricao);
+                        comando.Parameters.AddWithValue("@vinculo", vinculo);
+                        comando.Parameters.AddWithValue("@Op", op);
+
+                        int linhasAfetadas = comando.ExecuteNonQuery(); 
+
+                        
+                        return linhasAfetadas > 0;
+                    }
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar: " + ex.Message);
+                return false;
+            }
+        }
+
 
 
 

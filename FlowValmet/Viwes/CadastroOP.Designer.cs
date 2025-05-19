@@ -46,6 +46,7 @@
             this.GNTxtDescricaoOP = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNLabelNumeroOP = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtNumeroOP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GNlabelIdAtualizar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNPanelCadastroOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GnDvgOp)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelCadastroOP.BorderRadius = 20;
+            this.GNPanelCadastroOP.Controls.Add(this.GNlabelIdAtualizar);
             this.GNPanelCadastroOP.Controls.Add(this.GNBtnAtualizar);
             this.GNPanelCadastroOP.Controls.Add(this.GNBtnLimpar);
             this.GNPanelCadastroOP.Controls.Add(this.GNBtnCadastrar);
@@ -88,6 +90,7 @@
             this.GNBtnAtualizar.Size = new System.Drawing.Size(109, 39);
             this.GNBtnAtualizar.TabIndex = 19;
             this.GNBtnAtualizar.Text = "Atualizar";
+            this.GNBtnAtualizar.Click += new System.EventHandler(this.GNBtnAtualizar_Click);
             // 
             // GNBtnLimpar
             // 
@@ -102,6 +105,7 @@
             this.GNBtnLimpar.Size = new System.Drawing.Size(109, 39);
             this.GNBtnLimpar.TabIndex = 18;
             this.GNBtnLimpar.Text = "Limpar";
+            this.GNBtnLimpar.Click += new System.EventHandler(this.GNBtnLimpar_Click);
             // 
             // GNBtnCadastrar
             // 
@@ -300,6 +304,15 @@
             this.GNTxtNumeroOP.Size = new System.Drawing.Size(305, 46);
             this.GNTxtNumeroOP.TabIndex = 0;
             // 
+            // GNlabelIdAtualizar
+            // 
+            this.GNlabelIdAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.GNlabelIdAtualizar.Location = new System.Drawing.Point(359, 76);
+            this.GNlabelIdAtualizar.Name = "GNlabelIdAtualizar";
+            this.GNlabelIdAtualizar.Size = new System.Drawing.Size(12, 18);
+            this.GNlabelIdAtualizar.TabIndex = 20;
+            this.GNlabelIdAtualizar.Text = "...";
+            // 
             // CadastroOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,5 +346,6 @@
         private Guna.UI2.WinForms.Guna2Button GNBtnCadastrar;
         private Guna.UI2.WinForms.Guna2Button GNBtnLimpar;
         private Guna.UI2.WinForms.Guna2Button GNBtnAtualizar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNlabelIdAtualizar;
     }
 }

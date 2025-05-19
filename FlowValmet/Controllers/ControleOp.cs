@@ -151,8 +151,8 @@ namespace FlowValmet.Controllers
                     comando.Parameters.AddWithValue("@numeroop", numeroOp);
                     comando.Parameters.AddWithValue("@descricao", descricao);
                     comando.Parameters.AddWithValue("@desenho", desenho);
-                    comando.Parameters.AddWithValue("@datainicio", dataInicio);
-                    comando.Parameters.AddWithValue("@dataentrega", dataEntrega);
+                    comando.Parameters.AddWithValue("@datainicio", dataInicio.Date);
+                    comando.Parameters.AddWithValue("@dataentrega", dataEntrega.Date);
                     comando.Parameters.AddWithValue("@id", id);
 
                     int linhasAfetadas = comando.ExecuteNonQuery();

@@ -37,6 +37,7 @@
             this.desenho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GNBTnSalvar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.GNDVGAnaliseOp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,11 +138,27 @@
             this.dataEntrega.Name = "dataEntrega";
             this.dataEntrega.ReadOnly = true;
             // 
+            // GNBTnSalvar
+            // 
+            this.GNBTnSalvar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBTnSalvar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBTnSalvar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBTnSalvar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBTnSalvar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBTnSalvar.ForeColor = System.Drawing.Color.White;
+            this.GNBTnSalvar.Location = new System.Drawing.Point(1164, 875);
+            this.GNBTnSalvar.Name = "GNBTnSalvar";
+            this.GNBTnSalvar.Size = new System.Drawing.Size(113, 33);
+            this.GNBTnSalvar.TabIndex = 1;
+            this.GNBTnSalvar.Text = "Salvar";
+            this.GNBTnSalvar.Click += new System.EventHandler(this.GNBTnSalvar_Click);
+            // 
             // AnaliseOps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 900);
+            this.ClientSize = new System.Drawing.Size(1400, 913);
+            this.Controls.Add(this.GNBTnSalvar);
             this.Controls.Add(this.GNDVGAnaliseOp);
             this.Name = "AnaliseOps";
             this.Text = "AnaliseOps";
@@ -159,5 +176,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desenho;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntrega;
+        private Guna.UI2.WinForms.Guna2Button GNBTnSalvar;
     }
 }

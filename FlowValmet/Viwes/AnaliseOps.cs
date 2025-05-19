@@ -226,7 +226,18 @@ namespace FlowValmet.Viwes
 
         }
 
+        private void GNBTnSalvar_Click(object sender, EventArgs e)
+        {
+            ExportarPDF pdf = new ExportarPDF();    
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "PDF Files (*.pdf)|*.pdf"; 
+            saveDialog.FileName = "RelatorioPCP.pdf";
 
-
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                pdf.ExportarRelatorioEstilizado(GNDVGAnaliseOp, saveDialog.FileName);
+                MessageBox.Show("PDF gerado com sucesso!");
+            }
+        }
     }
 }

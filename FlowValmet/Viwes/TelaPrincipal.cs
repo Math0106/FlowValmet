@@ -1,4 +1,5 @@
 ﻿using FlowValmet.Controllers;
+using FlowValmet.Models;
 using Org.BouncyCastle.Pkcs;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,63 @@ namespace FlowValmet.Viwes
         public TelaPrincipal()
         {
             InitializeComponent();
-            
- 
+
+            ConfigurarAcessos();
         }
 
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
             GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+        }
+        public void ResetarTelaPrincpal()
+        {
+            ConfigurarAcessos();
+            GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+        }
+
+        private void ConfigurarAcessos()
+        {
+            // Desabilitar todos os botões inicialmente
+            GNBtnOp.Enabled = false;
+            GNBtnVincular.Enabled = false;
+            GNBtnProcessos.Enabled = false;
+            GNBtnUsuario.Enabled = false;
+            GNbtnLembretes.Enabled = false;
+
+            // Verificar se há usuário logado e habilitar botões conforme perfil
+            if (!string.IsNullOrEmpty(SessaoUsuario.Perfil))
+            {
+                // Habilitar botões baseado no perfil do usuário
+                switch (SessaoUsuario.Perfil.ToLower())
+                {
+                    case "admin":
+                        // Admin tem acesso a tudo
+                        GNBtnOp.Enabled = true;
+                        GNBtnPCP.Enabled = true;
+                        GNBtnVincular.Enabled = true;
+                        GNBtnProcessos.Enabled = true;
+                        GNBtnUsuario.Enabled = true;
+                        GNbtnLembretes.Enabled = true;
+                        GNBtnLogin.Enabled = false;
+                        break;
+
+                    case "user":
+                        // Supervisor tem acesso limitado
+                        GNBtnOp.Enabled = true;
+                        GNBtnPCP.Enabled = true;
+                        GNBtnVincular.Enabled = true;
+                        GNBtnProcessos.Enabled = true;
+                        GNBtnUsuario.Enabled = true;
+                        GNbtnLembretes.Enabled = true;
+                        GNBtnLogin.Enabled = false;
+                        break;
+
+
+                    default:
+                        // Perfil não reconhecido - acesso mínimo
+                        break;
+                }
+            }
         }
 
         public void GerarLembretes(List<Tuple<int, string, string, bool, string>> lista)
@@ -273,6 +324,34 @@ namespace FlowValmet.Viwes
                     GNPanelCentro.Invoke((MethodInvoker)delegate
                     {
                         Analise.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
+
+        private async void GNBtnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var login = new Login();
+                login.TopLevel = false;
+                login.FormBorderStyle = FormBorderStyle.None;
+                login.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(login);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        login.Show();
                     });
                 });
             }
