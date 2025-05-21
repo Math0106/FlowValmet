@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.GNCheckboxTravarVinculoOp = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GnBtnCadastrarVinculo = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +49,7 @@
             this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GNBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
             this.GNPanelCadastroOP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvVinculado)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelCadastroOP.BorderRadius = 20;
+            this.GNPanelCadastroOP.Controls.Add(this.GNBtnLimpar);
             this.GNPanelCadastroOP.Controls.Add(this.GNCheckboxTravarVinculoOp);
             this.GNPanelCadastroOP.Controls.Add(this.GnBtnCadastrarVinculo);
             this.GNPanelCadastroOP.Controls.Add(this.GNBtnVincular);
@@ -206,17 +208,17 @@
             // 
             this.GNDgvVinculado.AllowUserToAddRows = false;
             this.GNDgvVinculado.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.GNDgvVinculado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.GNDgvVinculado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GNDgvVinculado.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GNDgvVinculado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GNDgvVinculado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.GNDgvVinculado.ColumnHeadersHeight = 25;
             this.GNDgvVinculado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GNDgvVinculado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -224,14 +226,14 @@
             this.processo,
             this.dataInicio,
             this.dataFim});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GNDgvVinculado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GNDgvVinculado.DefaultCellStyle = dataGridViewCellStyle6;
             this.GNDgvVinculado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvVinculado.Location = new System.Drawing.Point(527, 101);
             this.GNDgvVinculado.Name = "GNDgvVinculado";
@@ -316,6 +318,21 @@
             this.GNCbxOps.Size = new System.Drawing.Size(333, 36);
             this.GNCbxOps.TabIndex = 0;
             // 
+            // GNBtnLimpar
+            // 
+            this.GNBtnLimpar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnLimpar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnLimpar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnLimpar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnLimpar.Location = new System.Drawing.Point(340, 422);
+            this.GNBtnLimpar.Name = "GNBtnLimpar";
+            this.GNBtnLimpar.Size = new System.Drawing.Size(110, 29);
+            this.GNBtnLimpar.TabIndex = 13;
+            this.GNBtnLimpar.Text = "Limpar";
+            this.GNBtnLimpar.Click += new System.EventHandler(this.GNBtnLimpar_Click);
+            // 
             // VincularProcessos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,5 +369,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn processo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFim;
+        private Guna.UI2.WinForms.Guna2Button GNBtnLimpar;
     }
 }

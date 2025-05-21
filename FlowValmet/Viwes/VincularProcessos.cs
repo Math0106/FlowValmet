@@ -21,24 +21,18 @@ namespace FlowValmet.Viwes
         public VincularProcessos()
         {
             InitializeComponent();
+
             GNDgvVinculado.ColumnHeadersHeight = 20;
 
-            var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT o.id, o.numeroop, o.descricao FROM bdflowvalmet.op o LEFT JOIN bdflowvalmet.processos p ON o.id = p.op_id WHERE p.op_id IS NULL;");
-            foreach (var item in resultadoOp)
-            {
-                GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
-            }
+            LimparCampos();
 
-            ResetarCbxProcessos();
+            //ResetarCbxOp();
+            //ResetarCbxProcessos();
+            //GNDtpDataInicio.Value = DateTime.Today;
+            //GNDtpDataFim.Value = DateTime.Today;
 
-            //var resultadoLinha = Vincular.RecuperarLinhaProducao_id_linha_sigla("SELECT id,linha,sigla FROM bdflowvalmet.linhaproducao");
-            //foreach (var item in resultadoLinha)
-            //{
-            //    GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
-            //}
-
-            GNDtpDataInicio.MinDate = DateTime.Today;
-            GNDtpDataFim.MinDate = DateTime.Today;
+            //GNDtpDataInicio.MinDate = DateTime.Today;
+            //GNDtpDataFim.MinDate = DateTime.Today;
         }
 
         public void ResetarCbxProcessos()
@@ -52,6 +46,14 @@ namespace FlowValmet.Viwes
                     GnCbxProcessos.Items.Add($"{item.Item1}-{item.Item2}-{item.Item3}");
                 }
 
+            }
+        }
+        public void ResetarCbxOp()
+        {
+            var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT o.id, o.numeroop, o.descricao FROM bdflowvalmet.op o LEFT JOIN bdflowvalmet.processos p ON o.id = p.op_id WHERE p.op_id IS NULL;");
+            foreach (var item in resultadoOp)
+            {
+                GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
             }
         }
 
@@ -197,6 +199,7 @@ namespace FlowValmet.Viwes
                 if (Vincular.InserirVinculoProcesso(listaProcessos)){
                     MessageBox.Show("Cadastrado com sucesso");
                     listaProcessosVinculados.Clear();
+                    LimparCampos();
                 }
                 else
                 {
@@ -207,13 +210,27 @@ namespace FlowValmet.Viwes
             }
             else
             {
-                MessageBox.Show("Nada no data grid viwes");
+                MessageBox.Show("Nada vinculado");
             }
         }
 
         private void GNPanelCadastroOP_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void LimparCampos()
+        {
+            ResetarCbxOp();
+            ResetarCbxProcessos();
+            GNDtpDataInicio.Value = DateTime.Today;
+            GNDtpDataFim.Value = DateTime.Today;
+
+        }
+
+        private void GNBtnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }

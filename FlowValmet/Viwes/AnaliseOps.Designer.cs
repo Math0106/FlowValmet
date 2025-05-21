@@ -72,13 +72,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GNDVGAnaliseOp.DefaultCellStyle = dataGridViewCellStyle3;
             this.GNDVGAnaliseOp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.GNDVGAnaliseOp.Location = new System.Drawing.Point(12, 12);
+            this.GNDVGAnaliseOp.Location = new System.Drawing.Point(22, 12);
             this.GNDVGAnaliseOp.Name = "GNDVGAnaliseOp";
             this.GNDVGAnaliseOp.ReadOnly = true;
             this.GNDVGAnaliseOp.RowHeadersVisible = false;
             this.GNDVGAnaliseOp.RowHeadersWidth = 49;
             this.GNDVGAnaliseOp.RowTemplate.Height = 24;
-            this.GNDVGAnaliseOp.Size = new System.Drawing.Size(1376, 857);
+            this.GNDVGAnaliseOp.Size = new System.Drawing.Size(1366, 846);
             this.GNDVGAnaliseOp.TabIndex = 0;
             this.GNDVGAnaliseOp.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.GNDVGAnaliseOp.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -157,6 +157,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1400, 913);
             this.Controls.Add(this.GNBTnSalvar);
             this.Controls.Add(this.GNDVGAnaliseOp);

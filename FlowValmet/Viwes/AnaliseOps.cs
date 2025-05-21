@@ -29,7 +29,7 @@ namespace FlowValmet.Viwes
            
             InitializeComponent();
 
-
+            GNDVGAnaliseOp.ScrollBars = ScrollBars.Both;
 
         }
 
@@ -172,6 +172,11 @@ namespace FlowValmet.Viwes
 
         public void CarregarLinhasProducao()
         {
+            for (int i = 0; i <= 6 && i < GNDVGAnaliseOp.Columns.Count; i++)
+            {
+                GNDVGAnaliseOp.Columns[i].MinimumWidth = 100; // ou o valor que você quiser
+            }
+
             var listaSiglas = linhaProducao.RecuperarLinhaSigla("SELECT id,sigla FROM bdflowvalmet.linhaproducao;");
             foreach (var itens in listaSiglas)
             {
@@ -184,7 +189,6 @@ namespace FlowValmet.Viwes
                 iconColumn.HeaderText = itens.Item2.ToUpper();
                 GNDVGAnaliseOp.Columns.Add(iconColumn);
                 GNDVGAnaliseOp.Rows.Add(itens.Item2.ToLower());
-                //iconColumn.Image = nulo;
             }
 
         }
