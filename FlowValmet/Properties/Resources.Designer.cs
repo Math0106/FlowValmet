@@ -83,6 +83,16 @@ namespace FlowValmet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_3_de_mai__de_2025__14_03_48 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 3 de mai. de 2025, 14_03_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_4_de_mai__de_2025__14_03_48 {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image 4 de mai. de 2025, 14_03_48", resourceCulture);
@@ -121,6 +131,16 @@ namespace FlowValmet.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lake_mountains_forest_pine_Nature_Photo_HD_Wallpaper_1366x768 {
+            get {
+                object obj = ResourceManager.GetObject("Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Byte[].
         /// </summary>
         internal static byte[] lixeira {
@@ -136,6 +156,16 @@ namespace FlowValmet.Properties {
         internal static System.Drawing.Bitmap LogoValmet {
             get {
                 object obj = ResourceManager.GetObject("LogoValmet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_souvenirpixels_417074 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-souvenirpixels-417074", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

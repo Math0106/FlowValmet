@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtconfirmarsenha = new Guna.UI2.WinForms.Guna2TextBox();
             this.picture2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtsenha2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtusuario2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtemail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -51,7 +51,6 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderColor = System.Drawing.Color.Transparent;
             this.panel2.BorderRadius = 20;
-            this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.txtconfirmarsenha);
             this.panel2.Controls.Add(this.picture2);
             this.panel2.Controls.Add(this.txtsenha2);
@@ -66,6 +65,52 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 800);
             this.panel2.TabIndex = 1;
+            // 
+            // BttnRegistrar
+            // 
+            this.BttnRegistrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BttnRegistrar.BorderRadius = 20;
+            this.BttnRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BttnRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BttnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnRegistrar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BttnRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BttnRegistrar.FillColor = System.Drawing.Color.Teal;
+            this.BttnRegistrar.FillColor2 = System.Drawing.Color.Teal;
+            this.BttnRegistrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.BttnRegistrar.Location = new System.Drawing.Point(201, 568);
+            this.BttnRegistrar.Name = "BttnRegistrar";
+            this.BttnRegistrar.Size = new System.Drawing.Size(223, 51);
+            this.BttnRegistrar.TabIndex = 9;
+            this.BttnRegistrar.Text = "Registrar";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
+            this.guna2Panel2.BorderRadius = 20;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel2.Location = new System.Drawing.Point(171, 105);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(274, 542);
+            this.guna2Panel2.TabIndex = 31;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(82, 72);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(121, 26);
+            this.guna2Button1.TabIndex = 34;
+            this.guna2Button1.Text = "Login";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtconfirmarsenha
             // 
@@ -154,25 +199,6 @@
             this.txtusuario2.Size = new System.Drawing.Size(229, 48);
             this.txtusuario2.TabIndex = 16;
             // 
-            // BttnRegistrar
-            // 
-            this.BttnRegistrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BttnRegistrar.BorderRadius = 20;
-            this.BttnRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BttnRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BttnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnRegistrar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BttnRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BttnRegistrar.FillColor = System.Drawing.Color.Teal;
-            this.BttnRegistrar.FillColor2 = System.Drawing.Color.Teal;
-            this.BttnRegistrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BttnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.BttnRegistrar.Location = new System.Drawing.Point(201, 568);
-            this.BttnRegistrar.Name = "BttnRegistrar";
-            this.BttnRegistrar.Size = new System.Drawing.Size(223, 51);
-            this.BttnRegistrar.TabIndex = 9;
-            this.BttnRegistrar.Text = "Registrar";
-            // 
             // txtemail
             // 
             this.txtemail.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -218,41 +244,16 @@
             this.guna2CirclePictureBox1.TabIndex = 26;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
-            this.guna2Panel2.BorderRadius = 20;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(171, 105);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(274, 542);
-            this.guna2Panel2.TabIndex = 31;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(23, 105);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(121, 26);
-            this.guna2Button1.TabIndex = 34;
-            this.guna2Button1.Text = "Login";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // CadastroUsuarioGUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1418, 945);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel2);
             this.Name = "CadastroUsuarioGUS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroUsuarioGUS";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).EndInit();
