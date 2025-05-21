@@ -1,5 +1,4 @@
-﻿using FlowValmet.Viwes;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using ServiceStack;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace FlowValmet.Controllers
 
         public List<Tuple<string, string, string, DateTime, DateTime, string>> RecuperarOp()
         {
-            List<Tuple<string, string, string, DateTime, DateTime, string>> listaAnaliseOp = new List<Tuple<string, string, string, DateTime, DateTime, string>>();
+            List<Tuple<string, string, string, DateTime,DateTime,string>> listaAnaliseOp = new List<Tuple<string, string, string, DateTime, DateTime, string>>();
             try
             {
                 string comando = @"
@@ -80,10 +79,9 @@ namespace FlowValmet.Controllers
 
             }
 
+       
+
         }
-
-
-
 
         public bool AtualizarStatus(string status,string numeroOp,string siglaLinhaProducao)
         {

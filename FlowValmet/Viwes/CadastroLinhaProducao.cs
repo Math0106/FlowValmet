@@ -1,5 +1,4 @@
 ﻿using FlowValmet.Controllers;
-using FlowValmet.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,20 +47,9 @@ namespace FlowValmet.Viwes
                    GNCbxCor.Text != "")
                 {
 
-                    var novaLinha = new LinhaProducao(
-                        nomeLinha: GNTxtNomeLinhaP.Text,
-                        cor: GNCbxCor.Text,
-                        sigla: GNTxtSilglaLinhaP.Text
-                        );
 
-                    // Chamar método de inserção
-                    bool sucesso = linha.InserirLinha(novaLinha);
-
-                    if (sucesso)
-                    {
-                        LimparCampos();
-                    }
-
+                    linha.InserirLinha(GNTxtNomeLinhaP.Text, GNCbxCor.Text, GNTxtSilglaLinhaP.Text);
+                    LimparCampos();
                 }
                 else
                 {

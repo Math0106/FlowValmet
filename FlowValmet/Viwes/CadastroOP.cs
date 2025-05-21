@@ -23,7 +23,6 @@ namespace FlowValmet.Viwes
         public void ResetarTelaOp()
         {
             GnDvgOp.DataSource = op.RecuperarOp("SELECT * FROM bdflowvalmet.op");
-            //GnDvgOp.DataSource = op.RecuperarOp();
             GNBtnAtualizar.Enabled = false;
             GNBtnCadastrar.Enabled = true;
         }
@@ -67,7 +66,6 @@ namespace FlowValmet.Viwes
             GNTxtDesenhoOP.Text = "";
             GNTxtNumeroOP.Text = "";
             GnDvgOp.DataSource = op.RecuperarOp("SELECT * FROM bdflowvalmet.op");
-            //GnDvgOp.DataSource = op.RecuperarOp();
             GnDvgOp.ClearSelection();
             GNlabelIdAtualizar.Text = "";
         }
