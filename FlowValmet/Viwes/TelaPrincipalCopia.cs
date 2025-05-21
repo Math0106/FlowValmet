@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FlowValmet.Viwes
+{
+    public partial class TelaPrincipalCopia: Form
+    {
+        public TelaPrincipalCopia()
+        {
+            InitializeComponent();
+        }
+
+        private void GNBtnOp_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
