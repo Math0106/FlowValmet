@@ -1,6 +1,6 @@
 ﻿namespace FlowValmet.Viwes
 {
-    partial class CadastroLembretes
+    partial class CadastroLembretesCopia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroLembretes));
             this.GNPanelCadastroLembretes = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.GnBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,7 +43,6 @@
             this.GNTxtDEscricaoCadastrarLembretes = new Guna.UI2.WinForms.Guna2TextBox();
             this.GNlabelTituloCadastroLembrete = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNTxtTituloLembrete = new Guna.UI2.WinForms.Guna2TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.GNPanelCadastroLembretes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvLembretes)).BeginInit();
             this.SuspendLayout();
@@ -68,10 +65,10 @@
             this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtDEscricaoCadastrarLembretes);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNlabelTituloCadastroLembrete);
             this.GNPanelCadastroLembretes.Controls.Add(this.GNTxtTituloLembrete);
-            this.GNPanelCadastroLembretes.Location = new System.Drawing.Point(208, 50);
+            this.GNPanelCadastroLembretes.Location = new System.Drawing.Point(235, 9);
             this.GNPanelCadastroLembretes.Name = "GNPanelCadastroLembretes";
             this.GNPanelCadastroLembretes.Size = new System.Drawing.Size(1002, 800);
-            this.GNPanelCadastroLembretes.TabIndex = 1;
+            this.GNPanelCadastroLembretes.TabIndex = 2;
             // 
             // GnBtnLimpar
             // 
@@ -88,7 +85,6 @@
             this.GnBtnLimpar.Size = new System.Drawing.Size(173, 45);
             this.GnBtnLimpar.TabIndex = 14;
             this.GnBtnLimpar.Text = "Limpar";
-            this.GnBtnLimpar.Click += new System.EventHandler(this.GnBtnLimpar_Click);
             // 
             // guna2HtmlLabel2
             // 
@@ -116,7 +112,6 @@
             this.GNCheckBoxVincular.UncheckedState.BorderRadius = 2;
             this.GNCheckBoxVincular.UncheckedState.BorderThickness = 0;
             this.GNCheckBoxVincular.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.GNCheckBoxVincular.Click += new System.EventHandler(this.GNCheckBoxVincular_Click);
             // 
             // GNDgvLembretes
             // 
@@ -170,7 +165,6 @@
             this.GNDgvLembretes.ThemeStyle.RowsStyle.Height = 24;
             this.GNDgvLembretes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvLembretes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.GNDgvLembretes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvLembretes_CellContentClick);
             // 
             // GNBtnCadastrarCadastroLembretes
             // 
@@ -187,7 +181,6 @@
             this.GNBtnCadastrarCadastroLembretes.Size = new System.Drawing.Size(167, 45);
             this.GNBtnCadastrarCadastroLembretes.TabIndex = 7;
             this.GNBtnCadastrarCadastroLembretes.Text = "Cadastrar";
-            this.GNBtnCadastrarCadastroLembretes.Click += new System.EventHandler(this.GNBtnCadastrarCadastroLembretes_Click);
             // 
             // GNTxtOPCadastroLembrete
             // 
@@ -276,21 +269,14 @@
             this.GNTxtTituloLembrete.Size = new System.Drawing.Size(458, 46);
             this.GNTxtTituloLembrete.TabIndex = 0;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "lixeira.png");
-            // 
-            // CadastroLembretes
+            // CadastroLembretesCopia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(89)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1402, 900);
+            this.ClientSize = new System.Drawing.Size(1473, 818);
             this.Controls.Add(this.GNPanelCadastroLembretes);
-            this.Name = "CadastroLembretes";
-            this.Text = "CadastroLembretes";
+            this.Name = "CadastroLembretesCopia";
+            this.Text = "tela_lembrete_copia";
             this.GNPanelCadastroLembretes.ResumeLayout(false);
             this.GNPanelCadastroLembretes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvLembretes)).EndInit();
@@ -301,17 +287,16 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel GNPanelCadastroLembretes;
-        private Guna.UI2.WinForms.Guna2TextBox GNTxtTituloLembrete;
-        private Guna.UI2.WinForms.Guna2HtmlLabel GNlabelTituloCadastroLembrete;
-        private Guna.UI2.WinForms.Guna2TextBox GNTxtDEscricaoCadastrarLembretes;
+        private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox GNCheckBoxVincular;
+        private Guna.UI2.WinForms.Guna2DataGridView GNDgvLembretes;
+        private Guna.UI2.WinForms.Guna2Button GNBtnCadastrarCadastroLembretes;
         private Guna.UI2.WinForms.Guna2TextBox GNTxtOPCadastroLembrete;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLabelDescricaoCadastrarLembrete;
-        private Guna.UI2.WinForms.Guna2Button GNBtnCadastrarCadastroLembretes;
-        private Guna.UI2.WinForms.Guna2DataGridView GNDgvLembretes;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox GNCheckBoxVincular;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
-        private System.Windows.Forms.ImageList imageList1;
+        private Guna.UI2.WinForms.Guna2TextBox GNTxtDEscricaoCadastrarLembretes;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNlabelTituloCadastroLembrete;
+        private Guna.UI2.WinForms.Guna2TextBox GNTxtTituloLembrete;
     }
 }
