@@ -27,7 +27,7 @@ namespace FlowValmet.Viwes
 
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+            //GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes")); 
         }
         public void ResetarTelaPrincpal()
         {
