@@ -30,21 +30,25 @@
         {
             this.GNPanelCentro = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.GNPanelBtnsEsquerdo = new Guna.UI2.WinForms.Guna2ContainerControl();
+
             this.GNBtnPCP = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnVincular = new Guna.UI2.WinForms.Guna2CircleButton();
+
             this.GNBtnOp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnProcessos = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnUsuario = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNbtnLembretes = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNPanelLembretes = new Guna.UI2.WinForms.Guna2ContainerControl();
+
             this.GNBtnLogin = new Guna.UI2.WinForms.Guna2CircleButton();
+
             this.GNPanelBtnsEsquerdo.SuspendLayout();
             this.SuspendLayout();
             // 
             // GNPanelCentro
             // 
             this.GNPanelCentro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelCentro.BorderRadius = 5;
             this.GNPanelCentro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.GNPanelCentro.Location = new System.Drawing.Point(122, 5);
@@ -55,9 +59,8 @@
             // 
             // GNPanelBtnsEsquerdo
             // 
-            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnLogin);
@@ -74,8 +77,7 @@
             this.GNPanelBtnsEsquerdo.TabIndex = 3;
             this.GNPanelBtnsEsquerdo.Text = "guna2ContainerControl2";
             // 
-            // GNBtnPCP
-            // 
+
             this.GNBtnPCP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,6 +121,7 @@
             this.GNBtnOp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
             this.GNBtnOp.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnOp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnOp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -136,9 +139,6 @@
             // 
             // GNBtnProcessos
             // 
-            this.GNBtnProcessos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnProcessos.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnProcessos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnProcessos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -156,9 +156,6 @@
             // 
             // GNBtnUsuario
             // 
-            this.GNBtnUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnUsuario.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -174,11 +171,20 @@
             this.GNBtnUsuario.Text = "Usuário ";
             this.GNBtnUsuario.Click += new System.EventHandler(this.GNBtnUsuario_Click);
             // 
+
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
+            this.guna2Panel1.BackgroundImage = global::FlowValmet.Properties.Resources.LogoValmet;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Location = new System.Drawing.Point(22, 13);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(73, 16);
+            this.guna2Panel1.TabIndex = 1;
+            // 
+
             // GNbtnLembretes
             // 
-            this.GNbtnLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNbtnLembretes.BackColor = System.Drawing.Color.LightGray;
             this.GNbtnLembretes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNbtnLembretes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -196,7 +202,8 @@
             // 
             // GNPanelLembretes
             // 
-            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelLembretes.AutoScroll = true;
             this.GNPanelLembretes.BorderRadius = 5;
@@ -207,8 +214,7 @@
             this.GNPanelLembretes.TabIndex = 3;
             this.GNPanelLembretes.Text = "guna2ContainerControl1";
             // 
-            // GNBtnLogin
-            // 
+
             this.GNBtnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -227,8 +233,7 @@
             this.GNBtnLogin.Text = "Login";
             this.GNBtnLogin.Click += new System.EventHandler(this.GNBtnLogin_Click);
             // 
-            // TelaPrincipal
-            // 
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(89)))), ((int)(((byte)(76)))));
