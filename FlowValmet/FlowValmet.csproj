@@ -244,12 +244,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Viwes\AnaliseOps.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Viwes\AnaliseOps.Designer.cs">
-      <DependentUpon>AnaliseOps.cs</DependentUpon>
-    </Compile>
     <Compile Include="Viwes\CadastroLinhaProducao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,18 +268,6 @@
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viwes\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Viwes\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Viwes\MessagemAtualizarExcluirCancelar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Viwes\MessagemAtualizarExcluirCancelar.Designer.cs">
-      <DependentUpon>MessagemAtualizarExcluirCancelar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Viwes\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,9 +291,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Viwes\AnaliseOps.resx">
-      <DependentUpon>AnaliseOps.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaProducao.resx">
       <DependentUpon>CadastroLinhaProducao.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,12 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Viwes\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Viwes\MessagemAtualizarExcluirCancelar.resx">
-      <DependentUpon>MessagemAtualizarExcluirCancelar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
@@ -355,8 +328,26 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Imagem\at.png" />
+    <Content Include="Imagem\circle-user.png" />
+    <Content Include="Imagem\email.png" />
+    <Content Include="Imagem\icon user.png" />
     <Content Include="Imagem\iconeLixeira.png" />
+    <Content Include="Imagem\lock.png" />
     <Content Include="Imagem\LogoValmet.png" />
+    <Content Include="Imagem\password icon.png" />
+    <Content Include="Imagem\profile.png" />
+    <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768.jpg" />
+    <None Include="Resources\ChatGPT Image 3 de mai. de 2025, 14_03_48.png" />
+    <None Include="Resources\pexels-souvenirpixels-417074.jpg" />
+    <None Include="Resources\e7ef6831-d73b-40f9-b663-ac42cfdafba7.jpg" />
+    <None Include="Resources\at.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\circle-user.png" />
+    <None Include="Resources\valmet logo2.png" />
+    <None Include="Resources\ChatGPT Image 4 de mai. de 2025, 14_03_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
