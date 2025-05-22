@@ -133,4 +133,13 @@
   <data name="iconConcluido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconVerde.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="circle-user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circle-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
