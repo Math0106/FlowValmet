@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FlowValmet.Controllers;
+using FlowValmet.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,42 +14,84 @@ namespace FlowValmet.Viwes
 {
     public partial class LoginUsuarioGUS: Form
     {
-        public LoginUsuarioGUS()
+
+        ControleUsuario Controleusuario = new ControleUsuario();
+         public LoginUsuarioGUS()
+          {
+           InitializeComponent();
+           LimparCampos();
+          }
+
+
+
+
+         public void LimparCampos()
+         {
+          TxtUsuario.Text = "";
+          TxtSenha.Text = "";
+          Lblstatus.Text = "";
+          }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-        }
+            // Obter os valores dos campos de entrada
+            string nomeUsuario = TxtUsuario.Text.Trim();
+            string senha = TxtSenha.Text;
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
+            // Validar campos vazios
+            if (string.IsNullOrEmpty(nomeUsuario) || string.IsNullOrEmpty(senha))
+            {
+                Lblstatus.ForeColor = Color.Red;
+                Lblstatus.Text = "Por favor, preencha todos os campos!";
+                //MessageBox.Show("Por favor, preencha todos os campos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        }
+            // Verificar credenciais no banco de dados
+            try
+            {
+                bool credenciaisValidas = Controleusuario.VerificarCredenciais(nomeUsuario, senha);
+
+                if (credenciaisValidas)
+                {
+                    // Obter informações adicionais do usuário (opcional)
+                    var usuario = Controleusuario.ObterUsuarioPorNome(nomeUsuario);
+
+                    // Armazenar informações do usuário logado (se necessário)
+                    SessaoUsuario.Nome = usuario.Nome;
+                    SessaoUsuario.Perfil = usuario.Perfil;
+                    SessaoUsuario.Setor = usuario.Setor;
 
 
+                    // 2. Obter referência da tela principal
+                    var telaPrincipal = this.ParentForm as TelaPrincipal;
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            CadastroUsuarioGUS novaTela = new CadastroUsuarioGUS(); 
-            novaTela.Show();              
-            this.Hide();                    
-        }
+                    // 3. Fechar o painel de login
+                    this.Parent.Controls.Remove(this);
+                    this.Close();
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            CadastroLinhaGUS novaTela = new CadastroLinhaGUS();
-            novaTela.Show();
-            this.Hide();
-        }
+                    // 4. Resetar/habilitar controles da tela principal
+                    if (telaPrincipal != null)
+                    {
+                        telaPrincipal.ResetarTelaPrincpal();
+                    }
+                    LimparCampos();
 
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            CadastroOPGUS novaTela = new CadastroOPGUS();
-            novaTela.Show();
-            this.Hide();
-        }
-
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
-
+                }
+                else
+                {
+                    Lblstatus.ForeColor = Color.Red;
+                    Lblstatus.Text = "Usuário ou senha incorretos!";
+                    TxtUsuario.Text = "";
+                    TxtSenha.Text = "";
+                    TxtUsuario.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                Lblstatus.ForeColor = Color.Red;
+                Lblstatus.Text = "Erro ao tentar fazer login!";
+            }
         }
     }
     

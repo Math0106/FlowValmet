@@ -17,11 +17,5 @@ namespace FlowValmet.Viwes
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            LoginUsuarioGUS novaTela = new LoginUsuarioGUS();
-            novaTela.Show();
-            this.Hide();
-        }
     }
 }

@@ -259,7 +259,7 @@ namespace FlowValmet.Viwes
 
             try
             {
-                var usuario = new CadastrarUsuario();
+                var usuario = new CadastroUsuarioGUS();
                 usuario.TopLevel = false;
                 usuario.FormBorderStyle = FormBorderStyle.None;
                 usuario.Dock = DockStyle.Fill;
@@ -374,23 +374,23 @@ namespace FlowValmet.Viwes
         {
             try
             {
-                var Analise = new AnaliseOps();
-                Analise.TopLevel = false;
-                Analise.FormBorderStyle = FormBorderStyle.None;
-                Analise.Dock = DockStyle.Fill;
+                //var Analise = new AnaliseOps();
+                //Analise.TopLevel = false;
+                //Analise.FormBorderStyle = FormBorderStyle.None;
+                //Analise.Dock = DockStyle.Fill;
 
-                // Operações de UI devem estar na thread principal
-                GNPanelCentro.Controls.Clear();
-                GNPanelCentro.Controls.Add(Analise);
+                //// Operações de UI devem estar na thread principal
+                //GNPanelCentro.Controls.Clear();
+                //GNPanelCentro.Controls.Add(Analise);
 
-                // Mostrar o formulário na thread principal
-                await Task.Run(() =>
-                {
-                    GNPanelCentro.Invoke((MethodInvoker)delegate
-                    {
-                        Analise.Show();
-                    });
-                });
+                //// Mostrar o formulário na thread principal
+                //await Task.Run(() =>
+                //{
+                //    GNPanelCentro.Invoke((MethodInvoker)delegate
+                //    {
+                //        Analise.Show();
+                //    });
+                //});
             }
             catch (Exception ex)
             {
@@ -402,7 +402,7 @@ namespace FlowValmet.Viwes
         {
             try
             {
-                var login = new Login();
+                var login = new LoginUsuarioGUS();
                 login.TopLevel = false;
                 login.FormBorderStyle = FormBorderStyle.None;
                 login.Dock = DockStyle.Fill;

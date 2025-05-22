@@ -122,16 +122,16 @@ namespace FlowValmet.Viwes
                 var linha = GNDgvUsuario.Rows[e.RowIndex];
                 if (linha.Cells[0].Value?.ToString() != "1")
                 {
-                    var form = new MessagemAtualizarExcluirCancelar("Cadastro Usuário", "Deseja realmente continuar?");
+                    var form = new PopUPGUS("Cadastro Usuário", "Deseja realmente continuar?");
                     form.ShowDialog();
 
                     switch (form.Result)
                     {
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                        case PopUPGUS.CustomDialogResult.Excluir:
                             Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
                             LimparCampos();
                             break;
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                        case PopUPGUS.CustomDialogResult.Alterar:
                             GNLblUsuarioId.Text = linha.Cells[0].Value?.ToString();
                             GNTxtNome.Text = linha.Cells[1].Value?.ToString();
                             GNTxtEmail.Text = linha.Cells[2].Value?.ToString().ToLower();
@@ -151,7 +151,7 @@ namespace FlowValmet.Viwes
                             GNBtnCadastrar.Enabled = false;
                             GNBtnAtualizar.Enabled = true;
                             break;
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                        case PopUPGUS.CustomDialogResult.Cancelar:
                             break;
                     }
 

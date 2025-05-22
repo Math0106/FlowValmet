@@ -28,108 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.GnBtnDeletar = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GNBtnAtualizar = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GNBtnCancelar = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.LblTitulo = new System.Windows.Forms.Label();
+            this.LblMensagem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // guna2GradientButton2
+            // GnBtnDeletar
             // 
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2GradientButton2.BorderRadius = 20;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(11, 130);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(119, 48);
-            this.guna2GradientButton2.TabIndex = 21;
-            this.guna2GradientButton2.Text = "Deletar";
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            this.GnBtnDeletar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GnBtnDeletar.BorderRadius = 20;
+            this.GnBtnDeletar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GnBtnDeletar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GnBtnDeletar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GnBtnDeletar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GnBtnDeletar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GnBtnDeletar.FillColor = System.Drawing.Color.Teal;
+            this.GnBtnDeletar.FillColor2 = System.Drawing.Color.Teal;
+            this.GnBtnDeletar.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GnBtnDeletar.ForeColor = System.Drawing.Color.White;
+            this.GnBtnDeletar.Location = new System.Drawing.Point(11, 130);
+            this.GnBtnDeletar.Name = "GnBtnDeletar";
+            this.GnBtnDeletar.Size = new System.Drawing.Size(119, 48);
+            this.GnBtnDeletar.TabIndex = 21;
+            this.GnBtnDeletar.Text = "Deletar";
+            this.GnBtnDeletar.Click += new System.EventHandler(this.GnBtnDeletar_Click);
             // 
-            // guna2GradientButton1
+            // GNBtnAtualizar
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(136, 130);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(119, 48);
-            this.guna2GradientButton1.TabIndex = 22;
-            this.guna2GradientButton1.Text = "Atualizar";
+            this.GNBtnAtualizar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnAtualizar.BorderRadius = 20;
+            this.GNBtnAtualizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnAtualizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnAtualizar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnAtualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnAtualizar.FillColor = System.Drawing.Color.Teal;
+            this.GNBtnAtualizar.FillColor2 = System.Drawing.Color.Teal;
+            this.GNBtnAtualizar.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GNBtnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnAtualizar.Location = new System.Drawing.Point(136, 130);
+            this.GNBtnAtualizar.Name = "GNBtnAtualizar";
+            this.GNBtnAtualizar.Size = new System.Drawing.Size(119, 48);
+            this.GNBtnAtualizar.TabIndex = 22;
+            this.GNBtnAtualizar.Text = "Atualizar";
+            this.GNBtnAtualizar.Click += new System.EventHandler(this.GNBtnAtualizar_Click_1);
             // 
-            // guna2GradientButton3
+            // GNBtnCancelar
             // 
-            this.guna2GradientButton3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2GradientButton3.BorderRadius = 20;
-            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.Location = new System.Drawing.Point(261, 130);
-            this.guna2GradientButton3.Name = "guna2GradientButton3";
-            this.guna2GradientButton3.Size = new System.Drawing.Size(119, 48);
-            this.guna2GradientButton3.TabIndex = 23;
-            this.guna2GradientButton3.Text = "Cancelar";
+            this.GNBtnCancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnCancelar.BorderRadius = 20;
+            this.GNBtnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnCancelar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnCancelar.FillColor = System.Drawing.Color.Teal;
+            this.GNBtnCancelar.FillColor2 = System.Drawing.Color.Teal;
+            this.GNBtnCancelar.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GNBtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnCancelar.Location = new System.Drawing.Point(261, 130);
+            this.GNBtnCancelar.Name = "GNBtnCancelar";
+            this.GNBtnCancelar.Size = new System.Drawing.Size(119, 48);
+            this.GNBtnCancelar.TabIndex = 23;
+            this.GNBtnCancelar.Text = "Cancelar";
+            this.GNBtnCancelar.Click += new System.EventHandler(this.GNBtnCancelar_Click_1);
             // 
-            // label1
+            // LblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "label1";
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Location = new System.Drawing.Point(29, 19);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(44, 16);
+            this.LblTitulo.TabIndex = 24;
+            this.LblTitulo.Text = "label1";
             // 
-            // label2
+            // LblMensagem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "label4";
+            this.LblMensagem.AutoSize = true;
+            this.LblMensagem.Location = new System.Drawing.Point(29, 77);
+            this.LblMensagem.Name = "LblMensagem";
+            this.LblMensagem.Size = new System.Drawing.Size(44, 16);
+            this.LblMensagem.TabIndex = 25;
+            this.LblMensagem.Text = "label2";
             // 
             // PopUPGUS
             // 
@@ -139,13 +121,11 @@
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(392, 217);
             this.ControlBox = false;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2GradientButton3);
-            this.Controls.Add(this.guna2GradientButton1);
-            this.Controls.Add(this.guna2GradientButton2);
+            this.Controls.Add(this.LblMensagem);
+            this.Controls.Add(this.LblTitulo);
+            this.Controls.Add(this.GNBtnCancelar);
+            this.Controls.Add(this.GNBtnAtualizar);
+            this.Controls.Add(this.GnBtnDeletar);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -153,19 +133,16 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.PopUPGUS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2GradientButton GnBtnDeletar;
+        private Guna.UI2.WinForms.Guna2GradientButton GNBtnAtualizar;
+        private Guna.UI2.WinForms.Guna2GradientButton GNBtnCancelar;
+        private System.Windows.Forms.Label LblTitulo;
+        private System.Windows.Forms.Label LblMensagem;
     }
 }

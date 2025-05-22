@@ -72,7 +72,7 @@
             // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Image = global::FlowValmet.Properties.Resources.valmet_logo2;
+            //this.guna2PictureBox2.Image = global::FlowValmet.Properties.Resources.valmet_logo2;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(780, 4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";

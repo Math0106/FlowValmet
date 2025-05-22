@@ -79,12 +79,12 @@ namespace FlowValmet.Viwes
                     var linhas = GnDvgOp.Rows[e.RowIndex];
 
 
-                    var form = new MessagemAtualizarExcluirCancelar("Cadastro OP", "Deseja realmente continuar?");
+                    var form = new PopUPGUS("Cadastro OP", "Deseja realmente continuar?");
                     form.ShowDialog();
 
                     switch (form.Result)
                     {
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                        case PopUPGUS.CustomDialogResult.Excluir:
                             if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())) == 0)
                             {
                                 if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
@@ -105,7 +105,7 @@ namespace FlowValmet.Viwes
                             }
                             LimparCampos();
                             break;
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                        case PopUPGUS.CustomDialogResult.Alterar:       
 
                             GNBtnCadastrar.Enabled = false;
                             GNBtnAtualizar.Enabled = true;
@@ -124,7 +124,7 @@ namespace FlowValmet.Viwes
                             }
 
                             break;
-                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                        case PopUPGUS.CustomDialogResult.Cancelar:
                             break;
                     }
 

@@ -109,16 +109,16 @@ namespace FlowValmet.Viwes
             if (e.RowIndex >= 0)
             {
                 var linha = GNDgvLembretes.Rows[e.RowIndex];
-                var form = new MessagemAtualizarExcluirCancelar("Cadastro Lembrete", "Deseja realmente continuar?");
+                var form = new PopUPGUS("Cadastro Lembrete", "Deseja realmente continuar?");
                 form.ShowDialog();
 
                 switch (form.Result)
                 {
-                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                    case PopUPGUS.CustomDialogResult.Excluir:
                         controleLembretes.ExcluirLembrete(Convert.ToInt32(linha.Cells[0].Value?.ToString()));                          
                         LimparCampos();
                         break;
-                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                    case PopUPGUS.CustomDialogResult.Alterar:
                         GNLblLembreteId.Text = linha.Cells[0].Value.ToString();
                         GNTxtTituloLembrete.Text = linha.Cells[1].Value.ToString();
                         GNTxtDEscricaoCadastrarLembretes.Text = linha.Cells[2].Value.ToString();
@@ -137,7 +137,7 @@ namespace FlowValmet.Viwes
                         GNBtnCadastrarCadastroLembretes.Enabled = false;
                         GNBtnAtualizar.Enabled = true;
                             break;
-                    case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                    case PopUPGUS.CustomDialogResult.Cancelar:
                         break;
                 }              
             }

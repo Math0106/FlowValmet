@@ -12,24 +12,43 @@ namespace FlowValmet.Viwes
 {
     public partial class PopUPGUS: Form
     {
-        public PopUPGUS()
+
+            public enum CustomDialogResult
+            {
+                None,
+                Excluir,
+                Alterar,
+                Cancelar
+            }
+
+            public CustomDialogResult Result { get; private set; } = CustomDialogResult.None;
+
+            public PopUPGUS(string titulo, string message)
+            {
+                InitializeComponent();
+                LblMensagem.Text = message;
+                LblTitulo.Text = titulo;
+            }
+
+         
+
+        private void GnBtnDeletar_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            Result = CustomDialogResult.Excluir;
+            this.Close();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void GNBtnAtualizar_Click_1(object sender, EventArgs e)
         {
+            Result = CustomDialogResult.Alterar;
+            this.Close();
 
         }
 
-        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        private void GNBtnCancelar_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void PopUPGUS_Load(object sender, EventArgs e)
-        {
-
+            Result = CustomDialogResult.Cancelar;
+            this.Close();
         }
     }
 }

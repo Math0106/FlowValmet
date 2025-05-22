@@ -131,16 +131,6 @@ namespace FlowValmet.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Lake_mountains_forest_pine_Nature_Photo_HD_Wallpaper_1366x768 {
-            get {
-                object obj = ResourceManager.GetObject("Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Byte[].
         /// </summary>
         internal static byte[] iconAndamento {
@@ -187,6 +177,26 @@ namespace FlowValmet.Properties {
             get {
                 object obj = ResourceManager.GetObject("iconNulo", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lake_mountains_forest_pine_Nature_Photo_HD_Wallpaper_1366x768 {
+            get {
+                object obj = ResourceManager.GetObject("Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoValmet {
+            get {
+                object obj = ResourceManager.GetObject("LogoValmet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

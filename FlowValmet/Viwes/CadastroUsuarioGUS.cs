@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlowValmet.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,348 @@ namespace FlowValmet.Viwes
 {
     public partial class CadastroUsuarioGUS: Form
     {
+
+        ControleUsuario Usuario = new ControleUsuario();
         public CadastroUsuarioGUS()
         {
             InitializeComponent();
+            LimparCampos();
+
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void GBBtnCadastrar_Click(object sender, EventArgs e)
         {
-            LoginUsuarioGUS novaTela = new LoginUsuarioGUS();
-            novaTela.Show();
-            this.Hide();
+            string perfil = "User";
+            try
+            {
+
+                if (TxtUsuario.Text != "" &&
+                   TxtEmail.Text != "" &&
+                   TxtSetor.Text != "" &&
+                   TxtSenha.Text != "" &&
+                   (GNCbxAdim.Checked || GNCbxUser.Checked))
+                {
+                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
+                    if (GNCbxAdim.Checked)
+                    {
+                        perfil = "Admin";
+                    }
+                    else if (GNCbxUser.Checked)
+                    {
+                        perfil = "User";
+                    }
+
+                    Usuario.InserirUsuario(TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Preencher todos os campos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex);
+                LimparCampos();
+            }
+        }
+
+        public void LimparCampos()
+        {
+            GNLblUsuarioId.Text = "";
+            TxtUsuario.Text = "";
+            TxtEmail.Text = "";
+            TxtSetor.Text = "";
+            TxtSenha.Text = "";
+            GNCbxAdim.Checked = false;
+            GNCbxUser.Checked = false;
+            BtnRegistrar.Enabled = true;
+            BtnAtualizar.Enabled = false;
+            GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
+            GNDgvUsuario.ClearSelection();
+        }
+
+        //public static string GerarHashSHA256(string input)
+        //{
+        //    using (SHA256 sha256Hash = SHA256.Create())
+        //    {
+        //        // Converte a string para array de bytes e calcula o hash
+        //        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+        //        // Converte o array de bytes para string hexadecimal
+        //        StringBuilder builder = new StringBuilder();
+        //        for (int i = 0; i < bytes.Length; i++)
+        //        {
+        //            builder.Append(bytes[i].ToString("x2")); // "x2" formata para hexadecimal
+        //        }
+
+        //        return builder.ToString();
+        //    }
+        //}
+
+
+
+        private void GnCbxUser_Click(object sender, EventArgs e)
+        {
+            if (GNCbxUser.Checked)
+            {
+                GNCbxAdim.Checked = false;
+            }
+        }
+
+        private void GNCbxAdim_Click(object sender, EventArgs e)
+        {
+            if (GNCbxAdim.Checked)
+            {
+                GNCbxUser.Checked = false;
+            }
+        }
+
+
+        private void GNDgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LimparCampos();
+            if (e.RowIndex >= 0)
+            {
+
+                var linha = GNDgvUsuario.Rows[e.RowIndex];
+                if (linha.Cells[0].Value?.ToString() != "1")
+                {
+                    var form = new PopUPGUS("Cadastro Usuário", "Deseja realmente continuar?");
+                    form.ShowDialog();
+
+                    switch (form.Result)
+                    {
+                        case PopUPGUS.CustomDialogResult.Excluir:
+                            Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
+                            LimparCampos();
+                            break;
+                        case PopUPGUS.CustomDialogResult.Alterar:
+                            GNLblUsuarioId.Text = linha.Cells[0].Value?.ToString();
+                            TxtUsuario.Text = linha.Cells[1].Value?.ToString();
+                            TxtEmail.Text = linha.Cells[2].Value?.ToString().ToLower();
+                            TxtSetor.Text = linha.Cells[3].Value?.ToString();
+                            if (linha.Cells[4].Value?.ToString() == "Admin")
+                            {
+                                GNCbxAdim.Checked = true;
+                                GNCbxUser.Checked = false;
+
+                            }
+                            else if (linha.Cells[4].Value?.ToString() == "User")
+                            {
+                                GNCbxAdim.Checked = false;
+                                GNCbxUser.Checked = true;
+                            }
+
+                            BtnRegistrar.Enabled = false;
+                            BtnAtualizar.Enabled = true;
+                            break;
+                        case PopUPGUS.CustomDialogResult.Cancelar:
+                            break;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Não é possivel manipular o primeiro usuario!");
+                }
+
+            }
+
+
+        }
+
+        private void GNBtnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void GNBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            string perfil = "User";
+            try
+            {
+
+                if (TxtUsuario.Text != "" &&
+                   TxtEmail.Text != "" &&
+                   TxtSetor.Text != "" &&
+                   TxtSenha.Text != "" &&
+                   (GNCbxAdim.Checked || GNCbxUser.Checked))
+                {
+                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
+                    if (GNCbxAdim.Checked)
+                    {
+                        perfil = "Admin";
+                    }
+                    else if (GNCbxUser.Checked)
+                    {
+                        perfil = "User";
+                    }
+
+                    Usuario.AtualizarUsuario(Convert.ToInt32(GNLblUsuarioId.Text), TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Preencher todos os campos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex);
+                LimparCampos();
+            }
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            string perfil = "User";
+            try
+            {
+
+                if (TxtUsuario.Text != "" &&
+                   TxtEmail.Text != "" &&
+                   TxtSetor.Text != "" &&
+                   TxtSenha.Text != "" &&
+                   (GNCbxAdim.Checked || GNCbxUser.Checked))
+                {
+                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
+                    if (GNCbxAdim.Checked)
+                    {
+                        perfil = "Admin";
+                    }
+                    else if (GNCbxUser.Checked)
+                    {
+                        perfil = "User";
+                    }
+
+                    Usuario.InserirUsuario(TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Preencher todos os campos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex);
+                LimparCampos();
+            }
+        }
+
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            string perfil = "User";
+            try
+            {
+
+                if (TxtUsuario.Text != "" &&
+                   TxtEmail.Text != "" &&
+                   TxtSetor.Text != "" &&
+                   TxtSenha.Text != "" &&
+                   (GNCbxAdim.Checked || GNCbxUser.Checked))
+                {
+                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
+                    if (GNCbxAdim.Checked)
+                    {
+                        perfil = "Admin";
+                    }
+                    else if (GNCbxUser.Checked)
+                    {
+                        perfil = "User";
+                    }
+
+                    Usuario.AtualizarUsuario(Convert.ToInt32(GNLblUsuarioId.Text), TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Preencher todos os campos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex);
+                LimparCampos();
+            }
+        }
+
+        private void BtnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void GNDgvUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            LimparCampos();
+            if (e.RowIndex >= 0)
+            {
+
+                var linha = GNDgvUsuario.Rows[e.RowIndex];
+                if (linha.Cells[0].Value?.ToString() != "1")
+                {
+                    var form = new PopUPGUS("Cadastro Usuário", "Deseja realmente continuar?");
+                    form.ShowDialog();
+
+                    switch (form.Result)
+                    {
+                        case PopUPGUS.CustomDialogResult.Excluir:
+                            Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
+                            LimparCampos();
+                            break;
+                        case PopUPGUS.CustomDialogResult.Alterar:
+                            GNLblUsuarioId.Text = linha.Cells[0].Value?.ToString();
+                            TxtUsuario.Text = linha.Cells[1].Value?.ToString();
+                            TxtEmail.Text = linha.Cells[2].Value?.ToString().ToLower();
+                            TxtSetor.Text = linha.Cells[3].Value?.ToString();
+                            if (linha.Cells[4].Value?.ToString() == "Admin")
+                            {
+                                GNCbxAdim.Checked = true;
+                                GNCbxUser.Checked = false;
+
+                            }
+                            else if (linha.Cells[4].Value?.ToString() == "User")
+                            {
+                                GNCbxAdim.Checked = false;
+                                GNCbxUser.Checked = true;
+                            }
+
+                            BtnRegistrar.Enabled = false;
+                            BtnAtualizar.Enabled = true;
+                            break;
+                        case PopUPGUS.CustomDialogResult.Cancelar:
+                            break;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Não é possivel manipular o primeiro usuario!");
+                }
+
+            }
+        }
+
+        private void GNCbxAdim_Click_1(object sender, EventArgs e)
+        {
+            if (GNCbxAdim.Checked)
+            {
+                GNCbxUser.Checked = false;
+            }
+        }
+
+        private void GNCbxUser_Click_1(object sender, EventArgs e)
+        {
+            if (GNCbxUser.Checked)
+            {
+                GNCbxAdim.Checked = false;
+            }
         }
     }
 }
+
