@@ -113,20 +113,50 @@ namespace FlowValmet.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Byte[].
         /// </summary>
-        internal static byte[] lixeira {
+        internal static byte[] iconAndamento {
             get {
-                object obj = ResourceManager.GetObject("lixeira", resourceCulture);
+                object obj = ResourceManager.GetObject("iconAndamento", resourceCulture);
                 return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap LogoValmet {
+        internal static byte[] iconAtraso {
             get {
-                object obj = ResourceManager.GetObject("LogoValmet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("iconAtraso", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] iconConcluido {
+            get {
+                object obj = ResourceManager.GetObject("iconConcluido", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] IconNaoAplicavel {
+            get {
+                object obj = ResourceManager.GetObject("IconNaoAplicavel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] iconNulo {
+            get {
+                object obj = ResourceManager.GetObject("iconNulo", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

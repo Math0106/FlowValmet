@@ -34,7 +34,7 @@ namespace FlowValmet.Viwes
                    GNTxtSenha.Text != "" &&
                    (GNCbxAdim.Checked || GnCbxUser.Checked))
                 {
-                    string senhaHash = GerarHashSHA256(GNTxtSenha.Text);
+                    string senhaHash = Usuario.GerarHashSHA256(GNTxtSenha.Text);
                     if (GNCbxAdim.Checked)
                     {
                         perfil = "Admin";
@@ -43,7 +43,7 @@ namespace FlowValmet.Viwes
                         perfil = "User";
                     }
 
-                    Usuario.InserirUsuario(GNTxtNome.Text, GNTxtEmail.Text, GNTxtSetor.Text, perfil, senhaHash);
+                    Usuario.InserirUsuario(GNTxtNome.Text, GNTxtEmail.Text.ToLower(), GNTxtSetor.Text, perfil, senhaHash);
                     LimparCampos();
                 }
                 else
@@ -55,38 +55,40 @@ namespace FlowValmet.Viwes
                 MessageBox.Show("Erro ao cadastrar: " + ex);
                 LimparCampos();
             }
-            GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
-
-
         }
 
         public void LimparCampos()
         {
+            GNLblUsuarioId.Text = "";
             GNTxtNome.Text = "";
             GNTxtEmail.Text = "";
             GNTxtSetor.Text = "";
             GNTxtSenha.Text = "";
             GNCbxAdim.Checked = false;
             GnCbxUser.Checked = false;
+            GNBtnCadastrar.Enabled = true;
+            GNBtnAtualizar.Enabled = false;
+            GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
+            GNDgvUsuario.ClearSelection();
         }
 
-        public static string GerarHashSHA256(string input)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // Converte a string para array de bytes e calcula o hash
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+        //public static string GerarHashSHA256(string input)
+        //{
+        //    using (SHA256 sha256Hash = SHA256.Create())
+        //    {
+        //        // Converte a string para array de bytes e calcula o hash
+        //        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-                // Converte o array de bytes para string hexadecimal
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2")); // "x2" formata para hexadecimal
-                }
+        //        // Converte o array de bytes para string hexadecimal
+        //        StringBuilder builder = new StringBuilder();
+        //        for (int i = 0; i < bytes.Length; i++)
+        //        {
+        //            builder.Append(bytes[i].ToString("x2")); // "x2" formata para hexadecimal
+        //        }
 
-                return builder.ToString();
-            }
-        }
+        //        return builder.ToString();
+        //    }
+        //}
 
 
 
@@ -108,7 +110,7 @@ namespace FlowValmet.Viwes
 
         private void CadastrarUsuario_Load(object sender, EventArgs e)
         {
-            GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
+            LimparCampos();
         }
 
         private void GNDgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,34 +118,94 @@ namespace FlowValmet.Viwes
             LimparCampos();
             if (e.RowIndex >= 0)
             {
+
                 var linha = GNDgvUsuario.Rows[e.RowIndex];
                 if (linha.Cells[0].Value?.ToString() != "1")
                 {
+                    var form = new MessagemAtualizarExcluirCancelar("Cadastro Usuário", "Deseja realmente continuar?");
+                    form.ShowDialog();
 
-                    var confirmacao = MessageBox.Show($"Deseja escluir linha: {linha.Cells[0].Value?.ToString()}", linha.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
-                    if (confirmacao == "OK")
+                    switch (form.Result)
                     {
-                        Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Excluir:
+                            Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
+                            LimparCampos();
+                            break;
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Alterar:
+                            GNLblUsuarioId.Text = linha.Cells[0].Value?.ToString();
+                            GNTxtNome.Text = linha.Cells[1].Value?.ToString();
+                            GNTxtEmail.Text = linha.Cells[2].Value?.ToString().ToLower();
+                            GNTxtSetor.Text = linha.Cells[3].Value?.ToString();
+                            if (linha.Cells[4].Value?.ToString() == "Admin")
+                            {
+                                GNCbxAdim.Checked = true;
+                                GnCbxUser.Checked = false;
+
+                            }
+                            else if (linha.Cells[4].Value?.ToString() == "User")
+                            {
+                                GNCbxAdim.Checked = false;
+                                GnCbxUser.Checked = true;
+                            }
+
+                            GNBtnCadastrar.Enabled = false;
+                            GNBtnAtualizar.Enabled = true;
+                            break;
+                        case MessagemAtualizarExcluirCancelar.CustomDialogResult.Cancelar:
+                            break;
                     }
 
-                    GNDgvUsuario.ClearSelection();
-                    GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
-                }
-                else
+                }else
                 {
-                    MessageBox.Show("Não é possivel excluir o primeiro usuario!");
+                    MessageBox.Show("Não é possivel manipular o primeiro usuario!");
                 }
-
-
 
             }
 
-            
+
         }
 
         private void GNBtnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+
+        private void GNBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            string perfil = "User";
+            try
+            {
+
+                if (GNTxtNome.Text != "" &&
+                   GNTxtEmail.Text != "" &&
+                   GNTxtSetor.Text != "" &&
+                   GNTxtSenha.Text != "" &&
+                   (GNCbxAdim.Checked || GnCbxUser.Checked))
+                {
+                    string senhaHash = Usuario.GerarHashSHA256(GNTxtSenha.Text);
+                    if (GNCbxAdim.Checked)
+                    {
+                        perfil = "Admin";
+                    }
+                    else if (GnCbxUser.Checked)
+                    {
+                        perfil = "User";
+                    }
+
+                    Usuario.AtualizarUsuario(Convert.ToInt32(GNLblUsuarioId.Text),GNTxtNome.Text, GNTxtEmail.Text.ToLower(), GNTxtSetor.Text, perfil, senhaHash);
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Preencher todos os campos");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex);
+                LimparCampos();
+            }
         }
     }
 }

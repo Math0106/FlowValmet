@@ -78,6 +78,40 @@ namespace FlowValmet.Controllers
             }
 
         }
+        public List<Tuple<int,string>> RecuperarLinhaSigla(string comando)
+        {
+            List<Tuple<int, string>> listaLinhasSigla = new List<Tuple<int, string>>();
+            try
+            {
+
+                var conexao = Conexao.Conectar();
+                if (conexao != null)
+                {
+
+                    conexao.Open();
+                    var strComando = new MySqlCommand(comando, conexao);
+                    var reader = strComando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        listaLinhasSigla.Add(Tuple.Create(Convert.ToInt32(reader["id"]),Convert.ToString(reader["sigla"])));
+                    }
+                    conexao.Close();
+                    return listaLinhasSigla;
+                }
+                else
+                {
+                    MessageBox.Show("Falha na conexão");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao recuperar siglas de produção: " + ex.Message);
+                return null;
+
+            }
+
+        }
 
         public bool ExcluirLinha(int id)
         {
