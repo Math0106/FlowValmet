@@ -1,61 +1,42 @@
-﻿using FlowValmet.Controllers;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Reflection;
-using System.Resources;
-using System.Web.UI.WebControls;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlowValmet.Viwes
 {
     public partial class Teste : Form
     {
-
         public Teste()
         {
             InitializeComponent();
+            Panel panel = new Panel();
+            panel.Size = new Size(320, 190);
+            panel.BackColor = Color.LightCyan;
+            panel.Location = new Point(10, 10); // Definir posição
 
+            // Criar e configurar o botão
+            Button btn = new Button();
+            btn.Size = new Size(100, 30); // Tamanho mais adequado
+            btn.Location = new Point(10, 10); // Posição relativa ao painel
+            btn.Text = "Clique Aqui";
 
+            // Adicionar o botão ao painel
+            panel.Controls.Add(btn);
+
+            // Adicionar o painel ao formulário
+            this.Controls.Add(panel);
         }
-        ConverterResx converter = new ConverterResx();
-        private void Teste_Load(object sender, EventArgs e)
+
+
+        public void CriarPanel()
         {
-            DataGridViewImageColumn iconColumn = new DataGridViewImageColumn();
-            iconColumn.Name = "IconColumn";
-            iconColumn.HeaderText = "";
-            //Image icone = FlowValmetProperties.Properties.Resources.IconeVerde;
-            guna2DataGridView1.Columns.Add(iconColumn);
-            guna2DataGridView1.Rows.Add();
-            guna2DataGridView1.Rows.Add();
-            guna2DataGridView1.Rows.Add();
 
-            // Carrega uma imagem (ex: de um arquivo ou recurso)
-            //byte[] imageBytes = Properties.Resources.iconVerde; // Supondo que está como byte[]
-            //System.Drawing.Image iconVerde;
-
-            //using (MemoryStream ms = new MemoryStream(imageBytes))
-            //{
-            //    iconVerde = System.Drawing.Image.FromStream(ms);
-            //}
-
-           
-
-            //Image icon = Image.FromFile("FlowValmet\\Imagem\\iconeLixeira.png");
-
-            // Define a imagem para todas as células da coluna
-            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
-            {
-                row.Cells["IconColumn"].Value = ConverterResx.GetIcon("iconVerde", 16, 16);
-            }
         }
     }
 }
-    
-
-
-
-
-
-
-
