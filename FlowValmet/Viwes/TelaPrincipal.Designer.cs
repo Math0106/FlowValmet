@@ -44,7 +44,7 @@
             // GNPanelCentro
             // 
             this.GNPanelCentro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelCentro.BorderRadius = 5;
             this.GNPanelCentro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(216)))), ((int)(((byte)(215)))));
             this.GNPanelCentro.Location = new System.Drawing.Point(122, 5);
@@ -55,9 +55,8 @@
             // 
             // GNPanelBtnsEsquerdo
             // 
-            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNPanelBtnsEsquerdo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnLogin);
@@ -136,9 +135,6 @@
             // 
             // GNBtnProcessos
             // 
-            this.GNBtnProcessos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnProcessos.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnProcessos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnProcessos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -156,9 +152,6 @@
             // 
             // GNBtnUsuario
             // 
-            this.GNBtnUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNBtnUsuario.BackColor = System.Drawing.Color.LightGray;
             this.GNBtnUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNBtnUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -176,9 +169,6 @@
             // 
             // GNbtnLembretes
             // 
-            this.GNbtnLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GNbtnLembretes.BackColor = System.Drawing.Color.LightGray;
             this.GNbtnLembretes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GNbtnLembretes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -196,7 +186,8 @@
             // 
             // GNPanelLembretes
             // 
-            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GNPanelLembretes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelLembretes.AutoScroll = true;
             this.GNPanelLembretes.BorderRadius = 5;
