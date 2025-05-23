@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.GNCheckboxTravarVinculoOp = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GnBtnCadastrarVinculo = new Guna.UI2.WinForms.Guna2Button();
@@ -72,6 +72,10 @@
             this.GNPanelCadastroOP.Controls.Add(this.GNDgvVinculado);
             this.GNPanelCadastroOP.Controls.Add(this.guna2HtmlLabel1);
             this.GNPanelCadastroOP.Controls.Add(this.GNCbxOps);
+            this.GNPanelCadastroOP.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.GNPanelCadastroOP.FillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.GNPanelCadastroOP.FillColor3 = System.Drawing.Color.WhiteSmoke;
+            this.GNPanelCadastroOP.FillColor4 = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCadastroOP.Location = new System.Drawing.Point(200, 50);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
             this.GNPanelCadastroOP.Size = new System.Drawing.Size(1000, 800);
@@ -80,10 +84,12 @@
             // 
             // GNCheckboxTravarVinculoOp
             // 
+            this.GNCheckboxTravarVinculoOp.BackColor = System.Drawing.Color.WhiteSmoke;
             this.GNCheckboxTravarVinculoOp.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNCheckboxTravarVinculoOp.CheckedState.BorderRadius = 2;
             this.GNCheckboxTravarVinculoOp.CheckedState.BorderThickness = 0;
             this.GNCheckboxTravarVinculoOp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNCheckboxTravarVinculoOp.CheckMarkColor = System.Drawing.Color.Teal;
             this.GNCheckboxTravarVinculoOp.Location = new System.Drawing.Point(469, 90);
             this.GNCheckboxTravarVinculoOp.Name = "GNCheckboxTravarVinculoOp";
             this.GNCheckboxTravarVinculoOp.Size = new System.Drawing.Size(20, 20);
@@ -180,7 +186,9 @@
             // 
             // GnCbxProcessos
             // 
-            this.GnCbxProcessos.BackColor = System.Drawing.Color.Transparent;
+            this.GnCbxProcessos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GnCbxProcessos.BorderColor = System.Drawing.Color.Teal;
+            this.GnCbxProcessos.BorderRadius = 20;
             this.GnCbxProcessos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.GnCbxProcessos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GnCbxProcessos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -206,17 +214,17 @@
             // 
             this.GNDgvVinculado.AllowUserToAddRows = false;
             this.GNDgvVinculado.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.GNDgvVinculado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.GNDgvVinculado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.GNDgvVinculado.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GNDgvVinculado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GNDgvVinculado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.GNDgvVinculado.ColumnHeadersHeight = 25;
             this.GNDgvVinculado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GNDgvVinculado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -224,14 +232,14 @@
             this.processo,
             this.dataInicio,
             this.dataFim});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GNDgvVinculado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GNDgvVinculado.DefaultCellStyle = dataGridViewCellStyle12;
             this.GNDgvVinculado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvVinculado.Location = new System.Drawing.Point(527, 101);
             this.GNDgvVinculado.Name = "GNDgvVinculado";
@@ -303,7 +311,9 @@
             // 
             // GNCbxOps
             // 
-            this.GNCbxOps.BackColor = System.Drawing.Color.Transparent;
+            this.GNCbxOps.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNCbxOps.BorderColor = System.Drawing.Color.Teal;
+            this.GNCbxOps.BorderRadius = 20;
             this.GNCbxOps.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.GNCbxOps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GNCbxOps.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));

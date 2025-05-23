@@ -289,7 +289,7 @@ namespace FlowValmet.Viwes
 
             try
             {
-                var linhas = new CadastroLinhaProducao();
+                var linhas = new CadastroLinhaGUS();
                 linhas.TopLevel = false;
                 linhas.FormBorderStyle = FormBorderStyle.None;
                 linhas.Dock = DockStyle.Fill;
@@ -317,7 +317,7 @@ namespace FlowValmet.Viwes
         {
             try
             {
-                var op = new CadastroOP();
+                var op = new CadastroOPGUS();
                 op.TopLevel = false;
                 op.FormBorderStyle = FormBorderStyle.None;
                 op.Dock = DockStyle.Fill;
