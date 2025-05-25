@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.GNDgvVinculado = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Idop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +59,7 @@
             // 
             // GNPanelCadastroOP
             // 
-            this.GNPanelCadastroOP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GNPanelCadastroOP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GNPanelCadastroOP.BorderRadius = 20;
             this.GNPanelCadastroOP.Controls.Add(this.guna2Panel1);
             this.GNPanelCadastroOP.Controls.Add(this.guna2Panel2);
@@ -71,9 +68,9 @@
             this.GNPanelCadastroOP.FillColor2 = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCadastroOP.FillColor3 = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCadastroOP.FillColor4 = System.Drawing.Color.WhiteSmoke;
-            this.GNPanelCadastroOP.Location = new System.Drawing.Point(100, 50);
+            this.GNPanelCadastroOP.Location = new System.Drawing.Point(108, 75);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
-            this.GNPanelCadastroOP.Size = new System.Drawing.Size(1200, 800);
+            this.GNPanelCadastroOP.Size = new System.Drawing.Size(1185, 751);
             this.GNPanelCadastroOP.TabIndex = 2;
             this.GNPanelCadastroOP.Paint += new System.Windows.Forms.PaintEventHandler(this.GNPanelCadastroOP_Paint);
             // 
@@ -83,24 +80,12 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.GNDgvVinculado);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(449, 57);
+            this.guna2Panel1.Location = new System.Drawing.Point(431, 19);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(736, 717);
             this.guna2Panel1.TabIndex = 35;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(16, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 16);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Processos vinculados";
             // 
             // GNDgvVinculado
             // 
@@ -133,7 +118,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GNDgvVinculado.DefaultCellStyle = dataGridViewCellStyle9;
             this.GNDgvVinculado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
-            this.GNDgvVinculado.Location = new System.Drawing.Point(19, 25);
+            this.GNDgvVinculado.Location = new System.Drawing.Point(15, 20);
             this.GNDgvVinculado.Name = "GNDgvVinculado";
             this.GNDgvVinculado.ReadOnly = true;
             this.GNDgvVinculado.RowHeadersVisible = false;
@@ -211,7 +196,7 @@
             this.guna2Panel2.Controls.Add(this.GnCbxProcessos);
             this.guna2Panel2.Controls.Add(this.GNDtpDataInicio);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(37, 57);
+            this.guna2Panel2.Location = new System.Drawing.Point(19, 19);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(406, 450);
             this.guna2Panel2.TabIndex = 34;
@@ -238,10 +223,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(16, 25);
+            this.label4.Location = new System.Drawing.Point(10, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.Size = new System.Drawing.Size(124, 21);
             this.label4.TabIndex = 33;
             this.label4.Text = "Op para vinculo";
             // 
@@ -249,10 +235,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label3.Location = new System.Drawing.Point(16, 89);
+            this.label3.Location = new System.Drawing.Point(10, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.Size = new System.Drawing.Size(76, 21);
             this.label3.TabIndex = 32;
             this.label3.Text = "Processo";
             // 
@@ -260,10 +247,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(11, 229);
+            this.label2.Location = new System.Drawing.Point(10, 223);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 31;
             this.label2.Text = "Data da fim";
             // 
@@ -308,10 +296,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(11, 153);
+            this.label1.Location = new System.Drawing.Point(10, 147);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.Size = new System.Drawing.Size(87, 21);
             this.label1.TabIndex = 30;
             this.label1.Text = "Data Inicio";
             // 
@@ -324,7 +313,7 @@
             this.GNCbxOps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GNCbxOps.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNCbxOps.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNCbxOps.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GNCbxOps.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNCbxOps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GNCbxOps.ItemHeight = 30;
             this.GNCbxOps.Location = new System.Drawing.Point(10, 44);
@@ -338,7 +327,7 @@
             this.GNDtpDataFim.BorderRadius = 20;
             this.GNDtpDataFim.Checked = true;
             this.GNDtpDataFim.FillColor = System.Drawing.Color.Teal;
-            this.GNDtpDataFim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDtpDataFim.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNDtpDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.GNDtpDataFim.Location = new System.Drawing.Point(6, 248);
             this.GNDtpDataFim.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -357,7 +346,7 @@
             this.GnCbxProcessos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GnCbxProcessos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GnCbxProcessos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GnCbxProcessos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GnCbxProcessos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GnCbxProcessos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GnCbxProcessos.ItemHeight = 30;
             this.GnCbxProcessos.Location = new System.Drawing.Point(6, 108);
@@ -371,7 +360,7 @@
             this.GNDtpDataInicio.BorderRadius = 20;
             this.GNDtpDataInicio.Checked = true;
             this.GNDtpDataInicio.FillColor = System.Drawing.Color.Teal;
-            this.GNDtpDataInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDtpDataInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNDtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.GNDtpDataInicio.Location = new System.Drawing.Point(6, 172);
             this.GNDtpDataInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -392,7 +381,7 @@
             this.GnBtnCadastrarVinculo.FillColor = System.Drawing.Color.Teal;
             this.GnBtnCadastrarVinculo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.GnBtnCadastrarVinculo.ForeColor = System.Drawing.Color.White;
-            this.GnBtnCadastrarVinculo.Location = new System.Drawing.Point(80, 709);
+            this.GnBtnCadastrarVinculo.Location = new System.Drawing.Point(81, 688);
             this.GnBtnCadastrarVinculo.Name = "GnBtnCadastrarVinculo";
             this.GnBtnCadastrarVinculo.Size = new System.Drawing.Size(300, 48);
             this.GnBtnCadastrarVinculo.TabIndex = 11;
@@ -410,7 +399,6 @@
             this.Text = "VincularProcessos";
             this.GNPanelCadastroOP.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvVinculado)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -439,7 +427,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
     }
 }

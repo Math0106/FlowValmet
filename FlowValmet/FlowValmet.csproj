@@ -247,6 +247,7 @@
     <Compile Include="Controllers\ControleUsuario.cs" />
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
     <Compile Include="Controllers\ConverterResx.cs" />
+    <Compile Include="Controllers\DesingDataGridView.cs" />
     <Compile Include="Controllers\ExportarExcel.cs" />
     <Compile Include="Controllers\ExportarPDF.cs" />
     <Compile Include="Models\Lembrete.cs" />

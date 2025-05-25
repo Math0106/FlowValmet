@@ -38,20 +38,20 @@
             // LblTitulo
             // 
             this.LblTitulo.AutoSize = true;
-            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.LblTitulo.Location = new System.Drawing.Point(12, 9);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(64, 25);
+            this.LblTitulo.Size = new System.Drawing.Size(63, 28);
             this.LblTitulo.TabIndex = 24;
             this.LblTitulo.Text = "label1";
             // 
             // LblMensagem
             // 
             this.LblMensagem.AutoSize = true;
-            this.LblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.LblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.LblMensagem.Location = new System.Drawing.Point(13, 66);
             this.LblMensagem.Name = "LblMensagem";
-            this.LblMensagem.Size = new System.Drawing.Size(51, 20);
+            this.LblMensagem.Size = new System.Drawing.Size(54, 21);
             this.LblMensagem.TabIndex = 25;
             this.LblMensagem.Text = "label2";
             // 
@@ -66,7 +66,7 @@
             this.GNBtnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GNBtnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.GNBtnCancelar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.GNBtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.GNBtnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNBtnCancelar.ForeColor = System.Drawing.Color.White;
             this.GNBtnCancelar.Image = global::FlowValmet.Properties.Resources.cancelar;
             this.GNBtnCancelar.Location = new System.Drawing.Point(264, 135);
@@ -87,7 +87,7 @@
             this.GNBtnAtualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GNBtnAtualizar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(110)))), ((int)(((byte)(253)))));
             this.GNBtnAtualizar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(110)))), ((int)(((byte)(253)))));
-            this.GNBtnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.GNBtnAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNBtnAtualizar.ForeColor = System.Drawing.Color.White;
             this.GNBtnAtualizar.Image = global::FlowValmet.Properties.Resources.limpar_limpo;
             this.GNBtnAtualizar.Location = new System.Drawing.Point(138, 135);
@@ -107,7 +107,7 @@
             this.GnBtnDeletar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GnBtnDeletar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.GnBtnDeletar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.GnBtnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.GnBtnDeletar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GnBtnDeletar.ForeColor = System.Drawing.Color.White;
             this.GnBtnDeletar.Image = global::FlowValmet.Properties.Resources.lixeira;
             this.GnBtnDeletar.Location = new System.Drawing.Point(9, 135);

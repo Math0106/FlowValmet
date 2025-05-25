@@ -41,6 +41,7 @@
             this.GNCbxUser = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GNCbxAdim = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.TxtSetor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.picture2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.TxtSenha = new Guna.UI2.WinForms.Guna2TextBox();
             this.BtnLimpar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TxtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +50,11 @@
             this.BtnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.picture2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvUsuario)).BeginInit();
@@ -66,9 +71,9 @@
             this.panel2.Controls.Add(this.guna2Panel1);
             this.panel2.Controls.Add(this.guna2Panel2);
             this.panel2.FillColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(120, 145);
+            this.panel2.Location = new System.Drawing.Point(142, 148);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1142, 611);
+            this.panel2.Size = new System.Drawing.Size(1098, 605);
             this.panel2.TabIndex = 1;
             // 
             // guna2Panel1
@@ -79,7 +84,7 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.GNDgvUsuario);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(590, 21);
+            this.guna2Panel1.Location = new System.Drawing.Point(551, 21);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(532, 566);
             this.guna2Panel1.TabIndex = 32;
@@ -101,6 +106,12 @@
             this.GNDgvUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.GNDgvUsuario.ColumnHeadersHeight = 4;
             this.GNDgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GNDgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.perfil,
+            this.email,
+            this.usuario_nome,
+            this.setor});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,7 +127,7 @@
             this.GNDgvUsuario.RowHeadersVisible = false;
             this.GNDgvUsuario.RowHeadersWidth = 49;
             this.GNDgvUsuario.RowTemplate.Height = 24;
-            this.GNDgvUsuario.Size = new System.Drawing.Size(498, 530);
+            this.GNDgvUsuario.Size = new System.Drawing.Size(499, 530);
             this.GNDgvUsuario.TabIndex = 32;
             this.GNDgvUsuario.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.GNDgvUsuario.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -161,7 +172,7 @@
             this.guna2Panel2.Controls.Add(this.TxtEmail);
             this.guna2Panel2.Controls.Add(this.BtnRegistrar);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(27, 21);
+            this.guna2Panel2.Location = new System.Drawing.Point(15, 21);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(532, 566);
             this.guna2Panel2.TabIndex = 31;
@@ -169,27 +180,30 @@
             // GNLblUsuarioId
             // 
             this.GNLblUsuarioId.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblUsuarioId.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNLblUsuarioId.Location = new System.Drawing.Point(25, 213);
             this.GNLblUsuarioId.Name = "GNLblUsuarioId";
-            this.GNLblUsuarioId.Size = new System.Drawing.Size(12, 18);
+            this.GNLblUsuarioId.Size = new System.Drawing.Size(12, 21);
             this.GNLblUsuarioId.TabIndex = 33;
             this.GNLblUsuarioId.Text = "...";
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(312, 376);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(312, 374);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(32, 18);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(31, 21);
             this.guna2HtmlLabel6.TabIndex = 24;
             this.guna2HtmlLabel6.Text = "User";
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(312, 350);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(312, 348);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(89, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(96, 21);
             this.guna2HtmlLabel5.TabIndex = 23;
             this.guna2HtmlLabel5.Text = "Adiministrador";
             // 
@@ -241,7 +255,7 @@
             this.TxtSetor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtSetor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtSetor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtSetor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtSetor.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtSetor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtSetor.Location = new System.Drawing.Point(274, 294);
             this.TxtSetor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -250,6 +264,19 @@
             this.TxtSetor.SelectedText = "";
             this.TxtSetor.Size = new System.Drawing.Size(247, 48);
             this.TxtSetor.TabIndex = 20;
+            // 
+            // picture2
+            // 
+            this.picture2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picture2.Image = global::FlowValmet.Properties.Resources.profile;
+            this.picture2.ImageRotate = 0F;
+            this.picture2.Location = new System.Drawing.Point(167, 20);
+            this.picture2.Name = "picture2";
+            this.picture2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picture2.Size = new System.Drawing.Size(200, 200);
+            this.picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture2.TabIndex = 19;
+            this.picture2.TabStop = false;
             // 
             // TxtSenha
             // 
@@ -263,13 +290,14 @@
             this.TxtSenha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtSenha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtSenha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtSenha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtSenha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtSenha.IconLeftSize = new System.Drawing.Size(18, 18);
             this.TxtSenha.IconRightSize = new System.Drawing.Size(15, 15);
             this.TxtSenha.Location = new System.Drawing.Point(16, 350);
             this.TxtSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxtSenha.Name = "TxtSenha";
+            this.TxtSenha.PasswordChar = '*';
             this.TxtSenha.PlaceholderText = "Senha";
             this.TxtSenha.SelectedText = "";
             this.TxtSenha.Size = new System.Drawing.Size(247, 48);
@@ -307,7 +335,7 @@
             this.TxtUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUsuario.Location = new System.Drawing.Point(16, 294);
             this.TxtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -349,7 +377,7 @@
             this.TxtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtEmail.Location = new System.Drawing.Point(16, 238);
             this.TxtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -397,18 +425,40 @@
             this.guna2HtmlLabel1.TabIndex = 24;
             this.guna2HtmlLabel1.Text = "User";
             // 
-            // picture2
+            // id
             // 
-            this.picture2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picture2.Image = global::FlowValmet.Properties.Resources.profile;
-            this.picture2.ImageRotate = 0F;
-            this.picture2.Location = new System.Drawing.Point(167, 20);
-            this.picture2.Name = "picture2";
-            this.picture2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picture2.Size = new System.Drawing.Size(200, 200);
-            this.picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picture2.TabIndex = 19;
-            this.picture2.TabStop = false;
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "Perfil";
+            this.perfil.MinimumWidth = 6;
+            this.perfil.Name = "perfil";
+            this.perfil.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // usuario_nome
+            // 
+            this.usuario_nome.HeaderText = "Usuario";
+            this.usuario_nome.MinimumWidth = 6;
+            this.usuario_nome.Name = "usuario_nome";
+            this.usuario_nome.ReadOnly = true;
+            // 
+            // setor
+            // 
+            this.setor.HeaderText = "Setor";
+            this.setor.MinimumWidth = 6;
+            this.setor.Name = "setor";
+            this.setor.ReadOnly = true;
             // 
             // CadastroUsuarioGUS
             // 
@@ -451,5 +501,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLblUsuarioId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario_nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn setor;
     }
 }

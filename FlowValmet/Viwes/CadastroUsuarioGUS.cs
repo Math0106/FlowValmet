@@ -15,6 +15,7 @@ namespace FlowValmet.Viwes
     {
 
         ControleUsuario Usuario = new ControleUsuario();
+        DesingDataGridView DesingDataGridView = new DesingDataGridView();
         public CadastroUsuarioGUS()
         {
             InitializeComponent();
@@ -71,29 +72,44 @@ namespace FlowValmet.Viwes
             GNCbxUser.Checked = false;
             BtnRegistrar.Enabled = true;
             BtnAtualizar.Enabled = false;
-            GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
+            DesingDataGridView.DesignGunaDataGrid(GNDgvUsuario);
+            CarregarUsuario();
+            //GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
             GNDgvUsuario.ClearSelection();
         }
+        public void CarregarUsuario()
+        {
+            try
+            {
+                var listaDados = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
 
-        //public static string GerarHashSHA256(string input)
-        //{
-        //    using (SHA256 sha256Hash = SHA256.Create())
-        //    {
-        //        // Converte a string para array de bytes e calcula o hash
-        //        byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                // Limpa dados existentes (opcional)
+                GNDgvUsuario.Rows.Clear();
 
-        //        // Converte o array de bytes para string hexadecimal
-        //        StringBuilder builder = new StringBuilder();
-        //        for (int i = 0; i < bytes.Length; i++)
-        //        {
-        //            builder.Append(bytes[i].ToString("x2")); // "x2" formata para hexadecimal
-        //        }
+                // Verifica se há dados
+                if (listaDados != null && listaDados.Any())
+                {
+                    foreach (var tupla in listaDados)
+                    {
+                            int rowIndex = GNDgvUsuario.Rows.Add();
 
-        //        return builder.ToString();
-        //    }
-        //}
+                            // Preenche cada célula com os elementos da tupla
+                            GNDgvUsuario.Rows[rowIndex].Cells["id"].Value = tupla.Item1; // string
+                            GNDgvUsuario.Rows[rowIndex].Cells["usuario_nome"].Value = tupla.Item2; // string
+                            GNDgvUsuario.Rows[rowIndex].Cells["email"].Value = tupla.Item3; // string
+                            GNDgvUsuario.Rows[rowIndex].Cells["setor"].Value = tupla.Item4; // DateTime
+                            GNDgvUsuario.Rows[rowIndex].Cells["perfil"].Value = tupla.Item5; // DateTime
+
+                    }
+                }
 
 
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao carregar as ordens!");
+            }
+        }
 
         private void GnCbxUser_Click(object sender, EventArgs e)
         {

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNlabelIdAtualizar = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,14 +62,14 @@
             this.GNPanelCadastroOP.FillColor2 = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCadastroOP.FillColor3 = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCadastroOP.FillColor4 = System.Drawing.Color.WhiteSmoke;
-            this.GNPanelCadastroOP.Location = new System.Drawing.Point(109, 72);
+            this.GNPanelCadastroOP.Location = new System.Drawing.Point(145, 112);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
-            this.GNPanelCadastroOP.Size = new System.Drawing.Size(1200, 800);
+            this.GNPanelCadastroOP.Size = new System.Drawing.Size(1129, 721);
             this.GNPanelCadastroOP.TabIndex = 2;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
@@ -85,7 +85,7 @@
             this.guna2Panel2.Controls.Add(this.Txtdesenho);
             this.guna2Panel2.Controls.Add(this.TxtDescricao);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel2.Location = new System.Drawing.Point(46, 34);
+            this.guna2Panel2.Location = new System.Drawing.Point(18, 16);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(357, 579);
             this.guna2Panel2.TabIndex = 33;
@@ -93,9 +93,10 @@
             // GNlabelIdAtualizar
             // 
             this.GNlabelIdAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.GNlabelIdAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNlabelIdAtualizar.Location = new System.Drawing.Point(27, 9);
             this.GNlabelIdAtualizar.Name = "GNlabelIdAtualizar";
-            this.GNlabelIdAtualizar.Size = new System.Drawing.Size(12, 18);
+            this.GNlabelIdAtualizar.Size = new System.Drawing.Size(12, 21);
             this.GNlabelIdAtualizar.TabIndex = 32;
             this.GNlabelIdAtualizar.Text = "...";
             // 
@@ -103,10 +104,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(44, 302);
+            this.label2.Location = new System.Drawing.Point(32, 297);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 16);
+            this.label2.Size = new System.Drawing.Size(125, 21);
             this.label2.TabIndex = 31;
             this.label2.Text = "Data da Entrega";
             // 
@@ -136,7 +138,7 @@
             this.GNDatePikerEntregaOP.BorderRadius = 20;
             this.GNDatePikerEntregaOP.Checked = true;
             this.GNDatePikerEntregaOP.FillColor = System.Drawing.Color.Teal;
-            this.GNDatePikerEntregaOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDatePikerEntregaOP.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNDatePikerEntregaOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.GNDatePikerEntregaOP.Location = new System.Drawing.Point(27, 321);
             this.GNDatePikerEntregaOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -150,10 +152,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(44, 220);
+            this.label1.Location = new System.Drawing.Point(32, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.Size = new System.Drawing.Size(87, 21);
             this.label1.TabIndex = 30;
             this.label1.Text = "Data Inicio";
             // 
@@ -163,7 +166,7 @@
             this.GNDatePikerInicioOP.BorderRadius = 20;
             this.GNDatePikerInicioOP.Checked = true;
             this.GNDatePikerInicioOP.FillColor = System.Drawing.Color.Teal;
-            this.GNDatePikerInicioOP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNDatePikerInicioOP.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.GNDatePikerInicioOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.GNDatePikerInicioOP.Location = new System.Drawing.Point(27, 239);
             this.GNDatePikerInicioOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -225,7 +228,7 @@
             this.TxtNumeroOp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtNumeroOp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtNumeroOp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtNumeroOp.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtNumeroOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtNumeroOp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtNumeroOp.Location = new System.Drawing.Point(27, 34);
             this.TxtNumeroOp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -247,7 +250,7 @@
             this.Txtdesenho.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Txtdesenho.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Txtdesenho.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Txtdesenho.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Txtdesenho.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.Txtdesenho.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Txtdesenho.Location = new System.Drawing.Point(27, 146);
             this.Txtdesenho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -269,7 +272,7 @@
             this.TxtDescricao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtDescricao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtDescricao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtDescricao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtDescricao.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.TxtDescricao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtDescricao.Location = new System.Drawing.Point(27, 90);
             this.TxtDescricao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -281,44 +284,44 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.GnDvgOp);
             this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(433, 34);
+            this.guna2Panel1.Location = new System.Drawing.Point(381, 16);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(736, 717);
+            this.guna2Panel1.Size = new System.Drawing.Size(730, 687);
             this.guna2Panel1.TabIndex = 34;
             // 
             // GnDvgOp
             // 
             this.GnDvgOp.AllowUserToAddRows = false;
             this.GnDvgOp.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.GnDvgOp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.GnDvgOp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GnDvgOp.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GnDvgOp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GnDvgOp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GnDvgOp.ColumnHeadersHeight = 4;
             this.GnDvgOp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GnDvgOp.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GnDvgOp.DefaultCellStyle = dataGridViewCellStyle3;
             this.GnDvgOp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.GnDvgOp.Location = new System.Drawing.Point(21, 34);
+            this.GnDvgOp.Location = new System.Drawing.Point(17, 19);
             this.GnDvgOp.Name = "GnDvgOp";
             this.GnDvgOp.ReadOnly = true;
             this.GnDvgOp.RowHeadersVisible = false;

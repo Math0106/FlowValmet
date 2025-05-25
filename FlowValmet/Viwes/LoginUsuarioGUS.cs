@@ -45,6 +45,7 @@ namespace FlowValmet.Viwes
             if (string.IsNullOrEmpty(nomeUsuario) || string.IsNullOrEmpty(senha))
             {
                 Lblstatus.ForeColor = Color.Red;
+                Lblstatus.BackColor = Color.WhiteSmoke;
                 Lblstatus.Text = "Por favor, preencha todos os campos!";
                 //MessageBox.Show("Por favor, preencha todos os campos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
