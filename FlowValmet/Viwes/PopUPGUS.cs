@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iText.Kernel.Validation.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,25 @@ namespace FlowValmet.Viwes
             public PopUPGUS(string titulo, string message)
             {
                 InitializeComponent();
-                LblMensagem.Text = message;
+
+            // Botão Deletar (vermelho)
+            GnBtnDeletar.BackColor = Color.WhiteSmoke; // Vermelho
+            GnBtnDeletar.FillColor = Color.FromArgb(220, 53, 69); // Vermelho
+            GnBtnDeletar.ForeColor = Color.White;
+            GnBtnDeletar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            // Botão Atualizar (azul)
+            GNBtnAtualizar.BackColor = Color.WhiteSmoke; // Azul
+            GNBtnAtualizar.FillColor = Color.FromArgb(13, 110, 253); // Azul
+            GNBtnAtualizar.ForeColor = Color.White;
+            GNBtnAtualizar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            // Botão Cancelar (cinza)
+            GNBtnCancelar.BackColor = Color.WhiteSmoke;
+            GNBtnCancelar.FillColor = Color.FromArgb(108, 117, 125); // Cinza
+            GNBtnCancelar.ForeColor = Color.White;
+            GNBtnCancelar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            LblMensagem.Text = message;
                 LblTitulo.Text = titulo;
             }
 
@@ -50,5 +69,7 @@ namespace FlowValmet.Viwes
             Result = CustomDialogResult.Cancelar;
             this.Close();
         }
+
+
     }
 }

@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.TxtSigla = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TxtLinhaProdução = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.CbxCor = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.TxtLinhaProdução = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TxtSigla = new Guna.UI2.WinForms.Guna2TextBox();
             this.PanelCores = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNDataGridLinhasCadastradaLinhaP = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -62,50 +62,6 @@
             this.panel2.Size = new System.Drawing.Size(1000, 800);
             this.panel2.TabIndex = 2;
             // 
-            // TxtSigla
-            // 
-            this.TxtSigla.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtSigla.BorderColor = System.Drawing.Color.Teal;
-            this.TxtSigla.BorderRadius = 20;
-            this.TxtSigla.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtSigla.DefaultText = "";
-            this.TxtSigla.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TxtSigla.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TxtSigla.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtSigla.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtSigla.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtSigla.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TxtSigla.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtSigla.Location = new System.Drawing.Point(20, 147);
-            this.TxtSigla.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtSigla.Name = "TxtSigla";
-            this.TxtSigla.PlaceholderText = "Sigla";
-            this.TxtSigla.SelectedText = "";
-            this.TxtSigla.Size = new System.Drawing.Size(290, 48);
-            this.TxtSigla.TabIndex = 21;
-            // 
-            // TxtLinhaProdução
-            // 
-            this.TxtLinhaProdução.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TxtLinhaProdução.BorderColor = System.Drawing.Color.Teal;
-            this.TxtLinhaProdução.BorderRadius = 20;
-            this.TxtLinhaProdução.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtLinhaProdução.DefaultText = "";
-            this.TxtLinhaProdução.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TxtLinhaProdução.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TxtLinhaProdução.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtLinhaProdução.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtLinhaProdução.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtLinhaProdução.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TxtLinhaProdução.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtLinhaProdução.Location = new System.Drawing.Point(20, 19);
-            this.TxtLinhaProdução.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtLinhaProdução.Name = "TxtLinhaProdução";
-            this.TxtLinhaProdução.PlaceholderText = "Linha de Produção";
-            this.TxtLinhaProdução.SelectedText = "";
-            this.TxtLinhaProdução.Size = new System.Drawing.Size(290, 48);
-            this.TxtLinhaProdução.TabIndex = 1;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -124,6 +80,17 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(332, 320);
             this.guna2Panel2.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label2.Location = new System.Drawing.Point(29, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Cor";
             // 
             // CbxCor
             // 
@@ -158,6 +125,50 @@
             this.CbxCor.Size = new System.Drawing.Size(244, 36);
             this.CbxCor.TabIndex = 26;
             this.CbxCor.SelectedIndexChanged += new System.EventHandler(this.CbxCor_SelectedIndexChanged);
+            // 
+            // TxtLinhaProdução
+            // 
+            this.TxtLinhaProdução.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TxtLinhaProdução.BorderColor = System.Drawing.Color.Teal;
+            this.TxtLinhaProdução.BorderRadius = 20;
+            this.TxtLinhaProdução.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtLinhaProdução.DefaultText = "";
+            this.TxtLinhaProdução.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtLinhaProdução.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtLinhaProdução.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtLinhaProdução.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtLinhaProdução.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtLinhaProdução.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtLinhaProdução.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtLinhaProdução.Location = new System.Drawing.Point(20, 19);
+            this.TxtLinhaProdução.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtLinhaProdução.Name = "TxtLinhaProdução";
+            this.TxtLinhaProdução.PlaceholderText = "Linha de Produção";
+            this.TxtLinhaProdução.SelectedText = "";
+            this.TxtLinhaProdução.Size = new System.Drawing.Size(290, 48);
+            this.TxtLinhaProdução.TabIndex = 1;
+            // 
+            // TxtSigla
+            // 
+            this.TxtSigla.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TxtSigla.BorderColor = System.Drawing.Color.Teal;
+            this.TxtSigla.BorderRadius = 20;
+            this.TxtSigla.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtSigla.DefaultText = "";
+            this.TxtSigla.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtSigla.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtSigla.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtSigla.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtSigla.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtSigla.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtSigla.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtSigla.Location = new System.Drawing.Point(20, 147);
+            this.TxtSigla.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtSigla.Name = "TxtSigla";
+            this.TxtSigla.PlaceholderText = "Sigla";
+            this.TxtSigla.SelectedText = "";
+            this.TxtSigla.Size = new System.Drawing.Size(290, 48);
+            this.TxtSigla.TabIndex = 21;
             // 
             // PanelCores
             // 
@@ -227,30 +238,30 @@
             // 
             this.GNDataGridLinhasCadastradaLinhaP.AllowUserToAddRows = false;
             this.GNDataGridLinhasCadastradaLinhaP.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.GNDataGridLinhasCadastradaLinhaP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.GNDataGridLinhasCadastradaLinhaP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GNDataGridLinhasCadastradaLinhaP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNDataGridLinhasCadastradaLinhaP.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersHeight = 4;
             this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GNDataGridLinhasCadastradaLinhaP.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GNDataGridLinhasCadastradaLinhaP.DefaultCellStyle = dataGridViewCellStyle6;
             this.GNDataGridLinhasCadastradaLinhaP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDataGridLinhasCadastradaLinhaP.Location = new System.Drawing.Point(20, 19);
             this.GNDataGridLinhasCadastradaLinhaP.Name = "GNDataGridLinhasCadastradaLinhaP";
@@ -283,22 +294,11 @@
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDataGridLinhasCadastradaLinhaP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDataGridLinhasCadastradaLinhaP_CellContentClick_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(29, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Cor";
-            // 
             // CadastroLinhaGUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(171)))), ((int)(((byte)(167)))));
             this.ClientSize = new System.Drawing.Size(1400, 900);
             this.Controls.Add(this.panel2);
             this.Name = "CadastroLinhaGUS";

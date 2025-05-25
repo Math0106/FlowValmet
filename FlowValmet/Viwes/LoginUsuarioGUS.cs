@@ -20,6 +20,8 @@ namespace FlowValmet.Viwes
           {
            InitializeComponent();
            LimparCampos();
+            TxtSenha.Text = "Matheus";
+            TxtUsuario.Text = "Matheus";
           }
 
 
@@ -34,6 +36,7 @@ namespace FlowValmet.Viwes
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+
             // Obter os valores dos campos de entrada
             string nomeUsuario = TxtUsuario.Text.Trim();
             string senha = TxtSenha.Text;
@@ -61,6 +64,7 @@ namespace FlowValmet.Viwes
                     SessaoUsuario.Nome = usuario.Nome;
                     SessaoUsuario.Perfil = usuario.Perfil;
                     SessaoUsuario.Setor = usuario.Setor;
+                    SessaoUsuario.Email = usuario.Email;
 
 
                     // 2. Obter referência da tela principal
@@ -76,6 +80,8 @@ namespace FlowValmet.Viwes
                         telaPrincipal.ResetarTelaPrincpal();
                     }
                     LimparCampos();
+                    
+                    
 
                 }
                 else
@@ -93,6 +99,8 @@ namespace FlowValmet.Viwes
                 Lblstatus.Text = "Erro ao tentar fazer login!";
             }
         }
+
+   
     }
     
 }

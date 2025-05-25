@@ -189,7 +189,7 @@ namespace FlowValmet.Controllers
         }
 
         // Método auxiliar para obter informações do usuário (opcional)
-       public  Usuario ObterUsuarioPorNome(string nome)
+       public Usuario ObterUsuarioPorNome(string nome)
         {
             using (var conexao = Conexao.Conectar())
             {

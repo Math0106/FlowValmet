@@ -211,9 +211,25 @@ namespace FlowValmet.Viwes
             }
         }
 
+
+        public void LimparCampos()
+        {
+            GNCbxOps.Enabled = true;
+            GNCheckboxTravarVinculoOp.Checked = false;
+            GnCbxProcessos.SelectedIndex = -1;
+            GNCbxOps.SelectedIndex = -1;
+            GNDtpDataInicio.Value = DateTime.Today;
+            GNDtpDataFim.Value = DateTime.Today;
+            GNDgvVinculado.Rows.Clear();    
+        }
         private void GNPanelCadastroOP_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void GnBtnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }

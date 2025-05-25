@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.BackgroundImage = global::FlowValmet.Properties.Resources.Lake_mountains_forest_pine_Nature_Photo_HD_Wallpaper_1366x768;
+            //this.BackgroundImage = global::FlowValmet.Properties.Resources.Lake_mountains_forest_pine_Nature_Photo_HD_Wallpaper_1366x768;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1418, 945);
             this.Controls.Add(this.guna2Panel1);

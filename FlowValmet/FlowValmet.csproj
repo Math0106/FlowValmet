@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -129,6 +131,14 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Microsoft.Vbe.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.3.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
@@ -140,6 +150,10 @@
     </Reference>
     <Reference Include="Npgsql, Version=4.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.1.9\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Interop.15.0.1\lib\net452\Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.13.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -233,8 +247,11 @@
     <Compile Include="Controllers\ControleUsuario.cs" />
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
     <Compile Include="Controllers\ConverterResx.cs" />
+    <Compile Include="Controllers\ExportarExcel.cs" />
     <Compile Include="Controllers\ExportarPDF.cs" />
     <Compile Include="Models\Lembrete.cs" />
+    <Compile Include="Models\LinhaProducao.cs" />
+    <Compile Include="Models\OrdemProducao.cs" />
     <Compile Include="Models\SessaoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
@@ -243,6 +260,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\AnaliseOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\AnaliseOp.Designer.cs">
+      <DependentUpon>AnaliseOp.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\CadastroLinhaGUS.cs">
       <SubType>Form</SubType>
@@ -327,6 +350,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\AnaliseOp.resx">
+      <DependentUpon>AnaliseOp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaGUS.resx">
       <DependentUpon>CadastroLinhaGUS.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +418,13 @@
     <Content Include="Imagem\password icon.png" />
     <Content Include="Imagem\profile.png" />
     <Content Include="Imagem\valmet logo.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\limpar-limpo.png" />
+    <None Include="Resources\lixeira1.png" />
+    <None Include="Resources\iconeLixeira.png" />
+    <None Include="Resources\LogoValmet.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\valmet logo1.png" />
     <None Include="Resources\Lake_mountains_forest_pine-Nature_Photo_HD_Wallpaper_1366x768.jpg" />
     <None Include="Resources\ChatGPT Image 3 de mai. de 2025, 14_03_48.png" />
     <None Include="Resources\pexels-souvenirpixels-417074.jpg" />
@@ -404,4 +437,11 @@
     <None Include="Resources\ChatGPT Image 4 de mai. de 2025, 14_03_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets" Condition="Exists('..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ExcelDna.Interop.15.0.1\build\ExcelDna.Interop.targets'))" />
+  </Target>
 </Project>

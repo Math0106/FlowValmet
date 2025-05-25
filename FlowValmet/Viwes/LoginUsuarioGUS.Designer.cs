@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.linkLabelRecuperarSenha = new System.Windows.Forms.LinkLabel();
             this.LabelLembrar = new System.Windows.Forms.Label();
             this.tgglSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -40,11 +37,18 @@
             this.TxtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.Lblstatus = new System.Windows.Forms.Label();
+            this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -54,8 +58,8 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel1.Controls.Add(this.Picture);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel1.Controls.Add(this.linkLabelRecuperarSenha);
             this.guna2Panel1.Controls.Add(this.LabelLembrar);
             this.guna2Panel1.Controls.Add(this.tgglSwitch);
@@ -63,43 +67,12 @@
             this.guna2Panel1.Controls.Add(this.TxtSenha);
             this.guna2Panel1.Controls.Add(this.TxtUsuario);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
+            this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel1.Location = new System.Drawing.Point(209, 72);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1000, 800);
             this.guna2Panel1.TabIndex = 1;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(464, 12);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(216, 53);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 24;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(575, -58);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(760, 911);
-            this.guna2CirclePictureBox1.TabIndex = 34;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // Picture
-            // 
-            this.Picture.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Picture.ImageRotate = 0F;
-            this.Picture.Location = new System.Drawing.Point(196, 196);
-            this.Picture.Name = "Picture";
-            this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Picture.Size = new System.Drawing.Size(229, 188);
-            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Picture.TabIndex = 29;
-            this.Picture.TabStop = false;
             // 
             // linkLabelRecuperarSenha
             // 
@@ -215,11 +188,12 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.Lblstatus);
+            this.guna2Panel2.Controls.Add(this.Picture);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Location = new System.Drawing.Point(170, 169);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -234,11 +208,76 @@
             this.Lblstatus.Size = new System.Drawing.Size(0, 16);
             this.Lblstatus.TabIndex = 0;
             // 
+            // Picture
+            // 
+            this.Picture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Picture.Image = global::FlowValmet.Properties.Resources.profile;
+            this.Picture.ImageRotate = 0F;
+            this.Picture.Location = new System.Drawing.Point(32, 27);
+            this.Picture.Name = "Picture";
+            this.Picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Picture.Size = new System.Drawing.Size(200, 200);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Picture.TabIndex = 29;
+            this.Picture.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2PictureBox1.Image = global::FlowValmet.Properties.Resources.valmet_logo;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = null;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(770, 186);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(230, 431);
+            this.guna2PictureBox1.TabIndex = 33;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2PictureBox2.Image = global::FlowValmet.Properties.Resources.valmet_logo;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.InitialImage = null;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(534, 186);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(230, 431);
+            this.guna2PictureBox2.TabIndex = 34;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2PictureBox3.Image = global::FlowValmet.Properties.Resources.valmet_logo;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.InitialImage = null;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(298, 186);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(230, 431);
+            this.guna2PictureBox3.TabIndex = 35;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2PictureBox4.Image = global::FlowValmet.Properties.Resources.valmet_logo;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.InitialImage = null;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(-66, 196);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(230, 431);
+            this.guna2PictureBox4.TabIndex = 36;
+            this.guna2PictureBox4.TabStop = false;
+            // 
             // LoginUsuarioGUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(171)))), ((int)(((byte)(167)))));
             this.ClientSize = new System.Drawing.Size(1418, 945);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "LoginUsuarioGUS";
@@ -246,11 +285,13 @@
             this.Text = "LoginUsuarioGUS";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,13 +302,15 @@
         private System.Windows.Forms.LinkLabel linkLabelRecuperarSenha;
         private System.Windows.Forms.Label LabelLembrar;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tgglSwitch;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2GradientButton BtnLogin;
         private Guna.UI2.WinForms.Guna2TextBox TxtSenha;
         private Guna.UI2.WinForms.Guna2TextBox TxtUsuario;
         private Guna.UI2.WinForms.Guna2CirclePictureBox Picture;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label Lblstatus;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
     }
 }
