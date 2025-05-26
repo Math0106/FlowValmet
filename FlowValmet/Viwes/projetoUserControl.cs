@@ -12,6 +12,7 @@ using FlowValmet.Controllers;
 using MySqlX.XDevAPI;
 using Guna.UI2.WinForms;
 
+
 namespace FlowValmet.Viwes
 {
     public partial class projetoUserControl : UserControl
@@ -21,121 +22,134 @@ namespace FlowValmet.Viwes
             InitializeComponent();
         }
 
-
         #region propriedades
 
         private int _pri;
         private string _BU;
         private string _PCs;
-        private string _Res;
+      
         private int _Cliente;
         private string _Item;
         private DateTime _DataEntrega;
         private DateTime _DataReprogramada;
         private decimal _Custos;
         private int _Semana;
-        private DateTimePicker dateTimePicker; //
+        private string _res;
 
-        public void MeuControle()
-        {
-            dateTimePicker = new DateTimePicker();
-            this.Controls.Add(dateTimePicker);
-        }
         [Category("Custom Pro")]
         public int Prioridade
         {
-            get { return _pri; }
+            get => _pri;
             set { _pri = value; PrioridadeTxt.Text = value.ToString(); }
         }
+
         [Category("Custom Pro")]
         public string BU
         {
-            get { return _BU; }
-            set {_BU = value; BuTXT.Text =  value.ToString(); }
+            get => _BU;
+            set { _BU = value ?? string.Empty; BuTXT.Text = value; }
         }
+
         [Category("Custom Pro")]
         public string PCs
         {
-            get { return _PCs; }
-            set { _PCs = value; PCsTxt.Text = value.ToString(); ; }
+            get => _PCs;
+            set { _PCs = value ?? string.Empty; PCsTxt.Text = value; }
         }
+
         [Category("Custom Pro")]
         public int Cliente
         {
-            get { return _Cliente; }
-            set { _Cliente = value; ClienteTxt.Text = value.ToString(); ; }
+            get => _Cliente;
+            set { _Cliente = value; ClienteTxt.Text = value.ToString(); }
         }
+
         [Category("Custom Pro")]
         public string Item
         {
-            get { return _Item; }
-            set { _Item = value; ItemTxt.Text = value.ToString(); ; }
+            get => _Item;
+            set { _Item = value ?? string.Empty; ItemTxt.Text = value; }
         }
+
         [Category("Custom Pro")]
         public DateTime DataEntrega
         {
-            get { return _DataEntrega; }
-            set
-            {
-                _DataEntrega = value;
-                DataPrazoSelected.Value = value; // Atualiza o DateTimePicker corretamente
-            }
+            get => _DataEntrega;
+            set { _DataEntrega = value; DataPrazoSelected.Value = value; }
         }
 
         [Category("Custom Pro")]
         public DateTime DataReprogramadaC
         {
-            get { return _DataReprogramada; }
-            set { 
-                _DataReprogramada = value; 
-                DataReproSelected.Value = value; 
-            }
+            get => _DataReprogramada;
+            set { _DataReprogramada = value; DataReproSelected.Value = value; }
+        }
 
-        }
         [Category("Custom Pro")]
-        public Decimal Custo
+        public decimal Custo
         {
-            get { return _Custos; }
-            set { _Custos = value; CustoTxt.Text = value.ToString(); }
+            get => _Custos;
+            set { _Custos = value; CustoTxt.Text = "R$: " + value.ToString("N2"); }
         }
+
+        [Category("Custom Pro")]
+        public string Responsavel
+        {
+            get => _res;
+            set { _res = value ?? string.Empty; Restxt.Text = value; }
+        }
+
         [Category("Custom Pro")]
         public int Semana
         {
-            get { return _Semana; }
+            get => _Semana;
             set { _Semana = value; SemanaTxt.Text = value.ToString(); }
         }
-        [Category("Custom Pro")]
-        public String Res
-        {
-            get { return _Res; }
-            set { _Res = value; Restxt.Text = value.ToString(); }
-        }
+
         #endregion
 
-        public void DetailsC(Projeto p)
+        public void LoadProjetoDetails(Projeto projeto)
         {
+            if (projeto == null)
+            {
+                throw new ArgumentNullException(nameof(projeto), "O objeto Projeto não pode ser nulo");
+            }
 
-            Prioridade = p.Pri;
-            BU = p.BU;
-            PCs = p.PCs;
-            Res = p.Res;
-            Semana = p.Semana;
-            Custo = p.Custo;
-            Cliente = p.Cliente;
-            Item = p.Item;
-            DateTime dataPrazo = (DateTime)p.DataPrazo;
-            DataEntrega = dataPrazo;
-            DateTime DataReprogramada = (DateTime)p.DataReprogramada;
-            DataReprogramadaC = DataReprogramada;
-            Custo = p.Custo;
+            try
+            {
+                // Atribuições básicas
+                Prioridade = projeto.Pri;
+                BU = projeto.BU;
+                PCs = projeto.PCs;
+                Responsavel = projeto.Res;  // Garantido pelo setter que trata nulos
+                Semana = projeto.Semana;
+                Custo =  projeto.Custo;
+                Cliente = projeto.Cliente;
+                Item = projeto.Item;
 
+                // Atribuições de datas com verificação
+                if (projeto.DataPrazo != null)
+                {
+                    DataEntrega = projeto.DataPrazo.Value;
+                }
 
+                if (projeto.DataReprogramada != null)
+                {
+                    DataReprogramadaC = projeto.DataReprogramada.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar detalhes do projeto: {ex.Message}",
+                              "Erro",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
         }
+
         private void projetoUserControl_Load(object sender, EventArgs e)
         {
-            
+            // Inicialização adicional se necessário
         }
-
-      
     }
 }

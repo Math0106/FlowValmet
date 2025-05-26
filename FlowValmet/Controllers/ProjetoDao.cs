@@ -14,44 +14,7 @@ namespace FlowValmet.Controllers
         public static List<Projeto> list = new List<Projeto>();
         ConexaoAcess conexaoBanco = new ConexaoAcess();
 
-        #region CadastrarProjeto
-        public void CadastrarProjeto(Projeto obj)
-        {
-            try
-            {
-                string sql = @"INSERT INTO projeto 
-                            (Pri, BU, PCs, Cliente, Item, DataPrazo, DataReprogramada, Res, Custo, Semana) 
-                            VALUES 
-                            (@Pri, @BU, @PCs, @Cliente, @Item, @DataPrazo, @DataReprogramada, @Res, @Custo, @Semana);
-                            SELECT LAST_INSERT_ID();";
-
-                using (MySqlConnection conexao = conexaoBanco.Conectar())
-                {
-                    conexao.Open();
-
-                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
-                    {
-                        cmd.Parameters.AddWithValue("@Pri", obj.Pri);
-                        cmd.Parameters.AddWithValue("@BU", obj.BU ?? string.Empty);
-                        cmd.Parameters.AddWithValue("@PCs", obj.PCs ?? string.Empty);
-                        cmd.Parameters.AddWithValue("@Cliente", obj.Cliente);
-                        cmd.Parameters.AddWithValue("@Item", obj.Item ?? string.Empty);
-                        cmd.Parameters.AddWithValue("@DataPrazo", obj.DataPrazo.HasValue ? (object)obj.DataPrazo.Value : DBNull.Value);
-                        cmd.Parameters.AddWithValue("@DataReprogramada", obj.DataReprogramada.HasValue ? (object)obj.DataReprogramada.Value : DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Res", obj.Res ?? string.Empty);
-                        cmd.Parameters.AddWithValue("@Custo", obj.Custo);
-                        cmd.Parameters.AddWithValue("@Semana", obj.Semana);
-
-                        obj.id_projeto = Convert.ToInt32(cmd.ExecuteScalar());
-                    }
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro ao cadastrar projeto: " + erro.Message);
-            }
-        }
-        #endregion
+       
 
         #region GetAllProjetos
         public List<Projeto> GetAllProjetos()
@@ -82,15 +45,19 @@ namespace FlowValmet.Controllers
                                     Item = reader["Item"].ToString(),
                                     DataPrazo = reader.IsDBNull(reader.GetOrdinal("DataPrazo")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("DataPrazo")),
                                     DataReprogramada = reader.IsDBNull(reader.GetOrdinal("DataReprogramada")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("DataReprogramada")),
-                                    Res = reader["Res"].ToString(),
-                                    Custo = reader.GetDecimal("Custo"),
-                                    Semana = Convert.ToInt32(reader["Semana"])
+                                    Res = reader.IsDBNull(reader.GetOrdinal("Res")) ? string.Empty : reader["Res"].ToString(),
+                                    Custo = reader.GetDecimal(reader.GetOrdinal("Custo")),
+                                    Semana = reader.IsDBNull(reader.GetOrdinal("Semana")) ? 0 : Convert.ToInt32(reader["Semana"])
                                 };
-
+                                //MessageBox.Show("Res: " + projeto.Res);
+                                //MessageBox.Show("Custo: " + projeto.Custo);
+                                //MessageBox.Show("Semana: " + projeto.Semana);
                                 projetos.Add(projeto);
+
                             }
                         }
                     }
+
                 }
             }
             catch (Exception erro)
