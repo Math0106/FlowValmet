@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace FlowValmet.Controllers
 {
-    internal class ConexaoAcess
+    public class ConexaoAcess
     {
         public MySqlConnection Conectar()
         {
             try
             {
-                var strConexao = "server=localhost;uid=root;pwd=***;database=BDFLowValmet";
+                var strConexao = "server=localhost; user ID=root; database=bdflowvalmet";
                 var conexao = new MySqlConnection(strConexao);
                 
                 return conexao;

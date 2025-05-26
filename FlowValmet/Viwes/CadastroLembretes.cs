@@ -141,6 +141,9 @@ namespace FlowValmet.Viwes
             GNDgvLembretes.ClearSelection();
         }
 
+        private void CadastroLembretes_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

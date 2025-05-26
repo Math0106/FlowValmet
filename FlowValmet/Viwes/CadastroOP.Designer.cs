@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.GBBtnCadastrar = new Guna.UI2.WinForms.Guna2Button();
             this.GnDvgOp = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -66,9 +66,10 @@
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtDescriçãoOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNLabelNumeroOP);
             this.GNPanelCadastroOP.Controls.Add(this.GNTxtNumeroOP);
-            this.GNPanelCadastroOP.Location = new System.Drawing.Point(190, 72);
+            this.GNPanelCadastroOP.Location = new System.Drawing.Point(142, 58);
+            this.GNPanelCadastroOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNPanelCadastroOP.Name = "GNPanelCadastroOP";
-            this.GNPanelCadastroOP.Size = new System.Drawing.Size(1000, 800);
+            this.GNPanelCadastroOP.Size = new System.Drawing.Size(750, 650);
             this.GNPanelCadastroOP.TabIndex = 1;
             // 
             // GBBtnCadastrar
@@ -79,43 +80,45 @@
             this.GBBtnCadastrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GBBtnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GBBtnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.GBBtnCadastrar.Location = new System.Drawing.Point(123, 524);
+            this.GBBtnCadastrar.Location = new System.Drawing.Point(92, 426);
+            this.GBBtnCadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GBBtnCadastrar.Name = "GBBtnCadastrar";
-            this.GBBtnCadastrar.Size = new System.Drawing.Size(180, 45);
+            this.GBBtnCadastrar.Size = new System.Drawing.Size(135, 37);
             this.GBBtnCadastrar.TabIndex = 17;
             this.GBBtnCadastrar.Text = "Cadastrar";
             this.GBBtnCadastrar.Click += new System.EventHandler(this.GBBtnCadastrar_Click);
             // 
             // GnDvgOp
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.GnDvgOp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.GnDvgOp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GnDvgOp.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GnDvgOp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GnDvgOp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GnDvgOp.ColumnHeadersHeight = 4;
             this.GnDvgOp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GnDvgOp.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GnDvgOp.DefaultCellStyle = dataGridViewCellStyle3;
             this.GnDvgOp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.GnDvgOp.Location = new System.Drawing.Point(377, 100);
+            this.GnDvgOp.Location = new System.Drawing.Point(283, 81);
+            this.GnDvgOp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GnDvgOp.Name = "GnDvgOp";
             this.GnDvgOp.RowHeadersVisible = false;
             this.GnDvgOp.RowHeadersWidth = 49;
             this.GnDvgOp.RowTemplate.Height = 24;
-            this.GnDvgOp.Size = new System.Drawing.Size(567, 531);
+            this.GnDvgOp.Size = new System.Drawing.Size(425, 431);
             this.GnDvgOp.TabIndex = 16;
             this.GnDvgOp.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.GnDvgOp.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -145,20 +148,22 @@
             this.GNDatePikerEntregaOP.Checked = true;
             this.GNDatePikerEntregaOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNDatePikerEntregaOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.GNDatePikerEntregaOP.Location = new System.Drawing.Point(65, 425);
+            this.GNDatePikerEntregaOP.Location = new System.Drawing.Point(49, 345);
+            this.GNDatePikerEntregaOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNDatePikerEntregaOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.GNDatePikerEntregaOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.GNDatePikerEntregaOP.Name = "GNDatePikerEntregaOP";
-            this.GNDatePikerEntregaOP.Size = new System.Drawing.Size(306, 36);
+            this.GNDatePikerEntregaOP.Size = new System.Drawing.Size(230, 29);
             this.GNDatePikerEntregaOP.TabIndex = 10;
             this.GNDatePikerEntregaOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
             // 
             // GNLabelDataEntregaOP
             // 
             this.GNLabelDataEntregaOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDataEntregaOP.Location = new System.Drawing.Point(65, 401);
+            this.GNLabelDataEntregaOP.Location = new System.Drawing.Point(49, 326);
+            this.GNLabelDataEntregaOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNLabelDataEntregaOP.Name = "GNLabelDataEntregaOP";
-            this.GNLabelDataEntregaOP.Size = new System.Drawing.Size(101, 18);
+            this.GNLabelDataEntregaOP.Size = new System.Drawing.Size(81, 15);
             this.GNLabelDataEntregaOP.TabIndex = 9;
             this.GNLabelDataEntregaOP.Text = "Data de Entrega";
             // 
@@ -167,29 +172,32 @@
             this.GNDatePikerInicioOP.Checked = true;
             this.GNDatePikerInicioOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNDatePikerInicioOP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.GNDatePikerInicioOP.Location = new System.Drawing.Point(65, 344);
+            this.GNDatePikerInicioOP.Location = new System.Drawing.Point(49, 280);
+            this.GNDatePikerInicioOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNDatePikerInicioOP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.GNDatePikerInicioOP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.GNDatePikerInicioOP.Name = "GNDatePikerInicioOP";
-            this.GNDatePikerInicioOP.Size = new System.Drawing.Size(306, 36);
+            this.GNDatePikerInicioOP.Size = new System.Drawing.Size(230, 29);
             this.GNDatePikerInicioOP.TabIndex = 8;
             this.GNDatePikerInicioOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
             // 
             // GNLabelDataInicioOP
             // 
             this.GNLabelDataInicioOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDataInicioOP.Location = new System.Drawing.Point(65, 320);
+            this.GNLabelDataInicioOP.Location = new System.Drawing.Point(49, 260);
+            this.GNLabelDataInicioOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNLabelDataInicioOP.Name = "GNLabelDataInicioOP";
-            this.GNLabelDataInicioOP.Size = new System.Drawing.Size(66, 18);
+            this.GNLabelDataInicioOP.Size = new System.Drawing.Size(55, 15);
             this.GNLabelDataInicioOP.TabIndex = 7;
             this.GNLabelDataInicioOP.Text = "Data início";
             // 
             // GNLabelDesenhoOP
             // 
             this.GNLabelDesenhoOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDesenhoOP.Location = new System.Drawing.Point(66, 232);
+            this.GNLabelDesenhoOP.Location = new System.Drawing.Point(50, 188);
+            this.GNLabelDesenhoOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNLabelDesenhoOP.Name = "GNLabelDesenhoOP";
-            this.GNLabelDesenhoOP.Size = new System.Drawing.Size(58, 18);
+            this.GNLabelDesenhoOP.Size = new System.Drawing.Size(46, 15);
             this.GNLabelDesenhoOP.TabIndex = 5;
             this.GNLabelDesenhoOP.Text = "Desenho";
             // 
@@ -204,20 +212,21 @@
             this.GNTxtDesenhoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNTxtDesenhoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNTxtDesenhoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDesenhoOP.Location = new System.Drawing.Point(66, 257);
-            this.GNTxtDesenhoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtDesenhoOP.Location = new System.Drawing.Point(50, 209);
+            this.GNTxtDesenhoOP.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.GNTxtDesenhoOP.Name = "GNTxtDesenhoOP";
             this.GNTxtDesenhoOP.PlaceholderText = "";
             this.GNTxtDesenhoOP.SelectedText = "";
-            this.GNTxtDesenhoOP.Size = new System.Drawing.Size(305, 46);
+            this.GNTxtDesenhoOP.Size = new System.Drawing.Size(229, 37);
             this.GNTxtDesenhoOP.TabIndex = 4;
             // 
             // GNLabelDescricaoOp
             // 
             this.GNLabelDescricaoOp.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelDescricaoOp.Location = new System.Drawing.Point(66, 154);
+            this.GNLabelDescricaoOp.Location = new System.Drawing.Point(50, 125);
+            this.GNLabelDescricaoOp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNLabelDescricaoOp.Name = "GNLabelDescricaoOp";
-            this.GNLabelDescricaoOp.Size = new System.Drawing.Size(65, 18);
+            this.GNLabelDescricaoOp.Size = new System.Drawing.Size(51, 15);
             this.GNLabelDescricaoOp.TabIndex = 3;
             this.GNLabelDescricaoOp.Text = "Descrição";
             // 
@@ -232,20 +241,21 @@
             this.GNTxtDescriçãoOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNTxtDescriçãoOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNTxtDescriçãoOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtDescriçãoOP.Location = new System.Drawing.Point(66, 179);
-            this.GNTxtDescriçãoOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtDescriçãoOP.Location = new System.Drawing.Point(50, 145);
+            this.GNTxtDescriçãoOP.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.GNTxtDescriçãoOP.Name = "GNTxtDescriçãoOP";
             this.GNTxtDescriçãoOP.PlaceholderText = "";
             this.GNTxtDescriçãoOP.SelectedText = "";
-            this.GNTxtDescriçãoOP.Size = new System.Drawing.Size(305, 46);
+            this.GNTxtDescriçãoOP.Size = new System.Drawing.Size(229, 37);
             this.GNTxtDescriçãoOP.TabIndex = 2;
             // 
             // GNLabelNumeroOP
             // 
             this.GNLabelNumeroOP.BackColor = System.Drawing.Color.Transparent;
-            this.GNLabelNumeroOP.Location = new System.Drawing.Point(66, 76);
+            this.GNLabelNumeroOP.Location = new System.Drawing.Point(50, 62);
+            this.GNLabelNumeroOP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GNLabelNumeroOP.Name = "GNLabelNumeroOP";
-            this.GNLabelNumeroOP.Size = new System.Drawing.Size(22, 18);
+            this.GNLabelNumeroOP.Size = new System.Drawing.Size(18, 15);
             this.GNLabelNumeroOP.TabIndex = 1;
             this.GNLabelNumeroOP.Text = "OP";
             // 
@@ -260,23 +270,25 @@
             this.GNTxtNumeroOP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNTxtNumeroOP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNTxtNumeroOP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNTxtNumeroOP.Location = new System.Drawing.Point(66, 101);
-            this.GNTxtNumeroOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GNTxtNumeroOP.Location = new System.Drawing.Point(50, 82);
+            this.GNTxtNumeroOP.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.GNTxtNumeroOP.Name = "GNTxtNumeroOP";
             this.GNTxtNumeroOP.PlaceholderText = "";
             this.GNTxtNumeroOP.SelectedText = "";
-            this.GNTxtNumeroOP.Size = new System.Drawing.Size(305, 46);
+            this.GNTxtNumeroOP.Size = new System.Drawing.Size(229, 37);
             this.GNTxtNumeroOP.TabIndex = 0;
             // 
             // CadastroOP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(89)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1418, 945);
+            this.ClientSize = new System.Drawing.Size(1064, 768);
             this.Controls.Add(this.GNPanelCadastroOP);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CadastroOP";
             this.Text = "CadastroOP";
+            this.Load += new System.EventHandler(this.CadastroOP_Load);
             this.GNPanelCadastroOP.ResumeLayout(false);
             this.GNPanelCadastroOP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GnDvgOp)).EndInit();
