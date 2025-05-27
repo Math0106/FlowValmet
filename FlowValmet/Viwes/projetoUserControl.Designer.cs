@@ -43,7 +43,6 @@
             this.DataReproSelected = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.FlowLayoutPanelFases = new System.Windows.Forms.FlowLayoutPanel();
-            this.StatusProjeto = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // PrioridadeTxt
@@ -258,31 +257,11 @@
             this.FlowLayoutPanelFases.TabIndex = 35;
             this.FlowLayoutPanelFases.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanelFases_Paint);
             // 
-            // StatusProjeto
-            // 
-            this.StatusProjeto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StatusProjeto.DefaultText = "";
-            this.StatusProjeto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StatusProjeto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StatusProjeto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusProjeto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusProjeto.Enabled = false;
-            this.StatusProjeto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusProjeto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.StatusProjeto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusProjeto.Location = new System.Drawing.Point(1422, 45);
-            this.StatusProjeto.Name = "StatusProjeto";
-            this.StatusProjeto.PlaceholderText = "Status";
-            this.StatusProjeto.SelectedText = "";
-            this.StatusProjeto.Size = new System.Drawing.Size(122, 49);
-            this.StatusProjeto.TabIndex = 36;
-            // 
             // projetoUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Controls.Add(this.StatusProjeto);
             this.Controls.Add(this.FlowLayoutPanelFases);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataReproSelected);
@@ -320,6 +299,5 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DataReproSelected;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelFases;
-        private Guna.UI2.WinForms.Guna2TextBox StatusProjeto;
     }
 }

@@ -81,7 +81,7 @@ namespace FlowValmet.Controllers
                     string sql = @"
                         SELECT 
                             p.id_projeto, p.Pri, p.BU, p.PCs, p.Cliente, p.Item,
-                            p.DataPrazo, p.DataReprogramada, p.Res, p.Custo, p.Semana, p.Status_Projeto,
+                            p.DataPrazo, p.DataReprogramada, p.Res, p.Custo, p.Semana,
                             f.id_fase, f.datafase_inicial, f.datafase_final, f.observacao, f.Status_Fase
                         FROM projeto p
                         LEFT JOIN fase_projeto f ON p.id_projeto = f.projeto_id
@@ -179,19 +179,18 @@ namespace FlowValmet.Controllers
                 using (var conexao = conexaoBanco.Conectar())
                 {
                     string sql = @"
-                        SELECT 
+                       SELECT 
                             fp.id_fase,
                             fp.projeto_id,
                             fp.datafase_inicial,
                             fp.datafase_final,
                             fp.observacao,
                             fp.Status_Fase,
-                            f.Fase,
-                            f.Status_Projeto
-                        FROM fase_projeto fp
-                        LEFT JOIN Fases f ON fp.fase_id = f.ID
-                        WHERE fp.projeto_id = @projId
-                        ORDER BY fp.datafase_inicial;";
+                            f.Fase
+                            FROM fase_projeto fp
+                            LEFT JOIN Fases f ON fp.fase_id = f.ID
+                            WHERE fp.projeto_id = @projId
+                    ORDER BY fp.datafase_inicial;";
 
                     using (var cmd = new MySqlCommand(sql, conexao))
                     {
