@@ -46,6 +46,12 @@
             this.TxtDescricao = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GnDvgOp = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desenho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GNPanelCadastroOP.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -312,6 +318,13 @@
             this.GnDvgOp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GnDvgOp.ColumnHeadersHeight = 4;
             this.GnDvgOp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GnDvgOp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.numeroop,
+            this.descricao,
+            this.desenho,
+            this.dataInicio,
+            this.dataEntrega});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,6 +365,48 @@
             this.GnDvgOp.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GnDvgOp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GnDvgOp_CellContentClick_1);
             // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // numeroop
+            // 
+            this.numeroop.HeaderText = "Número OP";
+            this.numeroop.MinimumWidth = 6;
+            this.numeroop.Name = "numeroop";
+            this.numeroop.ReadOnly = true;
+            // 
+            // descricao
+            // 
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.MinimumWidth = 6;
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            // 
+            // desenho
+            // 
+            this.desenho.HeaderText = "Desenho";
+            this.desenho.MinimumWidth = 6;
+            this.desenho.Name = "desenho";
+            this.desenho.ReadOnly = true;
+            // 
+            // dataInicio
+            // 
+            this.dataInicio.HeaderText = "Data de Início";
+            this.dataInicio.MinimumWidth = 6;
+            this.dataInicio.Name = "dataInicio";
+            this.dataInicio.ReadOnly = true;
+            // 
+            // dataEntrega
+            // 
+            this.dataEntrega.HeaderText = "Data de Entrega";
+            this.dataEntrega.MinimumWidth = 6;
+            this.dataEntrega.Name = "dataEntrega";
+            this.dataEntrega.ReadOnly = true;
+            // 
             // CadastroOPGUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,5 +443,11 @@
         private Guna.UI2.WinForms.Guna2GradientButton BtnLimpar;
         private Guna.UI2.WinForms.Guna2GradientButton BtnAtualizar;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNlabelIdAtualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desenho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataEntrega;
     }
 }

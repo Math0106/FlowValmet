@@ -57,36 +57,6 @@ namespace FlowValmet.Controllers
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
                 return null;
             }
-            //List<Tuple<int,string, string, bool, string>> listaLembretes = new List<Tuple<int,string, string, bool, string>>();
-            //try
-            //{
-
-            //    var conexao = Conexao.Conectar();
-            //    if (conexao != null)
-            //    {
-
-            //        conexao.Open();
-            //        var strComando = new MySqlCommand(comando,conexao);
-            //        var reader = strComando.ExecuteReader();
-            //        while (reader.Read()) 
-            //        {
-            //            listaLembretes.Add(Tuple.Create(Convert.ToInt32(reader["id"]), Convert.ToString(reader["titulo"]), Convert.ToString(reader["descricao"]), Convert.ToBoolean(reader["vinculo"]), Convert.ToString(reader["op"])));
-            //        }
-            //        conexao.Close();
-            //        return listaLembretes;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Falha na conexão");
-            //        return null;
-            //    }
-            //}
-            //catch(Exception ex) 
-            //{
-            //    MessageBox.Show("Exibir Lembrete: " + ex.Message);
-            //    return null;
-
-            //}
 
         }
 

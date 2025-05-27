@@ -130,6 +130,12 @@ namespace FlowValmet.Controllers
                 }
 
             }
+
+            catch (MySql.Data.MySqlClient.MySqlException e)
+            {
+                MessageBox.Show("Este processo não pode ser excluído porque está vinculado a uma OP");
+                return false;
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao excluir: " + ex.Message);

@@ -421,6 +421,33 @@ namespace FlowValmet.Viwes
             }
         }
 
+        private async void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GNPanelCentro.Visible = true;
+                var Analise = new OpDetalhada();
+                Analise.TopLevel = false;
+                Analise.FormBorderStyle = FormBorderStyle.None;
+                Analise.Dock = DockStyle.Fill;
 
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(Analise);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        Analise.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
     }
 }

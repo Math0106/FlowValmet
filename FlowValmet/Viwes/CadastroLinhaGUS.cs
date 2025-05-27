@@ -1,4 +1,5 @@
 ﻿using FlowValmet.Controllers;
+using FlowValmet.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iText.Kernel.Pdf.Colorspace.PdfDeviceCs;
 
 namespace FlowValmet.Viwes
 {
@@ -17,53 +19,10 @@ namespace FlowValmet.Viwes
         public CadastroLinhaGUS()
         {
             InitializeComponent();
-
-            GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
             LimparCampos();
         }
 
-        private void GNCbxCor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CbxCor.SelectedIndex != -1)
-            {
-                string[] rgb = new string[2];
-                string[] valorRgb = new string[3];
-                string resultado;
-                rgb = CbxCor.SelectedItem.ToString().Split('-');
-                resultado = rgb[1].Replace("(", "").Replace(")", "");
-                valorRgb = resultado.Split(',');
-                PanelCores.BackColor = Color.FromArgb(Convert.ToInt32(valorRgb[0]), Convert.ToInt32(valorRgb[1]), Convert.ToInt32(valorRgb[2]));
-            }
 
-        }
-
-        private void GNBtnCadastrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (TxtLinhaProdução.Text != "" &&
-                   TxtSigla.Text != "" &&
-                   CbxCor.Text != "")
-                {
-
-
-                    linha.InserirLinha(TxtLinhaProdução.Text, CbxCor.Text, TxtSigla.Text);
-                    LimparCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Preencher todos os campos");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao cadastrar: " + ex);
-                LimparCampos();
-            }
-            GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
-        }
 
         public void LimparCampos()
         {
@@ -71,37 +30,50 @@ namespace FlowValmet.Viwes
             TxtSigla.Text = "";
             CbxCor.SelectedIndex = -1;
             PanelCores.BackColor = Color.White;
+            DesingDataGridView.DesignGunaDataGrid(GNDataGridLinhasCadastradaLinhaP);
+            CarregarLinhas();
             GNDataGridLinhasCadastradaLinhaP.ClearSelection();
 
         }
-
-        private void GNDataGridLinhasCadastradaLinhaP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void CarregarLinhas()
         {
             try
             {
-                if (e.RowIndex >= 0)
+                var listaDados = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
+
+                // Limpa dados existentes (opcional)
+                GNDataGridLinhasCadastradaLinhaP.Rows.Clear();
+
+                // Verifica se há dados
+                if (listaDados != null && listaDados.Any())
                 {
-                    var linhas = GNDataGridLinhasCadastradaLinhaP.Rows[e.RowIndex];
-
-
-
-                    var confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
-                    if (confirmacao == "OK")
+                    foreach (var tupla in listaDados)
                     {
-                        linha.ExcluirLinha(Convert.ToInt32(linhas.Cells[0].Value?.ToString()));
-                    }
+                        string[] rgb = new string[2];
+                        string[] valorRgb = new string[3];
+                        string resultado;
+                        int rowIndex = GNDataGridLinhasCadastradaLinhaP.Rows.Add();
 
-                    GNDataGridLinhasCadastradaLinhaP.ClearSelection();
-                    GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
+                        // Preenche cada célula com os elementos da tupla
+                        GNDataGridLinhasCadastradaLinhaP.Rows[rowIndex].Cells["id"].Value = tupla.Item1; // string
+                        GNDataGridLinhasCadastradaLinhaP.Rows[rowIndex].Cells["linhaProducao"].Value = tupla.Item2; // string
+                        GNDataGridLinhasCadastradaLinhaP.Rows[rowIndex].Cells["sigla"].Value = tupla.Item3; // string
+                        GNDataGridLinhasCadastradaLinhaP.Rows[rowIndex].Cells["cor"].Value = tupla.Item4;
+                        rgb = tupla.Item4.ToString().Split('-');
+                        resultado = rgb[1].Replace("(", "").Replace(")", "");
+                        valorRgb = resultado.Split(',');
+                        GNDataGridLinhasCadastradaLinhaP.Rows[rowIndex].Cells["cor"].Style.BackColor = Color.FromArgb(Convert.ToInt32(valorRgb[0]), Convert.ToInt32(valorRgb[1]), Convert.ToInt32(valorRgb[2]));
+                        
+
+                    }
                 }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao excluir: " + ex);
-            }
-            LimparCampos();
 
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao carregar!");
+            }
 
         }
 
@@ -169,8 +141,6 @@ namespace FlowValmet.Viwes
                         linha.ExcluirLinha(Convert.ToInt32(linhas.Cells[0].Value?.ToString()));
                     }
 
-                    GNDataGridLinhasCadastradaLinhaP.ClearSelection();
-                    GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
                 }
 
             }

@@ -79,7 +79,6 @@ namespace FlowValmet.Viwes
 
             // 4. Estilo do cabeçalho
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-            //dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80);
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 

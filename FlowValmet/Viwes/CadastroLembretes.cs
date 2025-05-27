@@ -31,9 +31,41 @@ namespace FlowValmet.Viwes
             else
             {
                 GNTxtOPCadastroLembrete.Enabled = false;
-            }
+            }          
+        }
 
-          
+        public void CarregarLembrete()
+        {
+            try
+            {
+                var listaDados = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
+
+                // Limpa dados existentes (opcional)
+                GNDgvLembretes.Rows.Clear();
+
+                // Verifica se há dados
+                if (listaDados != null && listaDados.Any())
+                {
+                    foreach (var tupla in listaDados)
+                    {
+                        int rowIndex = GNDgvLembretes.Rows.Add();
+
+                        // Preenche cada célula com os elementos da tupla
+                        GNDgvLembretes.Rows[rowIndex].Cells["id"].Value = tupla.Id; // string
+                        GNDgvLembretes.Rows[rowIndex].Cells["titulo"].Value = tupla.Titulo; // string
+                        GNDgvLembretes.Rows[rowIndex].Cells["descricao"].Value = tupla.Descricao; // string
+                        GNDgvLembretes.Rows[rowIndex].Cells["vinculo"].Value = tupla.Vinculo;
+                        GNDgvLembretes.Rows[rowIndex].Cells["op"].Value = tupla.Op;
+                    }
+                }
+                GNDgvLembretes.ClearSelection();
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao carregar!");
+            }
         }
 
         private void GNBtnCadastrarCadastroLembretes_Click(object sender, EventArgs e)
@@ -152,10 +184,11 @@ namespace FlowValmet.Viwes
             GNCheckBoxVincular.Checked = false;
             GNTxtOPCadastroLembrete.Enabled = false;
             GNBtnAtualizar.Enabled = false;
-            GNDgvLembretes.ClearSelection();
-            GNDgvLembretes.ClearSelection();
+            
             GNLblLembreteId.Text = "";
-            GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
+            DesingDataGridView.DesignGunaDataGrid(GNDgvLembretes);
+            CarregarLembrete();
+            //GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
 
         }
 
@@ -203,7 +236,6 @@ namespace FlowValmet.Viwes
                     if (sucesso)
                     {
                         LimparCampos();
-                        // Atualizar a lista de lembretes se necessário
                     }
 
                 }

@@ -42,6 +42,10 @@
             this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNDataGridLinhasCadastradaLinhaP = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linhaProducao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -56,7 +60,7 @@
             this.panel2.BorderRadius = 20;
             this.panel2.Controls.Add(this.guna2Panel2);
             this.panel2.Controls.Add(this.guna2Panel1);
-            this.panel2.FillColor = System.Drawing.Color.White;
+            this.panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Location = new System.Drawing.Point(251, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(898, 684);
@@ -253,8 +257,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersHeight = 4;
+            this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersHeight = 50;
             this.GNDataGridLinhasCadastradaLinhaP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GNDataGridLinhasCadastradaLinhaP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.linhaProducao,
+            this.sigla,
+            this.cor});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,7 +293,7 @@
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.HeaderStyle.Height = 4;
+            this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.HeaderStyle.Height = 50;
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.ReadOnly = true;
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -294,6 +303,34 @@
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDataGridLinhasCadastradaLinhaP.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDataGridLinhasCadastradaLinhaP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDataGridLinhasCadastradaLinhaP_CellContentClick_1);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // linhaProducao
+            // 
+            this.linhaProducao.HeaderText = "Linha de Produção";
+            this.linhaProducao.MinimumWidth = 6;
+            this.linhaProducao.Name = "linhaProducao";
+            this.linhaProducao.ReadOnly = true;
+            // 
+            // sigla
+            // 
+            this.sigla.HeaderText = "Sigla";
+            this.sigla.MinimumWidth = 6;
+            this.sigla.Name = "sigla";
+            this.sigla.ReadOnly = true;
+            // 
+            // cor
+            // 
+            this.cor.HeaderText = "Cor";
+            this.cor.MinimumWidth = 6;
+            this.cor.Name = "cor";
+            this.cor.ReadOnly = true;
             // 
             // CadastroLinhaGUS
             // 
@@ -327,5 +364,9 @@
         private Guna.UI2.WinForms.Guna2TextBox TxtSigla;
         private Guna.UI2.WinForms.Guna2ComboBox CbxCor;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linhaProducao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sigla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cor;
     }
 }

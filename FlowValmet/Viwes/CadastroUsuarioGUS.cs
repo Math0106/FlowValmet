@@ -23,43 +23,6 @@ namespace FlowValmet.Viwes
 
         }
 
-        private void GBBtnCadastrar_Click(object sender, EventArgs e)
-        {
-            string perfil = "User";
-            try
-            {
-
-                if (TxtUsuario.Text != "" &&
-                   TxtEmail.Text != "" &&
-                   TxtSetor.Text != "" &&
-                   TxtSenha.Text != "" &&
-                   (GNCbxAdim.Checked || GNCbxUser.Checked))
-                {
-                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
-                    if (GNCbxAdim.Checked)
-                    {
-                        perfil = "Admin";
-                    }
-                    else if (GNCbxUser.Checked)
-                    {
-                        perfil = "User";
-                    }
-
-                    Usuario.InserirUsuario(TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
-                    LimparCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Preencher todos os campos");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao cadastrar: " + ex);
-                LimparCampos();
-            }
-        }
 
         public void LimparCampos()
         {
@@ -74,14 +37,13 @@ namespace FlowValmet.Viwes
             BtnAtualizar.Enabled = false;
             DesingDataGridView.DesignGunaDataGrid(GNDgvUsuario);
             CarregarUsuario();
-            //GNDgvUsuario.DataSource = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
             GNDgvUsuario.ClearSelection();
         }
         public void CarregarUsuario()
         {
             try
             {
-                var listaDados = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario");
+                var listaDados = Usuario.RecuperarUsuarios("SELECT * FROM bdflowvalmet.usuario where id != 1");
 
                 // Limpa dados existentes (opcional)
                 GNDgvUsuario.Rows.Clear();
@@ -107,123 +69,9 @@ namespace FlowValmet.Viwes
             }
             catch
             {
-                MessageBox.Show("Erro ao carregar as ordens!");
+                MessageBox.Show("Erro ao carregar!");
             }
         }
-
-        private void GnCbxUser_Click(object sender, EventArgs e)
-        {
-            if (GNCbxUser.Checked)
-            {
-                GNCbxAdim.Checked = false;
-            }
-        }
-
-        private void GNCbxAdim_Click(object sender, EventArgs e)
-        {
-            if (GNCbxAdim.Checked)
-            {
-                GNCbxUser.Checked = false;
-            }
-        }
-
-
-        private void GNDgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LimparCampos();
-            if (e.RowIndex >= 0)
-            {
-
-                var linha = GNDgvUsuario.Rows[e.RowIndex];
-                if (linha.Cells[0].Value?.ToString() != "1")
-                {
-                    var form = new PopUPGUS("Cadastro Usuário", "Deseja realmente continuar?");
-                    form.ShowDialog();
-
-                    switch (form.Result)
-                    {
-                        case PopUPGUS.CustomDialogResult.Excluir:
-                            Usuario.ExcluirUsuario(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
-                            LimparCampos();
-                            break;
-                        case PopUPGUS.CustomDialogResult.Alterar:
-                            GNLblUsuarioId.Text = linha.Cells[0].Value?.ToString();
-                            TxtUsuario.Text = linha.Cells[1].Value?.ToString();
-                            TxtEmail.Text = linha.Cells[2].Value?.ToString().ToLower();
-                            TxtSetor.Text = linha.Cells[3].Value?.ToString();
-                            if (linha.Cells[4].Value?.ToString() == "Admin")
-                            {
-                                GNCbxAdim.Checked = true;
-                                GNCbxUser.Checked = false;
-
-                            }
-                            else if (linha.Cells[4].Value?.ToString() == "User")
-                            {
-                                GNCbxAdim.Checked = false;
-                                GNCbxUser.Checked = true;
-                            }
-
-                            BtnRegistrar.Enabled = false;
-                            BtnAtualizar.Enabled = true;
-                            break;
-                        case PopUPGUS.CustomDialogResult.Cancelar:
-                            break;
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Não é possivel manipular o primeiro usuario!");
-                }
-
-            }
-
-
-        }
-
-        private void GNBtnLimpar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void GNBtnAtualizar_Click(object sender, EventArgs e)
-        {
-            string perfil = "User";
-            try
-            {
-
-                if (TxtUsuario.Text != "" &&
-                   TxtEmail.Text != "" &&
-                   TxtSetor.Text != "" &&
-                   TxtSenha.Text != "" &&
-                   (GNCbxAdim.Checked || GNCbxUser.Checked))
-                {
-                    string senhaHash = Usuario.GerarHashSHA256(TxtSenha.Text);
-                    if (GNCbxAdim.Checked)
-                    {
-                        perfil = "Admin";
-                    }
-                    else if (GNCbxUser.Checked)
-                    {
-                        perfil = "User";
-                    }
-
-                    Usuario.AtualizarUsuario(Convert.ToInt32(GNLblUsuarioId.Text), TxtUsuario.Text, TxtEmail.Text.ToLower(), TxtSetor.Text, perfil, senhaHash);
-                    LimparCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Preencher todos os campos");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao cadastrar: " + ex);
-                LimparCampos();
-            }
-        }
-
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             string perfil = "User";
@@ -312,8 +160,7 @@ namespace FlowValmet.Viwes
             {
 
                 var linha = GNDgvUsuario.Rows[e.RowIndex];
-                if (linha.Cells[0].Value?.ToString() != "1")
-                {
+
                     var form = new PopUPGUS("Cadastro Usuário", "Deseja realmente continuar?");
                     form.ShowDialog();
 
@@ -346,12 +193,6 @@ namespace FlowValmet.Viwes
                         case PopUPGUS.CustomDialogResult.Cancelar:
                             break;
                     }
-
-                }
-                else
-                {
-                    MessageBox.Show("Não é possivel manipular o primeiro usuario!");
-                }
 
             }
         }

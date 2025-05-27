@@ -39,6 +39,7 @@ namespace FlowValmet.Viwes
 
             GNDtpDataInicio.MinDate = DateTime.Today;
             GNDtpDataFim.MinDate = DateTime.Today;
+            DesingDataGridView.DesignGunaDataGrid(GNDgvVinculado);
         }
 
         public void ResetarCbxProcessos()
@@ -197,6 +198,7 @@ namespace FlowValmet.Viwes
                 if (Vincular.InserirVinculoProcesso(listaProcessos)){
                     MessageBox.Show("Cadastrado com sucesso");
                     listaProcessosVinculados.Clear();
+                    LimparCampos();
                 }
                 else
                 {

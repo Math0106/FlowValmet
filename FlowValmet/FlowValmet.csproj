@@ -241,6 +241,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ConexaoAcess.cs" />
     <Compile Include="Controllers\ControleAnaliseOp.cs" />
+    <Compile Include="Controllers\ControleConsultaOP.cs" />
     <Compile Include="Controllers\ControleLembretes.cs" />
     <Compile Include="Controllers\ControleLinhaProducao.cs" />
     <Compile Include="Controllers\ControleOp.cs" />
@@ -316,6 +317,12 @@
     <Compile Include="Viwes\LoginUsuarioGUS.Designer.cs">
       <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\OpDetalhada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\OpDetalhada.Designer.cs">
+      <DependentUpon>OpDetalhada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\PopUPGUS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\LoginUsuarioGUS.resx">
       <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\OpDetalhada.resx">
+      <DependentUpon>OpDetalhada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\PopUPGUS.resx">
       <DependentUpon>PopUPGUS.cs</DependentUpon>
