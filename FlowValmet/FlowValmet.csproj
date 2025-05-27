@@ -222,6 +222,12 @@
     <Compile Include="Viwes\FaseUserControl.Designer.cs">
       <DependentUpon>FaseUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\KanbanProjetoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viwes\KanbanProjetoUserControl.Designer.cs">
+      <DependentUpon>KanbanProjetoUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\projetoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,12 @@
     </Compile>
     <Compile Include="Viwes\TelaGestao.Designer.cs">
       <DependentUpon>TelaGestao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\TelaKanban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\TelaKanban.Designer.cs">
+      <DependentUpon>TelaKanban.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -281,11 +293,17 @@
     <EmbeddedResource Include="Viwes\FaseUserControl.resx">
       <DependentUpon>FaseUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\KanbanProjetoUserControl.resx">
+      <DependentUpon>KanbanProjetoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\projetoUserControl.resx">
       <DependentUpon>projetoUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaGestao.resx">
       <DependentUpon>TelaGestao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaKanban.resx">
+      <DependentUpon>TelaKanban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>

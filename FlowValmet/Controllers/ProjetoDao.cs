@@ -186,7 +186,8 @@ namespace FlowValmet.Controllers
                             fp.datafase_final,
                             fp.observacao,
                             fp.Status_Fase,
-                            f.Fase
+                            f.Fase,
+                            f.Status_Projeto
                         FROM fase_projeto fp
                         LEFT JOIN Fases f ON fp.fase_id = f.ID
                         WHERE fp.projeto_id = @projId
@@ -235,6 +236,178 @@ namespace FlowValmet.Controllers
             }
 
             return fases;
+        }
+        #endregion
+        #region GetProjetosPendente
+        public List<Projeto> GetProjetosPendente()
+        {
+            List<Projeto> projetos = new List<Projeto>();
+
+            try
+            {
+                using (MySqlConnection conexao = conexaoBanco.Conectar())
+                {
+                    string sql = "SELECT * FROM projeto WHERE Status_Projeto = 'Pendente'";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+                    {
+                        conexao.Open();
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Projeto projeto = new Projeto()
+                                {
+                                    id_projeto = Convert.ToInt32(reader["id_projeto"]),
+                                    Pri = Convert.ToInt32(reader["Pri"]),
+                                    BU = reader["BU"].ToString(),
+                                    PCs = reader["PCs"].ToString(),
+                                    Cliente = Convert.ToInt32(reader["Cliente"]),
+                                    Item = reader["Item"].ToString(),
+                                    DataPrazo = reader.IsDBNull(reader.GetOrdinal("DataPrazo"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataPrazo")),
+                                    DataReprogramada = reader.IsDBNull(reader.GetOrdinal("DataReprogramada"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataReprogramada")),
+                                    Res = reader.IsDBNull(reader.GetOrdinal("Res"))
+                                                ? string.Empty
+                                                : reader["Res"].ToString(),
+                                    Custo = reader.GetDecimal(reader.GetOrdinal("Custo")),
+                                    Semana = reader.IsDBNull(reader.GetOrdinal("Semana"))
+                                                ? 0
+                                                : Convert.ToInt32(reader["Semana"]),
+                                    Status = reader["Status_Projeto"].ToString(),
+                                };
+
+                                projetos.Add(projeto);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao buscar projetos pendentes: " + erro.Message);
+            }
+
+            return projetos;
+        }
+        #endregion
+        #region GetProjetosEmAndamento
+        public List<Projeto> GetProjetosEmAndamento()
+        {
+            List<Projeto> projetos = new List<Projeto>();
+
+            try
+            {
+                using (MySqlConnection conexao = conexaoBanco.Conectar())
+                {
+                    string sql = "SELECT * FROM projeto WHERE Status_Projeto = 'Em Andamento'";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+                    {
+                        conexao.Open();
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Projeto projeto = new Projeto()
+                                {
+                                    id_projeto = Convert.ToInt32(reader["id_projeto"]),
+                                    Pri = Convert.ToInt32(reader["Pri"]),
+                                    BU = reader["BU"].ToString(),
+                                    PCs = reader["PCs"].ToString(),
+                                    Cliente = Convert.ToInt32(reader["Cliente"]),
+                                    Item = reader["Item"].ToString(),
+                                    DataPrazo = reader.IsDBNull(reader.GetOrdinal("DataPrazo"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataPrazo")),
+                                    DataReprogramada = reader.IsDBNull(reader.GetOrdinal("DataReprogramada"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataReprogramada")),
+                                    Res = reader.IsDBNull(reader.GetOrdinal("Res"))
+                                                ? string.Empty
+                                                : reader["Res"].ToString(),
+                                    Custo = reader.GetDecimal(reader.GetOrdinal("Custo")),
+                                    Semana = reader.IsDBNull(reader.GetOrdinal("Semana"))
+                                                ? 0
+                                                : Convert.ToInt32(reader["Semana"]),
+                                    Status = reader["Status_Projeto"].ToString(),
+                                };
+
+                                projetos.Add(projeto);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao buscar projetos pendentes: " + erro.Message);
+            }
+
+            return projetos;
+        }
+        #endregion
+
+        #region GetProjetosEmAtraso
+        public List<Projeto> GetProjetosEmAtraso()
+        {
+            List<Projeto> projetos = new List<Projeto>();
+
+            try
+            {
+                using (MySqlConnection conexao = conexaoBanco.Conectar())
+                {
+                    string sql = "SELECT * FROM projeto WHERE Status_Projeto = 'Em Atraso'";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conexao))
+                    {
+                        conexao.Open();
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Projeto projeto = new Projeto()
+                                {
+                                    id_projeto = Convert.ToInt32(reader["id_projeto"]),
+                                    Pri = Convert.ToInt32(reader["Pri"]),
+                                    BU = reader["BU"].ToString(),
+                                    PCs = reader["PCs"].ToString(),
+                                    Cliente = Convert.ToInt32(reader["Cliente"]),
+                                    Item = reader["Item"].ToString(),
+                                    DataPrazo = reader.IsDBNull(reader.GetOrdinal("DataPrazo"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataPrazo")),
+                                    DataReprogramada = reader.IsDBNull(reader.GetOrdinal("DataReprogramada"))
+                                                ? (DateTime?)null
+                                                : reader.GetDateTime(reader.GetOrdinal("DataReprogramada")),
+                                    Res = reader.IsDBNull(reader.GetOrdinal("Res"))
+                                                ? string.Empty
+                                                : reader["Res"].ToString(),
+                                    Custo = reader.GetDecimal(reader.GetOrdinal("Custo")),
+                                    Semana = reader.IsDBNull(reader.GetOrdinal("Semana"))
+                                                ? 0
+                                                : Convert.ToInt32(reader["Semana"]),
+                                    Status = reader["Status_Projeto"].ToString(),
+                                };
+
+                                projetos.Add(projeto);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao buscar projetos pendentes: " + erro.Message);
+            }
+
+            return projetos;
         }
         #endregion
 

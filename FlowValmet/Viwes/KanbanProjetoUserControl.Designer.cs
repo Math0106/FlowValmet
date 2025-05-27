@@ -1,6 +1,6 @@
 ﻿namespace FlowValmet.Viwes
 {
-    partial class projetoUserControl
+    partial class KanbanProjetoUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,22 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.PrioridadeTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.BuTXT = new Guna.UI2.WinForms.Guna2TextBox();
             this.PCsTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ClienteTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.ItemTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.Restxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.CustoTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.SemanaTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.ClienteTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.DataPrazoSelected = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DataReproSelected = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FlowLayoutPanelFases = new System.Windows.Forms.FlowLayoutPanel();
-            this.StatusProjeto = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // PrioridadeTxt
@@ -58,12 +53,31 @@
             this.PrioridadeTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PrioridadeTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PrioridadeTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PrioridadeTxt.Location = new System.Drawing.Point(3, 3);
+            this.PrioridadeTxt.Location = new System.Drawing.Point(-85, 255);
             this.PrioridadeTxt.Name = "PrioridadeTxt";
             this.PrioridadeTxt.PlaceholderText = "Pri";
             this.PrioridadeTxt.SelectedText = "";
             this.PrioridadeTxt.Size = new System.Drawing.Size(46, 36);
-            this.PrioridadeTxt.TabIndex = 11;
+            this.PrioridadeTxt.TabIndex = 33;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.Enabled = false;
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(12, 8);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "Pri";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(46, 36);
+            this.guna2TextBox1.TabIndex = 34;
             // 
             // BuTXT
             // 
@@ -77,12 +91,12 @@
             this.BuTXT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.BuTXT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BuTXT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.BuTXT.Location = new System.Drawing.Point(55, 3);
+            this.BuTXT.Location = new System.Drawing.Point(64, 8);
             this.BuTXT.Name = "BuTXT";
             this.BuTXT.PlaceholderText = "BU";
             this.BuTXT.SelectedText = "";
             this.BuTXT.Size = new System.Drawing.Size(93, 36);
-            this.BuTXT.TabIndex = 12;
+            this.BuTXT.TabIndex = 35;
             // 
             // PCsTxt
             // 
@@ -96,101 +110,12 @@
             this.PCsTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PCsTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PCsTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PCsTxt.Location = new System.Drawing.Point(154, 3);
+            this.PCsTxt.Location = new System.Drawing.Point(267, 49);
             this.PCsTxt.Name = "PCsTxt";
             this.PCsTxt.PlaceholderText = "PCs";
             this.PCsTxt.SelectedText = "";
-            this.PCsTxt.Size = new System.Drawing.Size(93, 36);
-            this.PCsTxt.TabIndex = 13;
-            // 
-            // ItemTxt
-            // 
-            this.ItemTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ItemTxt.DefaultText = "";
-            this.ItemTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ItemTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ItemTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ItemTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ItemTxt.Enabled = false;
-            this.ItemTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ItemTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ItemTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ItemTxt.Location = new System.Drawing.Point(377, 3);
-            this.ItemTxt.Name = "ItemTxt";
-            this.ItemTxt.PlaceholderText = "Item";
-            this.ItemTxt.SelectedText = "";
-            this.ItemTxt.Size = new System.Drawing.Size(453, 36);
-            this.ItemTxt.TabIndex = 14;
-            // 
-            // Restxt
-            // 
-            this.Restxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Restxt.DefaultText = "";
-            this.Restxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Restxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Restxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Restxt.Enabled = false;
-            this.Restxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Restxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Restxt.Location = new System.Drawing.Point(836, 3);
-            this.Restxt.Name = "Restxt";
-            this.Restxt.PlaceholderText = "Res";
-            this.Restxt.SelectedText = "";
-            this.Restxt.Size = new System.Drawing.Size(249, 36);
-            this.Restxt.TabIndex = 17;
-            // 
-            // CustoTxt
-            // 
-            this.CustoTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CustoTxt.DefaultText = "";
-            this.CustoTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.CustoTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.CustoTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CustoTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CustoTxt.Enabled = false;
-            this.CustoTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CustoTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CustoTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CustoTxt.Location = new System.Drawing.Point(1091, 3);
-            this.CustoTxt.Name = "CustoTxt";
-            this.CustoTxt.PlaceholderText = "Custo";
-            this.CustoTxt.SelectedText = "";
-            this.CustoTxt.Size = new System.Drawing.Size(105, 36);
-            this.CustoTxt.TabIndex = 18;
-            this.CustoTxt.TextChanged += new System.EventHandler(this.CustoTxt_TextChanged);
-            // 
-            // SemanaTxt
-            // 
-            this.SemanaTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SemanaTxt.DefaultText = "";
-            this.SemanaTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SemanaTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SemanaTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SemanaTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SemanaTxt.Enabled = false;
-            this.SemanaTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SemanaTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SemanaTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SemanaTxt.Location = new System.Drawing.Point(1202, 3);
-            this.SemanaTxt.Name = "SemanaTxt";
-            this.SemanaTxt.PlaceholderText = "Semana";
-            this.SemanaTxt.SelectedText = "";
-            this.SemanaTxt.Size = new System.Drawing.Size(86, 36);
-            this.SemanaTxt.TabIndex = 19;
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // guna2BorderlessForm2
-            // 
-            this.guna2BorderlessForm2.ContainerControl = this;
-            this.guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm2.TransparentWhileDrag = true;
+            this.PCsTxt.Size = new System.Drawing.Size(138, 36);
+            this.PCsTxt.TabIndex = 36;
             // 
             // ClienteTxt
             // 
@@ -204,12 +129,88 @@
             this.ClienteTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ClienteTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ClienteTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ClienteTxt.Location = new System.Drawing.Point(253, 3);
+            this.ClienteTxt.Location = new System.Drawing.Point(12, 91);
             this.ClienteTxt.Name = "ClienteTxt";
             this.ClienteTxt.PlaceholderText = "Cliente";
             this.ClienteTxt.SelectedText = "";
-            this.ClienteTxt.Size = new System.Drawing.Size(118, 36);
-            this.ClienteTxt.TabIndex = 31;
+            this.ClienteTxt.Size = new System.Drawing.Size(249, 36);
+            this.ClienteTxt.TabIndex = 37;
+            // 
+            // ItemTxt
+            // 
+            this.ItemTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ItemTxt.DefaultText = "";
+            this.ItemTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ItemTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ItemTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ItemTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ItemTxt.Enabled = false;
+            this.ItemTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ItemTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ItemTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ItemTxt.Location = new System.Drawing.Point(12, 50);
+            this.ItemTxt.Name = "ItemTxt";
+            this.ItemTxt.PlaceholderText = "Item";
+            this.ItemTxt.SelectedText = "";
+            this.ItemTxt.Size = new System.Drawing.Size(249, 36);
+            this.ItemTxt.TabIndex = 38;
+            // 
+            // Restxt
+            // 
+            this.Restxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Restxt.DefaultText = "";
+            this.Restxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Restxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Restxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Restxt.Enabled = false;
+            this.Restxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Restxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Restxt.Location = new System.Drawing.Point(12, 133);
+            this.Restxt.Name = "Restxt";
+            this.Restxt.PlaceholderText = "Res";
+            this.Restxt.SelectedText = "";
+            this.Restxt.Size = new System.Drawing.Size(249, 36);
+            this.Restxt.TabIndex = 39;
+            // 
+            // CustoTxt
+            // 
+            this.CustoTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CustoTxt.DefaultText = "";
+            this.CustoTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CustoTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CustoTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustoTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CustoTxt.Enabled = false;
+            this.CustoTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustoTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CustoTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CustoTxt.Location = new System.Drawing.Point(267, 133);
+            this.CustoTxt.Name = "CustoTxt";
+            this.CustoTxt.PlaceholderText = "Custo";
+            this.CustoTxt.SelectedText = "";
+            this.CustoTxt.Size = new System.Drawing.Size(138, 36);
+            this.CustoTxt.TabIndex = 40;
+            // 
+            // SemanaTxt
+            // 
+            this.SemanaTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SemanaTxt.DefaultText = "";
+            this.SemanaTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SemanaTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SemanaTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SemanaTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SemanaTxt.Enabled = false;
+            this.SemanaTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SemanaTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SemanaTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SemanaTxt.Location = new System.Drawing.Point(267, 91);
+            this.SemanaTxt.Name = "SemanaTxt";
+            this.SemanaTxt.PlaceholderText = "Semana";
+            this.SemanaTxt.SelectedText = "";
+            this.SemanaTxt.Size = new System.Drawing.Size(138, 36);
+            this.SemanaTxt.TabIndex = 41;
             // 
             // DataPrazoSelected
             // 
@@ -218,12 +219,12 @@
             this.DataPrazoSelected.FillColor = System.Drawing.Color.White;
             this.DataPrazoSelected.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DataPrazoSelected.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DataPrazoSelected.Location = new System.Drawing.Point(1294, 3);
+            this.DataPrazoSelected.Location = new System.Drawing.Point(163, 8);
             this.DataPrazoSelected.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DataPrazoSelected.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DataPrazoSelected.Name = "DataPrazoSelected";
-            this.DataPrazoSelected.Size = new System.Drawing.Size(122, 36);
-            this.DataPrazoSelected.TabIndex = 32;
+            this.DataPrazoSelected.Size = new System.Drawing.Size(123, 36);
+            this.DataPrazoSelected.TabIndex = 42;
             this.DataPrazoSelected.Value = new System.DateTime(2025, 5, 21, 16, 52, 5, 757);
             // 
             // DataReproSelected
@@ -232,94 +233,48 @@
             this.DataReproSelected.FillColor = System.Drawing.Color.White;
             this.DataReproSelected.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DataReproSelected.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DataReproSelected.Location = new System.Drawing.Point(1422, 3);
+            this.DataReproSelected.Location = new System.Drawing.Point(292, 8);
             this.DataReproSelected.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DataReproSelected.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DataReproSelected.Name = "DataReproSelected";
-            this.DataReproSelected.Size = new System.Drawing.Size(122, 36);
-            this.DataReproSelected.TabIndex = 33;
+            this.DataReproSelected.Size = new System.Drawing.Size(113, 36);
+            this.DataReproSelected.TabIndex = 43;
             this.DataReproSelected.Value = new System.DateTime(2025, 5, 21, 16, 52, 5, 757);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 21);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Fases: ";
-            // 
-            // FlowLayoutPanelFases
-            // 
-            this.FlowLayoutPanelFases.Location = new System.Drawing.Point(55, 45);
-            this.FlowLayoutPanelFases.Name = "FlowLayoutPanelFases";
-            this.FlowLayoutPanelFases.Size = new System.Drawing.Size(1361, 49);
-            this.FlowLayoutPanelFases.TabIndex = 35;
-            this.FlowLayoutPanelFases.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanelFases_Paint);
-            // 
-            // StatusProjeto
-            // 
-            this.StatusProjeto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StatusProjeto.DefaultText = "";
-            this.StatusProjeto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StatusProjeto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StatusProjeto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusProjeto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StatusProjeto.Enabled = false;
-            this.StatusProjeto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusProjeto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.StatusProjeto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StatusProjeto.Location = new System.Drawing.Point(1422, 45);
-            this.StatusProjeto.Name = "StatusProjeto";
-            this.StatusProjeto.PlaceholderText = "Status";
-            this.StatusProjeto.SelectedText = "";
-            this.StatusProjeto.Size = new System.Drawing.Size(122, 49);
-            this.StatusProjeto.TabIndex = 36;
-            // 
-            // projetoUserControl
+            // KanbanProjetoUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Controls.Add(this.StatusProjeto);
-            this.Controls.Add(this.FlowLayoutPanelFases);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.DataReproSelected);
             this.Controls.Add(this.DataPrazoSelected);
-            this.Controls.Add(this.ClienteTxt);
             this.Controls.Add(this.SemanaTxt);
             this.Controls.Add(this.CustoTxt);
             this.Controls.Add(this.Restxt);
             this.Controls.Add(this.ItemTxt);
+            this.Controls.Add(this.ClienteTxt);
             this.Controls.Add(this.PCsTxt);
             this.Controls.Add(this.BuTXT);
+            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.PrioridadeTxt);
-            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Name = "projetoUserControl";
-            this.Size = new System.Drawing.Size(1549, 97);
-            this.Load += new System.EventHandler(this.projetoUserControl_Load);
+            this.Name = "KanbanProjetoUserControl";
+            this.Size = new System.Drawing.Size(413, 181);
+            this.Load += new System.EventHandler(this.KanbanProjetoUserControl_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
         private Guna.UI2.WinForms.Guna2TextBox PrioridadeTxt;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2TextBox BuTXT;
         private Guna.UI2.WinForms.Guna2TextBox PCsTxt;
+        private Guna.UI2.WinForms.Guna2TextBox ClienteTxt;
         private Guna.UI2.WinForms.Guna2TextBox ItemTxt;
         private Guna.UI2.WinForms.Guna2TextBox Restxt;
         private Guna.UI2.WinForms.Guna2TextBox CustoTxt;
         private Guna.UI2.WinForms.Guna2TextBox SemanaTxt;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
-        private Guna.UI2.WinForms.Guna2TextBox ClienteTxt;
         private Guna.UI2.WinForms.Guna2DateTimePicker DataPrazoSelected;
         private Guna.UI2.WinForms.Guna2DateTimePicker DataReproSelected;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelFases;
-        private Guna.UI2.WinForms.Guna2TextBox StatusProjeto;
     }
 }

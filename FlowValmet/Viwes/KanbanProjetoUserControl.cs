@@ -8,23 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FlowValmet.Model2;
-using FlowValmet.Controllers;
-using Guna.UI2.WinForms;
 
 namespace FlowValmet.Viwes
 {
-    public partial class projetoUserControl : UserControl
+    public partial class KanbanProjetoUserControl : UserControl
     {
-        public projetoUserControl()
+        public KanbanProjetoUserControl()
         {
             InitializeComponent();
         }
-
-        #region Propriedades
+        #region propriedades
 
         private int _pri;
         private string _BU;
         private string _PCs;
+
         private int _Cliente;
         private string _Item;
         private DateTime _DataEntrega;
@@ -105,8 +103,6 @@ namespace FlowValmet.Viwes
 
         #endregion
 
-        #region Carregamento de Dados
-
         public void LoadProjetoDetails(Projeto projeto, bool apenasPendentes = false)
         {
             if (projeto == null)
@@ -122,6 +118,7 @@ namespace FlowValmet.Viwes
                 Custo = projeto.Custo;
                 Cliente = projeto.Cliente;
                 Item = projeto.Item;
+            
 
                 if (projeto.DataPrazo != null)
                 {
@@ -133,7 +130,7 @@ namespace FlowValmet.Viwes
                     DataReprogramadaC = projeto.DataReprogramada.Value;
                 }
 
-                LoadFases(projeto.Fases, apenasPendentes);
+               
             }
             catch (Exception ex)
             {
@@ -143,46 +140,7 @@ namespace FlowValmet.Viwes
                                 MessageBoxIcon.Error);
             }
         }
-
-        public void LoadFases(List<Fase> fases, bool apenasPendentes = false)
-        {
-            FlowLayoutPanelFases.Controls.Clear();
-
-            var fasesParaCarregar = apenasPendentes
-                ? fases.Where(f => f.Status == "Pendente").ToList()
-                : fases;
-
-            foreach (var fase in fasesParaCarregar)
-            {
-                FaseUserControl faseControl = new FaseUserControl();
-
-                faseControl.NomeFase = fase.nomeFase.ToString();
-                faseControl.Status = fase.Status;
-
-                if (fase.DataFinal != null)
-                    faseControl.DataFinal = fase.DataFinal.Value;
-
-                FlowLayoutPanelFases.Controls.Add(faseControl);
-            }
-        }
-
-        #endregion
-
-        #region Eventos
-
-        private void projetoUserControl_Load(object sender, EventArgs e)
-        {
-            // Inicialização adicional se necessário
-        }
-
-        private void FlowLayoutPanelFases_Paint(object sender, PaintEventArgs e)
-        {
-            // Evento de pintura se necessário
-        }
-
-        #endregion
-
-        private void CustoTxt_TextChanged(object sender, EventArgs e)
+        private void KanbanProjetoUserControl_Load(object sender, EventArgs e)
         {
 
         }
