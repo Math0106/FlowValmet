@@ -49,6 +49,11 @@ namespace FlowValmet.Viwes
                 row.Cells["IconColumn"].Value = ConverterResx.GetIcon("iconVerde", 16, 16);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
     

@@ -35,52 +35,83 @@ namespace FlowValmet.Viwes
         {
             populateItems();
         }
+        //private void populateItems()
+        //{
+        //    // Limpa os controles existentes
+        //    PanelProject.Controls.Clear();
+
+        //    // Certifique-se de que o PanelProject esteja configurado como FlowLayoutPanel
+        //    if (PanelProject is FlowLayoutPanel flowPanel)
+        //    {
+        //        flowPanel.FlowDirection = FlowDirection.TopDown; // Define para organizar os controles verticalmente
+        //        flowPanel.AutoScroll = true; // Habilita a barra de rolagem se houver muitos itens
+        //    }
+
+        //    try
+        //    {
+        //        ProjetoDao dao = new ProjetoDao();
+        //        List<Projeto> projetos = dao.GetAllProjetos(); // Método que deve retornar a lista de projetos
+
+        //        foreach (Projeto projeto in projetos)
+        //        {
+        //            projetoUserControl userControl = new projetoUserControl();
+
+        //            // Preenche os dados do UserControl
+        //            userControl.Prioridade = projeto.Pri;
+        //            userControl.BU = projeto.BU;
+        //            userControl.PCs = projeto.PCs;
+        //            userControl.Cliente = projeto.Cliente;
+        //            userControl.Item = projeto.Item;
+        //            userControl.DataEntrega = (DateTime)projeto.DataPrazo;
+        //            userControl.Custo = projeto.Custo;
+        //            userControl.Responsavel = projeto.Res;
+        //            userControl.Semana = projeto.Semana;
+
+        //            // Adiciona ao painel
+        //            PanelProject.Controls.Add(userControl);
+
+        //            if (++itemCounter >= 20) break; // Limitação opcional
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Erro ao carregar projetos: {ex.Message}", "Erro",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
         private void populateItems()
         {
-            // Limpa os controles existentes
             PanelProject.Controls.Clear();
 
-            // Certifique-se de que o PanelProject esteja configurado como FlowLayoutPanel
-            if (PanelProject is FlowLayoutPanel flowPanel)
+            ProjetoDao dao = new ProjetoDao();
+            List<Projeto> projetos = dao.GetAllProjetos();
+
+            foreach (Projeto projeto in projetos)
             {
-                flowPanel.FlowDirection = FlowDirection.TopDown; // Define para organizar os controles verticalmente
-                flowPanel.AutoScroll = true; // Habilita a barra de rolagem se houver muitos itens
-            }
+                projetoUserControl userControl = new projetoUserControl();
 
-            try
-            {
-                ProjetoDao dao = new ProjetoDao();
-                List<Projeto> projetos = dao.GetAllProjetos(); // Método que deve retornar a lista de projetos
+                // Preenche dados básicos do projeto
+                userControl.Prioridade = projeto.Pri;
+                userControl.BU = projeto.BU;
+                userControl.PCs = projeto.PCs;
+                userControl.Cliente = projeto.Cliente;
+                userControl.Item = projeto.Item;
+                userControl.DataEntrega = (DateTime)projeto.DataPrazo;
+                userControl.Custo = projeto.Custo;
+                userControl.Responsavel = projeto.Res;
+                userControl.Semana = projeto.Semana;
 
-                foreach (Projeto projeto in projetos)
-                {
-                    projetoUserControl userControl = new projetoUserControl();
+                // Aqui você busca as fases relacionadas a esse projeto
+                List<Fase> fasesDoProjeto = dao.GetFasesByProjeto(projeto.id_projeto); // método que retorna as fases
 
-                    // Preenche os dados do UserControl
-                    userControl.Prioridade = projeto.Pri;
-                    userControl.BU = projeto.BU;
-                    userControl.PCs = projeto.PCs;
-                    userControl.Cliente = projeto.Cliente;
-                    userControl.Item = projeto.Item;
-                    userControl.DataEntrega = (DateTime)projeto.DataPrazo;
-                    userControl.Custo = projeto.Custo;
-                    userControl.Responsavel = projeto.Res;
-                    userControl.Semana = projeto.Semana;
+                // Carrega as fases no user control do projeto
+                userControl.LoadFases(fasesDoProjeto);
 
-                    // Adiciona ao painel
-                    PanelProject.Controls.Add(userControl);
-
-                    if (++itemCounter >= 20) break; // Limitação opcional
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar projetos: {ex.Message}", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PanelProject.Controls.Add(userControl);
             }
         }
 
-       
         private void guna2Button1_Click(object sender, EventArgs e) { }
         private void guna2Button9_Click(object sender, EventArgs e) { }
         private void PanelProject_Paint(object sender, PaintEventArgs e) { }

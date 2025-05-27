@@ -177,6 +177,7 @@
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
     <Compile Include="Controllers\ConverterResx.cs" />
     <Compile Include="Controllers\ProjetoDao.cs" />
+    <Compile Include="Model2\Fase.cs" />
     <Compile Include="Model2\Projeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,6 +216,12 @@
     <Compile Include="Viwes\CadastroOP.Designer.cs">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\FaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Viwes\FaseUserControl.Designer.cs">
+      <DependentUpon>FaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\projetoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +245,12 @@
     </Compile>
     <Compile Include="Viwes\Teste.Designer.cs">
       <DependentUpon>Teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viwes\TesteFase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\TesteFase.Designer.cs">
+      <DependentUpon>TesteFase.cs</DependentUpon>
     </Compile>
     <Compile Include="Viwes\VincularProcessos.cs">
       <SubType>Form</SubType>
@@ -265,6 +278,9 @@
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\FaseUserControl.resx">
+      <DependentUpon>FaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viwes\projetoUserControl.resx">
       <DependentUpon>projetoUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\Teste.resx">
       <DependentUpon>Teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TesteFase.resx">
+      <DependentUpon>TesteFase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\VincularProcessos.resx">
       <DependentUpon>VincularProcessos.cs</DependentUpon>

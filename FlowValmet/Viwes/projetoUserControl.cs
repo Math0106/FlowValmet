@@ -108,22 +108,87 @@ namespace FlowValmet.Viwes
 
         #endregion
 
+        //public void LoadProjetoDetails(Projeto projeto)
+        //{
+        //    if (projeto == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(projeto), "O objeto Projeto não pode ser nulo");
+        //    }
+
+        //    try
+        //    {
+        //        // Atribuições básicas
+        //        Prioridade = projeto.Pri;
+        //        BU = projeto.BU;
+        //        PCs = projeto.PCs;
+        //        Responsavel = projeto.Res;  // Garantido pelo setter que trata nulos
+        //        Semana = projeto.Semana;
+        //        Custo =  projeto.Custo;
+        //        Cliente = projeto.Cliente;
+        //        Item = projeto.Item;
+
+        //        // Atribuições de datas com verificação
+        //        if (projeto.DataPrazo != null)
+        //        {
+        //            DataEntrega = projeto.DataPrazo.Value;
+        //        }
+
+        //        if (projeto.DataReprogramada != null)
+        //        {
+        //            DataReprogramadaC = projeto.DataReprogramada.Value;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Erro ao carregar detalhes do projeto: {ex.Message}",
+        //                      "Erro",
+        //                      MessageBoxButtons.OK,
+        //                      MessageBoxIcon.Error);
+        //    }
+        //}
+
+        private void projetoUserControl_Load(object sender, EventArgs e)
+        {
+            // Inicialização adicional se necessário
+        }
+
+        private void FlowLayoutPanelFases_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void LoadFases(List<Fase> fases)
+        {
+            FlowLayoutPanelFases.Controls.Clear();
+
+            foreach (var fase in fases)
+            {
+                FaseUserControl faseControl = new FaseUserControl();
+
+                // Configure as propriedades do controle de fase
+                faseControl.NomeFase = fase.IdFase.ToString(); // Supondo que sua classe Fase tem NomeFase
+                faseControl.Status = fase.Status;
+                if (fase.DataFinal != null)
+                    faseControl.DataFinal = fase.DataFinal.Value; // Supondo DataFinal nullable
+
+                // Adiciona o controle ao painel de fases
+                FlowLayoutPanelFases.Controls.Add(faseControl);
+            }
+        }
         public void LoadProjetoDetails(Projeto projeto)
         {
             if (projeto == null)
-            {
                 throw new ArgumentNullException(nameof(projeto), "O objeto Projeto não pode ser nulo");
-            }
 
             try
             {
-                // Atribuições básicas
+                
                 Prioridade = projeto.Pri;
                 BU = projeto.BU;
                 PCs = projeto.PCs;
                 Responsavel = projeto.Res;  // Garantido pelo setter que trata nulos
                 Semana = projeto.Semana;
-                Custo =  projeto.Custo;
+                Custo = projeto.Custo;
                 Cliente = projeto.Cliente;
                 Item = projeto.Item;
 
@@ -137,6 +202,7 @@ namespace FlowValmet.Viwes
                 {
                     DataReprogramadaC = projeto.DataReprogramada.Value;
                 }
+                LoadFases(projeto.Fases);
             }
             catch (Exception ex)
             {
@@ -147,9 +213,8 @@ namespace FlowValmet.Viwes
             }
         }
 
-        private void projetoUserControl_Load(object sender, EventArgs e)
-        {
-            // Inicialização adicional se necessário
-        }
+
     }
+
+
 }

@@ -8,6 +8,11 @@ namespace FlowValmet.Model2
 {
     public class Projeto
     {
+     
+        // ... outras propriedades existentes
+
+        public List<Fase> Fases { get; set; } = new List<Fase>();
+        
         public int id_projeto { get; set; }
 
         public int Pri { get; set; }
@@ -16,7 +21,7 @@ namespace FlowValmet.Model2
 
         public string PCs { get; set; }
 
-
+        public string Status { get; set; }
         public int Cliente { get; set; }
 
         public string Item { get; set; }

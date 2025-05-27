@@ -42,7 +42,7 @@
             this.DataPrazoSelected = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DataReproSelected = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.fase1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.FlowLayoutPanelFases = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // PrioridadeTxt
@@ -239,22 +239,20 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Fases: ";
             // 
-            // fase1
+            // FlowLayoutPanelFases
             // 
-            this.fase1.BackColor = System.Drawing.Color.Transparent;
-            this.fase1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fase1.Location = new System.Drawing.Point(72, 53);
-            this.fase1.Name = "fase1";
-            this.fase1.Size = new System.Drawing.Size(47, 23);
-            this.fase1.TabIndex = 35;
-            this.fase1.Text = "Fase 1";
+            this.FlowLayoutPanelFases.Location = new System.Drawing.Point(55, 45);
+            this.FlowLayoutPanelFases.Name = "FlowLayoutPanelFases";
+            this.FlowLayoutPanelFases.Size = new System.Drawing.Size(1361, 49);
+            this.FlowLayoutPanelFases.TabIndex = 35;
+            this.FlowLayoutPanelFases.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanelFases_Paint);
             // 
             // projetoUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Controls.Add(this.fase1);
+            this.Controls.Add(this.FlowLayoutPanelFases);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataReproSelected);
             this.Controls.Add(this.DataPrazoSelected);
@@ -290,6 +288,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DataPrazoSelected;
         private Guna.UI2.WinForms.Guna2DateTimePicker DataReproSelected;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel fase1;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelFases;
     }
 }
