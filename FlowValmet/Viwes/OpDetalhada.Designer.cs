@@ -38,7 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelPrincipal.BorderRadius = 5;
             this.GNPanelPrincipal.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNPanelPrincipal.Location = new System.Drawing.Point(3, 2);
+            this.GNPanelPrincipal.Location = new System.Drawing.Point(2, 2);
             this.GNPanelPrincipal.Name = "GNPanelPrincipal";
             this.GNPanelPrincipal.Size = new System.Drawing.Size(1383, 946);
             this.GNPanelPrincipal.TabIndex = 4;

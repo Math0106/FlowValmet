@@ -16,7 +16,8 @@ namespace FlowValmet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Viwes.TelaPrincipal());
+            //Application.Run(new Viwes.TelaPrincipal());
+            Application.Run(new Viwes.TelaKanbanGUS());
         }
     }
 }

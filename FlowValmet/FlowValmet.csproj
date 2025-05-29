@@ -240,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConexaoAcess.cs" />
+    <Compile Include="Controllers\ConsultaProcessos.cs" />
     <Compile Include="Controllers\ControleAnaliseOp.cs" />
     <Compile Include="Controllers\ControleConsultaOP.cs" />
     <Compile Include="Controllers\ControleLembretes.cs" />
@@ -253,7 +254,9 @@
     <Compile Include="Controllers\ExportarPDF.cs" />
     <Compile Include="Models\Lembrete.cs" />
     <Compile Include="Models\LinhaProducao.cs" />
+    <Compile Include="Models\OpCompletaDto.cs" />
     <Compile Include="Models\OrdemProducao.cs" />
+    <Compile Include="Models\ProcessoDto.cs" />
     <Compile Include="Models\SessaoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />

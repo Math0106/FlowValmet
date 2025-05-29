@@ -1,4 +1,5 @@
-﻿using FlowValmet.Controllers;
+﻿
+using FlowValmet.Controllers;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,72 @@ namespace FlowValmet.Viwes
         public OpDetalhada()
         {
             InitializeComponent();
-            
-            CarregarOPsCompleta();
+            LoadDataAsync();
         }
 
+        private async void LoadDataAsync()
+        {
+            try
+            {
+                ShowLoadingIndicator(true);
+                opList = await Task.Run(() => consultaOP.RecuperarOpCompleta());
+
+                await Task.Run(() =>
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        CarregarOPsCompleta();
+                    });
+                });
+            }
+            finally
+            {
+                ShowLoadingIndicator(false);
+            }
+        }
+
+        private void ShowLoadingIndicator(bool show)
+        {
+            if (show)
+            {
+                var loadingPanel = new Guna2Panel()
+                {
+                    Dock = DockStyle.Fill,
+                    BackColor = Color.FromArgb(100, 0, 0, 0),
+                    Visible = true
+                };
+
+                var spinner = new Guna2WinProgressIndicator()
+                {
+                    Size = new Size(80, 80), // Aumentado de 60x60
+                    Location = new Point(
+                        (this.Width - 80) / 2,
+                        (this.Height - 80) / 2),
+                    ProgressColor = Color.White
+                };
+
+                loadingPanel.Controls.Add(spinner);
+                this.Controls.Add(loadingPanel);
+                spinner.Start();
+                spinner.BringToFront();
+            }
+            else
+            {
+                var loadingPanel = this.Controls.OfType<Guna2Panel>()
+                    .FirstOrDefault(p => p.BackColor == Color.FromArgb(100, 0, 0, 0));
+
+                if (loadingPanel != null)
+                {
+                    this.Controls.Remove(loadingPanel);
+                    loadingPanel.Dispose();
+                }
+            }
+        }
 
         public void CarregarOPsCompleta()
         {
-            // Limpa o panel principal
             GNPanelPrincipal.Controls.Clear();
-
-            // Carrega os dados
-            opList = consultaOP.RecuperarOpCompleta();
+            GNPanelPrincipal.Visible = false;
 
             if (opList == null || opList.Count == 0)
             {
@@ -40,15 +95,16 @@ namespace FlowValmet.Viwes
             }
 
             CriarCardsNoPanelPrincipal();
+            GNPanelPrincipal.Visible = true;
         }
 
         private void AdicionarMensagemNenhumRegistro()
         {
             var lblEmpty = new Guna2HtmlLabel()
             {
-                Text = "<span style='color: #666; font-size: 14pt;'>Nenhuma OP encontrada</span>",
+                Text = "<span style='color: #666; font-size: 16pt;'>Nenhuma OP encontrada</span>", // Aumentado de 14pt
                 AutoSize = false,
-                Size = new Size(GNPanelPrincipal.Width - 40, 100),
+                Size = new Size(GNPanelPrincipal.Width - 40, 120), // Aumentado de 100
                 TextAlignment = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill
             };
@@ -57,11 +113,10 @@ namespace FlowValmet.Viwes
 
         private void CriarCardsNoPanelPrincipal()
         {
-            // Cria um FlowLayoutPanel dentro do panel principal
             var flowPanel = new FlowLayoutPanel()
             {
                 Dock = DockStyle.Fill,
-                AutoScroll = false, // Já temos scroll no panel principal
+                AutoScroll = false,
                 WrapContents = true,
                 BackColor = Color.Transparent,
                 Margin = new Padding(0)
@@ -69,7 +124,6 @@ namespace FlowValmet.Viwes
 
             GNPanelPrincipal.Controls.Add(flowPanel);
 
-            // Cria os cards
             foreach (var op in opList)
             {
                 flowPanel.Controls.Add(CriarCardOP(op));
@@ -78,67 +132,64 @@ namespace FlowValmet.Viwes
 
         private Guna2Panel CriarCardOP(Tuple<string, string, string, string, DateTime, DateTime, string> op)
         {
-            // Card principal
             var card = new Guna2Panel()
             {
-                Size = new Size(420, 280),
+                Size = new Size(435, 320), // Aumentado de 420x280
                 Margin = new Padding(15),
                 BorderRadius = 15,
                 FillColor = Color.White,
                 Cursor = Cursors.Hand
             };
 
-            // Header do card
+            // Header com fonte maior
             var headerPanel = new Guna2Panel()
             {
-                Size = new Size(390, 40),
+                Size = new Size(410, 50), // Aumentado de 390x40
                 Location = new Point(15, 15),
-                FillColor = Color.FromArgb(50, 120, 200),
+                FillColor = Color.FromArgb(92, 132, 156),
                 BorderRadius = 10
             };
 
             var lblOpNumber = new Label()
             {
                 Text = $"OP #{op.Item2}",
-                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                Font = new Font("Segoe UI Semibold", 14, FontStyle.Bold), // Aumentado de 12
                 ForeColor = Color.White,
                 AutoSize = true,
-                Location = new Point(10, 5)
+                Location = new Point(10, 10) // Ajuste de posição
             };
             headerPanel.Controls.Add(lblOpNumber);
 
-            // Corpo do card
             var contentPanel = new Panel()
             {
-                Size = new Size(390, 200),
-                Location = new Point(15, 65),
+                Size = new Size(420, 240), // Aumentado de 390x200
+                Location = new Point(15, 75), // Ajuste de posição
                 BackColor = Color.Transparent
             };
 
-            // Adiciona informações básicas
+            // Informações com fontes maiores
             AdicionarInfoCard(contentPanel, "ID:", op.Item1, 0);
-            AdicionarInfoCard(contentPanel, "Descrição:", op.Item3, 30);
-            AdicionarInfoCard(contentPanel, "Desenho:", op.Item4, 60);
-            AdicionarInfoCard(contentPanel, "Início:", op.Item5.ToShortDateString(), 90);
-            AdicionarInfoCard(contentPanel, "Entrega:", op.Item6.ToShortDateString(), 120);
+            AdicionarInfoCard(contentPanel, "Descrição:", op.Item3, 35); // Aumentado espaçamento
+            AdicionarInfoCard(contentPanel, "Desenho:", op.Item4, 70);
+            AdicionarInfoCard(contentPanel, "Início:", op.Item5.ToShortDateString(), 105);
+            AdicionarInfoCard(contentPanel, "Entrega:", op.Item6.ToShortDateString(), 140);
 
-            // Botão de processos
+            // Botão com fonte maior
             var btnProcessos = new Guna2Button()
             {
                 Text = "Ver Processos",
-                Size = new Size(150, 30),
-                Location = new Point(120, 160),
+                Size = new Size(180, 40), // Aumentado de 150x30
+                Location = new Point(120, 185), // Ajuste de posição
                 BorderRadius = 8,
-                FillColor = Color.FromArgb(70, 130, 180),
+                FillColor = Color.FromArgb(92, 132, 156),
                 ForeColor = Color.White,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold), // Aumentado de 9
                 Cursor = Cursors.Hand,
-                Tag = op.Item7 // Armazena os processos para usar no click
+                Tag = op.Item7
             };
             btnProcessos.Click += BtnProcessos_Click;
             contentPanel.Controls.Add(btnProcessos);
 
-            // Adiciona os componentes ao card
             card.Controls.Add(headerPanel);
             card.Controls.Add(contentPanel);
 
@@ -149,17 +200,17 @@ namespace FlowValmet.Viwes
         {
             var lblTitle = new Guna2HtmlLabel()
             {
-                Text = $"<span style='color: #666; font-weight: bold;'>{label}</span>",
+                Text = $"<span style='color: #666; font-weight: bold; font-size: 12pt;'>{label}</span>", // Aumentado
                 Location = new Point(20, yPos),
                 AutoSize = true
             };
 
             var lblValue = new Guna2HtmlLabel()
             {
-                Text = $"<span style='color: #444;'>{value}</span>",
-                Location = new Point(130, yPos),
+                Text = $"<span style='color: #444; font-size: 12pt;'>{value}</span>", // Aumentado
+                Location = new Point(150, yPos), // Ajuste de posição
                 AutoSize = true,
-                MaximumSize = new Size(250, 0)
+                MaximumSize = new Size(260, 0) // Aumentado de 250
             };
 
             parent.Controls.Add(lblTitle);
@@ -186,18 +237,18 @@ namespace FlowValmet.Viwes
             var detailForm = new Form()
             {
                 Text = "Detalhes dos Processos",
-                Size = new Size(530, 600),
+                Size = new Size(500, 700), // Aumentado de 530x600
                 StartPosition = FormStartPosition.CenterParent,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
                 MaximizeBox = false,
                 BackColor = Color.FromArgb(240, 240, 240)
             };
 
-            // Painel de cabeçalho
+            // Header com fonte maior
             var headerPanel = new Guna2Panel()
             {
                 Dock = DockStyle.Top,
-                Height = 50,
+                Height = 60, // Aumentado de 50
                 FillColor = Color.FromArgb(50, 120, 200),
                 BorderRadius = 0,
                 Padding = new Padding(10)
@@ -206,7 +257,7 @@ namespace FlowValmet.Viwes
             var lblTitle = new Label()
             {
                 Text = "Processos da OP",
-                Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                Font = new Font("Segoe UI Semibold", 16, FontStyle.Bold), // Aumentado de 14
                 ForeColor = Color.White,
                 Dock = DockStyle.Left,
                 BackColor = Color.FromArgb(50, 120, 200),
@@ -214,12 +265,11 @@ namespace FlowValmet.Viwes
             };
             headerPanel.Controls.Add(lblTitle);
 
-            // Container dos cards de processos
             var flowPanel = new FlowLayoutPanel()
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true,
-                Padding = new Padding(20),
+                Padding = new Padding(25, 25, 25, 25),
                 BackColor = Color.Transparent
             };
 
@@ -233,7 +283,7 @@ namespace FlowValmet.Viwes
                 var lblEmpty = new Label()
                 {
                     Text = "Nenhum processo encontrado",
-                    Font = new Font("Segoe UI", 12),
+                    Font = new Font("Segoe UI Semibold", 14), // Aumentado de 12
                     ForeColor = Color.Gray,
                     AutoSize = true,
                     Dock = DockStyle.Fill,
@@ -265,18 +315,19 @@ namespace FlowValmet.Viwes
         {
             return input?.Replace("\n", "").Replace("\r", "").Trim() ?? string.Empty;
         }
+
         private Guna2Panel CreateProcessCard(string linha, string status, string inicio, string fim)
         {
             var card = new Guna2Panel()
             {
-                Size = new Size(450, 130), // Altura reduzida
-                Margin = new Padding(10),
+                Size = new Size(400, 160), // Aumentado de 450x130
+                Margin = new Padding(12, 12, 12, 30), // Aumentado de 10
                 BorderRadius = 10,
                 FillColor = Color.White,
-                Padding = new Padding(15)
+                Padding = new Padding(20) // Aumentado de 15
             };
 
-            var yPos = 10;
+            var yPos = 15; // Aumentado de 10
             AddLabelToCard(card, "🏭 Linha:", linha, ref yPos);
             AddLabelToCard(card, "🔄 Status:", FormatStatus(status), ref yPos);
             AddLabelToCard(card, "⏱️ Início:", FormatDate(inicio), ref yPos);
@@ -284,21 +335,31 @@ namespace FlowValmet.Viwes
 
             return card;
         }
+
         private string FormatStatus(string status)
         {
             if (string.IsNullOrWhiteSpace(status))
-                return "Status não informado";
+                return "❔ Status não informado";
 
-            string trimmedStatus = status.Trim();
+            string trimmedStatus = status.Trim().ToLower();
 
-            if (trimmedStatus == "Ativo")
-                return "✅ Ativo";
-            if (trimmedStatus == "Concluido" || trimmedStatus == "Concluído")
-                return "✔️ Concluído";
-            if (trimmedStatus == "Cancelado")
-                return "❌ Cancelado";
+            // Implementação específica para "em andamento" com destaque
+            if (trimmedStatus == "andamento")
+            {
+                return "🔄 EM ANDAMENTO";
+            }
 
-            return status;
+            switch (trimmedStatus)
+            {
+                case "concluido":
+                    return "✅ Concluído";
+                case "atrasado":
+                    return "❌ Atrasado";
+                case "nulo":
+                    return "⚠️ Nulo";
+                default:
+                    return $"� {status}";
+            }
         }
 
         private string FormatDate(string date)
@@ -306,7 +367,7 @@ namespace FlowValmet.Viwes
             if (string.IsNullOrWhiteSpace(date) || date.Trim() == "N/A")
                 return "⏳ Em andamento";
 
-            date = date.Trim(); // Remove espaços extras
+            date = date.Trim();
 
             if (DateTime.TryParse(date, out var parsedDate))
                 return parsedDate.ToString("dd/MM/yyyy");
@@ -319,392 +380,43 @@ namespace FlowValmet.Viwes
             var lblLabel = new Label()
             {
                 Text = label,
-                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold), // Aumentado de 11
                 ForeColor = Color.FromArgb(70, 70, 70),
-                Location = new Point(15, yPos),
+                Location = new Point(20, yPos), // Aumentado de 15
                 AutoSize = true
             };
 
             var lblValue = new Label()
             {
                 Text = value,
-                Font = new Font("Segoe UI", 10),
+                Font = new Font("Segoe UI Semibold", 11), // Aumentado de 10
                 ForeColor = Color.Black,
-                Location = new Point(135, yPos),
-                MaximumSize = new Size(550, 30),
+                Location = new Point(150, yPos), // Aumentado de 135
+                MaximumSize = new Size(600, 60), // Aumentado de 550x30
+                Size = new Size(200,5),
                 AutoSize = false,
-                Height = 20
+                Height = 30 // Aumentado de 20
             };
+
+            if (label.Contains("Status:") && value.ToLower().Contains("concluído"))
+            {
+                lblValue.ForeColor = Color.Green; 
+
+            }
+            else if (label.Contains("Status:") && value.ToLower().Contains("andamento"))
+            {
+                lblValue.ForeColor = Color.FromArgb(196,195,2); 
+            }
+            else if (label.Contains("Status:") && value.ToLower().Contains("atrasado"))
+            {
+                lblValue.ForeColor = Color.Red; 
+            }
 
             panel.Controls.Add(lblLabel);
             panel.Controls.Add(lblValue);
 
-            yPos += 30; // Espaçamento fixo entre linhas
+            yPos += 35; // Aumentado de 30
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-
-            // Ajusta o padding do panel principal quando o formulário redimensiona
-            if (WindowState == FormWindowState.Maximized)
-            {
-                GNPanelPrincipal.Padding = new Padding(40);
-            }
-            else
-            {
-                GNPanelPrincipal.Padding = new Padding(20);
-            }
-        }
-
-        //public partial class OpDetalhada : Form
-        //{
-        //    ControleConsultaOP consultaOP = new ControleConsultaOP();
-        //    public OpDetalhada()
-        //    {
-
-        //        //consultaOP.RecuperarOpCompleta();
-        //        CarregarOPsCompleta();
-        //        InitializeComponent();
-        //    }
-
-
-        //    private FlowLayoutPanel cardsContainer;
-        //    private List<Tuple<string, string, string, string, DateTime, DateTime, string>> opList;
-
-        //    public void CarregarOPsCompleta()
-        //    {
-        //        // Configuração inicial do formulário
-        //        this.Text = "Visualização de OPs";
-        //        this.ClientSize = new Size(1000, 700);
-        //        this.StartPosition = FormStartPosition.CenterScreen;
-        //        this.BackColor = Color.FromArgb(240, 240, 240);
-
-        //        // Carrega os dados
-        //        opList = consultaOP.RecuperarOpCompleta();
-
-        //        // Cria o container para os cards
-        //        cardsContainer = new FlowLayoutPanel
-        //        {
-        //            Dock = DockStyle.Fill,
-        //            AutoScroll = true,
-        //            WrapContents = true,
-        //            Padding = new Padding(20),
-        //            BackColor = Color.Transparent
-        //        };
-        //        this.Controls.Add(cardsContainer);
-
-        //        // Cria os cards dinamicamente
-        //        CreateCards();
-        //    }
-
-        //    private void CreateCards()
-        //    {
-        //        if (opList == null || opList.Count == 0)
-        //        {
-        //            var lblEmpty = new Label
-        //            {
-        //                Text = "Nenhuma OP encontrada",
-        //                Font = new Font("Segoe UI", 14, FontStyle.Bold),
-        //                ForeColor = Color.Gray,
-        //                AutoSize = true,
-        //                Dock = DockStyle.Fill,
-        //                TextAlign = ContentAlignment.MiddleCenter
-        //            };
-        //            cardsContainer.Controls.Add(lblEmpty);
-        //            return;
-        //        }
-
-        //        foreach (var op in opList)
-        //        {
-        //            // Cria o card principal
-        //            var card = new Guna2Panel()
-        //            {
-        //                Size = new Size(420, 280),
-        //                Margin = new Padding(15),
-        //                BorderRadius = 15,
-        //                FillColor = Color.White,
-        //            };
-
-        //            // Header do card
-        //            var headerPanel = new Guna2Panel()
-        //            {
-        //                Size = new Size(380, 40),
-        //                Location = new Point(20, 15),
-        //                FillColor = Color.FromArgb(50, 120, 200),
-        //                BorderRadius = 10
-        //            };
-
-        //            var lblOpNumber = new Label()
-        //            {
-        //                Text = $"OP #{op.Item2}",
-        //                Font = new Font("Segoe UI", 12, FontStyle.Bold),
-        //                ForeColor = Color.White,
-        //                AutoSize = true,
-        //                Location = new Point(10, 5)
-        //            };
-        //            headerPanel.Controls.Add(lblOpNumber);
-
-        //            // Corpo do card
-        //            var contentPanel = new Panel()
-        //            {
-        //                Size = new Size(310, 200),
-        //                Location = new Point(20, 65),
-        //                BackColor = Color.Transparent
-        //            };
-
-        //            // Adiciona informações básicas
-        //            AddInfoLabel(contentPanel, "ID:", op.Item1, 0);
-        //            AddInfoLabel(contentPanel, "Descrição:", op.Item3, 30);
-        //            AddInfoLabel(contentPanel, "Desenho:", op.Item4, 60);
-        //            AddInfoLabel(contentPanel, "Início:", op.Item5.ToShortDateString(), 90);
-        //            AddInfoLabel(contentPanel, "Entrega:", op.Item6.ToShortDateString(), 120);
-
-        //            // Adiciona botão para detalhes dos processos
-        //            var btnProcessos = new Guna2Button()
-        //            {
-        //                Text = "Ver Processos",
-        //                Size = new Size(150, 30),
-        //                Location = new Point(110, 160),
-        //                BorderRadius = 8,
-        //                FillColor = Color.FromArgb(70, 130, 180),
-        //                ForeColor = Color.White,
-        //                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-        //                Cursor = Cursors.Hand
-        //            };
-        //            btnProcessos.Click += (sender, e) => ShowProcessDetails(op.Item7);
-        //            contentPanel.Controls.Add(btnProcessos);
-
-        //            // Adiciona os componentes ao card
-        //            card.Controls.Add(headerPanel);
-        //            card.Controls.Add(contentPanel);
-
-        //            // Adiciona o card ao container
-        //            cardsContainer.Controls.Add(card);
-        //        }
-        //    }
-
-        //    private void AddInfoLabel(Panel parent, string label, string value, int yPos)
-        //    {
-        //        var lblTitle = new Label()
-        //        {
-        //            Text = label,
-        //            Font = new Font("Segoe UI", 11, FontStyle.Bold),
-        //            ForeColor = Color.Gray,
-        //            Location = new Point(20, yPos),
-        //            AutoSize = true
-        //        };
-
-        //        var lblValue = new Label()
-        //        {
-        //            Text = value,
-        //            Font = new Font("Segoe UI", 10),
-        //            ForeColor = Color.FromArgb(70, 70, 70),
-        //            Location = new Point(130, yPos),
-        //            AutoSize = true,
-        //            MaximumSize = new Size(200, 0)
-        //        };
-
-        //        parent.Controls.Add(lblTitle);
-        //        parent.Controls.Add(lblValue);
-        //    }
-        //    private void ShowProcessDetails(string processos)
-        //    {
-        //        if (string.IsNullOrEmpty(processos))
-        //        {
-        //            MessageBox.Show("Nenhum processo encontrado para esta OP.", "Informação",
-        //                          MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            return;
-        //        }
-
-        //        var detailForm = new Form()
-        //        {
-        //            Text = "Detalhes dos Processos",
-        //            Size = new Size(530, 600),
-        //            StartPosition = FormStartPosition.CenterParent,
-        //            FormBorderStyle = FormBorderStyle.FixedDialog,
-        //            MaximizeBox = false,
-        //            BackColor = Color.FromArgb(240, 240, 240)
-        //        };
-
-        //        // Painel de cabeçalho
-        //        var headerPanel = new Guna2Panel()
-        //        {
-        //            Dock = DockStyle.Top,
-        //            Height = 50,
-        //            FillColor = Color.FromArgb(50, 120, 200),
-        //            BorderRadius = 0,
-        //            Padding = new Padding(10)
-        //        };
-
-        //        var lblTitle = new Label()
-        //        {
-        //            Text = "Processos da OP",
-        //            Font = new Font("Segoe UI", 14, FontStyle.Bold),
-        //            ForeColor = Color.White,
-        //            Dock = DockStyle.Left,
-        //            BackColor = Color.FromArgb(50, 120, 200),
-        //            AutoSize = true
-        //        };
-        //        headerPanel.Controls.Add(lblTitle);
-
-        //        // Container dos cards de processos
-        //        var flowPanel = new FlowLayoutPanel()
-        //        {
-        //            Dock = DockStyle.Fill,
-        //            AutoScroll = true,
-        //            Padding = new Padding(20),
-        //            BackColor = Color.Transparent
-        //        };
-
-        //        detailForm.Controls.Add(flowPanel);
-        //        detailForm.Controls.Add(headerPanel);
-
-        //        var processList = processos.Split(';');
-
-        //        if (processList.Length == 0)
-        //        {
-        //            var lblEmpty = new Label()
-        //            {
-        //                Text = "Nenhum processo encontrado",
-        //                Font = new Font("Segoe UI", 12),
-        //                ForeColor = Color.Gray,
-        //                AutoSize = true,
-        //                Dock = DockStyle.Fill,
-        //                TextAlign = ContentAlignment.MiddleCenter
-        //            };
-        //            flowPanel.Controls.Add(lblEmpty);
-        //        }
-        //        else
-        //        {
-        //            foreach (var process in processList)
-        //            {
-        //                var parts = process.Split('|');
-        //                if (parts.Length >= 4)
-        //                {
-        //                    flowPanel.Controls.Add(CreateProcessCard(
-        //                        linha: SanitizeInput(parts[0]),
-        //                        status: SanitizeInput(parts[1]),
-        //                        inicio: SanitizeInput(parts[2]),
-        //                        fim: SanitizeInput(parts[3])
-        //                    ));
-        //                }
-        //            }
-        //        }
-
-        //        detailForm.ShowDialog();
-        //    }
-
-        //    private string SanitizeInput(string input)
-        //    {
-        //        return input?.Replace("\n", "").Replace("\r", "").Trim() ?? string.Empty;
-        //    }
-        //    private Guna2Panel CreateProcessCard(string linha, string status, string inicio, string fim)
-        //    {
-        //        var card = new Guna2Panel()
-        //        {
-        //            Size = new Size(450, 130), // Altura reduzida
-        //            Margin = new Padding(10),
-        //            BorderRadius = 10,
-        //            FillColor = Color.White,
-        //            Padding = new Padding(15)
-        //        };
-
-        //        var yPos = 10;
-        //        AddLabelToCard(card, "🏭 Linha:", linha, ref yPos);
-        //        AddLabelToCard(card, "🔄 Status:", FormatStatus(status), ref yPos);
-        //        AddLabelToCard(card, "⏱️ Início:", FormatDate(inicio), ref yPos);
-        //        AddLabelToCard(card, "🏁 Fim:", FormatDate(fim), ref yPos);
-
-        //        return card;
-        //    }
-
-        //    private void AddLabelToCard(Guna2Panel panel, string label, string value, ref int yPos)
-        //    {
-        //        var lblLabel = new Label()
-        //        {
-        //            Text = label,
-        //            Font = new Font("Segoe UI", 11, FontStyle.Bold),
-        //            ForeColor = Color.FromArgb(70, 70, 70),
-        //            Location = new Point(15, yPos),
-        //            AutoSize = true
-        //        };
-
-        //        var lblValue = new Label()
-        //        {
-        //            Text = value,
-        //            Font = new Font("Segoe UI", 10),
-        //            ForeColor = Color.Black,
-        //            Location = new Point(135, yPos),
-        //            MaximumSize = new Size(550, 30),
-        //            AutoSize = false,
-        //            Height = 20
-        //        };
-
-        //        panel.Controls.Add(lblLabel);
-        //        panel.Controls.Add(lblValue);
-
-        //        yPos += 30; // Espaçamento fixo entre linhas
-        //    }
-
-
-        //    private void AddProcessInfoRow(TableLayoutPanel panel, string label, string value, int row)
-        //    {
-        //        var lblLabel = new Label()
-        //        {
-        //            Text = label,
-        //            Font = new Font("Segoe UI", 9, FontStyle.Bold),
-        //            ForeColor = Color.FromArgb(70, 70, 70),
-        //            Dock = DockStyle.Fill,
-        //            TextAlign = ContentAlignment.MiddleLeft
-        //        };
-        //        var lblValue = new Label()
-        //        {
-        //            Text = value,
-        //            Font = new Font("Segoe UI", 9),
-        //            ForeColor = Color.Black,
-        //            Dock = DockStyle.Fill,
-        //            TextAlign = ContentAlignment.MiddleLeft,
-        //            MaximumSize = new Size(550, 0),
-        //            AutoSize = true // Garante que não haja espaçamento extra
-        //        };
-
-
-        //        panel.Controls.Add(lblLabel, 0, row);
-        //        panel.Controls.Add(lblValue, 1, row);
-        //    }
-
-        //    private string FormatStatus(string status)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(status))
-        //            return "Status não informado";
-
-        //        string trimmedStatus = status.Trim();
-
-        //        if (trimmedStatus == "Ativo")
-        //            return "✅ Ativo";
-        //        if (trimmedStatus == "Concluido" || trimmedStatus == "Concluído")
-        //            return "✔️ Concluído";
-        //        if (trimmedStatus == "Cancelado")
-        //            return "❌ Cancelado";
-
-        //        return status;
-        //    }
-
-        //    private string FormatDate(string date)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(date) || date.Trim() == "N/A")
-        //            return "⏳ Em andamento";
-
-        //        date = date.Trim(); // Remove espaços extras
-
-        //        if (DateTime.TryParse(date, out var parsedDate))
-        //            return parsedDate.ToString("dd/MM/yyyy");
-
-        //        return date;
-        //    }
-
-        //}
     }
 }
-
