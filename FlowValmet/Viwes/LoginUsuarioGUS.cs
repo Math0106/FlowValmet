@@ -79,6 +79,7 @@ namespace FlowValmet.Viwes
                     if (telaPrincipal != null)
                     {
                         telaPrincipal.ResetarTelaPrincpal();
+
                     }
                     LimparCampos();
                     

@@ -1,5 +1,6 @@
 ﻿using FlowValmet.Controllers;
 using FlowValmet.Models;
+using Guna.UI2.WinForms;
 using Org.BouncyCastle.Pkcs;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,11 @@ namespace FlowValmet.Viwes
         public TelaPrincipal()
         {
             InitializeComponent();
-
             ConfigurarAcessos();
 
+
         }
+
 
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
@@ -36,16 +38,23 @@ namespace FlowValmet.Viwes
             ConfigurarAcessos();
             GNPanelCentro.Visible = false;
             GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+
         }
+
 
         private void ConfigurarAcessos()
         {
-            // Desabilitar todos os botões inicialmente
+            //// Desabilitar todos os botões inicialmente
             GNBtnOp.Enabled = false;
             GNBtnVincular.Enabled = false;
             GNBtnProcessos.Enabled = false;
             GNBtnUsuario.Enabled = false;
             GNbtnLembretes.Enabled = false;
+
+
+            GNBtnKanban.Enabled = false;
+            GNBtnVincular.Enabled = false;
+            GNBtnOpDet.Enabled = false;
 
             // Verificar se há usuário logado e habilitar botões conforme perfil
             if (!string.IsNullOrEmpty(SessaoUsuario.Perfil))
@@ -62,6 +71,10 @@ namespace FlowValmet.Viwes
                         GNBtnUsuario.Enabled = true;
                         GNbtnLembretes.Enabled = true;
                         GNBtnLogin.Enabled = false;
+
+                        GNBtnKanban.Enabled = true;
+                        GNBtnVincular.Enabled = true;
+                        GNBtnOpDet.Enabled = true;
                         break;
 
                     case "user":
@@ -73,6 +86,10 @@ namespace FlowValmet.Viwes
                         GNBtnUsuario.Enabled = true;
                         GNbtnLembretes.Enabled = true;
                         GNBtnLogin.Enabled = false;
+
+                        GNBtnKanban.Enabled = true;
+                        GNBtnVincular.Enabled = true;
+                        GNBtnOpDet.Enabled = true;
                         break;
 
 
@@ -272,6 +289,8 @@ namespace FlowValmet.Viwes
                 MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
             }
 
+
+
         }
 
         private async void GNBtnProcessos_Click(object sender, EventArgs e)
@@ -421,7 +440,38 @@ namespace FlowValmet.Viwes
             }
         }
 
-        private async void guna2CircleButton1_Click(object sender, EventArgs e)
+
+
+        private async void GNBtnKanban_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GNPanelCentro.Visible = true;
+                var Analise = new TelaKanbanGUS();
+                Analise.TopLevel = false;
+                Analise.FormBorderStyle = FormBorderStyle.None;
+                Analise.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(Analise);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        Analise.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
+
+        private async void GNBtnOpDet_Click(object sender, EventArgs e)
         {
             try
             {

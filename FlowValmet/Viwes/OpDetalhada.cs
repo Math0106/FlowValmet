@@ -172,14 +172,14 @@ namespace FlowValmet.Viwes
             AdicionarInfoCard(contentPanel, "Descrição:", op.Item3, 35); // Aumentado espaçamento
             AdicionarInfoCard(contentPanel, "Desenho:", op.Item4, 70);
             AdicionarInfoCard(contentPanel, "Início:", op.Item5.ToShortDateString(), 105);
-            AdicionarInfoCard(contentPanel, "Entrega:", op.Item6.ToShortDateString(), 140);
+            AdicionarInfoCardF(contentPanel, "Entrega:", op.Item6.ToShortDateString(), 140);
 
             // Botão com fonte maior
             var btnProcessos = new Guna2Button()
             {
                 Text = "Ver Processos",
                 Size = new Size(180, 40), // Aumentado de 150x30
-                Location = new Point(120, 185), // Ajuste de posição
+                Location = new Point(115, 185), // Ajuste de posição
                 BorderRadius = 8,
                 FillColor = Color.FromArgb(92, 132, 156),
                 ForeColor = Color.White,
@@ -195,6 +195,33 @@ namespace FlowValmet.Viwes
 
             return card;
         }
+        private void AdicionarInfoCardF(Panel parent, string label, string value, int yPos)
+        {
+            var lblTitle = new Guna2HtmlLabel()
+            {
+                Text = $"<span style='color: #666; font-weight: bold; font-size: 12pt;'>{label}</span>", // Aumentado
+                Location = new Point(20, yPos),
+                AutoSize = true
+            };
+
+            var lblValue = new Guna2HtmlLabel()
+            {
+                Text = $"<span style='color: #444; font-size: 12pt;'>{value}</span>", // Aumentado
+                Location = new Point(150, yPos), // Ajuste de posição
+                AutoSize = true,
+                MaximumSize = new Size(260, 0) // Aumentado de 250
+            };
+
+            if (Convert.ToDateTime(value) < DateTime.Now)
+            {
+                lblValue.Text = $"<span style='color: #D00000; font-size: 12pt;'>{value}</span>"; // Aumentado
+
+            }
+
+            parent.Controls.Add(lblTitle);
+            parent.Controls.Add(lblValue);
+        }
+
 
         private void AdicionarInfoCard(Panel parent, string label, string value, int yPos)
         {
@@ -234,15 +261,18 @@ namespace FlowValmet.Viwes
                 return;
             }
 
-            var detailForm = new Form()
+            var detailForm = new FixedPositionForm()
             {
                 Text = "Detalhes dos Processos",
-                Size = new Size(500, 700), // Aumentado de 530x600
+                Size = new Size(500, 700),
                 StartPosition = FormStartPosition.CenterParent,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
+                MinimizeBox = false,
                 MaximizeBox = false,
                 BackColor = Color.FromArgb(240, 240, 240)
             };
+
+
 
             // Header com fonte maior
             var headerPanel = new Guna2Panel()
@@ -331,7 +361,7 @@ namespace FlowValmet.Viwes
             AddLabelToCard(card, "🏭 Linha:", linha, ref yPos);
             AddLabelToCard(card, "🔄 Status:", FormatStatus(status), ref yPos);
             AddLabelToCard(card, "⏱️ Início:", FormatDate(inicio), ref yPos);
-            AddLabelToCard(card, "🏁 Fim:", FormatDate(fim), ref yPos);
+            AddLabelToCardF(card, "🏁 Fim:", FormatDate(fim), ref yPos);
 
             return card;
         }
@@ -393,23 +423,23 @@ namespace FlowValmet.Viwes
                 ForeColor = Color.Black,
                 Location = new Point(150, yPos), // Aumentado de 135
                 MaximumSize = new Size(600, 60), // Aumentado de 550x30
-                Size = new Size(200,5),
+                Size = new Size(200, 5),
                 AutoSize = false,
                 Height = 30 // Aumentado de 20
             };
 
             if (label.Contains("Status:") && value.ToLower().Contains("concluído"))
             {
-                lblValue.ForeColor = Color.Green; 
+                lblValue.ForeColor = Color.Green;
 
             }
             else if (label.Contains("Status:") && value.ToLower().Contains("andamento"))
             {
-                lblValue.ForeColor = Color.FromArgb(196,195,2); 
+                lblValue.ForeColor = Color.FromArgb(196, 195, 2);
             }
             else if (label.Contains("Status:") && value.ToLower().Contains("atrasado"))
             {
-                lblValue.ForeColor = Color.Red; 
+                lblValue.ForeColor = Color.Red;
             }
 
             panel.Controls.Add(lblLabel);
@@ -418,5 +448,89 @@ namespace FlowValmet.Viwes
             yPos += 35; // Aumentado de 30
         }
 
+
+
+        private void AddLabelToCardF(Guna2Panel panel, string label, string value, ref int yPos)
+        {
+            var lblLabel = new Label()
+            {
+                Text = label,
+                Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold), // Aumentado de 11
+                ForeColor = Color.FromArgb(70, 70, 70),
+                Location = new Point(20, yPos), // Aumentado de 15
+                AutoSize = true
+            };
+
+            var lblValue = new Label()
+            {
+                Text = value,
+                Font = new Font("Segoe UI Semibold", 11), // Aumentado de 10
+                ForeColor = Color.Black,
+                Location = new Point(150, yPos), // Aumentado de 135
+                MaximumSize = new Size(600, 60), // Aumentado de 550x30
+                Size = new Size(200,5),
+                AutoSize = false,
+                Height = 30 // Aumentado de 20
+            };
+
+            if (Convert.ToDateTime(value) < DateTime.Now)
+            {
+                lblValue.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblValue.ForeColor = Color.Green;
+            }
+
+            if (label.Contains("Status:") && value.ToLower().Contains("concluído"))
+            {
+                lblValue.ForeColor = Color.Green;
+
+            }
+            else if (label.Contains("Status:") && value.ToLower().Contains("andamento"))
+            {
+                lblValue.ForeColor = Color.FromArgb(196, 195, 2);
+            }
+            else if (label.Contains("Status:") && value.ToLower().Contains("atrasado"))
+            {
+                lblValue.ForeColor = Color.Red;
+            }
+
+            panel.Controls.Add(lblLabel);
+            panel.Controls.Add(lblValue);
+
+            yPos += 35; // Aumentado de 30
+        }
+
+    }
+
+
+    public class FixedPositionForm : Form
+    {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int WS_EX_NOACTIVATE = 0x08000000;
+                const int WS_EX_TOOLWINDOW = 0x00000080;
+
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= WS_EX_TOOLWINDOW; // Opcional: faz parecer um toolwindow
+                cp.ExStyle |= WS_EX_NOACTIVATE; // Opcional: evita focar automaticamente
+                return cp;
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCLBUTTONDOWN = 0xA1;
+            const int HTCAPTION = 0x2;
+
+            if (m.Msg == WM_NCLBUTTONDOWN && m.WParam.ToInt32() == HTCAPTION)
+            {
+                return; // Ignora cliques na barra de título
+            }
+            base.WndProc(ref m);
+        }
     }
 }
