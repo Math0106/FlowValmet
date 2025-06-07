@@ -18,19 +18,28 @@ namespace FlowValmet.Viwes
     public partial class CadastroLembretes : Form
     {
         ControleLembretes controleLembretes = new ControleLembretes();
+        ControleVincularProcessos Vincular = new ControleVincularProcessos();
         public CadastroLembretes()
         {
             InitializeComponent();
 
             LimparCampos();
 
+            var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT o.id, o.numeroop, o.descricao FROM bdflowvalmet.op o;");
+            foreach (var item in resultadoOp)
+            {
+                GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
+            }
+
+
             if (GNCheckBoxVincular.Checked)
             {
-                GNTxtOPCadastroLembrete.Enabled = true;
+                GNCbxOps.Enabled = true;
+
             }
             else
             {
-                GNTxtOPCadastroLembrete.Enabled = false;
+                GNCbxOps.Enabled = true;
             }          
         }
 
@@ -81,7 +90,7 @@ namespace FlowValmet.Viwes
                 {
                     if (GNCheckBoxVincular.Checked)
                     {
-                        opTxt = GNTxtOPCadastroLembrete.Text;
+                        opTxt = GNCbxOps.Text;
                         vincular = true;
                     }
                     else
@@ -123,14 +132,14 @@ namespace FlowValmet.Viwes
         {
             if (GNCheckBoxVincular.Checked)
             {
-                
-                GNTxtOPCadastroLembrete.Enabled = true;
+
+                GNCbxOps.Enabled = true;
+
             }
             else
             {
-                GNTxtOPCadastroLembrete.Text = "";
-                GNTxtOPCadastroLembrete.Enabled = false;
-                
+                GNCbxOps.Enabled = false;
+                GNCbxOps.SelectedIndex = -1;               
             }
         }
 
@@ -158,13 +167,15 @@ namespace FlowValmet.Viwes
                         if (Convert.ToBoolean(obterValorCheck) == true)
                         {
                             GNCheckBoxVincular.Checked = true;
-                            GNTxtOPCadastroLembrete.Enabled = true;
-                            GNTxtOPCadastroLembrete.Text = linha.Cells[4].Value.ToString();
+                            //GNTxtOPCadastroLembrete.Enabled = true;
+                            GNCbxOps.Enabled = true;
+                            //GNTxtOPCadastroLembrete.Text = linha.Cells[4].Value.ToString();
+                            GNCbxOps.Text = linha.Cells[4].Value.ToString();
                         }
                         else
                         {
                             GNCheckBoxVincular.Checked = false;
-                            GNTxtOPCadastroLembrete.Enabled = false;
+                            GNCbxOps.Enabled = false;
                         }
                         GNBtnCadastrarCadastroLembretes.Enabled = false;
                         GNBtnAtualizar.Enabled = true;
@@ -177,12 +188,12 @@ namespace FlowValmet.Viwes
         
         public void LimparCampos()
         {
-            GNTxtOPCadastroLembrete.Clear();
+            GNCbxOps.SelectedIndex = -1;
             GNTxtDEscricaoCadastrarLembretes.Clear();
             GNTxtTituloLembrete.Clear();
             GNBtnCadastrarCadastroLembretes.Enabled=true;
             GNCheckBoxVincular.Checked = false;
-            GNTxtOPCadastroLembrete.Enabled = false;
+            GNCbxOps.Enabled = false;
             GNBtnAtualizar.Enabled = false;
             
             GNLblLembreteId.Text = "";
@@ -212,7 +223,7 @@ namespace FlowValmet.Viwes
                 {
                     if (GNCheckBoxVincular.Checked)
                     {
-                        opTxt = GNTxtOPCadastroLembrete.Text;
+                        opTxt = GNCbxOps.Text;
                         vincular = true;
                     }
                     else

@@ -5,34 +5,36 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlowValmet.Viwes
 {
-    public partial class LoginUsuarioGUS: Form
+    public partial class LoginUsuarioGUS : Form
     {
 
         ControleUsuario Controleusuario = new ControleUsuario();
-         public LoginUsuarioGUS()
-          {
-           InitializeComponent();
-           LimparCampos();
+        public LoginUsuarioGUS()
+        {
+            InitializeComponent();
+            LimparCampos();
             TxtSenha.Text = "Matheus";
             TxtUsuario.Text = "Matheus";
-          }
+        }
 
 
 
 
-         public void LimparCampos()
-         {
-          TxtUsuario.Text = "";
-          TxtSenha.Text = "";
-          Lblstatus.Text = "";
-          }
+        public void LimparCampos()
+        {
+            TxtUsuario.Text = "";
+            TxtSenha.Text = "";
+            Lblstatus.Text = "";
+        }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
@@ -82,8 +84,8 @@ namespace FlowValmet.Viwes
 
                     }
                     LimparCampos();
-                    
-                    
+
+
 
                 }
                 else
@@ -99,10 +101,10 @@ namespace FlowValmet.Viwes
             {
                 Lblstatus.ForeColor = Color.Red;
                 Lblstatus.Text = "Erro ao tentar fazer login!";
+
             }
         }
 
    
     }
-    
 }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.GNPanelCentro = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.GNBTnSalvarPDF = new Guna.UI2.WinForms.Guna2Button();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.GNPanelCentro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // GNPanelCentro
@@ -39,7 +40,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GNPanelCentro.BorderRadius = 5;
-            this.GNPanelCentro.Controls.Add(this.GNBTnSalvarPDF);
+            this.GNPanelCentro.Controls.Add(this.webView21);
             this.GNPanelCentro.FillColor = System.Drawing.Color.WhiteSmoke;
             this.GNPanelCentro.Location = new System.Drawing.Point(7, 5);
             this.GNPanelCentro.Name = "GNPanelCentro";
@@ -47,24 +48,19 @@
             this.GNPanelCentro.TabIndex = 4;
             this.GNPanelCentro.Text = "guna2ContainerControl1";
             // 
-            // GNBTnSalvarPDF
+            // webView21
             // 
-            this.GNBTnSalvarPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GNBTnSalvarPDF.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBTnSalvarPDF.BorderRadius = 20;
-            this.GNBTnSalvarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GNBTnSalvarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GNBTnSalvarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GNBTnSalvarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GNBTnSalvarPDF.FillColor = System.Drawing.Color.Teal;
-            this.GNBTnSalvarPDF.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.GNBTnSalvarPDF.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBTnSalvarPDF.Location = new System.Drawing.Point(1222, 887);
-            this.GNBTnSalvarPDF.Name = "GNBTnSalvarPDF";
-            this.GNBTnSalvarPDF.Size = new System.Drawing.Size(138, 40);
-            this.GNBTnSalvarPDF.TabIndex = 1;
-            this.GNBTnSalvarPDF.Text = "Salvar PDF";
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Location = new System.Drawing.Point(15, 18);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(1337, 900);
+            this.webView21.TabIndex = 2;
+            this.webView21.ZoomFactor = 1D;
             // 
             // TelaIndicadores
             // 
@@ -75,7 +71,9 @@
             this.Controls.Add(this.GNPanelCentro);
             this.Name = "TelaIndicadores";
             this.Text = "TelaIndicadores";
+            this.Load += new System.EventHandler(this.TelaIndicadores_Load);
             this.GNPanelCentro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,6 +81,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelCentro;
-        private Guna.UI2.WinForms.Guna2Button GNBTnSalvarPDF;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }

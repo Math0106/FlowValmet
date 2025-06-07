@@ -68,7 +68,7 @@ namespace FlowValmet.Viwes
             this.BackColor = Color.White;
             //this.DoubleBuffered = true;
 
-            _panelBacklog = CreateKanbanPanel("Backlog", _backlogColor, 20);
+            _panelBacklog = CreateKanbanPanel("Sem Status", _backlogColor, 20);
             _panelAtrasado = CreateKanbanPanel("Atrasado", _atrasadoColor, 360);  // 20 + 320 + 10 de margem
             _panelAndamento = CreateKanbanPanel("Andamento", _andamentoColor, 700);  // 350 + 320 + 10
             _panelConcluido = CreateKanbanPanel("Concluído", _concluidoColor, 1040);  // 680 + 320 + 10

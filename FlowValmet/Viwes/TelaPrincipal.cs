@@ -1,6 +1,7 @@
 ﻿using FlowValmet.Controllers;
 using FlowValmet.Models;
 using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Helpers;
 using Org.BouncyCastle.Pkcs;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace FlowValmet.Viwes
     public partial class TelaPrincipal : Form
     {
         ControleLembretes Lembretes = new ControleLembretes();
+        private LembreteUI _lembreteUI = new LembreteUI();
         public TelaPrincipal()
         {
             InitializeComponent();
@@ -31,13 +33,19 @@ namespace FlowValmet.Viwes
 
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes")); 
+            _lembreteUI.ConfigurarContainer(GNPanelLembretes);
+
+            // Carrega os lembretes iniciais
+            _lembreteUI.CarregarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+           
         }
         public void ResetarTelaPrincpal()
         {
+            GNPanelLembretes.VerticalScroll.Value = 0;
+            GNPanelLembretes.AutoScrollPosition = new Point(0, 0);
             ConfigurarAcessos();
             GNPanelCentro.Visible = false;
-            GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+            _lembreteUI.RecarregarLembretes();
 
         }
 
@@ -99,143 +107,19 @@ namespace FlowValmet.Viwes
                 }
             }
         }
-
-
-        public void GerarLembretes(List<Lembrete> lista)
-        {
-            // Limpa os controles existentes
-            GNPanelLembretes.Controls.Clear();
-            GNPanelLembretes.AutoScroll = true; // Habilita scroll no painel principal
-            GNPanelLembretes.HorizontalScroll.Visible = false;
-            GNPanelLembretes.VerticalScroll.Visible = false;
-            GNPanelLembretes.AutoScrollMargin = new Size(0, 0); // Remove margens do scroll
-
-            // Verifica se a lista é nula ou vazia
-            if (lista == null || lista.Count == 0)
-            {
-                Label lblSemLembretes = new Label();
-                lblSemLembretes.Text = "Nenhum lembrete encontrado";
-                lblSemLembretes.AutoSize = true;
-                lblSemLembretes.Font = new Font("Segoe UI", 10, FontStyle.Italic);
-                lblSemLembretes.ForeColor = Color.Gray;
-                lblSemLembretes.Location = new Point(10, 10);
-                GNPanelLembretes.Controls.Add(lblSemLembretes);
-                return;
-            }
-
-            int posY = 10; // Posição vertical inicial
-            int alturaPanel = 250; // Altura mais compacta
-            int larguraPanel = GNPanelLembretes.Width - 35;
-            int espacamento = 15;
-            int marginInterna = 15;
-            int borderRadius = 12;
-
-            // Paleta de cores modernas para os cards
-            Color[] cardColors = {
-    Color.FromArgb(144, 169, 85),   // Verde original
-    Color.FromArgb(70, 130, 180),    // Azul Steel
-    Color.FromArgb(220, 120, 120),  // Vermelho suave
-    Color.FromArgb(255, 187, 51)     // Laranja
-};
-
-            int colorIndex = 0;
-
-            foreach (var lembrete in lista)
-            {
-                Panel card = new Panel();
-                card.Size = new Size(larguraPanel, alturaPanel);
-                card.BackColor = cardColors[colorIndex % cardColors.Length];
-                colorIndex++;
-
-                // Efeito de sombra
-                card.Paint += (sender, e) =>
-                {
-                    int shadowDepth = 3;
-                    for (int i = 0; i < shadowDepth; i++)
-                    {
-                        e.Graphics.DrawRectangle(
-                            new Pen(Color.FromArgb(20, 0, 0, 0)),
-                            i, i, card.Width - 1 - 2 * i, card.Height - 1 - 2 * i);
-                    }
-                };
-
-                card.Location = new Point(10, posY);
-
-                // Arredondar bordas
-                GraphicsPath path = new GraphicsPath();
-                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-                path.AddArc(card.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-                path.AddArc(card.Width - borderRadius, card.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-                path.AddArc(0, card.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-                path.CloseFigure();
-                card.Region = new Region(path);
-
-                // Título
-                Label titulo = new Label();
-                titulo.Font = new Font("Segoe UI", 15, FontStyle.Bold);
-                titulo.Text = lembrete.Titulo; // Corrigido de 'Bitulo' para 'Titulo'
-                titulo.AutoSize = false;
-                titulo.Size = new Size(larguraPanel - (2 * marginInterna), 35);
-                titulo.TextAlign = ContentAlignment.MiddleLeft;
-                titulo.Location = new Point(marginInterna, marginInterna);
-                titulo.ForeColor = Color.White;
-                card.Controls.Add(titulo);
-
-                // Linha divisória
-                Panel linhaDivisoria = new Panel();
-                linhaDivisoria.BackColor = Color.FromArgb(80, 255, 255, 255);
-                linhaDivisoria.Size = new Size(larguraPanel - (2 * marginInterna), 1);
-                linhaDivisoria.Location = new Point(marginInterna, marginInterna + titulo.Height + 10);
-                card.Controls.Add(linhaDivisoria);
-
-
-                // Descrição com SCROLL INVISÍVEL
-                RichTextBox txtDescricao = new RichTextBox();
-                txtDescricao.Text = lembrete.Descricao;
-                txtDescricao.Font = new Font("Segoe UI", 12);
-                txtDescricao.Location = new Point(marginInterna, marginInterna + titulo.Height + 10);
-                txtDescricao.Size = new Size(
-                    larguraPanel - (2 * marginInterna),
-                    alturaPanel - (marginInterna + titulo.Height + 15 + marginInterna)
-                );
-                txtDescricao.Multiline = true;
-                txtDescricao.BorderStyle = BorderStyle.None;
-                txtDescricao.BackColor = card.BackColor;
-                txtDescricao.ForeColor = Color.White;
-                txtDescricao.ReadOnly = true;
-                txtDescricao.ScrollBars = RichTextBoxScrollBars.None; // Scroll invisível
-
-                card.Controls.Add(txtDescricao);
-
-                // Efeito hover interativo
-                Color originalColor = card.BackColor;
-                card.Cursor = Cursors.Hand;
-                card.MouseEnter += (sender, e) =>
-                {
-                    card.BackColor = ControlPaint.Light(originalColor, 0.15f);
-                };
-                card.MouseLeave += (sender, e) =>
-                {
-                    card.BackColor = originalColor;
-                };
-
-                GNPanelLembretes.Controls.Add(card);
-                posY += alturaPanel + espacamento;
-
-            }
-        }
-
         private async void GNbtnLembretes_Click(object sender, EventArgs e)
         {
 
             try
             {
+                
+                ResetarTelaPrincpal();
                 GNPanelCentro.Visible = true;
                 var lembrete = new CadastroLembretes();
                 lembrete.TopLevel = false;
                 lembrete.FormBorderStyle = FormBorderStyle.None;
                 lembrete.Dock = DockStyle.Fill;
-                GNPanelLembretes.VerticalScroll.Value = 0;
+                
 
                 // Operações de UI devem estar na thread principal
                 GNPanelCentro.Controls.Clear();
@@ -246,7 +130,7 @@ namespace FlowValmet.Viwes
                 {
                     GNPanelCentro.Invoke((MethodInvoker)delegate
                     {
-                        GerarLembretes(Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes"));
+                        
                         lembrete.Show();
                     });
                 });
@@ -493,6 +377,49 @@ namespace FlowValmet.Viwes
                         Analise.Show();
                     });
                 });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+        }
+
+        private async void GNBtnIndicador_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+
+                var checker = new InternetChecker();
+                bool temInternet = await checker.HasInternetAccessAsync();
+
+                if (temInternet)
+                {
+                    GNPanelCentro.Visible = true;
+                    var Analise = new TelaIndicadores();
+                    Analise.TopLevel = false;
+                    Analise.FormBorderStyle = FormBorderStyle.None;
+                    Analise.Dock = DockStyle.Fill;
+
+                    // Operações de UI devem estar na thread principal
+                    GNPanelCentro.Controls.Clear();
+                    GNPanelCentro.Controls.Add(Analise);
+
+                    // Mostrar o formulário na thread principal
+                    await Task.Run(() =>
+                    {
+                        GNPanelCentro.Invoke((MethodInvoker)delegate
+                        {
+                            Analise.Show();
+                        });
+                    });
+                }
+                else
+                {
+                   MessageBox.Show("Sem conexão com a internet");
+                }
+
             }
             catch (Exception ex)
             {

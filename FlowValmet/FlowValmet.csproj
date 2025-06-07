@@ -251,6 +251,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\GunaLocalizationHelper.cs" />
     <Compile Include="Controllers\ConexaoAcess.cs" />
     <Compile Include="Controllers\ConsultaProcessos.cs" />
     <Compile Include="Controllers\ControleAnaliseOp.cs" />
@@ -264,6 +265,8 @@
     <Compile Include="Controllers\DesingDataGridView.cs" />
     <Compile Include="Controllers\ExportarExcel.cs" />
     <Compile Include="Controllers\ExportarPDF.cs" />
+    <Compile Include="Controllers\InternetChecker.cs" />
+    <Compile Include="Controllers\LembreteUI.cs" />
     <Compile Include="Models\Lembrete.cs" />
     <Compile Include="Models\LinhaProducao.cs" />
     <Compile Include="Models\OpCompletaDto.cs" />
@@ -402,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroUsuarioGUS.resx">
       <DependentUpon>CadastroUsuarioGUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\LoginUsuarioGUS.es.resx">
+      <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\LoginUsuarioGUS.resx">
       <DependentUpon>LoginUsuarioGUS.cs</DependentUpon>
