@@ -54,9 +54,6 @@ public class LembreteUI
         Color.FromArgb(238, 119, 141)
     };
 
-    /// <summary>
-    /// Configura o container principal (compatível com Guna2Panel e Guna2ContainerControl)
-    /// </summary>
     public void ConfigurarContainer(Control container)
     {
         if (container is Guna2Panel panel)
@@ -68,8 +65,7 @@ public class LembreteUI
             _panelContainer = new Guna2Panel
             {
                 Dock = DockStyle.Fill,
-                AutoScroll = true,
-                Padding = new Padding(15)
+                AutoScroll = true
             };
             containerControl.Controls.Add(_panelContainer);
         }
@@ -81,21 +77,6 @@ public class LembreteUI
         ConfigurarPainelScroll();
     }
 
-    /// <summary>
-    /// Carrega uma nova lista de lembretes e atualiza a exibição
-    /// </summary>
-
-
-    /// <summary>
-    /// Adiciona um novo lembrete e atualiza a exibição
-    /// </summary>
-    public void AdicionarLembrete(Lembrete lembrete)
-    {
-        if (lembrete == null) return;
-
-        _lembretes.Add(lembrete);
-        RecarregarCards();
-    }
 
     // Métodos privados de configuração e renderização
     private void ConfigurarPainelScroll()
@@ -108,43 +89,6 @@ public class LembreteUI
         _panelContainer.VerticalScroll.Enabled = true;
         _panelContainer.AutoScrollMargin = new Size(0, 15);
         _panelContainer.ResumeLayout();
-    }
-
-    private void RecarregarCards()
-    {
-        if (_panelContainer == null || _panelContainer.IsDisposed) return;
-
-        _panelContainer.SuspendLayout();
-        _panelContainer.Controls.Clear();
-
-        if (_lembretes.Count == 0)
-        {
-            MostrarMensagemSemLembretes();
-            _panelContainer.ResumeLayout();
-            return;
-        }
-
-        int posY = 10;
-        int alturaCard = 250;
-        int larguraCard = _panelContainer.ClientSize.Width - 35;
-        int espacamento = 15;
-        int marginInterna = 15;
-
-        foreach (var lembrete in _lembretes)
-        {
-            var card = CriarCard(lembrete, _cardColors[_lembretes.IndexOf(lembrete) % _cardColors.Length],
-                larguraCard, alturaCard, posY);
-
-            AdicionarCabecalho(card, lembrete, larguraCard, marginInterna);
-            AdicionarDivisor(card, larguraCard, marginInterna);
-            AdicionarDescricao(card, lembrete, larguraCard, alturaCard, marginInterna);
-
-            _panelContainer.Controls.Add(card);
-            posY += alturaCard + espacamento;
-        }
-
-        _panelContainer.AutoScrollMinSize = new Size(0, posY + 10);
-        _panelContainer.ResumeLayout(true);
     }
 
     private void MostrarMensagemSemLembretes()
@@ -197,10 +141,11 @@ public class LembreteUI
         int espacamento = 15;
         int marginInterna = 15;
 
+
         foreach (var lembrete in _lembretes)
         {
             var card = CriarCard(lembrete, _cardColors[_lembretes.IndexOf(lembrete) % _cardColors.Length],
-                larguraCard, alturaCard, posY);
+                            larguraCard, alturaCard, posY);
 
             AdicionarCabecalho(card, lembrete, larguraCard, marginInterna);
             AdicionarDivisor(card, larguraCard, marginInterna);
@@ -209,7 +154,6 @@ public class LembreteUI
             _panelContainer.Controls.Add(card);
             posY += alturaCard + espacamento;
         }
-
         _panelContainer.AutoScrollMinSize = new Size(0, posY + 10);
     }
 
@@ -254,7 +198,7 @@ public class LembreteUI
             Font = new Font("Segoe UI Semibold", 14, FontStyle.Bold),
             Text = lembrete.Titulo,
             AutoSize = false,
-            Size = new Size(larguraPanel - (2 * marginInterna) - (lembrete.Vinculo ? 160 : 30), 30),
+            Size = new Size(larguraPanel - (2 * marginInterna) - (lembrete.Vinculo ? 160 : 30) +40, 30),
             Location = new Point(marginInterna + 5, marginInterna),
             ForeColor = Color.White,
             BackColor = Color.Transparent

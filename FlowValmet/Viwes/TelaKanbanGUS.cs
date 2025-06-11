@@ -56,7 +56,10 @@ namespace FlowValmet.Viwes
 
             // Configuração adicional do Guna2
             this.FormBorderStyle = FormBorderStyle.None;
-            this.DoubleBuffered = true;
+            //this.DoubleBuffered = true;
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+            ControlStyles.AllPaintingInWmPaint |
+            ControlStyles.UserPaint, true);
         }
 
         private void InitializeKanbanColumns()
@@ -165,49 +168,109 @@ namespace FlowValmet.Viwes
 
         private void PopularColunasKanban()
         {
-            // Limpa todos os cards existentes mantendo apenas os títulos
+            SuspendLayout(); // Pausa o layout para múltiplas alterações
+
+            try
+            {
+                // Limpa os controles existentes de forma mais eficiente
+                ClearPanels();
+
+                if (_processos == null || _processos.Count == 0)
+                    return;
+
+                // Ordena os processos
+                _processos.Sort((x, y) => x.DataInicio.CompareTo(y.DataInicio));
+
+                // Processa em paralelo para melhor performance
+                Parallel.ForEach(_processos, op =>
+                {
+                    foreach (var processo in op.Processos)
+                    {
+                        // Invoke necessário para operações na UI thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            var card = CriarCardProcesso(op, processo);
+                            Guna2Panel panelDestino = ObterPanelPorStatus(processo.Status);
+
+                            if (panelDestino != null)
+                            {
+                                card.Location = new Point(10, panelDestino.Controls.Count > 0 ?
+                                    panelDestino.Controls[panelDestino.Controls.Count - 1].Bottom + 15 : 50);
+                                panelDestino.Controls.Add(card);
+                            }
+                        });
+                    }
+                });
+
+                // Ajusta a altura dos painéis
+                AjustarAlturaPainels();
+            }
+            finally
+            {
+                ResumeLayout(true); // Retoma o layout e força redesenho
+                this.Refresh(); // Força redesenho imediato
+            }
+        }
+
+        private void ClearPanels()
+        {
             foreach (var panel in new[] { _panelBacklog, _panelAtrasado, _panelAndamento, _panelConcluido })
             {
-                // Mantém apenas o label do título (primeiro controle)
-                while (panel.Controls.Count > 1)
+                // Mantém apenas o label do título
+                for (int i = panel.Controls.Count - 1; i >= 1; i--)
                 {
-                    panel.Controls.RemoveAt(1);
+                    var control = panel.Controls[i];
+                    panel.Controls.RemoveAt(i);
+                    control.Dispose(); // Libera recursos
                 }
             }
-
-            // Dicionário para controlar a posição Y em cada painel
-            var panelYPositions = new Dictionary<Guna2Panel, int>
-            {
-                { _panelBacklog, 50 },
-                { _panelAtrasado, 50 },
-                { _panelAndamento, 50 },
-                { _panelConcluido, 50 }
-            };
-
-            // Ordena os processos por data de início
-            _processos.Sort((x, y) => x.DataInicio.CompareTo(y.DataInicio));
-
-            foreach (var op in _processos)
-            {
-                foreach (var processo in op.Processos)
-                {
-                    var card = CriarCardProcesso(op, processo);
-                    Guna2Panel panelDestino = ObterPanelPorStatus(processo.Status);
-
-                    if (panelDestino != null && panelYPositions.ContainsKey(panelDestino))
-                    {
-                        card.Location = new Point(10, panelYPositions[panelDestino]);
-                        panelDestino.Controls.Add(card);
-
-                        // Atualiza a posição Y para o próximo card
-                        panelYPositions[panelDestino] += card.Height + 15;
-                    }
-                }
-            }
-
-            // Ajusta a altura dos painéis se necessário
-            AjustarAlturaPainels();
         }
+
+        //private void PopularColunasKanban()
+        //{
+        //    // Limpa todos os cards existentes mantendo apenas os títulos
+        //    foreach (var panel in new[] { _panelBacklog, _panelAtrasado, _panelAndamento, _panelConcluido })
+        //    {
+        //        // Mantém apenas o label do título (primeiro controle)
+        //        while (panel.Controls.Count > 1)
+        //        {
+        //            panel.Controls.RemoveAt(1);
+        //        }
+        //    }
+
+        //    // Dicionário para controlar a posição Y em cada painel
+        //    var panelYPositions = new Dictionary<Guna2Panel, int>
+        //    {
+        //        { _panelBacklog, 50 },
+        //        { _panelAtrasado, 50 },
+        //        { _panelAndamento, 50 },
+        //        { _panelConcluido, 50 }
+        //    };
+
+        //    // Ordena os processos por data de início
+        //    _processos.Sort((x, y) => x.DataInicio.CompareTo(y.DataInicio));
+
+        //    foreach (var op in _processos)
+        //    {
+        //        foreach (var processo in op.Processos)
+        //        {
+        //            var card = CriarCardProcesso(op, processo);
+        //            Guna2Panel panelDestino = ObterPanelPorStatus(processo.Status);
+
+        //            if (panelDestino != null && panelYPositions.ContainsKey(panelDestino))
+        //            {
+        //                card.Location = new Point(10, panelYPositions[panelDestino]);
+        //                panelDestino.Controls.Add(card);
+
+        //                // Atualiza a posição Y para o próximo card
+        //                panelYPositions[panelDestino] += card.Height + 15;
+        //            }
+        //        }
+        //    }
+
+        //    // Ajusta a altura dos painéis se necessário
+        //    AjustarAlturaPainels();
+        //}
 
         private void AjustarAlturaPainels()
         {
@@ -245,6 +308,8 @@ namespace FlowValmet.Viwes
             }
         }
 
+
+
         private Guna2Panel CriarCardProcesso(OpCompletaDto op, ProcessoDto processo)
         {
             // Cores baseadas no status
@@ -255,23 +320,23 @@ namespace FlowValmet.Viwes
             Color secondaryTextColor = Color.FromArgb(120, 120, 120);
             Color cardShadowColor = Color.FromArgb(30, 0, 0, 0);
 
-            // Cria o card principal
-            var card = new Guna2Panel
-            {
-                Size = new Size(300, 300),
-                BackColor = Color.White,
-                FillColor = Color.White,
-                BorderRadius = 12,
-                Margin = new Padding(10),
-                Tag = new Tuple<OpCompletaDto, ProcessoDto>(op, processo),
-                Cursor = Cursors.Hand,
-                ShadowDecoration = {
-            Color = cardShadowColor,
-            Depth = 20,
-            //ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped
-        },
-                BorderThickness = 4
-            };
+            //Cria o card principal
+                var card = new Guna2Panel
+                {
+                    Size = new Size(300, 300),
+                    BackColor = Color.White,
+                    FillColor = Color.White,
+                    BorderRadius = 12,
+                    Margin = new Padding(10),
+                    Tag = new Tuple<OpCompletaDto, ProcessoDto>(op, processo),
+                    Cursor = Cursors.Hand,
+                    ShadowDecoration = {
+                Color = cardShadowColor,
+                Depth = 20,
+                //ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped
+            },
+                    BorderThickness = 4
+                };
 
             // Configurações de fonte
             var fontRegular = new Font("Segoe UI", 9.5f);

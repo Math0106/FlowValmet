@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZstdSharp.Unsafe;
 using static ServiceStack.Script.Lisp;
+using Guna.UI2.WinForms;
 
 namespace FlowValmet.Viwes
 {
@@ -344,7 +345,7 @@ namespace FlowValmet.Viwes
                             return;
                         }
                     }
-                    GNDVGAnaliseOp.ClearSelection();
+
                 }
             }
             catch

@@ -45,6 +45,7 @@ namespace FlowValmet.Viwes
             GNPanelLembretes.AutoScrollPosition = new Point(0, 0);
             ConfigurarAcessos();
             GNPanelCentro.Visible = false;
+
             _lembreteUI.RecarregarLembretes();
 
         }
@@ -112,8 +113,8 @@ namespace FlowValmet.Viwes
 
             try
             {
-                
                 ResetarTelaPrincpal();
+                
                 GNPanelCentro.Visible = true;
                 var lembrete = new CadastroLembretes();
                 lembrete.TopLevel = false;
@@ -132,6 +133,7 @@ namespace FlowValmet.Viwes
                     {
                         
                         lembrete.Show();
+                        
                     });
                 });
             }
@@ -425,6 +427,42 @@ namespace FlowValmet.Viwes
             {
                 MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
             }
+        }
+
+        public void LimparPanelCentro()
+        {
+            GNPanelCentro.Visible = true;
+        }
+
+        private async void GNBtnIdioma_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                GNPanelCentro.Visible = true;
+                var Analise = new TelaIdioma();
+                Analise.TopLevel = false;
+                Analise.FormBorderStyle = FormBorderStyle.None;
+                Analise.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(Analise);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        Analise.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+
         }
     }
 }

@@ -103,7 +103,8 @@ namespace FlowValmet.Viwes
                 MessageBox.Show("Erro ao cadastrar: " + ex);
                 LimparCampos();
             }
-            GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
+            CarregarLinhas();
+            //GNDataGridLinhasCadastradaLinhaP.DataSource = linha.RecuperarLinha("SELECT * FROM bdflowvalmet.linhaproducao");
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)

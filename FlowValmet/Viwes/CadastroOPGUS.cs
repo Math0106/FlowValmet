@@ -95,7 +95,7 @@ namespace FlowValmet.Viwes
                    )
                 {
 
-                    op.InserirOP(TxtNumeroOp.Text, Txtdesenho.Text, TxtDescricao.Text, Convert.ToDateTime(GNDatePikerInicioOP.Value), Convert.ToDateTime(GNDatePikerEntregaOP.Value));
+                    op.InserirOP(TxtNumeroOp.Text, TxtDescricao.Text, Txtdesenho.Text, Convert.ToDateTime(GNDatePikerInicioOP.Value), Convert.ToDateTime(GNDatePikerEntregaOP.Value));
                     LimparCampos();
                 }
                 else
@@ -126,8 +126,8 @@ namespace FlowValmet.Viwes
                 {
                     op.AtualizarOp(Convert.ToInt32(GNlabelIdAtualizar.Text),
                                                     TxtNumeroOp.Text,
-                                                    Txtdesenho.Text,
                                                     TxtDescricao.Text,
+                                                    Txtdesenho.Text,
                                                     Convert.ToDateTime(GNDatePikerInicioOP.Value),
                                                     Convert.ToDateTime(GNDatePikerEntregaOP.Value));
                     LimparCampos();

@@ -347,6 +347,12 @@
     <Compile Include="Viwes\PopUPGUS.Designer.cs">
       <DependentUpon>PopUPGUS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\TelaIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\TelaIdioma.Designer.cs">
+      <DependentUpon>TelaIdioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\TelaIndicadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\PopUPGUS.resx">
       <DependentUpon>PopUPGUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaIdioma.resx">
+      <DependentUpon>TelaIdioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaIndicadores.resx">
       <DependentUpon>TelaIndicadores.cs</DependentUpon>

@@ -199,7 +199,6 @@ namespace FlowValmet.Viwes
             GNLblLembreteId.Text = "";
             DesingDataGridView.DesignGunaDataGrid(GNDgvLembretes);
             CarregarLembrete();
-            //GNDgvLembretes.DataSource = controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
 
         }
 
@@ -247,6 +246,7 @@ namespace FlowValmet.Viwes
                     if (sucesso)
                     {
                         LimparCampos();
+
                     }
 
                 }
