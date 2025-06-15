@@ -1,4 +1,6 @@
 ﻿using FlowValmet.Controllers;
+using FlowValmet.Idioma;
+using Guna.UI2.WinForms;
 using Org.BouncyCastle.Pkcs;
 using System;
 using System.Collections.Generic;
@@ -6,8 +8,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
@@ -20,9 +24,20 @@ namespace FlowValmet.Viwes
         public TelaPrincipal()
         {
             InitializeComponent();
-            
- 
+            Lembretes = new ControleLembretes();
+            comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.ItemHeight = 40; // Altura suficiente para suas imagens
+            comboBox1.DrawItem += ComboBox1_DrawItem;
+
+            // Adiciona os itens (o texto não será exibido, mas pode ser útil para identificação)
+            comboBox1.Items.Add("pt-BR"); // Português
+            comboBox1.Items.Add("es-ES"); // Espanhol
+            comboBox1.Items.Add("en-US"); // Inglês
+
         }
+      
+
 
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
@@ -78,7 +93,7 @@ namespace FlowValmet.Viwes
                 Label lblDescricao = new Label();
                 lblDescricao.Text = "Descrição:\n" + item.Item3;
                 lblDescricao.Font = new Font("Segoe UI", 8);
-                
+
 
                 // Posiciona considerando a margem e o título acima
                 lblDescricao.Location = new Point(marginInterna, marginInterna + titulo.Height + 5);
@@ -229,7 +244,7 @@ namespace FlowValmet.Viwes
         {
             try
             {
-                var vincular= new VincularProcessos();
+                var vincular = new VincularProcessos();
                 vincular.TopLevel = false;
                 vincular.FormBorderStyle = FormBorderStyle.None;
                 vincular.Dock = DockStyle.Fill;
@@ -279,6 +294,119 @@ namespace FlowValmet.Viwes
             {
                 MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
             }
+        }
+
+        
+
+        private void GNPanelBtnsEsquerdo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Selecionador de idioma com imagem
+        public void ComboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            e.DrawBackground();
+
+            // Pega o código do item (por exemplo "pt-BR")
+            string codigo = comboBox1.Items[e.Index].ToString();
+            Image imagem = null;
+
+            // Escolhe a imagem com base no código
+            switch (codigo)
+            {
+                case "pt-BR":
+                    imagem = Properties.Resources.pt_BR;
+                    UpdateComponents("");
+                    break;
+                case "es-ES":
+                    imagem = Properties.Resources.es_ES;
+                    UpdateComponents("es-ES");
+                    break;
+                case "en-US":
+                    imagem = Properties.Resources.en_US;
+                    UpdateComponents("en-US");
+                    break;
+            }
+
+           
+
+            // Desenha a imagem
+            if (imagem != null)
+            {
+                Rectangle imageBounds = new Rectangle(e.Bounds.Left + 2, e.Bounds.Top + 2, 36, 36);
+                e.Graphics.DrawImage(imagem, imageBounds);
+            }
+
+            e.DrawFocusRectangle(); // desenha o contorno de foco se necessário
+
+        }
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string codigo = comboBox1.SelectedItem.ToString(); // Pega o texto, não o índice
+
+            switch (codigo)
+            {
+                case "pt-BR":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
+                    break;
+                case "es-ES":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-ES");
+                    break;
+                case "en-US":
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                    break;
+            }
+            GNPanelCentro.Controls.Clear();
+
+        }
+
+        public void UpdateComponents(string laguage)
+        {
+            Language.Culture = new CultureInfo(laguage);
+            GNBtnVincular.Text = Language.VINCULAR;
+            GNBtnProcessos.Text = Language.PROCESSOS;
+            GNBtnUsuario.Text = Language.USUARIO;
+            guna2CircleButton1.Text = Language.LEMBRETES;
+
+
+        }
+
+        //Botão de Cadastro de Lembretes
+        private async void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var Analise = new CadastroLembretes();
+                Analise.TopLevel = false;
+                Analise.FormBorderStyle = FormBorderStyle.None;
+                Analise.Dock = DockStyle.Fill;
+
+                // Operações de UI devem estar na thread principal
+                GNPanelCentro.Controls.Clear();
+                GNPanelCentro.Controls.Add(Analise);
+
+                // Mostrar o formulário na thread principal
+                await Task.Run(() =>
+                {
+                    GNPanelCentro.Invoke((MethodInvoker)delegate
+                    {
+                        Analise.Show();
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar formulário: {ex.Message}");
+            }
+
+        }
+
+        private void GNPanelCentro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

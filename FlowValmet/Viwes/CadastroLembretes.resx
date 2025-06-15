@@ -117,15 +117,264 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;GNTxtOPCadastroLembrete.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="guna2HtmlLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GNlabelTituloCadastroLembrete.Name" xml:space="preserve">
+    <value>GNlabelTituloCadastroLembrete</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GNPanelCadastroLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GNDgvLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="GNlabelTituloCadastroLembrete.Text" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="&gt;&gt;GnBtnLimpar.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCadastroLembretes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GnBtnLimpar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GNBtnCadastrarCadastroLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNTxtDEscricaoCadastrarLembretes.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GNTxtTituloLembrete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
+    <value>imageList1</value>
+  </data>
+  <data name="&gt;&gt;GNTxtOPCadastroLembrete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNTxtDEscricaoCadastrarLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNCheckBoxVincular.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="guna2HtmlLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;GNTxtOPCadastroLembrete.Name" xml:space="preserve">
+    <value>GNTxtOPCadastroLembrete</value>
+  </data>
+  <data name="GNlabelTituloCadastroLembrete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 51</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;GNBtnCadastrarCadastroLembretes.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="GnBtnLimpar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel1.Name" xml:space="preserve">
+    <value>guna2HtmlLabel1</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel1.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;GNLabelDescricaoCadastrarLembrete.Name" xml:space="preserve">
+    <value>GNLabelDescricaoCadastrarLembrete</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 520</value>
+  </data>
+  <data name="&gt;&gt;GNBtnCadastrarCadastroLembretes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GNTxtDEscricaoCadastrarLembretes.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GNTxtOPCadastroLembrete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 231</value>
+  </data>
+  <data name="&gt;&gt;GnBtnLimpar.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="GNlabelTituloCadastroLembrete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNPanelCadastroLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 650</value>
+  </data>
+  <data name="GNTxtOPCadastroLembrete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNTxtTituloLembrete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 37</value>
+  </data>
+  <data name="guna2HtmlLabel1.Text" xml:space="preserve">
+    <value>Vincular OP</value>
+  </data>
+  <data name="&gt;&gt;GNCheckBoxVincular.Name" xml:space="preserve">
+    <value>GNCheckBoxVincular</value>
+  </data>
+  <data name="GNLabelDescricaoCadastrarLembrete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 301</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GNDgvLembretes.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GNLabelDescricaoCadastrarLembrete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2HtmlLabel, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNTxtDEscricaoCadastrarLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="&gt;&gt;GNTxtTituloLembrete.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel2.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;GNTxtTituloLembrete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNDgvLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>CadastroLembretes</value>
+  </data>
+  <data name="GNLabelDescricaoCadastrarLembrete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 15</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;GNLabelDescricaoCadastrarLembrete.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;GNTxtTituloLembrete.Name" xml:space="preserve">
+    <value>GNTxtTituloLembrete</value>
+  </data>
+  <data name="GNTxtDEscricaoCadastrarLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GNLabelDescricaoCadastrarLembrete.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2HtmlLabel, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNlabelTituloCadastroLembrete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 15</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCadastroLembretes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="guna2HtmlLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 210</value>
+  </data>
+  <data name="guna2HtmlLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;GNDgvLembretes.Name" xml:space="preserve">
+    <value>GNDgvLembretes</value>
+  </data>
+  <data name="GNDgvLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>396, 72</value>
+  </data>
+  <data name="GNTxtDEscricaoCadastrarLembretes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNLabelDescricaoCadastrarLembrete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GnBtnLimpar.Text" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="GNCheckBoxVincular.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 609</value>
+  </data>
+  <data name="GNlabelTituloCadastroLembrete.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GNPanelCadastroLembretes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNTxtDEscricaoCadastrarLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 322</value>
+  </data>
+  <data name="GNTxtTituloLembrete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="GNPanelCadastroLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="GNTxtTituloLembrete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 72</value>
+  </data>
+  <data name="&gt;&gt;GNlabelTituloCadastroLembrete.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="GNCheckBoxVincular.Text" xml:space="preserve">
+    <value>guna2CustomCheckBox1</value>
+  </data>
+  <data name="GNCheckBoxVincular.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 16</value>
+  </data>
+  <data name="GNCheckBoxVincular.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GNTxtOPCadastroLembrete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="guna2HtmlLabel2.Text" xml:space="preserve">
+    <value>Vincular em uma OP</value>
+  </data>
+  <data name="GNDgvLembretes.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="GnBtnLimpar.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;GNTxtDEscricaoCadastrarLembretes.Name" xml:space="preserve">
+    <value>GNTxtDEscricaoCadastrarLembretes</value>
+  </data>
+  <data name="GnBtnLimpar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 37</value>
+  </data>
   <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD2
-        BwAAAk1TRnQBSQFMAwEBAAEYAQABGAEAARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMA
+        BwAAAk1TRnQBSQFMAwEBAAEgAQABMAEAARABAAEQAQAE/wEJARAI/wFCAU0BNgEEBgABNgEEAgABKAMA
         AUADAAEQAwABAQEAAQgGAAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEA
         AfABygGmAQABMwUAATMBAAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEA
         AYABfAH/AQACUAH/AQABkwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFm
@@ -159,7 +408,121 @@
         AfEB8gOUAbcwAAHzBL0H8wKUAbcBvTAAAf8DvQGTB+8BlAG3Ar0xAAO9CPcBmQK9Af8xAAH/Bb0Ctwa9
         MwAB/wu9NQAB/wi9AfM4AAH/AfMDvQH0NQABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGA
         FwAD/wEAAfABDwYAAeABAwYAAcABAQYAAYABAQYAAYA3AAGABwABgAEBBgABwAEDBgAB4AEHBgAB+AEf
-        BgAL
+        HAAL
 </value>
   </data>
+  <data name="guna2HtmlLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GnBtnLimpar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 520</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNLabelDescricaoCadastrarLembrete.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel2.Name" xml:space="preserve">
+    <value>guna2HtmlLabel2</value>
+  </data>
+  <data name="&gt;&gt;GNDgvLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2DataGridView, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="guna2HtmlLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 162</value>
+  </data>
+  <data name="&gt;&gt;GNDgvLembretes.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CadastroLembretes</value>
+  </data>
+  <data name="GNTxtDEscricaoCadastrarLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 172</value>
+  </data>
+  <data name="GnBtnLimpar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.Text" xml:space="preserve">
+    <value>Cadastrar</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCadastroLembretes.Name" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="GNTxtOPCadastroLembrete.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;GNlabelTituloCadastroLembrete.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="GNTxtOPCadastroLembrete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 37</value>
+  </data>
+  <data name="&gt;&gt;GNTxtOPCadastroLembrete.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="GNDgvLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 513</value>
+  </data>
+  <data name="guna2HtmlLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="&gt;&gt;guna2HtmlLabel2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2HtmlLabel, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNLabelDescricaoCadastrarLembrete.Text" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="&gt;&gt;GNCheckBoxVincular.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CustomCheckBox, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNPanelCadastroLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 41</value>
+  </data>
+  <data name="&gt;&gt;GnBtnLimpar.Name" xml:space="preserve">
+    <value>GnBtnLimpar</value>
+  </data>
+  <data name="guna2HtmlLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 15</value>
+  </data>
+  <data name="&gt;&gt;GNCheckBoxVincular.Parent" xml:space="preserve">
+    <value>GNPanelCadastroLembretes</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GNBtnCadastrarCadastroLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 37</value>
+  </data>
+  <data name="&gt;&gt;GNTxtTituloLembrete.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="GNCheckBoxVincular.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 162</value>
+  </data>
+  <data name="&gt;&gt;GNDgvLembretes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GNlabelTituloCadastroLembrete.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2HtmlLabel, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCadastroLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CustomGradientPanel, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="GNTxtTituloLembrete.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GNBtnCadastrarCadastroLembretes.Name" xml:space="preserve">
+    <value>GNBtnCadastrarCadastroLembretes</value>
+  </data>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

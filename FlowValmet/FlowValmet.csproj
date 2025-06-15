@@ -176,6 +176,11 @@
     <Compile Include="Controllers\ControleUsuario.cs" />
     <Compile Include="Controllers\ControleVincularProcessos.cs" />
     <Compile Include="Controllers\ConverterResx.cs" />
+    <Compile Include="Idioma\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -231,6 +236,12 @@
     <Compile Include="Viwes\VincularProcessos.Designer.cs">
       <DependentUpon>VincularProcessos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Idioma\Language.en-US.resx" />
+    <EmbeddedResource Include="Idioma\Language.es-ES.resx" />
+    <EmbeddedResource Include="Idioma\Language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -238,6 +249,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\AnaliseOps.resx">
       <DependentUpon>AnaliseOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastrarUsuario.en.resx">
+      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastrarUsuario.es.resx">
+      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroLembretes.en.resx">
+      <DependentUpon>CadastroLembretes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\CadastroLembretes.es.resx">
+      <DependentUpon>CadastroLembretes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroLinhaProducao.resx">
       <DependentUpon>CadastroLinhaProducao.cs</DependentUpon>
@@ -250,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\CadastroOP.resx">
       <DependentUpon>CadastroOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaPrincipal.en.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaPrincipal.es.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
@@ -278,8 +307,14 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagem\pt_BR.png" />
+    <Content Include="Imagem\es_ES.png" />
     <Content Include="Imagem\iconeLixeira.png" />
+    <Content Include="Imagem\en_US.png" />
     <Content Include="Imagem\LogoValmet.png" />
+    <None Include="Resources\brasil.png" />
+    <None Include="Resources\espanha.png" />
+    <None Include="Resources\ingles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

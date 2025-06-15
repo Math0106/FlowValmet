@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FlowValmet.Properties {
+namespace FlowValmet.Idioma {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace FlowValmet.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Language {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Language() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace FlowValmet.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FlowValmet.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FlowValmet.Idioma.Language", typeof(Language).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,82 +61,56 @@ namespace FlowValmet.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Cadastro de Lembretes.
         /// </summary>
-        internal static System.Drawing.Bitmap en_US {
+        internal static string LEMBRETES {
             get {
-                object obj = ResourceManager.GetObject("en_US", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("LEMBRETES", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome.
         /// </summary>
-        internal static System.Drawing.Bitmap es_ES {
+        internal static string NOME_CadastroUsuario {
             get {
-                object obj = ResourceManager.GetObject("es_ES", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("NOME_CadastroUsuario", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PCP.
         /// </summary>
-        internal static byte[] iconAndamento {
+        internal static string PCP {
             get {
-                object obj = ResourceManager.GetObject("iconAndamento", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("PCP", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Processos.
         /// </summary>
-        internal static byte[] iconAtraso {
+        internal static string PROCESSOS {
             get {
-                object obj = ResourceManager.GetObject("iconAtraso", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("PROCESSOS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário.
         /// </summary>
-        internal static byte[] iconConcluido {
+        internal static string USUARIO {
             get {
-                object obj = ResourceManager.GetObject("iconConcluido", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("USUARIO", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Vincular.
         /// </summary>
-        internal static byte[] IconNaoAplicavel {
+        internal static string VINCULAR {
             get {
-                object obj = ResourceManager.GetObject("IconNaoAplicavel", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
-        /// </summary>
-        internal static byte[] iconNulo {
-            get {
-                object obj = ResourceManager.GetObject("iconNulo", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pt_BR {
-            get {
-                object obj = ResourceManager.GetObject("pt_BR", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("VINCULAR", resourceCulture);
             }
         }
     }

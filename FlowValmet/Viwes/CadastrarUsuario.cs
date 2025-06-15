@@ -1,9 +1,11 @@
 ﻿using FlowValmet.Controllers;
+using FlowValmet.Idioma;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -145,5 +147,13 @@ namespace FlowValmet.Viwes
         {
             LimparCampos();
         }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }
+

@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using FlowValmet.Idioma;
+using System.Globalization;
 
 namespace FlowValmet.Viwes
 {
@@ -141,6 +143,16 @@ namespace FlowValmet.Viwes
             GNDgvLembretes.ClearSelection();
         }
 
+        private void CadastroLembretes_Load(object sender, EventArgs e)
+        {
 
+        }
+        
+        //Idioma
+        public void UpdateComponents(string laguage)
+        {
+            Language.Culture = new CultureInfo(laguage);
+
+        }
     }
 }

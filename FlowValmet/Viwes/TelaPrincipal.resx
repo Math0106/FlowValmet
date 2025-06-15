@@ -117,4 +117,397 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GNPanelCentro.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GNPanelCentro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 4</value>
+  </data>
+  <data name="GNPanelCentro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNPanelCentro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 768</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GNPanelCentro.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GNPanelCentro.Text" xml:space="preserve">
+    <value>guna2ContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCentro.Name" xml:space="preserve">
+    <value>GNPanelCentro</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCentro.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ContainerControl, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCentro.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GNPanelCentro.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="guna2CircleButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="guna2CircleButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="guna2CircleButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 341</value>
+  </data>
+  <data name="guna2CircleButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="guna2CircleButton1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="guna2CircleButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="guna2CircleButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="guna2CircleButton1.Text" xml:space="preserve">
+    <value>Cadastro de Lembretes</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Name" xml:space="preserve">
+    <value>guna2CircleButton1</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GNBtnPCP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNBtnPCP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNBtnPCP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 76</value>
+  </data>
+  <data name="GNBtnPCP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnPCP.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnPCP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnPCP.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GNBtnPCP.Text" xml:space="preserve">
+    <value>PCP</value>
+  </data>
+  <data name="&gt;&gt;GNBtnPCP.Name" xml:space="preserve">
+    <value>GNBtnPCP</value>
+  </data>
+  <data name="&gt;&gt;GNBtnPCP.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNBtnPCP.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNBtnPCP.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GNBtnVincular.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNBtnVincular.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNBtnVincular.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 129</value>
+  </data>
+  <data name="GNBtnVincular.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnVincular.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnVincular.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnVincular.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GNBtnVincular.Text" xml:space="preserve">
+    <value>Vincular</value>
+  </data>
+  <data name="&gt;&gt;GNBtnVincular.Name" xml:space="preserve">
+    <value>GNBtnVincular</value>
+  </data>
+  <data name="&gt;&gt;GNBtnVincular.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNBtnVincular.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNBtnVincular.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GNBtnOp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNBtnOp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNBtnOp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 182</value>
+  </data>
+  <data name="GNBtnOp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnOp.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnOp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnOp.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GNBtnOp.Text" xml:space="preserve">
+    <value>OP</value>
+  </data>
+  <data name="&gt;&gt;GNBtnOp.Name" xml:space="preserve">
+    <value>GNBtnOp</value>
+  </data>
+  <data name="&gt;&gt;GNBtnOp.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNBtnOp.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNBtnOp.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="GNBtnProcessos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNBtnProcessos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNBtnProcessos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 235</value>
+  </data>
+  <data name="GNBtnProcessos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnProcessos.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnProcessos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnProcessos.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GNBtnProcessos.Text" xml:space="preserve">
+    <value>Processos</value>
+  </data>
+  <data name="&gt;&gt;GNBtnProcessos.Name" xml:space="preserve">
+    <value>GNBtnProcessos</value>
+  </data>
+  <data name="&gt;&gt;GNBtnProcessos.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNBtnProcessos.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNBtnProcessos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="GNBtnUsuario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNBtnUsuario.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNBtnUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 288</value>
+  </data>
+  <data name="GNBtnUsuario.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNBtnUsuario.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNBtnUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GNBtnUsuario.Text" xml:space="preserve">
+    <value>Usuário </value>
+  </data>
+  <data name="&gt;&gt;GNBtnUsuario.Name" xml:space="preserve">
+    <value>GNBtnUsuario</value>
+  </data>
+  <data name="&gt;&gt;GNBtnUsuario.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNBtnUsuario.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNBtnUsuario.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GNbtnLembretes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GNbtnLembretes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="GNbtnLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 610</value>
+  </data>
+  <data name="GNbtnLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNbtnLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 49</value>
+  </data>
+  <data name="GNbtnLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GNbtnLembretes.Text" xml:space="preserve">
+    <value>Lembretes</value>
+  </data>
+  <data name="&gt;&gt;GNbtnLembretes.Name" xml:space="preserve">
+    <value>GNbtnLembretes</value>
+  </data>
+  <data name="&gt;&gt;GNbtnLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNbtnLembretes.Parent" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNbtnLembretes.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 4</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 768</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GNPanelBtnsEsquerdo.Text" xml:space="preserve">
+    <value>guna2ContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;GNPanelBtnsEsquerdo.Name" xml:space="preserve">
+    <value>GNPanelBtnsEsquerdo</value>
+  </data>
+  <data name="&gt;&gt;GNPanelBtnsEsquerdo.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ContainerControl, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNPanelBtnsEsquerdo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GNPanelBtnsEsquerdo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GNPanelLembretes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="GNPanelLembretes.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GNPanelLembretes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1146, 4</value>
+  </data>
+  <data name="GNPanelLembretes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="GNPanelLembretes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 768</value>
+  </data>
+  <data name="GNPanelLembretes.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GNPanelLembretes.Text" xml:space="preserve">
+    <value>guna2ContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;GNPanelLembretes.Name" xml:space="preserve">
+    <value>GNPanelLembretes</value>
+  </data>
+  <data name="&gt;&gt;GNPanelLembretes.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ContainerControl, Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;GNPanelLembretes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GNPanelLembretes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1028, 609</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TelaPrincipal</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TelaPrincipal</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
