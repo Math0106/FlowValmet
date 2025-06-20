@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlowValmet.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,10 @@ namespace FlowValmet.Viwes
 {
     public partial class TelaIdioma : Form
     {
-        TelaPrincipal principal = new TelaPrincipal();
+        
+        //TelaPrincipal _principalForm = new TelaPrincipal();
+        TelaPrincipal _principalForm = Application.OpenForms.OfType<TelaPrincipal>().FirstOrDefault();
+        SessaoIdioma _sessaoIdioma;
         public TelaIdioma()
         {
             InitializeComponent();
@@ -21,7 +25,30 @@ namespace FlowValmet.Viwes
         private void GNBtnEspanhol_Click(object sender, EventArgs e)
         {
             FecharTela();
+            SessaoIdioma.Idioma = "es";
+            //_sessaoIdioma = new SessaoIdioma("es");
+            _principalForm.CarregarIdioma();
+
         }
+
+
+        private void GNBtnIngles_Click(object sender, EventArgs e)
+        {
+            FecharTela();
+            SessaoIdioma.Idioma = "en";
+            //_sessaoIdioma = new SessaoIdioma("en");
+            _principalForm.CarregarIdioma();
+
+        }
+
+        private void GNBtnPortugues_Click(object sender, EventArgs e)
+        {
+            FecharTela();
+            SessaoIdioma.Idioma = "pt";
+            //_sessaoIdioma = new SessaoIdioma("pt");
+            _principalForm.CarregarIdioma();
+        }
+
 
 
         public void FecharTela()

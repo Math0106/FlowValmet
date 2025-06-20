@@ -34,10 +34,10 @@
             this.GNPanelCadastroOP = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNlabelIdAtualizar = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblEntrega = new System.Windows.Forms.Label();
             this.BtnLimpar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GNDatePikerEntregaOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblInicio = new System.Windows.Forms.Label();
             this.GNDatePikerInicioOP = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.BtnAtualizar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnCadastrar = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -80,10 +80,10 @@
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.GNlabelIdAtualizar);
-            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.LblEntrega);
             this.guna2Panel2.Controls.Add(this.BtnLimpar);
             this.guna2Panel2.Controls.Add(this.GNDatePikerEntregaOP);
-            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.LblInicio);
             this.guna2Panel2.Controls.Add(this.GNDatePikerInicioOP);
             this.guna2Panel2.Controls.Add(this.BtnAtualizar);
             this.guna2Panel2.Controls.Add(this.BtnCadastrar);
@@ -106,17 +106,17 @@
             this.GNlabelIdAtualizar.TabIndex = 32;
             this.GNlabelIdAtualizar.Text = "...";
             // 
-            // label2
+            // LblEntrega
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(32, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 21);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Data da Entrega";
+            this.LblEntrega.AutoSize = true;
+            this.LblEntrega.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblEntrega.Location = new System.Drawing.Point(32, 297);
+            this.LblEntrega.Name = "LblEntrega";
+            this.LblEntrega.Size = new System.Drawing.Size(125, 21);
+            this.LblEntrega.TabIndex = 31;
+            this.LblEntrega.Text = "Data da Entrega";
             // 
             // BtnLimpar
             // 
@@ -154,17 +154,17 @@
             this.GNDatePikerEntregaOP.TabIndex = 22;
             this.GNDatePikerEntregaOP.Value = new System.DateTime(2025, 4, 30, 12, 45, 49, 708);
             // 
-            // label1
+            // LblInicio
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(32, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Data Inicio";
+            this.LblInicio.AutoSize = true;
+            this.LblInicio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblInicio.Location = new System.Drawing.Point(32, 215);
+            this.LblInicio.Name = "LblInicio";
+            this.LblInicio.Size = new System.Drawing.Size(87, 21);
+            this.LblInicio.TabIndex = 30;
+            this.LblInicio.Text = "Data Inicio";
             // 
             // GNDatePikerInicioOP
             // 
@@ -436,8 +436,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker GNDatePikerEntregaOP;
         private Guna.UI2.WinForms.Guna2GradientButton BtnCadastrar;
         private Guna.UI2.WinForms.Guna2DataGridView GnDvgOp;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblInicio;
+        private System.Windows.Forms.Label LblEntrega;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2GradientButton BtnLimpar;

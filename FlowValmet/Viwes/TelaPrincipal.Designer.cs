@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             this.GNPanelCentro = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.GNPanelBtnsEsquerdo = new Guna.UI2.WinForms.Guna2ContainerControl();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLblIndicadorDiario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNBtnIndicadoresDiarios = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.GNLabel_Entrar = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Lembretes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Usuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Processo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Op = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Vinculo = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_PCP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Quadro = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Kanban = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_Idioma = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLabel_PowerBI = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNBtnIdioma = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnIndicador = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GNBtnKanban = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -79,17 +81,19 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.GNPanelBtnsEsquerdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(171)))), ((int)(((byte)(167)))));
             this.GNPanelBtnsEsquerdo.BorderRadius = 5;
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel11);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel10);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel9);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel8);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel7);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel6);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel5);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel4);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel3);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel1);
-            this.GNPanelBtnsEsquerdo.Controls.Add(this.guna2HtmlLabel2);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLblIndicadorDiario);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnIndicadoresDiarios);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Entrar);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Lembretes);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Usuario);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Processo);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Op);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Vinculo);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_PCP);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Quadro);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Kanban);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_Idioma);
+            this.GNPanelBtnsEsquerdo.Controls.Add(this.GNLabel_PowerBI);
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnIdioma);
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnIndicador);
             this.GNPanelBtnsEsquerdo.Controls.Add(this.GNBtnKanban);
@@ -108,122 +112,164 @@
             this.GNPanelBtnsEsquerdo.TabIndex = 3;
             this.GNPanelBtnsEsquerdo.Text = "guna2ContainerControl2";
             // 
-            // guna2HtmlLabel11
+            // GNLblIndicadorDiario
             // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(32, 954);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(40, 21);
-            this.guna2HtmlLabel11.TabIndex = 22;
-            this.guna2HtmlLabel11.Text = "Entrar";
+            this.GNLblIndicadorDiario.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblIndicadorDiario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLblIndicadorDiario.Location = new System.Drawing.Point(16, 58);
+            this.GNLblIndicadorDiario.Name = "GNLblIndicadorDiario";
+            this.GNLblIndicadorDiario.Size = new System.Drawing.Size(75, 21);
+            this.GNLblIndicadorDiario.TabIndex = 24;
+            this.GNLblIndicadorDiario.Text = "Indicadores";
+            this.GNLblIndicadorDiario.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel10
+            // GNBtnIndicadoresDiarios
             // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(19, 869);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(67, 21);
-            this.guna2HtmlLabel10.TabIndex = 21;
-            this.guna2HtmlLabel10.Text = "Lembretes";
+            this.GNBtnIndicadoresDiarios.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnIndicadoresDiarios.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage")));
+            this.GNBtnIndicadoresDiarios.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GNBtnIndicadoresDiarios.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.GNBtnIndicadoresDiarios.DisabledState.BorderColor = System.Drawing.Color.LightGray;
+            this.GNBtnIndicadoresDiarios.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
+            this.GNBtnIndicadoresDiarios.DisabledState.FillColor = System.Drawing.Color.LightGray;
+            this.GNBtnIndicadoresDiarios.DisabledState.ForeColor = System.Drawing.Color.LightGray;
+            this.GNBtnIndicadoresDiarios.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnIndicadoresDiarios.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNBtnIndicadoresDiarios.ForeColor = System.Drawing.Color.White;
+            this.GNBtnIndicadoresDiarios.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnIndicadoresDiarios.Location = new System.Drawing.Point(23, 3);
+            this.GNBtnIndicadoresDiarios.Name = "GNBtnIndicadoresDiarios";
+            this.GNBtnIndicadoresDiarios.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GNBtnIndicadoresDiarios.Size = new System.Drawing.Size(60, 50);
+            this.GNBtnIndicadoresDiarios.TabIndex = 23;
+            this.GNBtnIndicadoresDiarios.Click += new System.EventHandler(this.GNBtnIndicadoresDiarios_Click);
             // 
-            // guna2HtmlLabel9
+            // GNLabel_Entrar
             // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(27, 779);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(51, 21);
-            this.guna2HtmlLabel9.TabIndex = 20;
-            this.guna2HtmlLabel9.Text = "Usuário";
+            this.GNLabel_Entrar.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Entrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Entrar.Location = new System.Drawing.Point(33, 949);
+            this.GNLabel_Entrar.Name = "GNLabel_Entrar";
+            this.GNLabel_Entrar.Size = new System.Drawing.Size(40, 21);
+            this.GNLabel_Entrar.TabIndex = 22;
+            this.GNLabel_Entrar.Text = "Entrar";
+            this.GNLabel_Entrar.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel8
+            // GNLabel_Lembretes
             // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(23, 689);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(58, 21);
-            this.guna2HtmlLabel8.TabIndex = 19;
-            this.guna2HtmlLabel8.Text = "Processo";
+            this.GNLabel_Lembretes.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Lembretes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Lembretes.Location = new System.Drawing.Point(20, 868);
+            this.GNLabel_Lembretes.Name = "GNLabel_Lembretes";
+            this.GNLabel_Lembretes.Size = new System.Drawing.Size(67, 21);
+            this.GNLabel_Lembretes.TabIndex = 21;
+            this.GNLabel_Lembretes.Text = "Lembretes";
+            this.GNLabel_Lembretes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel7
+            // GNLabel_Usuario
             // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(41, 599);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(22, 21);
-            this.guna2HtmlLabel7.TabIndex = 18;
-            this.guna2HtmlLabel7.Text = "OP";
+            this.GNLabel_Usuario.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Usuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Usuario.Location = new System.Drawing.Point(28, 787);
+            this.GNLabel_Usuario.Name = "GNLabel_Usuario";
+            this.GNLabel_Usuario.Size = new System.Drawing.Size(51, 21);
+            this.GNLabel_Usuario.TabIndex = 20;
+            this.GNLabel_Usuario.Text = "Usuário";
+            this.GNLabel_Usuario.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel6
+            // GNLabel_Processo
             // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(27, 509);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(51, 21);
-            this.guna2HtmlLabel6.TabIndex = 17;
-            this.guna2HtmlLabel6.Text = "Vínculo";
+            this.GNLabel_Processo.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Processo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Processo.Location = new System.Drawing.Point(24, 706);
+            this.GNLabel_Processo.Name = "GNLabel_Processo";
+            this.GNLabel_Processo.Size = new System.Drawing.Size(58, 21);
+            this.GNLabel_Processo.TabIndex = 19;
+            this.GNLabel_Processo.Text = "Processo";
+            this.GNLabel_Processo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel5
+            // GNLabel_Op
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(38, 419);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(28, 21);
-            this.guna2HtmlLabel5.TabIndex = 16;
-            this.guna2HtmlLabel5.Text = "PCP";
+            this.GNLabel_Op.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Op.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Op.Location = new System.Drawing.Point(42, 625);
+            this.GNLabel_Op.Name = "GNLabel_Op";
+            this.GNLabel_Op.Size = new System.Drawing.Size(22, 21);
+            this.GNLabel_Op.TabIndex = 18;
+            this.GNLabel_Op.Text = "OP";
+            this.GNLabel_Op.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel4
+            // GNLabel_Vinculo
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(27, 329);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(50, 21);
-            this.guna2HtmlLabel4.TabIndex = 15;
-            this.guna2HtmlLabel4.Text = "Quadro";
+            this.GNLabel_Vinculo.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Vinculo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Vinculo.Location = new System.Drawing.Point(28, 544);
+            this.GNLabel_Vinculo.Name = "GNLabel_Vinculo";
+            this.GNLabel_Vinculo.Size = new System.Drawing.Size(51, 21);
+            this.GNLabel_Vinculo.TabIndex = 17;
+            this.GNLabel_Vinculo.Text = "Vínculo";
+            this.GNLabel_Vinculo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel3
+            // GNLabel_PCP
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(27, 239);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(50, 21);
-            this.guna2HtmlLabel3.TabIndex = 14;
-            this.guna2HtmlLabel3.Text = "Kanban";
+            this.GNLabel_PCP.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_PCP.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_PCP.Location = new System.Drawing.Point(39, 463);
+            this.GNLabel_PCP.Name = "GNLabel_PCP";
+            this.GNLabel_PCP.Size = new System.Drawing.Size(28, 21);
+            this.GNLabel_PCP.TabIndex = 16;
+            this.GNLabel_PCP.Text = "PCP";
+            this.GNLabel_PCP.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel1
+            // GNLabel_Quadro
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(29, 149);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(46, 21);
-            this.guna2HtmlLabel1.TabIndex = 13;
-            this.guna2HtmlLabel1.Text = "Idioma";
+            this.GNLabel_Quadro.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Quadro.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Quadro.Location = new System.Drawing.Point(28, 382);
+            this.GNLabel_Quadro.Name = "GNLabel_Quadro";
+            this.GNLabel_Quadro.Size = new System.Drawing.Size(50, 21);
+            this.GNLabel_Quadro.TabIndex = 15;
+            this.GNLabel_Quadro.Text = "Quadro";
+            this.GNLabel_Quadro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel2
+            // GNLabel_Kanban
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(23, 59);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(58, 21);
-            this.guna2HtmlLabel2.TabIndex = 12;
-            this.guna2HtmlLabel2.Text = "Power BI";
+            this.GNLabel_Kanban.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Kanban.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Kanban.Location = new System.Drawing.Point(28, 301);
+            this.GNLabel_Kanban.Name = "GNLabel_Kanban";
+            this.GNLabel_Kanban.Size = new System.Drawing.Size(50, 21);
+            this.GNLabel_Kanban.TabIndex = 14;
+            this.GNLabel_Kanban.Text = "Kanban";
+            this.GNLabel_Kanban.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GNLabel_Idioma
+            // 
+            this.GNLabel_Idioma.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_Idioma.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_Idioma.Location = new System.Drawing.Point(30, 220);
+            this.GNLabel_Idioma.Name = "GNLabel_Idioma";
+            this.GNLabel_Idioma.Size = new System.Drawing.Size(46, 21);
+            this.GNLabel_Idioma.TabIndex = 13;
+            this.GNLabel_Idioma.Text = "Idioma";
+            this.GNLabel_Idioma.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GNLabel_PowerBI
+            // 
+            this.GNLabel_PowerBI.BackColor = System.Drawing.Color.Transparent;
+            this.GNLabel_PowerBI.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLabel_PowerBI.Location = new System.Drawing.Point(24, 139);
+            this.GNLabel_PowerBI.Name = "GNLabel_PowerBI";
+            this.GNLabel_PowerBI.Size = new System.Drawing.Size(58, 21);
+            this.GNLabel_PowerBI.TabIndex = 12;
+            this.GNLabel_PowerBI.Text = "Power BI";
+            this.GNLabel_PowerBI.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GNBtnIdioma
             // 
             this.GNBtnIdioma.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnIdioma.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage")));
-            this.GNBtnIdioma.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GNBtnIdioma.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GNBtnIdioma.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage1")));
+            this.GNBtnIdioma.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.GNBtnIdioma.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.GNBtnIdioma.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnIdioma.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -233,7 +279,7 @@
             this.GNBtnIdioma.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnIdioma.ForeColor = System.Drawing.Color.Black;
             this.GNBtnIdioma.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnIdioma.Location = new System.Drawing.Point(22, 93);
+            this.GNBtnIdioma.Location = new System.Drawing.Point(23, 165);
             this.GNBtnIdioma.Name = "GNBtnIdioma";
             this.GNBtnIdioma.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnIdioma.Size = new System.Drawing.Size(60, 50);
@@ -243,8 +289,8 @@
             // GNBtnIndicador
             // 
             this.GNBtnIndicador.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnIndicador.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage1")));
-            this.GNBtnIndicador.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GNBtnIndicador.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage2")));
+            this.GNBtnIndicador.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GNBtnIndicador.CustomImages.ImageSize = new System.Drawing.Size(40, 50);
             this.GNBtnIndicador.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnIndicador.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -254,7 +300,7 @@
             this.GNBtnIndicador.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnIndicador.ForeColor = System.Drawing.Color.White;
             this.GNBtnIndicador.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnIndicador.Location = new System.Drawing.Point(22, 3);
+            this.GNBtnIndicador.Location = new System.Drawing.Point(23, 84);
             this.GNBtnIndicador.Name = "GNBtnIndicador";
             this.GNBtnIndicador.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnIndicador.Size = new System.Drawing.Size(60, 50);
@@ -264,8 +310,8 @@
             // GNBtnKanban
             // 
             this.GNBtnKanban.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnKanban.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage2")));
-            this.GNBtnKanban.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.GNBtnKanban.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage3")));
+            this.GNBtnKanban.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.GNBtnKanban.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnKanban.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnKanban.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -275,7 +321,7 @@
             this.GNBtnKanban.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnKanban.ForeColor = System.Drawing.Color.White;
             this.GNBtnKanban.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnKanban.Location = new System.Drawing.Point(22, 183);
+            this.GNBtnKanban.Location = new System.Drawing.Point(23, 246);
             this.GNBtnKanban.Name = "GNBtnKanban";
             this.GNBtnKanban.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnKanban.Size = new System.Drawing.Size(60, 50);
@@ -285,8 +331,8 @@
             // GNBtnOpDet
             // 
             this.GNBtnOpDet.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnOpDet.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage3")));
-            this.GNBtnOpDet.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.GNBtnOpDet.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage4")));
+            this.GNBtnOpDet.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.GNBtnOpDet.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnOpDet.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnOpDet.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -296,7 +342,7 @@
             this.GNBtnOpDet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnOpDet.ForeColor = System.Drawing.Color.White;
             this.GNBtnOpDet.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnOpDet.Location = new System.Drawing.Point(22, 273);
+            this.GNBtnOpDet.Location = new System.Drawing.Point(23, 327);
             this.GNBtnOpDet.Name = "GNBtnOpDet";
             this.GNBtnOpDet.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnOpDet.Size = new System.Drawing.Size(60, 50);
@@ -306,10 +352,10 @@
             // GNBtnLogin
             // 
             this.GNBtnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnLogin.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage4")));
-            this.GNBtnLogin.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.GNBtnLogin.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage5")));
+            this.GNBtnLogin.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.GNBtnLogin.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GNBtnLogin.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
+            this.GNBtnLogin.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnLogin.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
             this.GNBtnLogin.DisabledState.FillColor = System.Drawing.Color.LightGray;
@@ -319,7 +365,7 @@
             this.GNBtnLogin.ForeColor = System.Drawing.Color.White;
             this.GNBtnLogin.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.GNBtnLogin.ImageSize = new System.Drawing.Size(40, 40);
-            this.GNBtnLogin.Location = new System.Drawing.Point(22, 903);
+            this.GNBtnLogin.Location = new System.Drawing.Point(23, 894);
             this.GNBtnLogin.Name = "GNBtnLogin";
             this.GNBtnLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnLogin.Size = new System.Drawing.Size(60, 50);
@@ -330,8 +376,8 @@
             // GNBtnPCP
             // 
             this.GNBtnPCP.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnPCP.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage5")));
-            this.GNBtnPCP.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.GNBtnPCP.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage6")));
+            this.GNBtnPCP.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.GNBtnPCP.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnPCP.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnPCP.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -341,7 +387,7 @@
             this.GNBtnPCP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnPCP.ForeColor = System.Drawing.Color.White;
             this.GNBtnPCP.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnPCP.Location = new System.Drawing.Point(22, 363);
+            this.GNBtnPCP.Location = new System.Drawing.Point(23, 408);
             this.GNBtnPCP.Name = "GNBtnPCP";
             this.GNBtnPCP.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnPCP.Size = new System.Drawing.Size(60, 50);
@@ -352,8 +398,9 @@
             // 
             this.GNBtnVincular.BackColor = System.Drawing.Color.Transparent;
             this.GNBtnVincular.BorderColor = System.Drawing.Color.Transparent;
-            this.GNBtnVincular.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage6")));
-            this.GNBtnVincular.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.GNBtnVincular.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage7")));
+            this.GNBtnVincular.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.GNBtnVincular.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GNBtnVincular.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnVincular.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnVincular.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -365,7 +412,7 @@
             this.GNBtnVincular.ForeColor = System.Drawing.Color.White;
             this.GNBtnVincular.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.GNBtnVincular.ImageSize = new System.Drawing.Size(40, 40);
-            this.GNBtnVincular.Location = new System.Drawing.Point(22, 453);
+            this.GNBtnVincular.Location = new System.Drawing.Point(23, 489);
             this.GNBtnVincular.Name = "GNBtnVincular";
             this.GNBtnVincular.PressedColor = System.Drawing.Color.Transparent;
             this.GNBtnVincular.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -377,8 +424,8 @@
             // GNBtnOp
             // 
             this.GNBtnOp.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnOp.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage7")));
-            this.GNBtnOp.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.GNBtnOp.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage8")));
+            this.GNBtnOp.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.GNBtnOp.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnOp.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnOp.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -388,7 +435,7 @@
             this.GNBtnOp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnOp.ForeColor = System.Drawing.Color.White;
             this.GNBtnOp.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnOp.Location = new System.Drawing.Point(22, 543);
+            this.GNBtnOp.Location = new System.Drawing.Point(23, 570);
             this.GNBtnOp.Name = "GNBtnOp";
             this.GNBtnOp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnOp.Size = new System.Drawing.Size(60, 50);
@@ -398,9 +445,8 @@
             // GNBtnProcessos
             // 
             this.GNBtnProcessos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnProcessos.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage8")));
-            this.GNBtnProcessos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            this.GNBtnProcessos.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GNBtnProcessos.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage9")));
+            this.GNBtnProcessos.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.GNBtnProcessos.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnProcessos.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNBtnProcessos.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -410,7 +456,7 @@
             this.GNBtnProcessos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GNBtnProcessos.ForeColor = System.Drawing.Color.White;
             this.GNBtnProcessos.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnProcessos.Location = new System.Drawing.Point(22, 633);
+            this.GNBtnProcessos.Location = new System.Drawing.Point(23, 651);
             this.GNBtnProcessos.Name = "GNBtnProcessos";
             this.GNBtnProcessos.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnProcessos.Size = new System.Drawing.Size(60, 50);
@@ -420,8 +466,8 @@
             // GNBtnUsuario
             // 
             this.GNBtnUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNBtnUsuario.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage9")));
-            this.GNBtnUsuario.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.GNBtnUsuario.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage10")));
+            this.GNBtnUsuario.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.GNBtnUsuario.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GNBtnUsuario.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
             this.GNBtnUsuario.DisabledState.BorderColor = System.Drawing.Color.LightGray;
@@ -433,7 +479,7 @@
             this.GNBtnUsuario.ForeColor = System.Drawing.Color.White;
             this.GNBtnUsuario.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.GNBtnUsuario.ImageSize = new System.Drawing.Size(40, 40);
-            this.GNBtnUsuario.Location = new System.Drawing.Point(22, 723);
+            this.GNBtnUsuario.Location = new System.Drawing.Point(23, 732);
             this.GNBtnUsuario.Name = "GNBtnUsuario";
             this.GNBtnUsuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNBtnUsuario.Size = new System.Drawing.Size(60, 50);
@@ -443,8 +489,9 @@
             // GNbtnLembretes
             // 
             this.GNbtnLembretes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNbtnLembretes.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage10")));
-            this.GNbtnLembretes.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.GNbtnLembretes.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("resource.HoveredImage11")));
+            this.GNbtnLembretes.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.GNbtnLembretes.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GNbtnLembretes.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.GNbtnLembretes.DisabledState.BorderColor = System.Drawing.Color.LightGray;
             this.GNbtnLembretes.DisabledState.CustomBorderColor = System.Drawing.Color.LightGray;
@@ -456,7 +503,7 @@
             this.GNbtnLembretes.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.GNbtnLembretes.ImageSize = new System.Drawing.Size(40, 40);
             this.GNbtnLembretes.IndicateFocus = true;
-            this.GNbtnLembretes.Location = new System.Drawing.Point(22, 813);
+            this.GNbtnLembretes.Location = new System.Drawing.Point(23, 813);
             this.GNbtnLembretes.Name = "GNbtnLembretes";
             this.GNbtnLembretes.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GNbtnLembretes.Size = new System.Drawing.Size(60, 50);
@@ -517,28 +564,30 @@
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelCentro;
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelBtnsEsquerdo;
         private Guna.UI2.WinForms.Guna2ContainerControl GNPanelLembretes;
-        private Guna.UI2.WinForms.Guna2CircleButton GNbtnLembretes;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnUsuario;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnProcessos;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnOp;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnVincular;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnPCP;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnLogin;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnOpDet;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnKanban;
-        private Guna.UI2.WinForms.Guna2CircleButton GNBtnIndicador;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Quadro;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Kanban;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Idioma;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_PowerBI;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Lembretes;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Usuario;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Processo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Op;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Vinculo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_PCP;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLabel_Entrar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLblIndicadorDiario;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnIndicadoresDiarios;
         private Guna.UI2.WinForms.Guna2CircleButton GNBtnIdioma;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnIndicador;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnKanban;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnOpDet;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnLogin;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnPCP;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnVincular;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnOp;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnProcessos;
+        private Guna.UI2.WinForms.Guna2CircleButton GNBtnUsuario;
+        private Guna.UI2.WinForms.Guna2CircleButton GNbtnLembretes;
     }
 }

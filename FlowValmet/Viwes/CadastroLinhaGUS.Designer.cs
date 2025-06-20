@@ -33,12 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblCor = new System.Windows.Forms.Label();
             this.CbxCor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.TxtLinhaProdução = new Guna.UI2.WinForms.Guna2TextBox();
             this.TxtSigla = new Guna.UI2.WinForms.Guna2TextBox();
             this.PanelCores = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GNBtnLimpar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BttnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNDataGridLinhasCadastradaLinhaP = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -72,12 +72,12 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.LblCor);
             this.guna2Panel2.Controls.Add(this.CbxCor);
             this.guna2Panel2.Controls.Add(this.TxtLinhaProdução);
             this.guna2Panel2.Controls.Add(this.TxtSigla);
             this.guna2Panel2.Controls.Add(this.PanelCores);
-            this.guna2Panel2.Controls.Add(this.guna2GradientButton1);
+            this.guna2Panel2.Controls.Add(this.GNBtnLimpar);
             this.guna2Panel2.Controls.Add(this.BttnRegistrar);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Location = new System.Drawing.Point(20, 18);
@@ -85,17 +85,17 @@
             this.guna2Panel2.Size = new System.Drawing.Size(332, 320);
             this.guna2Panel2.TabIndex = 32;
             // 
-            // label2
+            // LblCor
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(29, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 21);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Cor";
+            this.LblCor.AutoSize = true;
+            this.LblCor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblCor.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblCor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblCor.Location = new System.Drawing.Point(29, 73);
+            this.LblCor.Name = "LblCor";
+            this.LblCor.Size = new System.Drawing.Size(36, 21);
+            this.LblCor.TabIndex = 32;
+            this.LblCor.Text = "Cor";
             // 
             // CbxCor
             // 
@@ -186,25 +186,25 @@
             this.PanelCores.Size = new System.Drawing.Size(20, 20);
             this.PanelCores.TabIndex = 22;
             // 
-            // guna2GradientButton1
+            // GNBtnLimpar
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Teal;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(20, 257);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(290, 48);
-            this.guna2GradientButton1.TabIndex = 24;
-            this.guna2GradientButton1.Text = "Limpar";
-            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.GNBtnLimpar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNBtnLimpar.BorderRadius = 20;
+            this.GNBtnLimpar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GNBtnLimpar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnLimpar.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GNBtnLimpar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GNBtnLimpar.FillColor = System.Drawing.Color.Teal;
+            this.GNBtnLimpar.FillColor2 = System.Drawing.Color.Teal;
+            this.GNBtnLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GNBtnLimpar.ForeColor = System.Drawing.Color.White;
+            this.GNBtnLimpar.Location = new System.Drawing.Point(20, 257);
+            this.GNBtnLimpar.Name = "GNBtnLimpar";
+            this.GNBtnLimpar.Size = new System.Drawing.Size(290, 48);
+            this.GNBtnLimpar.TabIndex = 24;
+            this.GNBtnLimpar.Text = "Limpar";
+            this.GNBtnLimpar.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // BttnRegistrar
             // 
@@ -357,13 +357,13 @@
         private Guna.UI2.WinForms.Guna2TextBox TxtLinhaProdução;
         private Guna.UI2.WinForms.Guna2Panel PanelCores;
         private Guna.UI2.WinForms.Guna2GradientButton BttnRegistrar;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton GNBtnLimpar;
         private Guna.UI2.WinForms.Guna2DataGridView GNDataGridLinhasCadastradaLinhaP;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox TxtSigla;
         private Guna.UI2.WinForms.Guna2ComboBox CbxCor;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblCor;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn linhaProducao;
         private System.Windows.Forms.DataGridViewTextBoxColumn sigla;

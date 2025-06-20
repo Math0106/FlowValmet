@@ -20,8 +20,73 @@ namespace FlowValmet.Viwes
         {
             InitializeComponent();
             LimparCampos();
+            TrocaIdioma();
         }
 
+        public void TrocaIdioma()
+        {
+            switch (SessaoIdioma.Idioma) 
+            {
+                case "en":
+                    {
+                        TxtLinhaProdução.PlaceholderText = "Production line";
+                        TxtSigla.PlaceholderText = "Acronym";
+                        LblCor.Text = "Color";
+                        BttnRegistrar.Text = "Register";
+                        GNBtnLimpar.Text = "Clean";
+
+                        GNDataGridLinhasCadastradaLinhaP.Columns["id"].HeaderText = "Id"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["linhaProducao"].HeaderText = "Production line"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["sigla"].HeaderText = "Acronym"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["cor"].HeaderText = "Color";
+                        break;
+                    }
+                case "es":
+                    {
+                        TxtLinhaProdução.PlaceholderText = "Línea de montaje";
+                        TxtSigla.PlaceholderText = "Acrónimo";
+                        LblCor.Text = "Color";
+                        BttnRegistrar.Text = "Registro";
+                        GNBtnLimpar.Text = "Limpiar";
+
+                        GNDataGridLinhasCadastradaLinhaP.Columns["id"].HeaderText = "Id"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["linhaProducao"].HeaderText = "Línea de montaje"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["sigla"].HeaderText = "Acrónimo"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["cor"].HeaderText = "Color";
+                        break;
+                    }
+                case "pt":
+                    {
+                        TxtLinhaProdução.PlaceholderText = "Linha de Produção";
+                        TxtSigla.PlaceholderText = "Sigla";
+                        LblCor.Text = "Cor";
+                        BttnRegistrar.Text = "Cadastrar";
+                        GNBtnLimpar.Text = "Limpar";
+
+                        GNDataGridLinhasCadastradaLinhaP.Columns["id"].HeaderText = "Id"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["linhaProducao"].HeaderText = "Linha de Produção"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["sigla"].HeaderText = "Sigla"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["cor"].HeaderText = "Cor";
+
+                        break;
+                    }
+                default:
+                    {
+                        TxtLinhaProdução.PlaceholderText = "Linha de Produção";
+                        TxtSigla.PlaceholderText = "Sigla";
+                        LblCor.Text = "Cor";
+                        BttnRegistrar.Text = "Cadastrar";
+                        GNBtnLimpar.Text = "Limpar";
+
+                        GNDataGridLinhasCadastradaLinhaP.Columns["id"].HeaderText = "Id"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["linhaProducao"].HeaderText = "Linha de Produção"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["sigla"].HeaderText = "Sigla"; // string
+                        GNDataGridLinhasCadastradaLinhaP.Columns["cor"].HeaderText = "Cor";
+                        break;
+                    }
+            }
+
+        }
 
 
         public void LimparCampos()
@@ -72,7 +137,30 @@ namespace FlowValmet.Viwes
             }
             catch
             {
-                MessageBox.Show("Erro ao carregar!");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error loading!");
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al cargar!");
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                }
             }
 
         }
@@ -94,13 +182,59 @@ namespace FlowValmet.Viwes
                 }
                 else
                 {
-                    MessageBox.Show("Preencher todos os campos");
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                MessageBox.Show("Fill in all fields!");
+
+                                break;
+                            }
+                        case "es":
+                            {
+                                MessageBox.Show("Complete todos los campos!");
+                                break;
+                            }
+                        case "pt":
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar: " + ex);
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error registering!" + ex);
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al registrarse!" + ex);
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao cadastrar: " + ex);
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao cadastrar: " + ex);
+                            break;
+                        }
+                }
                 LimparCampos();
             }
             CarregarLinhas();
@@ -133,10 +267,32 @@ namespace FlowValmet.Viwes
                 if (e.RowIndex >= 0)
                 {
                     var linhas = GNDataGridLinhasCadastradaLinhaP.Rows[e.RowIndex];
+                    var confirmacao = "";
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                confirmacao = MessageBox.Show($"Do you want to delete line?: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
+                                break;
+                            }
+                        case "es":
+                            {
+                                confirmacao = MessageBox.Show($"Quieres eliminar la línea?: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
+                                break;
+                            }
+                        case "pt":
+                            {
+                                confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
+                                break;
+                            }
+                        default:
+                            {
+                                confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
+                                break;
+                            }
+                    }
 
-
-
-                    var confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
+                    //confirmacao = MessageBox.Show($"Deseja escluir linha: {linhas.Cells[0].Value?.ToString()}", linhas.Cells[1].Value?.ToString(), MessageBoxButtons.OKCancel).ToString();
                     if (confirmacao == "OK")
                     {
                         linha.ExcluirLinha(Convert.ToInt32(linhas.Cells[0].Value?.ToString()));
@@ -147,7 +303,30 @@ namespace FlowValmet.Viwes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao excluir: " + ex);
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error when deleting:" + ex);
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al eliminar:" + ex);
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao excluir: " + ex);
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao excluir: " + ex);
+                            break;
+                        }
+                }
             }
             LimparCampos();
         }

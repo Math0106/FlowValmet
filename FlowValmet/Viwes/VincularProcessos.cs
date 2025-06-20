@@ -1,4 +1,5 @@
 ﻿using FlowValmet.Controllers;
+using FlowValmet.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,59 @@ namespace FlowValmet.Viwes
             GNDtpDataInicio.MinDate = DateTime.Today;
             GNDtpDataFim.MinDate = DateTime.Today;
             DesingDataGridView.DesignGunaDataGrid(GNDgvVinculado);
+            TrocaIdioma();
+        }
+
+        public void TrocaIdioma()
+        {
+            switch (SessaoIdioma.Idioma)
+            {
+                case "en":
+                    {
+                        LblOp_vinculo.Text = "PO for vehicle";
+                        Lbl_processo.Text = "Process";
+                        LblDataInicio.Text = "Start date";
+                        LblData_final.Text = "End date";
+                        GNBtnVincular.Text = "Link";
+                        GnBtnLimpar.Text = "Clean";
+                        GnBtnCadastrarVinculo.Text = "Apply link";
+                        break;
+                    }
+                case "es":
+                    {
+                        LblOp_vinculo.Text = "OP para enlace";
+                        Lbl_processo.Text = "Proceso";
+                        LblDataInicio.Text = "Fecha de inicio";
+                        LblData_final.Text = "Fecha de finalización";
+                        GNBtnVincular.Text = "Unir";
+                        GnBtnLimpar.Text = "Limpiar";
+                        GnBtnCadastrarVinculo.Text = "Aplicar enlace";
+                        break;
+                    }
+                case "pt":
+                    {
+                        LblOp_vinculo.Text = "Op para vínculo";
+                        Lbl_processo.Text = "Processo";
+                        LblDataInicio.Text = "Data de início";
+                        LblData_final.Text = "Data final";
+                        GNBtnVincular.Text = "Vincular";
+                        GnBtnLimpar.Text = "Limpar";
+                        GnBtnCadastrarVinculo.Text = "Aplicar Vínculo";
+                        break;
+                    }
+                default:
+                    {
+                        LblOp_vinculo.Text = "Op para vínculo";
+                        Lbl_processo.Text = "Processo";
+                        LblDataInicio.Text = "Data de início";
+                        LblData_final.Text = "Data final";
+                        GNBtnVincular.Text = "Vincular";
+                        GnBtnLimpar.Text = "Limpar";
+                        GnBtnCadastrarVinculo.Text = "Aplicar Vínculo";
+                        break;
+                    }
+
+            }
         }
 
         public void ResetarCbxProcessos()

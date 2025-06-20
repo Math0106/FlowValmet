@@ -40,12 +40,12 @@
             this.dataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GnBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblOp_vinculo = new System.Windows.Forms.Label();
+            this.Lbl_processo = new System.Windows.Forms.Label();
+            this.LblData_final = new System.Windows.Forms.Label();
             this.GNCheckboxTravarVinculoOp = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GNBtnVincular = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblDataInicio = new System.Windows.Forms.Label();
             this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GNDtpDataFim = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.GnCbxProcessos = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -185,12 +185,12 @@
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.GnBtnLimpar);
-            this.guna2Panel2.Controls.Add(this.label4);
-            this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.LblOp_vinculo);
+            this.guna2Panel2.Controls.Add(this.Lbl_processo);
+            this.guna2Panel2.Controls.Add(this.LblData_final);
             this.guna2Panel2.Controls.Add(this.GNCheckboxTravarVinculoOp);
             this.guna2Panel2.Controls.Add(this.GNBtnVincular);
-            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.LblDataInicio);
             this.guna2Panel2.Controls.Add(this.GNCbxOps);
             this.guna2Panel2.Controls.Add(this.GNDtpDataFim);
             this.guna2Panel2.Controls.Add(this.GnCbxProcessos);
@@ -219,41 +219,41 @@
             this.GnBtnLimpar.Text = "Limpar";
             this.GnBtnLimpar.Click += new System.EventHandler(this.GnBtnLimpar_Click);
             // 
-            // label4
+            // LblOp_vinculo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(10, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 21);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Op para vinculo";
+            this.LblOp_vinculo.AutoSize = true;
+            this.LblOp_vinculo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblOp_vinculo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblOp_vinculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblOp_vinculo.Location = new System.Drawing.Point(10, 20);
+            this.LblOp_vinculo.Name = "LblOp_vinculo";
+            this.LblOp_vinculo.Size = new System.Drawing.Size(124, 21);
+            this.LblOp_vinculo.TabIndex = 33;
+            this.LblOp_vinculo.Text = "Op para vinculo";
             // 
-            // label3
+            // Lbl_processo
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label3.Location = new System.Drawing.Point(10, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Processo";
+            this.Lbl_processo.AutoSize = true;
+            this.Lbl_processo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Lbl_processo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.Lbl_processo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Lbl_processo.Location = new System.Drawing.Point(10, 83);
+            this.Lbl_processo.Name = "Lbl_processo";
+            this.Lbl_processo.Size = new System.Drawing.Size(76, 21);
+            this.Lbl_processo.TabIndex = 32;
+            this.Lbl_processo.Text = "Processo";
             // 
-            // label2
+            // LblData_final
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(10, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 21);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Data da fim";
+            this.LblData_final.AutoSize = true;
+            this.LblData_final.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblData_final.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblData_final.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblData_final.Location = new System.Drawing.Point(10, 223);
+            this.LblData_final.Name = "LblData_final";
+            this.LblData_final.Size = new System.Drawing.Size(93, 21);
+            this.LblData_final.TabIndex = 31;
+            this.LblData_final.Text = "Data da fim";
             // 
             // GNCheckboxTravarVinculoOp
             // 
@@ -292,17 +292,17 @@
             this.GNBtnVincular.Text = "Vincular";
             this.GNBtnVincular.Click += new System.EventHandler(this.GNBtnVincular_Click);
             // 
-            // label1
+            // LblDataInicio
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(10, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Data Inicio";
+            this.LblDataInicio.AutoSize = true;
+            this.LblDataInicio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LblDataInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LblDataInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.LblDataInicio.Location = new System.Drawing.Point(10, 147);
+            this.LblDataInicio.Name = "LblDataInicio";
+            this.LblDataInicio.Size = new System.Drawing.Size(87, 21);
+            this.LblDataInicio.TabIndex = 30;
+            this.LblDataInicio.Text = "Data Inicio";
             // 
             // GNCbxOps
             // 
@@ -385,7 +385,7 @@
             this.GnBtnCadastrarVinculo.Name = "GnBtnCadastrarVinculo";
             this.GnBtnCadastrarVinculo.Size = new System.Drawing.Size(300, 48);
             this.GnBtnCadastrarVinculo.TabIndex = 11;
-            this.GnBtnCadastrarVinculo.Text = "Aplicar Vinculo";
+            this.GnBtnCadastrarVinculo.Text = "Aplicar Vínculo";
             this.GnBtnCadastrarVinculo.Click += new System.EventHandler(this.GnBtnCadastrarVinculo_Click_1);
             // 
             // VincularProcessos
@@ -422,10 +422,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFim;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LblData_final;
+        private System.Windows.Forms.Label LblDataInicio;
+        private System.Windows.Forms.Label LblOp_vinculo;
+        private System.Windows.Forms.Label Lbl_processo;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
     }

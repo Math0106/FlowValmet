@@ -21,6 +21,8 @@ namespace FlowValmet.Viwes
         {
             InitializeComponent();
             LimparCampos();
+
+            TrocarIdioma();
         }
 
         public void LimparCampos()
@@ -38,6 +40,89 @@ namespace FlowValmet.Viwes
             GNlabelIdAtualizar.Text = "";
         }
 
+
+        public void TrocarIdioma()
+        {
+            switch (SessaoIdioma.Idioma)
+            {
+                case "en":
+                    {
+                        TxtNumeroOp.PlaceholderText = "PO";
+                        TxtDescricao.PlaceholderText = "Description";
+                        Txtdesenho.PlaceholderText = "Design";
+                        LblInicio.Text = "Start Date";
+                        LblEntrega.Text = "Delivery Date";
+                        BtnCadastrar.Text = "Register";
+                        BtnAtualizar.Text = "Update";
+                        BtnLimpar.Text = "Clean";
+
+                        GnDvgOp.Columns["id"].HeaderText = "ID"; // string
+                        GnDvgOp.Columns["numeroop"].HeaderText = "PO"; // string
+                        GnDvgOp.Columns["descricao"].HeaderText = "Description"; // string
+                        GnDvgOp.Columns["desenho"].HeaderText = "Design";
+                        GnDvgOp.Columns["dataInicio"].HeaderText = "Start Date";
+                        GnDvgOp.Columns["dataEntrega"].HeaderText = "Delivery Date"; // DateTime
+                        break;
+                    }
+                case "es":
+                    {
+                        TxtNumeroOp.PlaceholderText = "OP";
+                        TxtDescricao.PlaceholderText = "Descripción";
+                        Txtdesenho.PlaceholderText = "Diseño";
+                        LblInicio.Text = "Fecha de inicio";
+                        LblEntrega.Text = "Fecha de entrega";
+                        BtnCadastrar.Text = "Registro";
+                        BtnAtualizar.Text = "Actualizar";
+                        BtnLimpar.Text = "Limpiar";
+
+                        GnDvgOp.Columns["id"].HeaderText = "ID"; // string
+                        GnDvgOp.Columns["numeroop"].HeaderText = "OP"; // string
+                        GnDvgOp.Columns["descricao"].HeaderText = "Descripción"; // string
+                        GnDvgOp.Columns["desenho"].HeaderText = "Diseño";
+                        GnDvgOp.Columns["dataInicio"].HeaderText = "Fecha de inicio";
+                        GnDvgOp.Columns["dataEntrega"].HeaderText = "Fecha de entrega"; // DateTime
+                        break;
+                    }
+                case "pt":
+                    {
+                        TxtNumeroOp.PlaceholderText = "OP";
+                        TxtDescricao.PlaceholderText = "Descrição";
+                        Txtdesenho.PlaceholderText = "Desenho";
+                        LblInicio.Text = "Data de início";
+                        LblEntrega.Text = "Data de entrega";
+                        BtnCadastrar.Text = "Cadastrar";
+                        BtnAtualizar.Text = "Atualizar";
+                        BtnLimpar.Text = "Limpar";
+
+                        GnDvgOp.Columns["id"].HeaderText = "ID"; // string
+                        GnDvgOp.Columns["numeroop"].HeaderText = "OP"; // string
+                        GnDvgOp.Columns["descricao"].HeaderText = "Descrição"; // string
+                        GnDvgOp.Columns["desenho"].HeaderText = "Desenho";
+                        GnDvgOp.Columns["dataInicio"].HeaderText = "Data de início";
+                        GnDvgOp.Columns["dataEntrega"].HeaderText = "Data de entrega"; // DateTime
+                        break;
+                    }
+                default:
+                    {
+                        TxtNumeroOp.PlaceholderText = "OP";
+                        TxtDescricao.PlaceholderText = "Descrição";
+                        Txtdesenho.PlaceholderText = "Desenho";
+                        LblInicio.Text = "Data de Início";
+                        LblEntrega.Text = "Data de entrega";
+                        BtnCadastrar.Text = "Cadastrar";
+                        BtnAtualizar.Text = "Atualizar";
+                        BtnLimpar.Text = "Limpar";
+
+                        GnDvgOp.Columns["id"].HeaderText = "ID"; // string
+                        GnDvgOp.Columns["numeroop"].HeaderText = "OP"; // string
+                        GnDvgOp.Columns["descricao"].HeaderText = "Descrição"; // string
+                        GnDvgOp.Columns["desenho"].HeaderText = "Desenho";
+                        GnDvgOp.Columns["dataInicio"].HeaderText = "Data de início";
+                        GnDvgOp.Columns["dataEntrega"].HeaderText = "Data de entrega"; // DateTime
+                        break;
+                    }
+            }
+        }
         public void CarregarOP()
         {
             try
@@ -77,7 +162,30 @@ namespace FlowValmet.Viwes
             }
             catch
             {
-                MessageBox.Show("Erro ao carregar!");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error loading!");
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al cargar!");
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                }
             }
         }
 
@@ -100,13 +208,60 @@ namespace FlowValmet.Viwes
                 }
                 else
                 {
-                    MessageBox.Show("Preencher todos os campos");
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                MessageBox.Show("Fill in all fields!");
+
+                                break;
+                            }
+                        case "es":
+                            {
+                                MessageBox.Show("Complete todos los campos!");
+                                break;
+                            }
+                        case "pt":
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar: " + ex);
+
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error registering!" + ex);
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al registrarse!" + ex);
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao cadastrar: " + ex);
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao cadastrar: " + ex);
+                            break;
+                        }
+                }
                 LimparCampos();
             }
        
@@ -134,13 +289,60 @@ namespace FlowValmet.Viwes
                 }
                 else
                 {
-                    MessageBox.Show("Preencher todos os campos");
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                MessageBox.Show("Fill in all fields!");
+
+                                break;
+                            }
+                        case "es":
+                            {
+                                MessageBox.Show("Complete todos los campos!");
+                                break;
+                            }
+                        case "pt":
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Preencher todos os campos");
+                                break;
+                            }
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar: " + ex);
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error when updating: " + ex);
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al actualizar: " + ex);
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao atualizar: " + ex);
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao atualizar: " + ex);
+                            break;
+                        }
+                }
+
                 LimparCampos();
             }
         }
@@ -157,9 +359,38 @@ namespace FlowValmet.Viwes
                 if (e.RowIndex >= 0)
                 {
                     var linhas = GnDvgOp.Rows[e.RowIndex];
+                    string titulo = "";
+                    string descricao = "";
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                titulo = "User registration";
+                                descricao = "Do you really want to continue?";
 
+                                break;
+                            }
+                        case "es":
+                            {
+                                titulo = "Registro de usuario";
+                                descricao = "Realmente deseas continuar?";
+                                break;
+                            }
+                        case "pt":
+                            {
+                                titulo = "Cadastro Usuário";
+                                descricao = "Deseja realmente continuar?";
+                                break;
+                            }
+                        default:
+                            {
+                                titulo = "Cadastro Usuário";
+                                descricao = "Deseja realmente continuar?";
+                                break;
+                            }
+                    }
 
-                    var form = new PopUPGUS("Cadastro OP", "Deseja realmente continuar?");
+                    var form = new PopUPGUS(titulo, descricao);
                     form.ShowDialog();
 
                     switch (form.Result)
@@ -169,19 +400,89 @@ namespace FlowValmet.Viwes
                             {
                                 if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
                                 {
-                                    MessageBox.Show("Erro ao excluir OP");
+                                    switch (SessaoIdioma.Idioma)
+                                    {
+                                        case "en":
+                                            {
+                                                MessageBox.Show("Error when deleting" );
+
+                                                break;
+                                            }
+                                        case "es":
+                                            {
+                                                MessageBox.Show("Error al eliminar");
+                                                break;
+                                            }
+                                        case "pt":
+                                            {
+                                                MessageBox.Show("Erro ao excluir");
+                                                break;
+                                            }
+                                        default:
+                                            {
+                                                MessageBox.Show("Erro ao excluir");
+                                                break;
+                                            }
+                                    }
                                 }
                             }
                             else if (op.ExcluirProcessosVinculados(Convert.ToInt32(linhas.Cells[0].Value?.ToString())) >= 0)
                             {
                                 if (!op.ExcluirOp(Convert.ToInt32(linhas.Cells[0].Value?.ToString())))
                                 {
-                                    MessageBox.Show("Erro ao excluir OP");
+                                    switch (SessaoIdioma.Idioma)
+                                    {
+                                        case "en":
+                                            {
+                                                MessageBox.Show("Error when deleting");
+
+                                                break;
+                                            }
+                                        case "es":
+                                            {
+                                                MessageBox.Show("Error al eliminar");
+                                                break;
+                                            }
+                                        case "pt":
+                                            {
+                                                MessageBox.Show("Erro ao excluir");
+                                                break;
+                                            }
+                                        default:
+                                            {
+                                                MessageBox.Show("Erro ao excluir");
+                                                break;
+                                            }
+                                    }
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Erro ao excluir vinculos OP");
+                                switch (SessaoIdioma.Idioma)
+                                {
+                                    case "en":
+                                        {
+                                            MessageBox.Show("Error deleting PO links");
+
+                                            break;
+                                        }
+                                    case "es":
+                                        {
+                                            MessageBox.Show("Error al eliminar enlaces OP");
+                                            break;
+                                        }
+                                    case "pt":
+                                        {
+                                            MessageBox.Show("Erro ao excluir vinculos OP");
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            MessageBox.Show("Erro ao excluir vinculos OP");
+                                            break;
+                                        }
+                                }
+
                             }
                             LimparCampos();
                             break;
@@ -212,7 +513,31 @@ namespace FlowValmet.Viwes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao excluir ou atualizar: " + ex);
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error deleting or updating: " + ex);
+
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al eliminar o actualizar: " + ex);
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao excluir ou atualizar: " + ex);
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao excluir ou atualizar: " + ex);
+                            break;
+                        }
+                }
+
             }
         }
     }

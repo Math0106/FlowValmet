@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroLembretes));
             this.GNPanelCadastroLembretes = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GNLblLembreteId = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GnBtnLimpar = new Guna.UI2.WinForms.Guna2Button();
             this.GNBtnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             this.GNTxtTituloLembrete = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLblVincularOp = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNBtnCadastrarCadastroLembretes = new Guna.UI2.WinForms.Guna2Button();
             this.GNCheckBoxVincular = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GNTxtDEscricaoCadastrarLembretes = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNDgvLembretes = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vinculo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.op = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.GNCbxOps = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GNPanelCadastroLembretes.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -82,7 +82,7 @@
             this.guna2Panel2.Controls.Add(this.GnBtnLimpar);
             this.guna2Panel2.Controls.Add(this.GNBtnAtualizar);
             this.guna2Panel2.Controls.Add(this.GNTxtTituloLembrete);
-            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel2.Controls.Add(this.GNLblVincularOp);
             this.guna2Panel2.Controls.Add(this.GNBtnCadastrarCadastroLembretes);
             this.guna2Panel2.Controls.Add(this.GNCheckBoxVincular);
             this.guna2Panel2.Controls.Add(this.GNTxtDEscricaoCadastrarLembretes);
@@ -91,6 +91,23 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(332, 492);
             this.guna2Panel2.TabIndex = 35;
+            // 
+            // GNCbxOps
+            // 
+            this.GNCbxOps.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GNCbxOps.BorderColor = System.Drawing.Color.Teal;
+            this.GNCbxOps.BorderRadius = 20;
+            this.GNCbxOps.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GNCbxOps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GNCbxOps.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNCbxOps.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GNCbxOps.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNCbxOps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GNCbxOps.ItemHeight = 30;
+            this.GNCbxOps.Location = new System.Drawing.Point(18, 129);
+            this.GNCbxOps.Name = "GNCbxOps";
+            this.GNCbxOps.Size = new System.Drawing.Size(299, 36);
+            this.GNCbxOps.TabIndex = 17;
             // 
             // GNLblLembreteId
             // 
@@ -159,15 +176,15 @@
             this.GNTxtTituloLembrete.Size = new System.Drawing.Size(299, 46);
             this.GNTxtTituloLembrete.TabIndex = 0;
             // 
-            // guna2HtmlLabel2
+            // GNLblVincularOp
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(24, 102);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(132, 21);
-            this.guna2HtmlLabel2.TabIndex = 11;
-            this.guna2HtmlLabel2.Text = "Vincular em uma OP";
+            this.GNLblVincularOp.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblVincularOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLblVincularOp.Location = new System.Drawing.Point(59, 102);
+            this.GNLblVincularOp.Name = "GNLblVincularOp";
+            this.GNLblVincularOp.Size = new System.Drawing.Size(132, 21);
+            this.GNLblVincularOp.TabIndex = 11;
+            this.GNLblVincularOp.Text = "Vincular em uma OP";
             // 
             // GNBtnCadastrarCadastroLembretes
             // 
@@ -196,7 +213,7 @@
             this.GNCheckBoxVincular.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GNCheckBoxVincular.CheckMarkColor = System.Drawing.Color.WhiteSmoke;
             this.GNCheckBoxVincular.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.GNCheckBoxVincular.Location = new System.Drawing.Point(162, 102);
+            this.GNCheckBoxVincular.Location = new System.Drawing.Point(33, 102);
             this.GNCheckBoxVincular.Name = "GNCheckBoxVincular";
             this.GNCheckBoxVincular.Size = new System.Drawing.Size(20, 20);
             this.GNCheckBoxVincular.TabIndex = 10;
@@ -247,18 +264,18 @@
             // 
             this.GNDgvLembretes.AllowUserToAddRows = false;
             this.GNDgvLembretes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.GNDgvLembretes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.GNDgvLembretes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GNDgvLembretes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.GNDgvLembretes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GNDgvLembretes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GNDgvLembretes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GNDgvLembretes.ColumnHeadersHeight = 4;
             this.GNDgvLembretes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GNDgvLembretes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -267,14 +284,14 @@
             this.descricao,
             this.vinculo,
             this.op});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GNDgvLembretes.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GNDgvLembretes.DefaultCellStyle = dataGridViewCellStyle3;
             this.GNDgvLembretes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GNDgvLembretes.Location = new System.Drawing.Point(19, 18);
             this.GNDgvLembretes.Name = "GNDgvLembretes";
@@ -307,6 +324,12 @@
             this.GNDgvLembretes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDgvLembretes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvLembretes_CellContentClick);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "lixeira.png");
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -316,7 +339,7 @@
             // 
             // titulo
             // 
-            this.titulo.HeaderText = "Tiítulo";
+            this.titulo.HeaderText = "Título";
             this.titulo.MinimumWidth = 6;
             this.titulo.Name = "titulo";
             this.titulo.ReadOnly = true;
@@ -330,7 +353,7 @@
             // 
             // vinculo
             // 
-            this.vinculo.HeaderText = "Vinculo";
+            this.vinculo.HeaderText = "Vínculo";
             this.vinculo.MinimumWidth = 6;
             this.vinculo.Name = "vinculo";
             this.vinculo.ReadOnly = true;
@@ -343,29 +366,6 @@
             this.op.MinimumWidth = 6;
             this.op.Name = "op";
             this.op.ReadOnly = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "lixeira.png");
-            // 
-            // GNCbxOps
-            // 
-            this.GNCbxOps.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.GNCbxOps.BorderColor = System.Drawing.Color.Teal;
-            this.GNCbxOps.BorderRadius = 20;
-            this.GNCbxOps.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GNCbxOps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GNCbxOps.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNCbxOps.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GNCbxOps.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.GNCbxOps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GNCbxOps.ItemHeight = 30;
-            this.GNCbxOps.Location = new System.Drawing.Point(18, 129);
-            this.GNCbxOps.Name = "GNCbxOps";
-            this.GNCbxOps.Size = new System.Drawing.Size(299, 36);
-            this.GNCbxOps.TabIndex = 17;
             // 
             // CadastroLembretes
             // 
@@ -393,18 +393,18 @@
         private Guna.UI2.WinForms.Guna2Button GNBtnCadastrarCadastroLembretes;
         private Guna.UI2.WinForms.Guna2DataGridView GNDgvLembretes;
         private Guna.UI2.WinForms.Guna2CustomCheckBox GNCheckBoxVincular;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLblVincularOp;
         private Guna.UI2.WinForms.Guna2Button GnBtnLimpar;
         private System.Windows.Forms.ImageList imageList1;
         private Guna.UI2.WinForms.Guna2HtmlLabel GNLblLembreteId;
         private Guna.UI2.WinForms.Guna2Button GNBtnAtualizar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2ComboBox GNCbxOps;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn vinculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn op;
-        private Guna.UI2.WinForms.Guna2ComboBox GNCbxOps;
     }
 }

@@ -1,288 +1,290 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using FlowValmet.Controllers;
+﻿using FlowValmet.Controllers;
 using FlowValmet.Models;
 using Guna.UI2.WinForms;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using System;
+using System.Linq;
 
 public class LembreteUI
 {
-    // Controle principal que armazena os cards
+    // Controles
     private Guna2Panel _panelContainer;
+    private readonly ControleLembretes _controleLembretes = new ControleLembretes();
 
-    // Lista atual de lembretes
+    // Dados
     private List<Lembrete> _lembretes = new List<Lembrete>();
 
-    ControleLembretes Lembretes = new ControleLembretes();
+    // Constantes de layout (FIXAS)
+    private const int FIXED_CARD_HEIGHT = 250;
+    private const int FIXED_CARD_WIDTH_OFFSET = 40;
+    private const int FIXED_CARD_MARGIN = 15;
+    private const int FIXED_HEADER_HEIGHT = 50;
+    private const int FIXED_HEADER_HEIGHT_WITH_LINK = 70;
+    private const int FIXED_DESCRIPTION_HEIGHT = FIXED_CARD_HEIGHT - FIXED_HEADER_HEIGHT - 20;
+
+    // Cores
+    private readonly Color PRIMARY_CARD_COLOR = Color.FromArgb(114, 137, 161);
+    private readonly Color HOVER_CARD_COLOR = ControlPaint.Light(Color.FromArgb(114, 137, 161), 0.15f);
+
+    public void ConfigurarContainer(Control container)
+    {
+        if (container == null)
+            throw new ArgumentNullException(nameof(container));
+
+        _panelContainer = container as Guna2Panel ?? new Guna2Panel
+        {
+            Dock = DockStyle.Fill,
+            AutoScroll = true,
+            Padding = new Padding(10)
+        }; 
+
+        if (!(container is Guna2Panel))
+        {
+            container.Controls.Add(_panelContainer);
+        }
+
+        ConfigurarEstiloPainel();
+    }
+
+    private void ConfigurarEstiloPainel()
+    {
+        _panelContainer.SuspendLayout();
+        _panelContainer.AutoScroll = true;
+        _panelContainer.HorizontalScroll.Enabled = false;
+        _panelContainer.VerticalScroll.Enabled = true;
+        _panelContainer.AutoScrollMargin = new Size(0, 15);
+        _panelContainer.ResumeLayout(false);
+    }
+
+    public void CarregarLembretesIniciais()
+    {
+        if (_panelContainer == null)
+        {
+            MessageBox.Show("Container não configurado!", "Erro",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        _panelContainer.SuspendLayout();
+        try
+        {
+            _lembretes = _controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
+            RenderizarTodosLembretes();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Erro ao carregar lembretes: {ex.Message}", "Erro",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        finally
+        {
+            _panelContainer.ResumeLayout(true);
+        }
+    }
 
     public void RecarregarLembretes()
     {
+        _panelContainer.VerticalScroll.Value = 0;
         if (_panelContainer == null) return;
 
+        // Salvar estado do scroll
+        var scrollState = new ScrollState
+        {
+            Position = _panelContainer.VerticalScroll.Value,
+            WasAtBottom = _panelContainer.VerticalScroll.Value >=
+                         _panelContainer.VerticalScroll.Maximum - _panelContainer.Height
+        };
+
+        _panelContainer.SuspendLayout();
         try
         {
-            // Obter a lista atualizada do banco de dados
-            var lembretesAtualizados = ObterLembretesDoBanco();
+            var novosLembretes = _controleLembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
 
-            // Atualizar a exibição
-            CarregarLembretes(lembretesAtualizados);
+            // Sempre recriar os cards para garantir consistência
+            RenderizarTodosLembretes(novosLembretes);
+
+            // Restaurar posição do scroll
+            RestaurarScrollPosition(scrollState);
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Erro ao recarregar lembretes: {ex.Message}", "Erro",
                           MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-    }
-
-    private List<Lembrete> ObterLembretesDoBanco()
-    {
-        // Implementação conforme mostrado anteriormente
-        // Pode ser Entity Framework, ADO.NET, Dapper, etc.
-        // Exemplo mock:
-        return Lembretes.RecuperarLembrete("SELECT * FROM bdflowvalmet.lembretes");
-    }
-
-
-    // Cores disponíveis para os cards
-    private readonly Color[] _cardColors =
-    {
-        Color.FromArgb(74, 144, 226),
-        Color.FromArgb(29, 185, 157),
-        Color.FromArgb(255, 159, 67),
-        Color.FromArgb(238, 119, 141)
-    };
-
-    public void ConfigurarContainer(Control container)
-    {
-        if (container is Guna2Panel panel)
+        finally
         {
-            _panelContainer = panel;
+            _panelContainer.ResumeLayout(true);
         }
-        else if (container is Guna2ContainerControl containerControl)
-        {
-            _panelContainer = new Guna2Panel
-            {
-                Dock = DockStyle.Fill,
-                AutoScroll = true
-            };
-            containerControl.Controls.Add(_panelContainer);
-        }
-        else
-        {
-            throw new ArgumentException("Tipo de container não suportado");
-        }
-
-        ConfigurarPainelScroll();
     }
 
-
-    // Métodos privados de configuração e renderização
-    private void ConfigurarPainelScroll()
+    private void RenderizarTodosLembretes(List<Lembrete> lembretes = null)
     {
-        if (_panelContainer == null) return;
+        _lembretes = lembretes ?? _lembretes;
 
-        _panelContainer.SuspendLayout();
-        _panelContainer.AutoScroll = true;
-        _panelContainer.HorizontalScroll.Enabled = false;
-        _panelContainer.VerticalScroll.Enabled = true;
-        _panelContainer.AutoScrollMargin = new Size(0, 15);
-        _panelContainer.ResumeLayout();
-    }
-
-    private void MostrarMensagemSemLembretes()
-    {
-        var lblMensagem = new Guna2HtmlLabel
-        {
-            Text = "Nenhum lembrete encontrado",
-            AutoSize = true,
-            Font = new Font("Segoe UI Semibold", 11, FontStyle.Italic),
-            ForeColor = Color.FromArgb(120, 120, 120),
-            Location = new Point(20, 20),
-            BackColor = Color.Transparent
-        };
-        _panelContainer.Controls.Add(lblMensagem);
-    }
-
-    public void CarregarLembretes(List<Lembrete> lembretes)
-    {
-        _panelContainer.VerticalScroll.Value = 0;
-        _panelContainer.AutoScrollPosition = new Point(0, 0);
-
-        _lembretes = lembretes ?? new List<Lembrete>();
-
-        if (_panelContainer == null) return;
-
-        _panelContainer.SuspendLayout();
-
-        // Limpa os controles existentes
         _panelContainer.Controls.Clear();
 
         if (!_lembretes.Any())
         {
             MostrarMensagemSemLembretes();
-        }
-        else
-        {
-            CriarCardsLembretes();
+            return;
         }
 
+        int posY = FIXED_CARD_MARGIN;
+        int cardWidth = _panelContainer.Width - FIXED_CARD_WIDTH_OFFSET;
 
-
-        _panelContainer.ResumeLayout(true);
-    }
-
-    private void CriarCardsLembretes()
-    {
-        int posY = 10;
-        int alturaCard = 250;
-        int larguraCard = _panelContainer.ClientSize.Width - 35;
-        int espacamento = 15;
-        int marginInterna = 15;
-
-
+        // Loop simples sem ordenação
         foreach (var lembrete in _lembretes)
         {
-            var card = CriarCard(lembrete, _cardColors[_lembretes.IndexOf(lembrete) % _cardColors.Length],
-                            larguraCard, alturaCard, posY);
-
-            AdicionarCabecalho(card, lembrete, larguraCard, marginInterna);
-            AdicionarDivisor(card, larguraCard, marginInterna);
-            AdicionarDescricao(card, lembrete, larguraCard, alturaCard, marginInterna);
-
+            var card = CriarCardCompleto(cardWidth, posY, lembrete);
             _panelContainer.Controls.Add(card);
-            posY += alturaCard + espacamento;
+            posY += FIXED_CARD_HEIGHT + FIXED_CARD_MARGIN;
+
         }
-        _panelContainer.AutoScrollMinSize = new Size(0, posY + 10);
+
+        _panelContainer.AutoScrollMinSize = new Size(0, posY);
     }
 
-
-    private Guna2Panel CriarCard(Lembrete lembrete, Color cor, int largura, int altura, int posY)
+    private Guna2Panel CriarCardCompleto(int width, int posY, Lembrete lembrete)
     {
         var card = new Guna2Panel
         {
-            Size = new Size(largura, altura),
-            Location = new Point(15, posY),
+            Size = new Size(width, FIXED_CARD_HEIGHT),
+            Location = new Point(FIXED_CARD_MARGIN, posY),
             Tag = lembrete,
-            Cursor = Cursors.Hand,
             BorderRadius = 14,
-            FillColor = cor,
+            FillColor = PRIMARY_CARD_COLOR,
             BorderColor = Color.FromArgb(40, 255, 255, 255),
-            BorderThickness = 1
+            BorderThickness = 1,
+            Margin = new Padding(0, 0, 0, FIXED_CARD_MARGIN),
+            Cursor = Cursors.Hand
         };
 
-        // Efeitos de hover
-        card.MouseEnter += (sender, e) => card.FillColor = ControlPaint.Light(cor, 0.15f);
-        card.MouseLeave += (sender, e) => card.FillColor = cor;
-        card.MouseDown += (sender, e) => card.Location = new Point(card.Location.X + 1, card.Location.Y + 1);
-        card.MouseUp += (sender, e) => card.Location = new Point(card.Location.X - 1, card.Location.Y - 1);
+        // Configurar eventos hover
+        card.MouseEnter += (s, e) => card.FillColor = HOVER_CARD_COLOR;
+        card.MouseLeave += (s, e) => card.FillColor = PRIMARY_CARD_COLOR;
+        card.MouseDown += (s, e) => card.Location = new Point(card.Location.X + 1, card.Location.Y + 1);
+        card.MouseUp += (s, e) => card.Location = new Point(card.Location.X - 1, card.Location.Y - 1);
+
+        // Adicionar conteúdo do card
+        AdicionarConteudoCard(card, lembrete);
 
         return card;
     }
 
-    private void AdicionarCabecalho(Guna2Panel card, Lembrete lembrete, int larguraPanel, int marginInterna)
+    private void AdicionarConteudoCard(Guna2Panel card, Lembrete lembrete)
     {
-        int headerHeight = lembrete.Vinculo ? 70 : 50;
-        var headerPanel = new Guna2Panel
+        // Limpar controles existentes
+        card.Controls.Clear();
+
+        // Configurar header
+        var headerHeight = lembrete.Vinculo ? FIXED_HEADER_HEIGHT_WITH_LINK : FIXED_HEADER_HEIGHT;
+        var header = new Guna2Panel
         {
-            Size = new Size(larguraPanel, headerHeight),
-            Location = new Point(0, 0),
+            Size = new Size(card.Width, headerHeight),
             BackColor = Color.Transparent,
             Padding = new Padding(10, 5, 10, 5)
         };
 
-        // Título
+        // Adicionar título
         var titulo = new Guna2HtmlLabel
         {
-            Font = new Font("Segoe UI Semibold", 14, FontStyle.Bold),
             Text = lembrete.Titulo,
-            AutoSize = false,
-            Size = new Size(larguraPanel - (2 * marginInterna) - (lembrete.Vinculo ? 160 : 30) +40, 30),
-            Location = new Point(marginInterna + 5, marginInterna),
+            Font = new Font("Segoe UI Semibold", 14, FontStyle.Bold),
             ForeColor = Color.White,
-            BackColor = Color.Transparent
+            Location = new Point(10, 10),
+            MaximumSize = new Size(card.Width - (lembrete.Vinculo ? 170 : 40), 30),
+            AutoSize = false,
+            Size = new Size(card.Width - (lembrete.Vinculo ? 170 : 40), 30)
         };
-        headerPanel.Controls.Add(titulo);
+        header.Controls.Add(titulo);
 
-        // Vínculo (se aplicável)
+        // Adicionar vínculo se necessário
         if (lembrete.Vinculo && !string.IsNullOrEmpty(lembrete.Op))
         {
-            var lblVinculo = new Guna2Panel
+            var vinculo = new Guna2Panel
             {
                 Size = new Size(150, 22),
-                Location = new Point(marginInterna, 45),
+                Location = new Point(10, 40),
                 FillColor = Color.FromArgb(40, 0, 0, 0),
-                BorderRadius = 5,
-                Anchor = AnchorStyles.Top | AnchorStyles.Left
+                BorderRadius = 5
             };
 
-            var lblVinculoText = new Guna2HtmlLabel
+            var vinculoText = new Guna2HtmlLabel
             {
                 Text = lembrete.Op,
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                AutoSize = true,
                 ForeColor = Color.White,
-                BackColor = Color.Transparent,
-                Location = new Point(5, 1)
+                Location = new Point(5, 1),
+                AutoSize = false,
+                Size = new Size(140, 20)
             };
-
-            lblVinculo.Controls.Add(lblVinculoText);
-            headerPanel.Controls.Add(lblVinculo);
+            vinculo.Controls.Add(vinculoText);
+            header.Controls.Add(vinculo);
         }
+        card.Controls.Add(header);
 
-        card.Controls.Add(headerPanel);
-    }
-
-    private void AdicionarDivisor(Guna2Panel card, int larguraPanel, int marginInterna)
-    {
-        int posY = card.Controls[0].Height + 5;
+        // Adicionar divisor
         var divisor = new Guna2Panel
         {
-            Size = new Size(larguraPanel - (2 * marginInterna), 1),
-            Location = new Point(marginInterna, posY),
-            FillColor = Color.FromArgb(80, 255, 255, 255),
-            BorderThickness = 0
+            Size = new Size(card.Width - 20, 1),
+            Location = new Point(10, header.Bottom + 5),
+            FillColor = Color.FromArgb(80, 255, 255, 255)
         };
         card.Controls.Add(divisor);
-    }
 
-    private void AdicionarDescricao(Guna2Panel card, Lembrete lembrete, int larguraPanel, int alturaPanel, int marginInterna)
-    {
-        int posYDivisor = card.Controls.OfType<Guna2Panel>().FirstOrDefault(p => p.Height == 1)?.Bottom ?? 85;
-
-        var scrollPanel = new Guna2Panel
+        // Adicionar área de descrição
+        var descPanel = new Guna2Panel
         {
-            Width = larguraPanel - (2 * marginInterna),
-            Height = alturaPanel - posYDivisor - 5,
-            Location = new Point(marginInterna, posYDivisor + 5),
+            Size = new Size(card.Width - 20, FIXED_DESCRIPTION_HEIGHT),
+            Location = new Point(10, divisor.Bottom + 5),
             AutoScroll = true,
-            BackColor = Color.Transparent,
-            BorderThickness = 0,
-            Padding = new Padding(0, 5, 0, 0)
+            BackColor = Color.Transparent
         };
 
-        var txtDescricao = new Guna2HtmlLabel
+        var descricao = new Guna2HtmlLabel
         {
             Text = lembrete.Descricao,
             Font = new Font("Segoe UI", 11),
-            AutoSize = false,
-            Width = scrollPanel.Width - SystemInformation.VerticalScrollBarWidth - 5,
-            BackColor = Color.Transparent,
             ForeColor = Color.White,
-            Location = new Point(0, 0),
-            MaximumSize = new Size(scrollPanel.Width - SystemInformation.VerticalScrollBarWidth, 0)
+            MaximumSize = new Size(descPanel.Width - SystemInformation.VerticalScrollBarWidth - 5, 0),
+            AutoSize = false,
+            Size = new Size(descPanel.Width - SystemInformation.VerticalScrollBarWidth - 5, FIXED_DESCRIPTION_HEIGHT - 10)
         };
+        descPanel.Controls.Add(descricao);
+        card.Controls.Add(descPanel);
+    }
 
-        // Cálculo dinâmico da altura
-        using (Graphics g = scrollPanel.CreateGraphics())
+    private void MostrarMensagemSemLembretes()
+    {
+        var lbl = new Guna2HtmlLabel
         {
-            SizeF size = g.MeasureString(lembrete.Descricao, txtDescricao.Font, txtDescricao.Width);
-            txtDescricao.Height = (int)Math.Ceiling(size.Height) + 10;
-        }
+            Text = "Nenhum lembrete encontrado",
+            Font = new Font("Segoe UI Semibold", 11, FontStyle.Italic),
+            ForeColor = Color.FromArgb(120, 120, 120),
+            Location = new Point(20, 20),
+            BackColor = Color.Transparent
+        };
+        _panelContainer.Controls.Add(lbl);
+    }
 
-        scrollPanel.AutoScroll = txtDescricao.Height >= scrollPanel.Height;
-        scrollPanel.Controls.Add(txtDescricao);
-        card.Controls.Add(scrollPanel);
+    private void RestaurarScrollPosition(ScrollState scrollState)
+    {
+        if (scrollState.WasAtBottom)
+        {
+            _panelContainer.VerticalScroll.Value = _panelContainer.VerticalScroll.Maximum;
+        }
+        else
+        {
+            _panelContainer.VerticalScroll.Value =
+                Math.Min(scrollState.Position, _panelContainer.VerticalScroll.Maximum);
+        }
+    }
+
+    private class ScrollState
+    {
+        public int Position { get; set; }
+        public bool WasAtBottom { get; set; }
     }
 }

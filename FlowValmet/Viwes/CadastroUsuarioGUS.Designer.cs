@@ -34,10 +34,15 @@
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNDgvUsuario = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.GNLblUsuarioId = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLblUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.GNLblAdim = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GNCbxUser = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.GNCbxAdim = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.TxtSetor = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,11 +55,6 @@
             this.BtnRegistrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNDgvUsuario)).BeginInit();
@@ -153,6 +153,41 @@
             this.GNDgvUsuario.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.GNDgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GNDgvUsuario_CellContentClick_1);
             // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // usuario_nome
+            // 
+            this.usuario_nome.HeaderText = "Usuario";
+            this.usuario_nome.MinimumWidth = 6;
+            this.usuario_nome.Name = "usuario_nome";
+            this.usuario_nome.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // setor
+            // 
+            this.setor.HeaderText = "Setor";
+            this.setor.MinimumWidth = 6;
+            this.setor.Name = "setor";
+            this.setor.ReadOnly = true;
+            // 
+            // perfil
+            // 
+            this.perfil.HeaderText = "Perfil";
+            this.perfil.MinimumWidth = 6;
+            this.perfil.Name = "perfil";
+            this.perfil.ReadOnly = true;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
@@ -160,8 +195,8 @@
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.GNLblUsuarioId);
-            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel6);
-            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel2.Controls.Add(this.GNLblUsuario);
+            this.guna2Panel2.Controls.Add(this.GNLblAdim);
             this.guna2Panel2.Controls.Add(this.GNCbxUser);
             this.guna2Panel2.Controls.Add(this.GNCbxAdim);
             this.guna2Panel2.Controls.Add(this.TxtSetor);
@@ -188,25 +223,25 @@
             this.GNLblUsuarioId.TabIndex = 33;
             this.GNLblUsuarioId.Text = "...";
             // 
-            // guna2HtmlLabel6
+            // GNLblUsuario
             // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(312, 374);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(31, 21);
-            this.guna2HtmlLabel6.TabIndex = 24;
-            this.guna2HtmlLabel6.Text = "User";
+            this.GNLblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLblUsuario.Location = new System.Drawing.Point(312, 374);
+            this.GNLblUsuario.Name = "GNLblUsuario";
+            this.GNLblUsuario.Size = new System.Drawing.Size(31, 21);
+            this.GNLblUsuario.TabIndex = 24;
+            this.GNLblUsuario.Text = "User";
             // 
-            // guna2HtmlLabel5
+            // GNLblAdim
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(312, 348);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(96, 21);
-            this.guna2HtmlLabel5.TabIndex = 23;
-            this.guna2HtmlLabel5.Text = "Adiministrador";
+            this.GNLblAdim.BackColor = System.Drawing.Color.Transparent;
+            this.GNLblAdim.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.GNLblAdim.Location = new System.Drawing.Point(312, 348);
+            this.GNLblAdim.Name = "GNLblAdim";
+            this.GNLblAdim.Size = new System.Drawing.Size(96, 21);
+            this.GNLblAdim.TabIndex = 23;
+            this.GNLblAdim.Text = "Adiministrador";
             // 
             // GNCbxUser
             // 
@@ -405,7 +440,7 @@
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(223, 51);
             this.BtnRegistrar.TabIndex = 9;
-            this.BtnRegistrar.Text = "Registrar";
+            this.BtnRegistrar.Text = "Cadastrar";
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // guna2HtmlLabel2
@@ -425,41 +460,6 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(32, 18);
             this.guna2HtmlLabel1.TabIndex = 24;
             this.guna2HtmlLabel1.Text = "User";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // usuario_nome
-            // 
-            this.usuario_nome.HeaderText = "Usuario";
-            this.usuario_nome.MinimumWidth = 6;
-            this.usuario_nome.Name = "usuario_nome";
-            this.usuario_nome.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // setor
-            // 
-            this.setor.HeaderText = "Setor";
-            this.setor.MinimumWidth = 6;
-            this.setor.Name = "setor";
-            this.setor.ReadOnly = true;
-            // 
-            // perfil
-            // 
-            this.perfil.HeaderText = "Perfil";
-            this.perfil.MinimumWidth = 6;
-            this.perfil.Name = "perfil";
-            this.perfil.ReadOnly = true;
             // 
             // CadastroUsuarioGUS
             // 
@@ -495,8 +495,8 @@
         private Guna.UI2.WinForms.Guna2TextBox TxtSetor;
         private Guna.UI2.WinForms.Guna2CustomCheckBox GNCbxUser;
         private Guna.UI2.WinForms.Guna2CustomCheckBox GNCbxAdim;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLblAdim;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GNLblUsuario;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2DataGridView GNDgvUsuario;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

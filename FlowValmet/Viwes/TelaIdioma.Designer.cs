@@ -103,6 +103,7 @@
             this.GNBtnIngles.Name = "GNBtnIngles";
             this.GNBtnIngles.Size = new System.Drawing.Size(317, 212);
             this.GNBtnIngles.TabIndex = 7;
+            this.GNBtnIngles.Click += new System.EventHandler(this.GNBtnIngles_Click);
             // 
             // GNBtnPortugues
             // 
@@ -120,6 +121,7 @@
             this.GNBtnPortugues.Name = "GNBtnPortugues";
             this.GNBtnPortugues.Size = new System.Drawing.Size(310, 208);
             this.GNBtnPortugues.TabIndex = 8;
+            this.GNBtnPortugues.Click += new System.EventHandler(this.GNBtnPortugues_Click);
             // 
             // GNPanelPrincipal
             // 

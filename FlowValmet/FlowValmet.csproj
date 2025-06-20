@@ -272,6 +272,7 @@
     <Compile Include="Models\OpCompletaDto.cs" />
     <Compile Include="Models\OrdemProducao.cs" />
     <Compile Include="Models\ProcessoDto.cs" />
+    <Compile Include="Models\SessaoIdioma.cs" />
     <Compile Include="Models\SessaoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
@@ -359,6 +360,12 @@
     <Compile Include="Viwes\TelaIndicadores.Designer.cs">
       <DependentUpon>TelaIndicadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Viwes\TelaIndicadoresDiarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viwes\TelaIndicadoresDiarios.Designer.cs">
+      <DependentUpon>TelaIndicadoresDiarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viwes\TelaKanbanGUS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaIndicadores.resx">
       <DependentUpon>TelaIndicadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viwes\TelaIndicadoresDiarios.resx">
+      <DependentUpon>TelaIndicadoresDiarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viwes\TelaKanbanGUS.resx">
       <DependentUpon>TelaKanbanGUS.cs</DependentUpon>

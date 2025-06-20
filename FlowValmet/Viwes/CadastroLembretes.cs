@@ -25,12 +25,13 @@ namespace FlowValmet.Viwes
 
             LimparCampos();
 
+            TrocaIdioma(SessaoIdioma.Idioma);
+
             var resultadoOp = Vincular.RecuperarOp_id_numeroOP_descricao("SELECT o.id, o.numeroop, o.descricao FROM bdflowvalmet.op o;");
             foreach (var item in resultadoOp)
             {
                 GNCbxOps.Items.Add($"{item.Item1}-{item.Item2} ");
             }
-
 
             if (GNCheckBoxVincular.Checked)
             {
@@ -41,6 +42,82 @@ namespace FlowValmet.Viwes
             {
                 GNCbxOps.Enabled = true;
             }          
+        }
+
+        public void TrocaIdioma(string idioma)
+        {
+            switch (idioma)
+            {
+                case "en":
+                    {
+                        GNTxtTituloLembrete.PlaceholderText = "Title";
+                        GNLblVincularOp.Text = "Link in a PO";
+                        GNTxtDEscricaoCadastrarLembretes.PlaceholderText = "Description";
+                        GNBtnCadastrarCadastroLembretes.Text = "Register";
+                        GNBtnAtualizar.Text = "Update";
+                        GnBtnLimpar.Text = "Clean";
+
+                        GNDgvLembretes.Columns["id"].HeaderText = "id"; // string
+                        GNDgvLembretes.Columns["titulo"].HeaderText = "Title"; // string
+                        GNDgvLembretes.Columns["descricao"].HeaderText = "Description"; // string
+                        GNDgvLembretes.Columns["vinculo"].HeaderText = "Bond";
+                        GNDgvLembretes.Columns["op"].HeaderText = "PO";
+                        break;
+                    }
+                case "es":
+                    {
+                        GNTxtTituloLembrete.PlaceholderText = "Título";
+                        GNLblVincularOp.Text = "Enlace en una orden de compra";
+                        GNTxtDEscricaoCadastrarLembretes.PlaceholderText = "Descripción";
+                        GNBtnCadastrarCadastroLembretes.Text = "Registro";
+                        GNBtnAtualizar.Text = "Actualizar";
+                        GnBtnLimpar.Text = "Limpiar";
+
+                        GNDgvLembretes.Columns["id"].HeaderText = "id"; // string
+                        GNDgvLembretes.Columns["titulo"].HeaderText = "Título"; // string
+                        GNDgvLembretes.Columns["descricao"].HeaderText = "Descripción"; // string
+                        GNDgvLembretes.Columns["vinculo"].HeaderText = "Vínculo";
+                        GNDgvLembretes.Columns["op"].HeaderText = "OP";
+
+                        break;
+                    }
+                case "pt":
+                    {
+                        GNTxtTituloLembrete.PlaceholderText = "Título";
+                        GNLblVincularOp.Text = "Vincular em uma OP";
+                        GNTxtDEscricaoCadastrarLembretes.PlaceholderText = "Descrição";
+                        GNBtnCadastrarCadastroLembretes.Text = "Cadastrar";
+                        GNBtnAtualizar.Text = "Atualizar";
+                        GnBtnLimpar.Text = "Limpar";
+
+
+
+                        GNDgvLembretes.Columns["id"].HeaderText = "id"; // string
+                        GNDgvLembretes.Columns["titulo"].HeaderText = "Título"; // string
+                        GNDgvLembretes.Columns["descricao"].HeaderText = "Descrição"; // string
+                        GNDgvLembretes.Columns["vinculo"].HeaderText = "Vínculo";
+                        GNDgvLembretes.Columns["op"].HeaderText = "OP";
+                        break;
+                    }
+                default:
+                    {
+                        GNTxtTituloLembrete.PlaceholderText = "Título";
+                        GNLblVincularOp.Text = "Vincular em uma OP";
+                        GNTxtDEscricaoCadastrarLembretes.PlaceholderText = "Descrição";
+                        GNBtnCadastrarCadastroLembretes.Text = "Cadastrar";
+                        GNBtnAtualizar.Text = "Atualizar";
+                        GnBtnLimpar.Text = "Limpar";
+
+                        GNDgvLembretes.Columns["id"].HeaderText = "id"; // string
+                        GNDgvLembretes.Columns["titulo"].HeaderText = "Título"; // string
+                        GNDgvLembretes.Columns["descricao"].HeaderText = "Descrição"; // string
+                        GNDgvLembretes.Columns["vinculo"].HeaderText = "Vínculo";
+                        GNDgvLembretes.Columns["op"].HeaderText = "OP";
+
+                        break;
+                    }
+            }
+
         }
 
         public void CarregarLembrete()
@@ -73,7 +150,30 @@ namespace FlowValmet.Viwes
             }
             catch
             {
-                MessageBox.Show("Erro ao carregar!");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Error loading!");
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Error al cargar!");
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Erro ao carregar!");
+                            break;
+                        }
+                }
+
             }
         }
 
@@ -113,18 +213,69 @@ namespace FlowValmet.Viwes
 
                     if (sucesso)
                     {
+
+                        var telaPrincipal = this.ParentForm as TelaPrincipal;
+                        if (telaPrincipal != null)
+                        {
+                            telaPrincipal.ResetarTelaPrincpalLembretes();
+                        }
                         LimparCampos();
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                MessageBox.Show("Unable to register: " + ex);
+                                break;
+                            }
+                        case "es":
+                            {
+                                MessageBox.Show("No se puede registrar: " + ex);
+                                break;
+                            }
+                        case "pt":
+                            {
+                                MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                                break;
+                            }
+                    }
+
                 }
             }
             else
             {
-                MessageBox.Show("Campos em branco ");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Blank fields ");
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Campos en blanco ");
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Campos em branco ");
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Campos em branco ");
+                            break;
+                        }
+                }
             }
         }
 
@@ -149,36 +300,86 @@ namespace FlowValmet.Viwes
             
             if (e.RowIndex >= 0)
             {
+                string titulo;
+                string descrição;
                 var linha = GNDgvLembretes.Rows[e.RowIndex];
-                var form = new PopUPGUS("Cadastro Lembrete", "Deseja realmente continuar?");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            titulo = "Registration reminder";
+                            descrição = "Do you really want to continue?";
+                            break;
+                        }
+                    case "es":
+                        {
+                            titulo = "Recordatorio de registro";
+                            descrição = "Realmente deseas continuar?";
+                            break;
+                        }
+                    case "pt":
+                        {
+                            titulo = "Cadastro Lembrete";
+                            descrição = "Deseja realmente continuar?";
+                            break;
+                        }
+                    default:
+                        {
+                            titulo = "Cadastro Lembrete";
+                            descrição = "Deseja realmente continuar?";
+                            break;
+                        }
+                }
+                var form = new PopUPGUS(titulo, descrição);
                 form.ShowDialog();
+
 
                 switch (form.Result)
                 {
                     case PopUPGUS.CustomDialogResult.Excluir:
-                        controleLembretes.ExcluirLembrete(Convert.ToInt32(linha.Cells[0].Value?.ToString()));                          
-                        LimparCampos();
+                        try 
+                        {
+                            controleLembretes.ExcluirLembrete(Convert.ToInt32(linha.Cells[0].Value?.ToString()));
+
+                            var telaPrincipal = this.ParentForm as TelaPrincipal;
+                            if (telaPrincipal != null)
+                            {
+                                telaPrincipal.ResetarTelaPrincpalLembretes();
+                            }
+                            LimparCampos();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"{ex}");
+                        }
+
                         break;
                     case PopUPGUS.CustomDialogResult.Alterar:
-                        GNLblLembreteId.Text = linha.Cells[0].Value.ToString();
-                        GNTxtTituloLembrete.Text = linha.Cells[1].Value.ToString();
-                        GNTxtDEscricaoCadastrarLembretes.Text = linha.Cells[2].Value.ToString();
-                        var obterValorCheck = linha.Cells[3].Value;
-                        if (Convert.ToBoolean(obterValorCheck) == true)
+                        try
                         {
-                            GNCheckBoxVincular.Checked = true;
-                            //GNTxtOPCadastroLembrete.Enabled = true;
-                            GNCbxOps.Enabled = true;
-                            //GNTxtOPCadastroLembrete.Text = linha.Cells[4].Value.ToString();
-                            GNCbxOps.Text = linha.Cells[4].Value.ToString();
+                            GNLblLembreteId.Text = linha.Cells[0].Value.ToString();
+                            GNTxtTituloLembrete.Text = linha.Cells[1].Value.ToString();
+                            GNTxtDEscricaoCadastrarLembretes.Text = linha.Cells[2].Value.ToString();
+                            var obterValorCheck = linha.Cells[3].Value;
+                            if (Convert.ToBoolean(obterValorCheck) == true)
+                            {
+                                GNCheckBoxVincular.Checked = true;
+                                GNCbxOps.Enabled = true;
+                                GNCbxOps.Text = linha.Cells[4].Value.ToString();
+                            }
+                            else
+                            {
+                                GNCheckBoxVincular.Checked = false;
+                                GNCbxOps.Enabled = false;
+                            }
+                            GNBtnCadastrarCadastroLembretes.Enabled = false;
+                            GNBtnAtualizar.Enabled = true;
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            GNCheckBoxVincular.Checked = false;
-                            GNCbxOps.Enabled = false;
+                            MessageBox.Show($"{ex}");
                         }
-                        GNBtnCadastrarCadastroLembretes.Enabled = false;
-                        GNBtnAtualizar.Enabled = true;
+
                             break;
                     case PopUPGUS.CustomDialogResult.Cancelar:
                         break;
@@ -245,6 +446,11 @@ namespace FlowValmet.Viwes
 
                     if (sucesso)
                     {
+                        var telaPrincipal = this.ParentForm as TelaPrincipal;
+                        if (telaPrincipal != null)
+                        {
+                            telaPrincipal.ResetarTelaPrincpalLembretes();
+                        }
                         LimparCampos();
 
                     }
@@ -252,14 +458,59 @@ namespace FlowValmet.Viwes
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                    switch (SessaoIdioma.Idioma)
+                    {
+                        case "en":
+                            {
+                                MessageBox.Show("Unable to update: " + ex);
+                                break;
+                            }
+                        case "es":
+                            {
+                                MessageBox.Show("No se puede actualizar: " + ex);
+                                break;
+                            }
+                        case "pt":
+                            {
+                                MessageBox.Show("Não foi possivel cadastrar: " + ex);
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Não foi possivel atualizar: " + ex);
+                                break;
+                            }
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Campos em branco ");
+                switch (SessaoIdioma.Idioma)
+                {
+                    case "en":
+                        {
+                            MessageBox.Show("Blank fields ");
+                            break;
+                        }
+                    case "es":
+                        {
+                            MessageBox.Show("Campos en blanco ");
+                            break;
+                        }
+                    case "pt":
+                        {
+                            MessageBox.Show("Campos em branco ");
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("Campos em branco ");
+                            break;
+                        }
+                }
             }
-
         }
+
+        
     }
 }

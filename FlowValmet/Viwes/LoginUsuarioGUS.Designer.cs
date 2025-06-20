@@ -34,7 +34,6 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.Lblstatus = new System.Windows.Forms.Label();
             this.Picture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.TxtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.BtnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -96,7 +95,6 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.Teal;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.Lblstatus);
             this.guna2Panel2.Controls.Add(this.Picture);
             this.guna2Panel2.Controls.Add(this.TxtUsuario);
             this.guna2Panel2.Controls.Add(this.BtnLogin);
@@ -104,11 +102,6 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this.guna2Panel2, "guna2Panel2");
             this.guna2Panel2.Name = "guna2Panel2";
-            // 
-            // Lblstatus
-            // 
-            resources.ApplyResources(this.Lblstatus, "Lblstatus");
-            this.Lblstatus.Name = "Lblstatus";
             // 
             // Picture
             // 
@@ -174,7 +167,6 @@
             this.TxtSenha.PasswordChar = '*';
             this.TxtSenha.PlaceholderText = "Senha";
             this.TxtSenha.SelectedText = "";
-            //this.TxtSenha.TextChanged += new System.EventHandler(this.TxtSenha_TextChanged);
             // 
             // guna2PictureBox3
             // 
@@ -199,13 +191,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(171)))), ((int)(((byte)(167)))));
             this.Controls.Add(this.guna2Panel1);
             this.Name = "LoginUsuarioGUS";
-            //this.Load += new System.EventHandler(this.LoginUsuarioGUS_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
@@ -221,7 +211,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TxtUsuario;
         private Guna.UI2.WinForms.Guna2CirclePictureBox Picture;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label Lblstatus;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
